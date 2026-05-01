@@ -47,10 +47,10 @@ export const SELLERS = [
   { name: "Ariel Ivan Silva Bustillo", phone: "9615-1932" },
   { name: "Edgar Hernan Montoya Banegas", phone: "9615-2437" },
   { name: "Nolvin Mondragón", phone: "9509-4935" },
-  { name: "Ariel Silva", phone: "9509-5106" },
+  { name: "Gerson Raudales ", phone: "9509-5106" },
   { name: "Oscar David Alvarado Reyes", phone: "9509-5163" },
   { name: "Marvin Antonio Martínez Mendéz", phone: "9509-5454" },
-  { name: "Heber Cerrato", phone: "9762-6848" },
+  { name: "Yonathan Triminio", phone: "9762-6848" },
   { name: "Allan Palma", phone: "9452-5432" },
 ];
 
