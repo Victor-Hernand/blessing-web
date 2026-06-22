@@ -7,21 +7,21 @@ import { IMAGES } from "@/lib/constants";
 const galleryItems = [
   {
     src: IMAGES.realClientDelivery,
-    alt: "Entrega de producto Wagner a cliente satisfecho",
+    alt: "Atención al cliente en el mostrador de Auto Repuestos Blessing",
     caption: "Atención Personalizada",
     desc: "Nuestro equipo entregando productos de calidad a nuestros clientes.",
     span: "col-span-2",
   },
   {
     src: IMAGES.realSellerRadio,
-    alt: "Vendedor especializado verificando productos NPW",
+    alt: "Asesora especializada de Blessing brindando atención personalizada",
     caption: "Asesoría Técnica",
     desc: "Vendedores expertos que te ayudan a encontrar el repuesto exacto.",
     span: "col-span-1",
   },
   {
     src: IMAGES.realEmployeeProducts,
-    alt: "Colaboradora preparando pedido con productos RIK y TP",
+    alt: "Colaboradora de Blessing con productos en exhibición",
     caption: "Inventario Completo",
     desc: "Amplia variedad de marcas reconocidas en nuestro inventario.",
     span: "col-span-1",
@@ -35,14 +35,14 @@ const galleryItems = [
   },
   {
     src: IMAGES.realEmployeeBag,
-    alt: "Colaborador preparando envío con bolsa Blessing",
+    alt: "Colaborador de Blessing con producto en tienda",
     caption: "Preparación de Pedidos",
     desc: "Empacamos con cuidado cada pedido para garantizar su integridad.",
     span: "col-span-1",
   },
   {
     src: IMAGES.realSellerProducts,
-    alt: "Vendedor Marlon Pagoaga con productos RS Tachs",
+    alt: "Vendedor especializado de Blessing con productos",
     caption: "Vendedores Especializados",
     desc: "Nuestro equipo conoce cada producto para brindarte la mejor asesoría.",
     span: "col-span-2",

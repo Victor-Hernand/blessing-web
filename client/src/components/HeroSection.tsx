@@ -29,9 +29,9 @@ export default function HeroSection() {
           className="w-full h-[115%] object-cover"
         />
       </div>
-      {/* Lighter gradient overlays — still readable but brighter feel */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/70 to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white/50 via-transparent to-white/20" />
+      {/* Gradient overlays — strong scrim only behind the text (left), clears toward the right to reveal the storefront */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 to-transparent lg:via-white/30" />
+      <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
 
       {/* Red accent line left */}
       <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-red-600 to-transparent hidden lg:block" />
