@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
 
 const NAV_LINKS = [
+  { label: "Nosotros", href: "#nosotros" },
   { label: "Inicio", href: "#inicio" },
   { label: "Categorías", href: "#categorias" },
-  { label: "Nosotros", href: "#nosotros" },
   { label: "Servicios", href: "#servicios" },
   { label: "Marcas", href: "#marcas" },
   { label: "Galería", href: "#galeria" },
@@ -18,12 +18,12 @@ const NAV_LINKS = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("inicio");
+  const [activeSection, setActiveSection] = useState("nosotros");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
-      const sections = NAV_LINKS.map(l => l.href.replace("#", ""));
+      const sections = NAV_LINKS.filter(l => l.href.startsWith("#")).map(l => l.href.slice(1));
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i]);
         if (el && el.getBoundingClientRect().top <= 120) {
