@@ -25,11 +25,11 @@ export default function Home() {
       <TopBar />
       <Header />
       <main>
+        <AboutSection />
         <HeroSection />
         <StatsBar />
         <CategoriesSection />
         <PromoBanner />
-        <AboutSection />
         <ServicesSection />
         <BrandsSection />
         <GallerySection />

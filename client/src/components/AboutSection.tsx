@@ -1,7 +1,7 @@
 /* DESIGN: Industrial Automotriz Premium — Nosotros con fotos reales */
 import { motion } from "framer-motion";
-import { CheckCircle2, Users, Award, TrendingUp } from "lucide-react";
-import { IMAGES, COMPANY } from "@/lib/constants";
+import { CheckCircle2, Users, Award, TrendingUp, Target, Eye } from "lucide-react";
+import { IMAGES, COMPANY, MISSION, VISION } from "@/lib/constants";
 
 const highlights = [
   { icon: Award, title: "Calidad Garantizada", desc: "Marcas reconocidas a nivel mundial" },
@@ -11,7 +11,7 @@ const highlights = [
 
 const values = [
   "Más de 10 años de experiencia en el mercado hondureño",
-  "Amplio inventario con más de 9 categorías de productos",
+  "Amplio inventario con más de 10 categorías de productos",
   "Servicio de entrega a domicilio en Tegucigalpa",
   "Asesoría técnica personalizada por vendedores expertos",
   "Alianzas con marcas premium y convencionales",
@@ -129,6 +129,32 @@ export default function AboutSection() {
               ))}
             </div>
           </motion.div>
+        </div>
+
+        {/* Misión y Visión */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-20 lg:mt-28">
+          {[
+            { icon: Target, title: "Misión", text: MISSION },
+            { icon: Eye, title: "Visión", text: VISION },
+          ].map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.15 }}
+              className="group relative bg-gray-50 border border-gray-100 p-8 lg:p-10 hover:border-red-200 hover:bg-red-50/30 hover:shadow-xl hover:shadow-red-100/30 transition-all duration-300"
+            >
+              <div className="absolute top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-500" />
+              <div className="flex items-center gap-4 mb-5">
+                <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center shadow-md shadow-red-900/20">
+                  <item.icon className="w-6 h-6 text-white" />
+                </div>
+                <h3 className="section-title text-2xl lg:text-3xl text-gray-900">{item.title}</h3>
+              </div>
+              <p className="text-gray-600 text-base leading-relaxed">{item.text}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

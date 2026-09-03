@@ -162,17 +162,13 @@ export default function Garantia() {
       {/* ═══ Minimal Header ═══ */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div className="h-1 bg-gradient-to-r from-red-800 via-red-600 to-red-800" />
-        <div className="max-w-6xl mx-auto px-5 flex items-center justify-between h-16">
-          <a href="/" className="flex items-center gap-3 group">
-            <div className="w-9 h-9 bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center" style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}>
-              <svg viewBox="0 0 24 24" className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-              </svg>
-            </div>
-            <div className="leading-none">
-              <span className="text-[8px] font-medium tracking-[0.2em] text-gray-400 uppercase block">Auto Repuestos</span>
-              <span className="text-lg font-bold tracking-tight text-gray-900" style={{ fontFamily: "var(--font-heading)" }}>BLESSING</span>
-            </div>
+        <div className="max-w-6xl mx-auto px-5 flex items-center justify-between h-[72px]">
+          <a href="/" className="flex items-center group">
+            <img
+              src="/images/logo.png"
+              alt="Auto Repuestos Blessing"
+              className="h-11 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
+            />
           </a>
           <div className="flex items-center gap-4">
             <a href="/" className="text-xs text-gray-500 hover:text-red-700 transition-colors flex items-center gap-1.5 font-medium">
