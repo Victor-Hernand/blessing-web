@@ -118,7 +118,7 @@ export default function CategoriesSection() {
                     href={whatsappLink(`Hola, quiero consultar por: ${product} (${category.name})`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-neutral-900 border border-neutral-800 p-4 hover:border-red-900 hover:bg-red-950/40/30 hover:shadow-lg hover:shadow-red-100/20 transition-all duration-300"
+                    className="group flex items-center gap-4 bg-neutral-900 border border-neutral-800 p-4 hover:border-red-900 hover:bg-red-950/40 hover:shadow-lg hover:shadow-red-950/50 transition-all duration-300"
                   >
                     <div className="w-11 h-11 shrink-0 bg-neutral-950 border border-neutral-800 flex items-center justify-center group-hover:bg-red-700 group-hover:border-red-700 transition-all duration-300 shadow-sm">
                       {Icon && <Icon className="w-5 h-5 text-red-700 group-hover:text-white transition-colors duration-300" />}

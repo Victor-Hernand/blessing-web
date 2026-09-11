@@ -43,10 +43,10 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-neutral-900 border border-neutral-800 p-6 relative group hover:shadow-xl hover:shadow-red-100/20 hover:border-red-100 transition-all duration-500 hover:-translate-y-1"
+              className="bg-neutral-900 border border-neutral-800 p-6 relative group hover:shadow-xl hover:shadow-red-950/50 hover:border-red-900 transition-all duration-500 hover:-translate-y-1"
             >
               {/* Quote icon */}
-              <Quote className="w-8 h-8 text-red-100 group-hover:text-red-200 transition-colors mb-4" />
+              <Quote className="w-8 h-8 text-red-900 group-hover:text-red-700 transition-colors mb-4" />
 
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">

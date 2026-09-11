@@ -27,7 +27,7 @@ export default function AboutSection() {
 
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image side - Two stacked real photos */}
+          {/* Image side - foto del local */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -35,29 +35,15 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            {/* Main image - Customer service */}
-            <div className="relative overflow-hidden shadow-2xl shadow-black/10">
+            {/* Imagen principal: el equipo de entrega a domicilio frente al local */}
+            <div className="relative overflow-hidden shadow-2xl shadow-black/40">
               <img
-                src={IMAGES.realCustomerService}
-                alt="Atención al cliente en Auto Repuestos Blessing"
-                className="w-full h-[320px] lg:h-[420px] object-cover"
+                src={IMAGES.realDeliverySingle}
+                alt="Equipo de entrega a domicilio de Auto Repuestos Blessing frente a la tienda"
+                className="w-full h-[320px] lg:h-[420px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
-            {/* Secondary image - Delivery team overlay */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="absolute -bottom-8 -right-4 lg:-right-8 w-[55%] shadow-xl border-4 border-white"
-            >
-              <img
-                src={IMAGES.realDeliveryTeam}
-                alt="Equipo de delivery de Auto Repuestos Blessing"
-                className="w-full h-[140px] lg:h-[180px] object-cover"
-              />
-            </motion.div>
             {/* Experience badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -143,7 +129,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative bg-neutral-900 border border-neutral-800 p-8 lg:p-10 hover:border-red-900 hover:bg-red-950/40 hover:shadow-xl hover:shadow-red-100/30 transition-all duration-300"
+              className="group relative bg-neutral-900 border border-neutral-800 p-8 lg:p-10 hover:border-red-900 hover:bg-red-950/40 hover:shadow-xl hover:shadow-red-950/50 transition-all duration-300"
             >
               <div className="absolute top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-500" />
               <div className="flex items-center gap-4 mb-5">

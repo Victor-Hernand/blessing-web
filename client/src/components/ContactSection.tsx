@@ -36,7 +36,7 @@ export default function ContactSection() {
               Información de Contacto
             </h3>
 
-            <a href={`tel:${COMPANY.phone}`} className="flex items-start gap-4 p-4 bg-neutral-950 border border-neutral-800 hover:border-red-200 hover:shadow-md transition-all group">
+            <a href={`tel:${COMPANY.phone}`} className="flex items-start gap-4 p-4 bg-neutral-950 border border-neutral-800 hover:border-red-900 hover:shadow-md transition-all group">
               <div className="w-10 h-10 bg-red-700 flex items-center justify-center shrink-0">
                 <Phone className="w-4 h-4 text-white" />
               </div>
@@ -46,7 +46,7 @@ export default function ContactSection() {
               </div>
             </a>
 
-            <a href={`mailto:${COMPANY.email}`} className="flex items-start gap-4 p-4 bg-neutral-950 border border-neutral-800 hover:border-red-200 hover:shadow-md transition-all group">
+            <a href={`mailto:${COMPANY.email}`} className="flex items-start gap-4 p-4 bg-neutral-950 border border-neutral-800 hover:border-red-900 hover:shadow-md transition-all group">
               <div className="w-10 h-10 bg-red-700 flex items-center justify-center shrink-0">
                 <Mail className="w-4 h-4 text-white" />
               </div>

@@ -1,12 +1,13 @@
 /* DESIGN: Industrial Automotriz Premium — Marcas con marquee infinito */
 import { motion } from "framer-motion";
-import { BRANDS } from "@/lib/constants";
+import { Handshake } from "lucide-react";
+import { BRANDS, SUPPLIERS } from "@/lib/constants";
 
 const allBrands = [...BRANDS.premium, ...BRANDS.conventional];
 
 function BrandCard({ name, isPremium }: { name: string; isPremium: boolean }) {
   return (
-    <div className="group flex-shrink-0 w-44 sm:w-52 h-28 bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center px-4 hover:border-red-300 hover:shadow-xl hover:shadow-red-100/30 transition-all duration-300 mx-2.5 hover:-translate-y-1">
+    <div className="group flex-shrink-0 w-44 sm:w-52 h-28 bg-neutral-950 border border-neutral-800 flex flex-col items-center justify-center px-4 hover:border-red-800 hover:shadow-xl hover:shadow-red-950/50 transition-all duration-300 mx-2.5 hover:-translate-y-1">
       <span className="text-lg font-bold text-neutral-200 group-hover:text-red-700 transition-colors uppercase tracking-wider" style={{ fontFamily: "var(--font-heading)" }}>
         {name}
       </span>
@@ -70,7 +71,7 @@ export default function BrandsSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-neutral-950 border border-neutral-800 p-6 hover:shadow-lg hover:shadow-amber-100/20 hover:border-amber-200 transition-all duration-300"
+            className="bg-neutral-950 border border-neutral-800 p-6 hover:shadow-lg hover:shadow-amber-900/30 hover:border-amber-900 transition-all duration-300"
           >
             <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 bg-amber-500/15 flex items-center justify-center">
@@ -80,7 +81,7 @@ export default function BrandsSection() {
             </div>
             <div className="flex flex-wrap gap-2">
               {BRANDS.premium.map(b => (
-                <span key={b} className="bg-amber-500/15 border border-amber-900/60 text-amber-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider hover:bg-amber-100 transition-colors">{b}</span>
+                <span key={b} className="bg-amber-500/15 border border-amber-900/60 text-amber-300 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider hover:bg-amber-500/25 transition-colors">{b}</span>
               ))}
             </div>
           </motion.div>
@@ -105,6 +106,30 @@ export default function BrandsSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Proveedores de confianza */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="mt-6 bg-neutral-950 border border-neutral-800 p-6"
+        >
+          <div className="flex items-center gap-3 mb-3">
+            <div className="w-9 h-9 bg-neutral-900 flex items-center justify-center">
+              <Handshake className="w-4 h-4 text-neutral-300" />
+            </div>
+            <h3 className="font-bold text-neutral-100 uppercase tracking-wide text-sm" style={{ fontFamily: "var(--font-heading)" }}>Proveedores de Confianza</h3>
+          </div>
+          <p className="text-neutral-400 text-sm mb-5 leading-relaxed">
+            Trabajamos con proveedores que cumplen con los estándares de calidad de la industria, garantizando productos seguros, duraderos y confiables.
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {SUPPLIERS.map(sup => (
+              <span key={sup} className="bg-neutral-900 border border-neutral-800 text-neutral-200 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider">{sup}</span>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );

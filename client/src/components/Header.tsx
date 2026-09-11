@@ -1,24 +1,26 @@
 /* DESIGN: Industrial Automotriz Premium — Header sticky con transiciones */
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, ChevronRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
 
+/* El orden sigue el de las secciones en la página; Garantía va al final
+   por ser una página aparte. */
 const NAV_LINKS = [
-  { label: "Nosotros", href: "#nosotros" },
   { label: "Inicio", href: "#inicio" },
+  { label: "Nosotros", href: "#nosotros" },
   { label: "Categorías", href: "#categorias" },
   { label: "Servicios", href: "#servicios" },
   { label: "Marcas", href: "#marcas" },
   { label: "Galería", href: "#galeria" },
-  { label: "Garantía", href: "/garantia" },
   { label: "Contacto", href: "#contacto" },
+  { label: "Garantía", href: "/garantia" },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("nosotros");
+  const [activeSection, setActiveSection] = useState("inicio");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,6 +38,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Progreso de lectura de la página, sobre la línea roja del header.
+  const { scrollYProgress } = useScroll();
+  const progreso = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
+
   return (
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
@@ -44,8 +50,14 @@ export default function Header() {
           : "bg-neutral-900 shadow-md"
       }`}
     >
-      {/* Red accent line */}
-      <div className="h-[3px] bg-gradient-to-r from-red-800 via-red-600 to-red-800" />
+      {/* Línea de acento roja + progreso de lectura */}
+      <div className="relative h-[3px] bg-gradient-to-r from-red-800 via-red-600 to-red-800">
+        <motion.div
+          style={{ scaleX: progreso, transformOrigin: "0% 50%" }}
+          className="absolute inset-0 bg-amber-400"
+          aria-hidden="true"
+        />
+      </div>
 
       <div className="container flex items-center justify-between h-[72px] lg:h-20">
         {/* Logo */}

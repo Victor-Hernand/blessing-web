@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function LocationSection() {
   return (
-    <section className="py-20 lg:py-28 bg-neutral-950">
+    <section id="ubicacion" className="py-20 lg:py-28 bg-neutral-950">
       <div className="container">
         {/* Header */}
         <motion.div

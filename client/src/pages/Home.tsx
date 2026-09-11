@@ -4,17 +4,19 @@
  * Oswald (headings) + Roboto (body) + Playfair Display (slogan)
  * ============================================================ */
 import Header from "@/components/Header";
-import HeroSection from "@/components/HeroSection";
-import TopBar from "@/components/TopBar";
+import HeroBanner from "@/components/HeroBanner";
 import StatsBar from "@/components/StatsBar";
 import CategoriesSection from "@/components/CategoriesSection";
 import PromoBanner from "@/components/PromoBanner";
 import AboutSection from "@/components/AboutSection";
 import ServicesSection from "@/components/ServicesSection";
 import BrandsSection from "@/components/BrandsSection";
+import ValuePropsSection from "@/components/ValuePropsSection";
+import ValuesSection from "@/components/ValuesSection";
 import GallerySection from "@/components/GallerySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
+import QuoteSection from "@/components/QuoteSection";
 import LocationSection from "@/components/LocationSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -22,19 +24,21 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-neutral-950">
-      <TopBar />
       <Header />
       <main>
-        <AboutSection />
-        <HeroSection />
+        <HeroBanner />
         <StatsBar />
+        <AboutSection />
+        <ValuePropsSection />
         <CategoriesSection />
         <PromoBanner />
         <ServicesSection />
         <BrandsSection />
+        <ValuesSection />
         <GallerySection />
         <TestimonialsSection />
         <ContactSection />
+        <QuoteSection />
         <LocationSection />
       </main>
       <Footer />

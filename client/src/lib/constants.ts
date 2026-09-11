@@ -6,6 +6,7 @@
 
 export const IMAGES = {
   heroPremium: "/images/hero-blessing.jpg",
+  bannerLocal: "/images/banner-local.jpg",
   // Category images (real store photos)
   categoryEngine: "/images/category-motor.jpg",
   categoryBrakes: "/images/category-frenos.jpg",
@@ -140,6 +141,16 @@ export const CATEGORIES = [
   },
 ];
 
+/** Opciones del formulario de cotización mayorista. */
+export const CLIENT_TYPES = [
+  "Taller mecánico",
+  "Tienda de repuestos",
+  "Distribuidor / Mayorista",
+  "Flota de vehículos",
+  "Particular / Consumidor final",
+  "Otro",
+];
+
 /** Enlace de WhatsApp con mensaje prellenado. */
 export const whatsappLink = (message: string) =>
   `${COMPANY.whatsapp}?text=${encodeURIComponent(message)}`;
@@ -152,8 +163,91 @@ export const VISION =
 
 export const BRANDS = {
   premium: ["Bosch", "Aisin", "NPW", "Tree Five", "Excedi"],
-  conventional: ["Welmet", "Motorteck", "EDK", "Syntecfil", "Freemap", "Kaizen"],
+  conventional: [
+    "Welmet", "Motorteck", "EDK", "Syntecfil", "Freemap", "Kaizen",
+    "Wagner", "Endo", "Peak", "Koyo", "Honda",
+  ],
 };
+
+/** Proveedores con los que trabajamos, todos con estándares de calidad de la industria. */
+export const SUPPLIERS = [
+  "La Meta",
+  "Inversiones Venitez",
+  "Suazo",
+  "Reasa",
+  "Acavisa",
+];
+
+/** Los tres pilares de la propuesta de valor. */
+export const VALUE_PROPS = [
+  {
+    icon: "Gem",
+    title: "La calidad no es cara",
+    lead: "Nuestro lema y nuestra promesa central.",
+    text: "Demostramos día a día que es posible ofrecer autopartes de alta calidad a precios justos y accesibles. No tenés que elegir entre calidad o precio: obtenés ambos, gracias a relaciones sólidas con proveedores y una gestión eficiente de inventario.",
+  },
+  {
+    icon: "Package",
+    title: "Inventario amplio y disponibilidad inmediata",
+    lead: "Sin esperas de días ni semanas.",
+    text: "Contamos con un inventario robusto que abarca las marcas y modelos más comunes en Honduras. Para reparaciones urgentes esto es esencial; para talleres mecánicos significa mantener sus operaciones sin interrupciones.",
+  },
+  {
+    icon: "Users",
+    title: "Atención personalizada y asesoría experta",
+    lead: "No solo vendemos autopartes: asesoramos.",
+    text: "Nuestro equipo está capacitado para comprender tus necesidades, explicar opciones y recomendar soluciones que realmente funcionen. Al elegirnos recibís asesoría honesta y soluciones efectivas.",
+  },
+];
+
+/** Valores corporativos: los principios que guían cada decisión. */
+export const VALUES = [
+  {
+    icon: "Heart",
+    title: "Compromiso con el cliente",
+    text: "La satisfacción del cliente es nuestra máxima prioridad. Atendemos cada necesidad con un enfoque personalizado y el compromiso de encontrar la mejor solución para su vehículo.",
+  },
+  {
+    icon: "BadgeCheck",
+    title: "Calidad",
+    text: "Las autopartes son componentes críticos que afectan la seguridad del vehículo. Por eso seleccionamos cuidadosamente cada pieza, trabajando solo con marcas reconocidas y proveedores confiables.",
+  },
+  {
+    icon: "Eye",
+    title: "Honestidad y transparencia",
+    text: "Información clara sobre productos y precios. Si un producto económico satisface la necesidad, lo indicamos; si se requiere mayor calidad, explicamos sus ventajas.",
+  },
+  {
+    icon: "Users",
+    title: "Trabajo en equipo",
+    text: "Desde los vendedores hasta el personal de logística, cada miembro comparte el mismo compromiso con la excelencia y la atención al cliente.",
+  },
+  {
+    icon: "Leaf",
+    title: "Responsabilidad social",
+    text: "Operamos de manera responsable, cuidando el medio ambiente y contribuyendo al desarrollo de nuestras comunidades, con oportunidades de crecimiento para nuestro equipo.",
+  },
+  {
+    icon: "Flame",
+    title: "Pasión por lo que hacemos",
+    text: "Nos motiva una verdadera pasión por el sector automotriz, reflejada en nuestro conocimiento técnico y en el orgullo de que un cliente vuelva satisfecho.",
+  },
+  {
+    icon: "Handshake",
+    title: "Colaboración",
+    text: "Valoramos el trabajo en equipo dentro de la organización y con proveedores y socios comerciales, construyendo relaciones sólidas y objetivos comunes.",
+  },
+  {
+    icon: "Scale",
+    title: "Integridad",
+    text: "Operamos con los más altos estándares éticos en todas nuestras transacciones. La integridad es un principio innegociable.",
+  },
+  {
+    icon: "Lightbulb",
+    title: "Innovación",
+    text: "Apertura a nuevas ideas, productos y tecnologías que nos permitan mejorar continuamente el servicio y ofrecer soluciones más efectivas.",
+  },
+];
 
 export const STATS = [
   { value: 10, suffix: "+", label: "Años de Experiencia" },

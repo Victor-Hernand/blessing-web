@@ -64,7 +64,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative overflow-hidden transition-all duration-500 border border-neutral-800 hover:border-red-300 bg-neutral-950 shadow-sm hover:shadow-lg flex flex-col"
+              className="group relative overflow-hidden transition-all duration-500 border border-neutral-800 hover:border-red-800 bg-neutral-950 shadow-sm hover:shadow-lg flex flex-col"
             >
               <button
                 type="button"
