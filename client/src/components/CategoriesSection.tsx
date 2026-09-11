@@ -47,7 +47,7 @@ export default function CategoriesSection() {
   }, [lightbox]);
 
   return (
-    <section id="categorias" className="py-20 lg:py-28 bg-white">
+    <section id="categorias" className="py-20 lg:py-28 bg-neutral-950">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -61,10 +61,10 @@ export default function CategoriesSection() {
             <span className="section-label">Nuestro catálogo</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-gray-900">
+            <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50">
               Categorías de <span className="text-gradient-red">Productos</span>
             </h2>
-            <p className="text-gray-500 max-w-md text-base leading-relaxed">
+            <p className="text-neutral-400 max-w-md text-base leading-relaxed">
               Amplio inventario organizado en categorías para que encuentres exactamente lo que necesitas.
             </p>
           </div>
@@ -78,27 +78,27 @@ export default function CategoriesSection() {
           className="mb-10"
         >
           <div className="relative max-w-2xl">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 pointer-events-none" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar repuesto: frenos, amortiguadores, dirección..."
               aria-label="Buscar repuestos"
-              className="w-full border border-gray-200 bg-gray-50 focus:bg-white pl-12 pr-12 py-4 text-sm text-gray-800 placeholder:text-gray-400 outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-all duration-300"
+              className="w-full border border-neutral-800 bg-neutral-900 focus:bg-neutral-950 pl-12 pr-12 py-4 text-sm text-neutral-100 placeholder:text-neutral-400 outline-none focus:border-red-600 focus:ring-2 focus:ring-red-100 transition-all duration-300"
             />
             {isSearching && (
               <button
                 onClick={() => setQuery("")}
                 aria-label="Limpiar búsqueda"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-red-700 transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-red-700 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             )}
           </div>
           {isSearching && (
-            <p className="mt-3 text-sm text-gray-500">
+            <p className="mt-3 text-sm text-neutral-400">
               {results.length > 0
                 ? `${results.length} ${results.length === 1 ? "repuesto encontrado" : "repuestos encontrados"} para «${query.trim()}»`
                 : `Sin coincidencias para «${query.trim()}»`}
@@ -118,16 +118,16 @@ export default function CategoriesSection() {
                     href={whatsappLink(`Hola, quiero consultar por: ${product} (${category.name})`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-gray-50 border border-gray-100 p-4 hover:border-red-200 hover:bg-red-50/30 hover:shadow-lg hover:shadow-red-100/20 transition-all duration-300"
+                    className="group flex items-center gap-4 bg-neutral-900 border border-neutral-800 p-4 hover:border-red-900 hover:bg-red-950/40/30 hover:shadow-lg hover:shadow-red-100/20 transition-all duration-300"
                   >
-                    <div className="w-11 h-11 shrink-0 bg-white border border-gray-200 flex items-center justify-center group-hover:bg-red-700 group-hover:border-red-700 transition-all duration-300 shadow-sm">
+                    <div className="w-11 h-11 shrink-0 bg-neutral-950 border border-neutral-800 flex items-center justify-center group-hover:bg-red-700 group-hover:border-red-700 transition-all duration-300 shadow-sm">
                       {Icon && <Icon className="w-5 h-5 text-red-700 group-hover:text-white transition-colors duration-300" />}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="text-sm font-bold text-gray-800 group-hover:text-red-700 transition-colors truncate" style={{ fontFamily: "var(--font-heading)" }}>
+                      <h3 className="text-sm font-bold text-neutral-100 group-hover:text-red-700 transition-colors truncate" style={{ fontFamily: "var(--font-heading)" }}>
                         {product}
                       </h3>
-                      <p className="text-[11px] text-gray-500 uppercase tracking-wider">{category.name}</p>
+                      <p className="text-[11px] text-neutral-400 uppercase tracking-wider">{category.name}</p>
                     </div>
                     <ArrowRight className="w-4 h-4 shrink-0 text-gray-300 group-hover:text-red-700 group-hover:translate-x-1 transition-all duration-300" />
                   </a>
@@ -135,8 +135,8 @@ export default function CategoriesSection() {
               })}
             </div>
           ) : (
-            <div className="border border-dashed border-gray-200 bg-gray-50/50 p-10 text-center">
-              <p className="text-gray-600 mb-5">
+            <div className="border border-dashed border-neutral-800 bg-neutral-900/50 p-10 text-center">
+              <p className="text-neutral-300 mb-5">
                 No listamos ese repuesto en el sitio, pero es muy probable que lo tengamos en tienda.
               </p>
               <a
@@ -216,21 +216,21 @@ export default function CategoriesSection() {
             <button
               onClick={() => setLightbox(null)}
               aria-label="Cerrar"
-              className="absolute top-4 right-4 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); step(-1); }}
               aria-label="Categoría anterior"
-              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); step(1); }}
               aria-label="Categoría siguiente"
-              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -253,11 +253,11 @@ export default function CategoriesSection() {
                 <h3 className="text-white font-bold text-2xl uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
                   {CATEGORIES[lightbox].name}
                 </h3>
-                <p className="text-gray-400 text-sm mt-2">{CATEGORIES[lightbox].description}</p>
+                <p className="text-neutral-400 text-sm mt-2">{CATEGORIES[lightbox].description}</p>
 
                 <div className="flex flex-wrap justify-center gap-2 mt-5 max-h-[16vh] overflow-y-auto">
                   {CATEGORIES[lightbox].products.map((product) => (
-                    <span key={product} className="bg-white/10 text-gray-200 text-xs px-3 py-1.5">
+                    <span key={product} className="bg-neutral-950/10 text-gray-200 text-xs px-3 py-1.5">
                       {product}
                     </span>
                   ))}
@@ -274,7 +274,7 @@ export default function CategoriesSection() {
                   Consultar por WhatsApp
                 </a>
 
-                <p className="text-gray-500 text-xs mt-5 tracking-widest">{lightbox + 1} / {CATEGORIES.length}</p>
+                <p className="text-neutral-400 text-xs mt-5 tracking-widest">{lightbox + 1} / {CATEGORIES.length}</p>
               </div>
             </motion.div>
           </motion.div>

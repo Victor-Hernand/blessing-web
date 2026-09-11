@@ -34,7 +34,7 @@ export default function ServicesSection() {
   }, [lightbox]);
 
   return (
-    <section id="servicios" className="py-20 lg:py-28 relative overflow-hidden bg-gray-50">
+    <section id="servicios" className="py-20 lg:py-28 relative overflow-hidden bg-neutral-900">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -50,7 +50,7 @@ export default function ServicesSection() {
             </span>
             <div className="w-10 h-[2px] bg-red-600" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 uppercase" style={{ fontFamily: "var(--font-heading)" }}>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-50 uppercase" style={{ fontFamily: "var(--font-heading)" }}>
             Nuestros <span className="text-red-700">Servicios</span>
           </h2>
         </motion.div>
@@ -64,7 +64,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative overflow-hidden transition-all duration-500 border border-gray-200 hover:border-red-300 bg-white shadow-sm hover:shadow-lg flex flex-col"
+              className="group relative overflow-hidden transition-all duration-500 border border-neutral-800 hover:border-red-300 bg-neutral-950 shadow-sm hover:shadow-lg flex flex-col"
             >
               <button
                 type="button"
@@ -77,20 +77,20 @@ export default function ServicesSection() {
                   alt={s.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/25 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/25 to-transparent" />
                 <span className="absolute top-3 right-3 w-9 h-9 bg-black/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <ZoomIn className="w-4 h-4 text-white" />
                 </span>
               </button>
 
               <div className="p-6 lg:p-7 flex-1">
-                <div className="w-12 h-12 flex items-center justify-center mb-5 bg-gray-50 border border-gray-200 group-hover:bg-red-700 group-hover:border-red-700 transition-all duration-300">
+                <div className="w-12 h-12 flex items-center justify-center mb-5 bg-neutral-900 border border-neutral-800 group-hover:bg-red-700 group-hover:border-red-700 transition-all duration-300">
                   <s.icon className="w-5 h-5 text-red-600 group-hover:text-white transition-colors duration-300" />
                 </div>
-                <h3 className="text-gray-900 font-bold text-base uppercase tracking-wide mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="text-neutral-50 font-bold text-base uppercase tracking-wide mb-3" style={{ fontFamily: "var(--font-heading)" }}>
                   {s.title}
                 </h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-500" />
             </motion.div>
@@ -130,7 +130,7 @@ export default function ServicesSection() {
             <button
               onClick={() => setLightbox(null)}
               aria-label="Cerrar"
-              className="absolute top-4 right-4 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -138,14 +138,14 @@ export default function ServicesSection() {
             <button
               onClick={(e) => { e.stopPropagation(); step(-1); }}
               aria-label="Imagen anterior"
-              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); step(1); }}
               aria-label="Imagen siguiente"
-              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -167,8 +167,8 @@ export default function ServicesSection() {
                 <h3 className="text-white font-bold text-lg uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
                   {services[lightbox].title}
                 </h3>
-                <p className="text-gray-400 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>
-                <p className="text-gray-500 text-xs mt-3 tracking-widest">{lightbox + 1} / {services.length}</p>
+                <p className="text-neutral-400 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>
+                <p className="text-neutral-400 text-xs mt-3 tracking-widest">{lightbox + 1} / {services.length}</p>
               </div>
             </motion.div>
           </motion.div>

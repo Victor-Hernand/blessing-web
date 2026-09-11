@@ -21,7 +21,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-neutral-950">
       <TopBar />
       <Header />
       <main>

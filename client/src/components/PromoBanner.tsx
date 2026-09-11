@@ -48,7 +48,7 @@ export default function PromoBanner() {
               href={COMPANY.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-white text-red-800 px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-gray-100 transition-all duration-300 shadow-xl hover:translate-y-[-2px]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-white text-red-800 px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Solicitar Cotización
@@ -56,7 +56,7 @@ export default function PromoBanner() {
             </a>
             <a
               href={`tel:${COMPANY.phone}`}
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-white/10 hover:border-white/50 transition-all duration-300"
+              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-950/10 hover:border-white/50 transition-all duration-300"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Truck className="w-4 h-4" />
