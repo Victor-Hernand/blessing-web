@@ -34,7 +34,7 @@ export default function LocationSection() {
           >
             <div className="bg-neutral-950 border border-neutral-800 p-2 shadow-lg shadow-black/5">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3869.7!2d-87.22!3d14.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA0JzQ4LjAiTiA4N8KwMTMnMTIuMCJX!5e0!3m2!1ses!2shn!4v1700000000000!5m2!1ses!2shn"
+                src={COMPANY.mapsEmbedUrl}
                 width="100%"
                 height="420"
                 style={{ border: 0 }}
@@ -89,7 +89,7 @@ export default function LocationSection() {
               </div>
             </div>
             <a
-              href="https://www.google.com/maps/search/Auto+Repuestos+Blessing+Tegucigalpa"
+              href={COMPANY.mapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-red-900 px-6 py-3.5 font-bold uppercase tracking-wider transition-all text-sm shadow-lg shadow-amber-900/20 hover:translate-y-[-2px]"

@@ -46,6 +46,15 @@ export const COMPANY = {
   tiktok: "https://www.tiktok.com/@autorepuestosblessing",
   whatsapp: "https://wa.me/50492507107",
   website: "https://autorepuestosblessing.com",
+  careersUrl: "https://recruit.capgrupo.com/aplicar",
+  careersLinkedin: "https://www.linkedin.com/company/caphn/posts/?feedView=all",
+  coords: { lat: 14.0641018, lng: -87.176339 },
+  mapsUrl:
+    "https://www.google.com/maps/place/AUTOREPUESTOS+BLESSING/@14.0641018,-87.176339,17z/data=!3m1!4b1!4m6!3m5!1s0x8f6fbd1165642125:0x38c73471ee8919db!8m2!3d14.0641018!4d-87.176339!16s%2Fg%2F11fpj7mxkh?hl=es",
+  mapsEmbedUrl:
+    "https://www.google.com/maps?q=AUTOREPUESTOS+BLESSING,+Tegucigalpa,+Honduras&ll=14.0641018,-87.176339&z=17&hl=es&output=embed",
+  mapsDirectionsUrl:
+    "https://www.google.com/maps/dir/?api=1&destination=14.0641018%2C-87.176339",
   schedule: {
     weekdays: "Lunes a Viernes: 8:00 AM - 5:30 PM",
     saturday: "Sábados: 8:00 AM - 4:00 PM",

@@ -18,6 +18,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ContactSection from "@/components/ContactSection";
 import QuoteSection from "@/components/QuoteSection";
 import LocationSection from "@/components/LocationSection";
+import CareersSection from "@/components/CareersSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -40,6 +41,7 @@ export default function Home() {
         <ContactSection />
         <QuoteSection />
         <LocationSection />
+        <CareersSection />
       </main>
       <Footer />
       <WhatsAppButton />
