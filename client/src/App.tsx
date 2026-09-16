@@ -43,7 +43,7 @@ function ScrollToTopButton() {
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Subir arriba"
-          className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full border border-red-400/60 bg-red-700 text-white shadow-lg shadow-red-900/30 transition-all duration-300 hover:bg-red-600 hover:shadow-red-700/40"
+          className="fixed bottom-6 right-[5.5rem] z-50 flex h-12 w-12 items-center justify-center rounded-full border border-red-400/60 bg-red-700 text-white shadow-lg shadow-red-900/30 transition-all duration-300 hover:bg-red-600 hover:shadow-red-700/40"
         >
           <ChevronUp className="h-5 w-5" />
         </motion.button>
