@@ -32,6 +32,7 @@ export const IMAGES = {
   realEmployeeBag: "/images/real-employee-bag.jpeg",
   realSellerProducts: "/images/real-seller-products.jpeg",
   realClientDelivery: "/images/real-client-delivery.jpeg",
+  realTeamStore: "/images/real-team-store.jpg",
 };
 
 export const COMPANY = {

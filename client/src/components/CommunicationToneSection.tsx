@@ -14,7 +14,7 @@ export default function CommunicationToneSection() {
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(127,29,29,0.18),transparent_45%)]" />
 
       <div className="container relative z-10">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -75,11 +75,11 @@ export default function CommunicationToneSection() {
             <div className="pointer-events-none absolute -right-2 top-2 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-red-700/90 lg:block" />
             <div className="pointer-events-none absolute -left-2 bottom-6 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-red-700/90 lg:block" />
 
-            <div className="relative overflow-hidden rounded-[28px] border border-neutral-800 bg-neutral-900 shadow-2xl shadow-black/30">
+            <div className="relative w-full overflow-hidden rounded-[28px] border border-neutral-800 bg-neutral-900 shadow-2xl shadow-black/30">
               <img
-                src={IMAGES.realDeliverySingle}
-                alt="Empleado de Blessing sonriendo durante la atención al cliente"
-                className="h-[420px] w-full object-cover object-center sm:h-[520px] lg:h-[620px]"
+                src={IMAGES.realTeamStore}
+                alt="Equipo de Auto Repuestos Blessing en el mostrador de la tienda"
+                className="aspect-[4/3] w-full object-cover object-center lg:aspect-auto lg:h-[600px]"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
             </div>
