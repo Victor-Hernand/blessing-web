@@ -70,15 +70,34 @@ export default function AboutSection() {
               <div className="w-10 h-[2px] bg-red-700" />
               <span className="section-label">Conócenos</span>
             </div>
-            <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50 mb-6">
-              Sobre <span className="text-gradient-red">Nosotros</span>
-            </h2>
-            <p className="text-neutral-300 text-base leading-relaxed mb-4">
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50 mb-6"
+            >
+              Sobre <span className="text-gradient-red text-shimmer">Nosotros</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-neutral-300 text-base leading-relaxed mb-4"
+            >
               <strong className="text-neutral-100">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
-            </p>
-            <p className="text-amber-700 italic text-lg mb-8" style={{ fontFamily: "var(--font-accent)" }}>
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-amber-700 italic text-lg mb-8"
+              style={{ fontFamily: "var(--font-accent)" }}
+            >
               "{COMPANY.slogan}"
-            </p>
+            </motion.p>
 
             {/* Values checklist */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">

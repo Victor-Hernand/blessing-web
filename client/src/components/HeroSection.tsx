@@ -66,12 +66,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-neutral-50 uppercase leading-[0.9] mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+            <h1 className="text-animate text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-neutral-50 uppercase leading-[0.9] mb-2 text-float" style={{ fontFamily: "var(--font-heading)" }}>
               Auto
               <br />
               Repuestos
             </h1>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold uppercase leading-[0.9]" style={{ fontFamily: "var(--font-heading)", backgroundImage: "linear-gradient(135deg, #b91c1c, #dc2626, #ef4444)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <h1 className="text-animate text-animate-delay-1 text-shimmer text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold uppercase leading-[0.9]" style={{ fontFamily: "var(--font-heading)" }}>
               Blessing
             </h1>
           </motion.div>
@@ -81,7 +81,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-amber-700 text-xl sm:text-2xl lg:text-[1.65rem] mt-5 mb-3 italic"
+            className="text-animate text-animate-delay-2 text-amber-700 text-xl sm:text-2xl lg:text-[1.65rem] mt-5 mb-3 italic"
             style={{ fontFamily: "var(--font-accent)" }}
           >
             "{COMPANY.slogan}"
@@ -92,7 +92,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="text-neutral-300 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
+            className="text-animate text-animate-delay-3 text-neutral-300 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
           >
             Más de 10 años brindando autopartes de calidad a precios justos. Amplio inventario para todas las marcas y modelos de vehículos.
           </motion.p>
