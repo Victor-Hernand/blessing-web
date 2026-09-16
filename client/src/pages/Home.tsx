@@ -19,6 +19,7 @@ import ContactSection from "@/components/ContactSection";
 import QuoteSection from "@/components/QuoteSection";
 import LocationSection from "@/components/LocationSection";
 import CareersSection from "@/components/CareersSection";
+import CommunicationToneSection from "@/components/CommunicationToneSection";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
@@ -35,6 +36,7 @@ export default function Home() {
         <PromoBanner />
         <ServicesSection />
         <BrandsSection />
+        <CommunicationToneSection />
         <ValuesSection />
         <GallerySection />
         <TestimonialsSection />
