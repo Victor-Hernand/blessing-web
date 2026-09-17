@@ -20,14 +20,14 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <section id="nosotros" className="py-20 lg:py-28 bg-neutral-950 relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-red-50 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-50 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-red-900 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-900 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2" />
 
       <div className="container relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Image side - Two stacked real photos */}
+          {/* Image side - foto del local */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -35,29 +35,15 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
             className="relative"
           >
-            {/* Main image - Customer service */}
-            <div className="relative overflow-hidden shadow-2xl shadow-black/10">
+            {/* Imagen principal: el equipo de entrega a domicilio frente al local */}
+            <div className="relative overflow-hidden shadow-2xl shadow-black/40">
               <img
-                src={IMAGES.realCustomerService}
-                alt="Atención al cliente en Auto Repuestos Blessing"
-                className="w-full h-[320px] lg:h-[420px] object-cover"
+                src={IMAGES.realDeliverySingle}
+                alt="Equipo de entrega a domicilio de Auto Repuestos Blessing frente a la tienda"
+                className="w-full h-[320px] lg:h-[420px] object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
-            {/* Secondary image - Delivery team overlay */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="absolute -bottom-8 -right-4 lg:-right-8 w-[55%] shadow-xl border-4 border-white"
-            >
-              <img
-                src={IMAGES.realDeliveryTeam}
-                alt="Equipo de delivery de Auto Repuestos Blessing"
-                className="w-full h-[140px] lg:h-[180px] object-cover"
-              />
-            </motion.div>
             {/* Experience badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -84,15 +70,34 @@ export default function AboutSection() {
               <div className="w-10 h-[2px] bg-red-700" />
               <span className="section-label">Conócenos</span>
             </div>
-            <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-gray-900 mb-6">
-              Sobre <span className="text-gradient-red">Nosotros</span>
-            </h2>
-            <p className="text-gray-600 text-base leading-relaxed mb-4">
-              <strong className="text-gray-800">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
-            </p>
-            <p className="text-amber-700 italic text-lg mb-8" style={{ fontFamily: "var(--font-accent)" }}>
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50 mb-6"
+            >
+              Sobre <span className="text-gradient-red text-shimmer">Nosotros</span>
+            </motion.h2>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-neutral-300 text-base leading-relaxed mb-4"
+            >
+              <strong className="text-neutral-100">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 18 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-amber-700 italic text-lg mb-8"
+              style={{ fontFamily: "var(--font-accent)" }}
+            >
               "{COMPANY.slogan}"
-            </p>
+            </motion.p>
 
             {/* Values checklist */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
@@ -106,7 +111,7 @@ export default function AboutSection() {
                   className="flex items-start gap-2.5"
                 >
                   <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                  <span className="text-gray-600 text-sm leading-snug">{v}</span>
+                  <span className="text-neutral-300 text-sm leading-snug">{v}</span>
                 </motion.div>
               ))}
             </div>
@@ -120,11 +125,11 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="bg-gray-50 border border-gray-100 p-4 text-center group hover:border-red-200 hover:bg-red-50/30 transition-all duration-300 hover:-translate-y-1"
+                  className="bg-neutral-900 border border-neutral-800 p-4 text-center group hover:border-red-900 hover:bg-red-950/40 transition-all duration-300 hover:-translate-y-1"
                 >
                   <h.icon className="w-6 h-6 text-red-700 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <div className="text-xs font-bold text-gray-800 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
-                  <p className="text-[10px] text-gray-500 mt-1 leading-tight">{h.desc}</p>
+                  <div className="text-xs font-bold text-neutral-100 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
+                  <p className="text-[10px] text-neutral-400 mt-1 leading-tight">{h.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -143,16 +148,16 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative bg-gray-50 border border-gray-100 p-8 lg:p-10 hover:border-red-200 hover:bg-red-50/30 hover:shadow-xl hover:shadow-red-100/30 transition-all duration-300"
+              className="group relative bg-neutral-900 border border-neutral-800 p-8 lg:p-10 hover:border-red-900 hover:bg-red-950/40 hover:shadow-xl hover:shadow-red-950/50 transition-all duration-300"
             >
               <div className="absolute top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-500" />
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center shadow-md shadow-red-900/20">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="section-title text-2xl lg:text-3xl text-gray-900">{item.title}</h3>
+                <h3 className="section-title text-2xl lg:text-3xl text-neutral-50">{item.title}</h3>
               </div>
-              <p className="text-gray-600 text-base leading-relaxed">{item.text}</p>
+              <p className="text-neutral-300 text-base leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
         </div>

@@ -11,10 +11,10 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-white relative overflow-hidden">
+    <section className="py-20 lg:py-28 bg-neutral-950 relative overflow-hidden">
       {/* Subtle decorative elements */}
-      <div className="absolute top-20 left-10 w-40 h-40 bg-red-50 rounded-full blur-3xl opacity-40" />
-      <div className="absolute bottom-20 right-10 w-60 h-60 bg-red-50 rounded-full blur-3xl opacity-30" />
+      <div className="absolute top-20 left-10 w-40 h-40 bg-red-900 rounded-full blur-3xl opacity-40" />
+      <div className="absolute bottom-20 right-10 w-60 h-60 bg-red-900 rounded-full blur-3xl opacity-30" />
 
       <div className="container relative z-10">
         {/* Header */}
@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
             <span className="section-label">Testimonios</span>
             <div className="w-10 h-[2px] bg-red-700" />
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-gray-900">
+          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50">
             Lo que dicen <span className="text-gradient-red">nuestros clientes</span>
           </h2>
         </motion.div>
@@ -43,10 +43,10 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-gray-50 border border-gray-100 p-6 relative group hover:shadow-xl hover:shadow-red-100/20 hover:border-red-100 transition-all duration-500 hover:-translate-y-1"
+              className="bg-neutral-900 border border-neutral-800 p-6 relative group hover:shadow-xl hover:shadow-red-950/50 hover:border-red-900 transition-all duration-500 hover:-translate-y-1"
             >
               {/* Quote icon */}
-              <Quote className="w-8 h-8 text-red-100 group-hover:text-red-200 transition-colors mb-4" />
+              <Quote className="w-8 h-8 text-red-900 group-hover:text-red-700 transition-colors mb-4" />
 
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">
@@ -56,12 +56,12 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Text */}
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
+              <p className="text-neutral-300 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
 
               {/* Author */}
-              <div className="border-t border-gray-200 pt-4">
-                <div className="font-bold text-gray-800 text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
-                <div className="text-xs text-gray-500 mt-0.5">{t.role}</div>
+              <div className="border-t border-neutral-800 pt-4">
+                <div className="font-bold text-neutral-100 text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
+                <div className="text-xs text-neutral-400 mt-0.5">{t.role}</div>
               </div>
 
               {/* Bottom line */}

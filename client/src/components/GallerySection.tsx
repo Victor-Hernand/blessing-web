@@ -53,7 +53,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section id="galeria" className="py-20 lg:py-28 bg-gray-50 relative overflow-hidden">
+    <section id="galeria" className="py-20 lg:py-28 bg-neutral-900 relative overflow-hidden">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -67,10 +67,10 @@ export default function GallerySection() {
             <span className="section-label">Nuestro Equipo</span>
             <div className="w-10 h-[2px] bg-red-700" />
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-gray-900">
+          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50">
             Conoce <span className="text-gradient-red">Blessing</span>
           </h2>
-          <p className="text-gray-500 text-base max-w-2xl mx-auto mt-4">
+          <p className="text-neutral-400 text-base max-w-2xl mx-auto mt-4">
             Un equipo comprometido con brindarte la mejor experiencia en autopartes. Conoce a las personas detrás de nuestro servicio.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ export default function GallerySection() {
                   </p>
                 </div>
                 {/* Camera icon */}
-                <div className="absolute top-3 right-3 w-8 h-8 bg-white/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-neutral-950/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Camera className="w-4 h-4 text-white" />
                 </div>
                 {/* Red accent line */}
@@ -130,7 +130,7 @@ export default function GallerySection() {
           >
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-4 right-4 w-12 h-12 bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -150,7 +150,7 @@ export default function GallerySection() {
                 <h3 className="text-white font-bold text-lg uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
                   {galleryItems[lightbox].caption}
                 </h3>
-                <p className="text-gray-400 text-sm mt-1">{galleryItems[lightbox].desc}</p>
+                <p className="text-neutral-400 text-sm mt-1">{galleryItems[lightbox].desc}</p>
               </div>
             </motion.div>
           </motion.div>

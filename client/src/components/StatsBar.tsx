@@ -18,7 +18,7 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
       <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-red-800 mb-2" style={{ fontFamily: "var(--font-heading)" }}>
         {count}<span className="text-red-500">{suffix}</span>
       </div>
-      <div className="text-gray-500 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-neutral-400 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
         {label}
       </div>
     </motion.div>
@@ -27,12 +27,12 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
 
 export default function StatsBar() {
   return (
-    <section className="relative overflow-hidden bg-gray-50 border-y border-gray-200">
+    <section className="relative overflow-hidden bg-neutral-900 border-y border-neutral-800">
       {/* Top red line */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
 
       <div className="container relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-gray-200">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-neutral-800">
           {STATS.map((stat, i) => (
             <StatItem key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} index={i} />
           ))}

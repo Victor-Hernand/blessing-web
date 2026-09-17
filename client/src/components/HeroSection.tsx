@@ -30,8 +30,8 @@ export default function HeroSection() {
         />
       </div>
       {/* Gradient overlays — strong scrim only behind the text (left), clears toward the right to reveal the storefront */}
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/45 to-transparent lg:via-white/30" />
-      <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/55 to-transparent lg:via-neutral-950/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/45 via-transparent to-transparent" />
 
       {/* Red accent line left */}
       <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-red-600 to-transparent hidden lg:block" />
@@ -66,12 +66,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-gray-900 uppercase leading-[0.9] mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+            <h1 className="text-animate text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-neutral-50 uppercase leading-[0.9] mb-2 text-float" style={{ fontFamily: "var(--font-heading)" }}>
               Auto
               <br />
               Repuestos
             </h1>
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold uppercase leading-[0.9]" style={{ fontFamily: "var(--font-heading)", backgroundImage: "linear-gradient(135deg, #b91c1c, #dc2626, #ef4444)", backgroundClip: "text", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            <h1 className="text-animate text-animate-delay-1 text-shimmer text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold uppercase leading-[0.9]" style={{ fontFamily: "var(--font-heading)" }}>
               Blessing
             </h1>
           </motion.div>
@@ -81,7 +81,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="text-amber-700 text-xl sm:text-2xl lg:text-[1.65rem] mt-5 mb-3 italic"
+            className="text-animate text-animate-delay-2 text-amber-700 text-xl sm:text-2xl lg:text-[1.65rem] mt-5 mb-3 italic"
             style={{ fontFamily: "var(--font-accent)" }}
           >
             "{COMPANY.slogan}"
@@ -92,7 +92,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="text-gray-600 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
+            className="text-animate text-animate-delay-3 text-neutral-300 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
           >
             Más de 10 años brindando autopartes de calidad a precios justos. Amplio inventario para todas las marcas y modelos de vehículos.
           </motion.p>
@@ -117,7 +117,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#categorias"
-              className="inline-flex items-center justify-center gap-2 border-2 border-gray-800 hover:border-red-700 text-gray-800 hover:text-red-700 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-red-50 hover:translate-y-[-2px]"
+              className="inline-flex items-center justify-center gap-2 border-2 border-gray-800 hover:border-red-700 text-neutral-100 hover:text-red-400 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-red-950/40 hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Ver Productos
@@ -134,7 +134,7 @@ export default function HeroSection() {
             {features.map((f, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 bg-white/70 backdrop-blur-sm border border-gray-200 px-4 py-2.5 text-xs text-gray-700 hover:border-red-300 hover:bg-red-50/50 transition-all duration-300 shadow-sm"
+                className="flex items-center gap-2 bg-neutral-950/70 backdrop-blur-sm border border-neutral-800 px-4 py-2.5 text-xs text-neutral-200 hover:border-red-800 hover:bg-red-950/50 transition-all duration-300 shadow-sm"
               >
                 <f.icon className="w-3.5 h-3.5 text-red-600" />
                 <span className="uppercase tracking-wider font-medium" style={{ fontFamily: "var(--font-heading)" }}>{f.text}</span>
@@ -151,12 +151,12 @@ export default function HeroSection() {
         transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-gray-400 text-[10px] uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>Scroll</span>
+        <span className="text-neutral-400 text-[10px] uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-gray-400" />
+          <ChevronDown className="w-5 h-5 text-neutral-400" />
         </motion.div>
       </motion.div>
 
