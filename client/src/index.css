@@ -5,7 +5,7 @@
 
 /* ============================================================
  * DESIGN SYSTEM: Industrial Automotriz Premium — Clase Mundial
- * Rojo carmesí #B91C1C / Negro carbón #111 / Blanco humo / Dorado #D4A843
+ * Rojo carmesí #b7212c / Negro carbón #111 / Blanco humo / Dorado #D4A843
  * ============================================================ */
 
 @theme inline {
@@ -46,52 +46,52 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
   /* Custom brand colors */
-  --color-blessing-red: oklch(0.45 0.22 25);
-  --color-blessing-red-light: oklch(0.55 0.22 25);
+  --color-blessing-red: #b7212c;
+  --color-blessing-red-light: #b7212c;
   --color-blessing-dark: oklch(0.15 0.005 285);
   --color-blessing-gold: oklch(0.75 0.12 85);
 }
 
 :root {
-  color-scheme: dark only;
+  color-scheme: light only;
 
   --font-heading: "Oswald", sans-serif;
   --font-body: "Roboto", sans-serif;
   --font-accent: "Playfair Display", serif;
 
-  --primary: oklch(0.45 0.22 25);
+  --primary: #b7212c;
   --primary-foreground: oklch(0.98 0 0);
-  --sidebar-primary: oklch(0.45 0.22 25);
+  --sidebar-primary: #b7212c;
   --sidebar-primary-foreground: oklch(0.98 0 0);
-  --chart-1: oklch(0.45 0.22 25);
-  --chart-2: oklch(0.55 0.22 25);
-  --chart-3: oklch(0.35 0.18 25);
+  --chart-1: #b7212c;
+  --chart-2: #b7212c;
+  --chart-3: #b7212c;
   --chart-4: oklch(0.75 0.12 85);
   --chart-5: oklch(0.25 0.005 285);
   --radius: 0.25rem;
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.18 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.18 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.22 0 0);
-  --secondary-foreground: oklch(0.92 0 0);
-  --muted: oklch(0.22 0 0);
-  --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.24 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.45 0.22 25);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.95 0 0);
+  --accent-foreground: oklch(0.145 0 0);
+  --destructive: #b7212c;
   --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.27 0 0);
-  --input: oklch(0.27 0 0);
-  --ring: oklch(0.45 0.22 25);
-  --sidebar: oklch(0.18 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.24 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.27 0 0);
-  --sidebar-ring: oklch(0.45 0.22 25);
+  --border: oklch(0.9 0 0);
+  --input: oklch(0.9 0 0);
+  --ring: #b7212c;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-accent: oklch(0.95 0 0);
+  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: #b7212c;
 }
 
 @layer base {
@@ -136,7 +136,7 @@
   }
 
   ::selection {
-    background: rgba(185, 28, 28, 0.2);
+    background: rgba(183, 33, 44, 0.2);
     color: #1a1a1a;
   }
 
@@ -145,14 +145,14 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #1a1a1a;
+    background: #f5f5f5;
   }
   ::-webkit-scrollbar-thumb {
-    background: #b91c1c;
+    background: #b7212c;
     border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #dc2626;
+    background: #b7212c;
   }
 }
 
@@ -189,7 +189,7 @@
     font-weight: 600;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #b91c1c;
+    color: #b7212c;
   }
   .section-title {
     font-family: var(--font-heading);
@@ -216,7 +216,7 @@
 
   .text-shimmer {
     background-size: 200% auto;
-    background-image: linear-gradient(110deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.95) 25%, rgba(248,113,113,0.75) 40%, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0.85) 100%);
+    background-image: linear-gradient(110deg, rgba(255,255,255,0.85) 0%, rgba(255,255,255,0.95) 25%, rgba(183,33,44,0.75) 40%, rgba(255,255,255,0.95) 60%, rgba(255,255,255,0.85) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -225,10 +225,10 @@
 
   /* Glassmorphism utility */
   .glass {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
   .glass-dark {
     background: rgba(0, 0, 0, 0.4);
@@ -249,7 +249,7 @@
     transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: #b91c1c;
+    background: #b7212c;
     transition: width 0.3s ease;
   }
   .hover-line:hover::after {
@@ -270,7 +270,7 @@
 
   /* Gradient text */
   .text-gradient-red {
-    background: linear-gradient(135deg, #b91c1c 0%, #ef4444 50%, #b91c1c 100%);
+    background: linear-gradient(135deg, #b7212c 0%, #b7212c 50%, #b7212c 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -282,7 +282,7 @@
     100% { background-position: 200% 0; }
   }
   .shimmer {
-    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.05) 50%, transparent 100%);
     background-size: 200% 100%;
     animation: shimmer 3s ease-in-out infinite;
   }
@@ -314,7 +314,7 @@
     top: 25%;
     bottom: 25%;
     width: 3px;
-    background: linear-gradient(to bottom, transparent, #b91c1c, transparent);
+    background: linear-gradient(to bottom, transparent, #b7212c, transparent);
   }
 
   /* Floating animation */
@@ -334,7 +334,7 @@
 
   /* Glow border on hover */
   .glow-red:hover {
-    box-shadow: 0 0 20px rgba(185, 28, 28, 0.15), 0 0 40px rgba(185, 28, 28, 0.05);
+    box-shadow: 0 0 20px rgba(183, 33, 44, 0.15), 0 0 40px rgba(183, 33, 44, 0.05);
   }
 
   /* Image zoom on hover */

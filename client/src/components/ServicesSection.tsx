@@ -1,7 +1,7 @@
 /* DESIGN: Industrial Automotriz Premium — Servicios — Tema Claro */
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Truck, ShieldCheck, Users, Clock, Wrench, HeadphonesIcon, ZoomIn, X, ChevronLeft, ChevronRight } from "lucide-react";
+import { Truck, ShieldCheck, Users, Clock, Wrench, HeadphonesIcon, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { IMAGES, COMPANY } from "@/lib/constants";
 
 const services = [
@@ -34,7 +34,7 @@ export default function ServicesSection() {
   }, [lightbox]);
 
   return (
-    <section id="servicios" className="py-20 lg:py-28 relative overflow-hidden bg-neutral-900">
+    <section id="servicios" className="pt-20 lg:pt-28 pb-6 lg:pb-8 relative overflow-hidden bg-neutral-50">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -44,14 +44,14 @@ export default function ServicesSection() {
           className="mb-14 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-10 h-[2px] bg-red-600" />
-            <span className="text-red-600 text-xs font-semibold uppercase tracking-[0.25em]" style={{ fontFamily: "var(--font-heading)" }}>
+            <div className="w-10 h-[2px] bg-[#b7212c]" />
+            <span className="text-[#b7212c] text-xs font-semibold uppercase tracking-[0.25em]" style={{ fontFamily: "var(--font-heading)" }}>
               Lo que ofrecemos
             </span>
-            <div className="w-10 h-[2px] bg-red-600" />
+            <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-neutral-50 uppercase" style={{ fontFamily: "var(--font-heading)" }}>
-            Nuestros <span className="text-red-700">Servicios</span>
+          <h2 className="font-bold text-neutral-900 uppercase text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
+            Nuestros <span className="text-[#b7212c]">Servicios</span>
           </h2>
         </motion.div>
 
@@ -64,57 +64,25 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="group relative overflow-hidden transition-all duration-500 border border-neutral-800 hover:border-red-800 bg-neutral-950 shadow-sm hover:shadow-lg flex flex-col"
+              className="group relative overflow-hidden transition-all duration-500 border border-neutral-200 hover:border-[#b7212c] bg-white shadow-sm hover:shadow-lg flex flex-col"
             >
-              <button
-                type="button"
-                onClick={() => setLightbox(i)}
-                aria-label={`Ampliar imagen: ${s.title}`}
-                className="relative h-40 overflow-hidden shrink-0 block w-full cursor-zoom-in"
-              >
-                <img
-                  src={s.image}
-                  alt={s.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/25 to-transparent" />
-                <span className="absolute top-3 right-3 w-9 h-9 bg-black/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <ZoomIn className="w-4 h-4 text-white" />
-                </span>
-              </button>
+              <div className="h-1.5 w-full shrink-0 bg-[#b7212c]" />
 
               <div className="p-6 lg:p-7 flex-1">
-                <div className="w-12 h-12 flex items-center justify-center mb-5 bg-neutral-900 border border-neutral-800 group-hover:bg-red-700 group-hover:border-red-700 transition-all duration-300">
-                  <s.icon className="w-5 h-5 text-red-600 group-hover:text-white transition-colors duration-300" />
+                <div className="flex items-start justify-between gap-4 mb-3">
+                  <h3 className="text-neutral-900 font-bold uppercase tracking-wide text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
+                    {s.title}
+                  </h3>
+                  <div className="w-9 h-9 shrink-0 flex items-center justify-center bg-neutral-50 border border-neutral-200 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-all duration-300">
+                    <s.icon className="w-4 h-4 text-[#b7212c] group-hover:text-white transition-colors duration-300" />
+                  </div>
                 </div>
-                <h3 className="text-neutral-50 font-bold text-base uppercase tracking-wide mb-3" style={{ fontFamily: "var(--font-heading)" }}>
-                  {s.title}
-                </h3>
-                <p className="text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-neutral-500 text-sm leading-relaxed">{s.desc}</p>
               </div>
-              <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-500" />
+              <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#b7212c] to-[#b7212c] group-hover:w-full transition-all duration-500" />
             </motion.div>
           ))}
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mt-14 text-center"
-        >
-          <a
-            href={COMPANY.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 bg-red-700 hover:bg-red-600 text-white px-10 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-red-700/20 hover:shadow-red-600/30 hover:translate-y-[-2px]"
-            style={{ fontFamily: "var(--font-heading)" }}
-          >
-            <HeadphonesIcon className="w-5 h-5" />
-            Solicitar Asesoría
-          </a>
-        </motion.div>
       </div>
 
       {/* Lightbox */}
@@ -164,11 +132,11 @@ export default function ServicesSection() {
                 className="w-full flex-1 min-h-0 object-contain"
               />
               <div className="mt-4 text-center shrink-0">
-                <h3 className="text-white font-bold text-lg uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="text-neutral-900 font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {services[lightbox].title}
                 </h3>
-                <p className="text-neutral-400 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>
-                <p className="text-neutral-400 text-xs mt-3 tracking-widest">{lightbox + 1} / {services.length}</p>
+                <p className="text-neutral-500 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>
+                <p className="text-neutral-500 text-xs mt-3 tracking-widest">{lightbox + 1} / {services.length}</p>
               </div>
             </motion.div>
           </motion.div>

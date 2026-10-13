@@ -10,7 +10,7 @@ const tonePoints = [
 
 export default function CommunicationToneSection() {
   return (
-    <section className="relative overflow-hidden bg-neutral-950 py-20 lg:py-28">
+    <section className="relative overflow-hidden bg-white pt-20 lg:pt-28 pb-6 lg:pb-8">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(127,29,29,0.18),transparent_45%)]" />
 
       <div className="container relative z-10">
@@ -23,7 +23,7 @@ export default function CommunicationToneSection() {
           >
             <div className="mb-6">
               <h2
-                className="text-4xl font-black uppercase leading-[0.92] tracking-[-0.04em] text-neutral-50 sm:text-5xl lg:text-7xl"
+                className="font-black uppercase leading-[0.92] tracking-[-0.04em] text-neutral-900 text-[42px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Tono y Estilo de
@@ -31,31 +31,31 @@ export default function CommunicationToneSection() {
               </h2>
             </div>
 
-            <div className="mb-8 h-px w-full max-w-[580px] bg-neutral-700" />
+            <div className="mb-8 h-px w-full max-w-[580px] bg-neutral-300" />
 
-            <p className="max-w-[760px] text-base leading-relaxed text-neutral-300 sm:text-lg">
+            <p className="max-w-[760px] text-base leading-relaxed text-neutral-700 sm:text-lg">
               El tono de Blessing debe reflejar cercanía, sencillez y credibilidad, proyectando
               siempre energía positiva y confianza.
             </p>
 
             <div className="mt-10 max-w-[720px]">
               <h3
-                className="mb-4 text-3xl font-black uppercase tracking-[-0.03em] text-neutral-50"
+                className="mb-4 font-black uppercase tracking-[-0.03em] text-neutral-900 text-[32px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Tono General
               </h3>
 
-              <p className="mb-6 text-base leading-relaxed text-neutral-300 sm:text-lg">
+              <p className="mb-6 text-base leading-relaxed text-neutral-700 sm:text-lg">
                 El tono general es para sentar la base de la personalidad de la marca y crear la
                 conexión emocional con los clientes, generando confianza y credibilidad por medio de
                 una comunicación coherente.
               </p>
 
-              <ol className="space-y-4 text-base leading-relaxed text-neutral-200 sm:text-lg">
+              <ol className="space-y-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
                 {tonePoints.map((point, index) => (
                   <li key={point} className="flex gap-3">
-                    <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-red-700 text-xs font-bold text-white">
+                    <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b7212c] text-xs font-bold text-white">
                       {index + 1}
                     </span>
                     <span>{point}</span>
@@ -72,10 +72,10 @@ export default function CommunicationToneSection() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="relative flex justify-center lg:justify-end"
           >
-            <div className="pointer-events-none absolute -right-2 top-2 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-red-700/90 lg:block" />
-            <div className="pointer-events-none absolute -left-2 bottom-6 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-red-700/90 lg:block" />
+            <div className="pointer-events-none absolute -right-2 top-2 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-[#b7212c]/90 lg:block" />
+            <div className="pointer-events-none absolute -left-2 bottom-6 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-[#b7212c]/90 lg:block" />
 
-            <div className="relative w-full overflow-hidden rounded-[28px] border border-neutral-800 bg-neutral-900 shadow-2xl shadow-black/30">
+            <div className="relative w-full overflow-hidden rounded-[28px] border border-neutral-200 bg-neutral-50 shadow-2xl shadow-black/30">
               <img
                 src={IMAGES.realTeamStore}
                 alt="Equipo de Auto Repuestos Blessing en el mostrador de la tienda"
