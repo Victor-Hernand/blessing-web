@@ -184,11 +184,11 @@ export default function CategoriesSection() {
                       <ZoomIn className="w-3.5 h-3.5 text-white" />
                     </span>
                     <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                      <div className="flex items-start gap-2.5 mb-1.5 min-w-0">
+                      <div className="flex flex-col sm:flex-row sm:items-center items-start gap-1.5 sm:gap-2.5 mb-1.5 min-w-0">
                         <div className="w-8 h-8 shrink-0 bg-[#b7212c]/80 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#b7212c] transition-colors duration-300">
                           {Icon && <Icon className="w-4 h-4 text-white" />}
                         </div>
-                        <h3 className="font-bold text-white uppercase tracking-wide leading-tight min-w-0 text-[22px] sm:text-[28px] lg:text-[32px] break-words" style={{ fontFamily: "var(--font-heading)" }}>
+                        <h3 className="font-bold text-white uppercase tracking-wide leading-tight min-w-0 text-[16px] sm:text-[28px] lg:text-[32px] whitespace-normal" style={{ fontFamily: "var(--font-heading)" }}>
                           {cat.name}
                         </h3>
                       </div>
