@@ -4,7 +4,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function TopBar() {
   return (
-    <div className="bg-red-800 text-white/90 hidden md:block">
+    <div className="bg-[#b7212c] text-white/90 hidden md:block">
       <div className="container flex items-center justify-between py-2 text-xs">
         <div className="flex items-center gap-6">
           <a href={`tel:${COMPANY.phone}`} className="flex items-center gap-1.5 hover:text-amber-300 transition-colors">

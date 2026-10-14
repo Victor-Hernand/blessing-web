@@ -34,14 +34,14 @@ export default function HeroSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/45 via-transparent to-transparent" />
 
       {/* Red accent line left */}
-      <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-red-600 to-transparent hidden lg:block" />
+      <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-[#b7212c] to-transparent hidden lg:block" />
 
       {/* Decorative hexagon pattern top-right */}
       <div className="absolute top-20 right-12 opacity-[0.08] hidden xl:block">
         <svg width="200" height="200" viewBox="0 0 200 200">
-          <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" fill="none" stroke="#b91c1c" strokeWidth="1"/>
-          <polygon points="100,30 160,65 160,135 100,170 40,135 40,65" fill="none" stroke="#b91c1c" strokeWidth="0.5"/>
-          <polygon points="100,50 140,75 140,125 100,150 60,125 60,75" fill="none" stroke="#b91c1c" strokeWidth="0.5"/>
+          <polygon points="100,10 180,55 180,145 100,190 20,145 20,55" fill="none" stroke="#b7212c" strokeWidth="1"/>
+          <polygon points="100,30 160,65 160,135 100,170 40,135 40,65" fill="none" stroke="#b7212c" strokeWidth="0.5"/>
+          <polygon points="100,50 140,75 140,125 100,150 60,125 60,75" fill="none" stroke="#b7212c" strokeWidth="0.5"/>
         </svg>
       </div>
 
@@ -54,8 +54,8 @@ export default function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="flex items-center gap-3 mb-6"
           >
-            <div className="w-12 h-[2px] bg-red-600" />
-            <span className="text-red-700 text-xs font-semibold uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>
+            <div className="w-12 h-[2px] bg-[#b7212c]" />
+            <span className="text-[#b7212c] text-xs font-semibold uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>
               Tegucigalpa, Honduras
             </span>
           </motion.div>
@@ -66,12 +66,12 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h1 className="text-animate text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold text-neutral-50 uppercase leading-[0.9] mb-2 text-float" style={{ fontFamily: "var(--font-heading)" }}>
+            <h1 className="text-animate font-bold text-neutral-900 uppercase leading-[0.9] mb-2 text-float text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
               Auto
               <br />
               Repuestos
             </h1>
-            <h1 className="text-animate text-animate-delay-1 text-shimmer text-5xl sm:text-6xl lg:text-7xl xl:text-[5.5rem] font-bold uppercase leading-[0.9]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h1 className="text-animate text-animate-delay-1 text-shimmer font-bold uppercase leading-[0.9] text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
               Blessing
             </h1>
           </motion.div>
@@ -92,7 +92,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
-            className="text-animate text-animate-delay-3 text-neutral-300 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
+            className="text-animate text-animate-delay-3 text-neutral-700 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
           >
             Más de 10 años brindando autopartes de calidad a precios justos. Amplio inventario para todas las marcas y modelos de vehículos.
           </motion.p>
@@ -108,7 +108,7 @@ export default function HeroSection() {
               href={COMPANY.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-red-700 hover:bg-red-600 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-red-700/30 hover:shadow-red-600/40 hover:translate-y-[-2px]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#b7212c]/30 hover:shadow-[#b7212c]/40 hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Phone className="w-4 h-4" />
@@ -117,7 +117,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#categorias"
-              className="inline-flex items-center justify-center gap-2 border-2 border-gray-800 hover:border-red-700 text-neutral-100 hover:text-red-400 px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-red-950/40 hover:translate-y-[-2px]"
+              className="inline-flex items-center justify-center gap-2 border-2 border-neutral-200 hover:border-[#b7212c] text-neutral-900 hover:text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-red-50 hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Ver Productos
@@ -134,9 +134,9 @@ export default function HeroSection() {
             {features.map((f, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 bg-neutral-950/70 backdrop-blur-sm border border-neutral-800 px-4 py-2.5 text-xs text-neutral-200 hover:border-red-800 hover:bg-red-950/50 transition-all duration-300 shadow-sm"
+                className="flex items-center gap-2 bg-neutral-950/70 backdrop-blur-sm border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 hover:border-[#b7212c] hover:bg-red-50 transition-all duration-300 shadow-sm"
               >
-                <f.icon className="w-3.5 h-3.5 text-red-600" />
+                <f.icon className="w-3.5 h-3.5 text-[#b7212c]" />
                 <span className="uppercase tracking-wider font-medium" style={{ fontFamily: "var(--font-heading)" }}>{f.text}</span>
               </div>
             ))}
@@ -151,18 +151,18 @@ export default function HeroSection() {
         transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-neutral-400 text-[10px] uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>Scroll</span>
+        <span className="text-neutral-500 text-[10px] uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-neutral-400" />
+          <ChevronDown className="w-5 h-5 text-neutral-500" />
         </motion.div>
       </motion.div>
 
       {/* Decorative corner elements */}
-      <div className="absolute top-20 right-8 w-20 h-20 border-t-2 border-r-2 border-red-700/15 hidden lg:block" />
-      <div className="absolute bottom-20 right-8 w-20 h-20 border-b-2 border-r-2 border-red-700/15 hidden lg:block" />
+      <div className="absolute top-20 right-8 w-20 h-20 border-t-2 border-r-2 border-[#b7212c]/15 hidden lg:block" />
+      <div className="absolute bottom-20 right-8 w-20 h-20 border-b-2 border-r-2 border-[#b7212c]/15 hidden lg:block" />
     </section>
   );
 }

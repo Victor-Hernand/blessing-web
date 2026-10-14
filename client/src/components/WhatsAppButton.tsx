@@ -14,18 +14,18 @@ export default function WhatsAppButton() {
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="bg-neutral-950 border border-neutral-800 shadow-xl p-4 max-w-[260px] relative"
+            className="bg-white border border-neutral-200 shadow-xl p-4 max-w-[260px] relative"
           >
             <button
               onClick={() => setShowTooltip(false)}
-              className="absolute top-2 right-2 text-neutral-400 hover:text-neutral-300"
+              className="absolute top-2 right-2 text-neutral-500 hover:text-neutral-700"
             >
               <X className="w-3.5 h-3.5" />
             </button>
-            <p className="text-sm font-bold text-neutral-100 mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-sm font-bold text-neutral-900 mb-1" style={{ fontFamily: "var(--font-heading)" }}>
               ¿Necesitas ayuda?
             </p>
-            <p className="text-xs text-neutral-400 mb-3">
+            <p className="text-xs text-neutral-500 mb-3">
               Escríbenos por WhatsApp y te atenderemos de inmediato.
             </p>
             <a

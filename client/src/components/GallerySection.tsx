@@ -53,7 +53,7 @@ export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
   return (
-    <section id="galeria" className="py-20 lg:py-28 bg-neutral-900 relative overflow-hidden">
+    <section id="galeria" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-neutral-50 relative overflow-hidden">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -63,14 +63,14 @@ export default function GallerySection() {
           className="mb-14 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-10 h-[2px] bg-red-700" />
+            <div className="w-10 h-[2px] bg-[#b7212c]" />
             <span className="section-label">Nuestro Equipo</span>
-            <div className="w-10 h-[2px] bg-red-700" />
+            <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50">
+          <h2 className="section-title text-neutral-900 text-[42px]">
             Conoce <span className="text-gradient-red">Blessing</span>
           </h2>
-          <p className="text-neutral-400 text-base max-w-2xl mx-auto mt-4">
+          <p className="text-neutral-500 text-base max-w-2xl mx-auto mt-4">
             Un equipo comprometido con brindarte la mejor experiencia en autopartes. Conoce a las personas detrás de nuestro servicio.
           </p>
         </motion.div>
@@ -102,16 +102,13 @@ export default function GallerySection() {
                   <div className="text-white font-bold text-sm uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
                     {item.caption}
                   </div>
-                  <p className="text-white/70 text-xs mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                    {item.desc}
-                  </p>
                 </div>
                 {/* Camera icon */}
                 <div className="absolute top-3 right-3 w-8 h-8 bg-neutral-950/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Camera className="w-4 h-4 text-white" />
                 </div>
                 {/* Red accent line */}
-                <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-red-600 group-hover:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-all duration-500" />
               </div>
             </motion.div>
           ))}
@@ -147,10 +144,10 @@ export default function GallerySection() {
                 className="w-full max-h-[80vh] object-contain"
               />
               <div className="mt-4 text-center">
-                <h3 className="text-white font-bold text-lg uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="text-white font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {galleryItems[lightbox].caption}
                 </h3>
-                <p className="text-neutral-400 text-sm mt-1">{galleryItems[lightbox].desc}</p>
+                <p className="text-white/70 text-sm mt-1">{galleryItems[lightbox].desc}</p>
               </div>
             </motion.div>
           </motion.div>

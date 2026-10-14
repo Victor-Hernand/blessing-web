@@ -1,6 +1,6 @@
 /* DESIGN: Industrial Automotriz Premium — Banner promocional — Tema Claro */
 import { motion } from "framer-motion";
-import { ArrowRight, Percent, Truck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { COMPANY, IMAGES } from "@/lib/constants";
 
 export default function PromoBanner() {
@@ -8,8 +8,8 @@ export default function PromoBanner() {
     <section className="relative overflow-hidden">
       {/* Background image - real delivery team photo */}
       <div className="absolute inset-0">
-        <img src={IMAGES.realDeliveryTeam} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-red-800/92 via-red-700/88 to-red-800/80" />
+        <img src={IMAGES.promoFrenos} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#b7212c]/92 via-[#b7212c]/88 to-[#b7212c]/80" />
       </div>
 
       {/* Top accent */}
@@ -23,18 +23,17 @@ export default function PromoBanner() {
             viewport={{ once: true }}
           >
             <div className="flex items-center gap-3 mb-5">
-              <Percent className="w-7 h-7 text-amber-300" />
-              <span className="text-amber-300 text-xs font-bold uppercase tracking-[0.25em]" style={{ fontFamily: "var(--font-heading)" }}>
-                Promoción Especial
+              <span className="text-white text-xs font-bold uppercase tracking-[0.25em]" style={{ fontFamily: "var(--font-heading)" }}>
+                Beneficios Exclusivos para Compras al por Mayor
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white uppercase leading-tight mb-5" style={{ fontFamily: "var(--font-heading)" }}>
-              Precios Especiales
+            <h2 className="font-bold text-white uppercase leading-tight mb-5 text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
+              Precios Preferenciales
               <br />
-              <span className="text-amber-300">al por Mayor</span>
+              <span className="text-white">por Volumen</span>
             </h2>
             <p className="text-red-100/80 text-base sm:text-lg max-w-lg leading-relaxed">
-              Consulta nuestros precios especiales para talleres mecánicos, distribuidores y compras al por mayor. Descuentos exclusivos por volumen.
+              Accede a precios competitivos y beneficios exclusivos en compras por volumen. Ofrecemos condiciones especiales para talleres mecánicos, distribuidores y clientes comerciales que buscan calidad, disponibilidad y el mejor valor para su inversión.
             </p>
           </motion.div>
 
@@ -48,19 +47,11 @@ export default function PromoBanner() {
               href={COMPANY.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-white text-red-800 px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:translate-y-[-2px]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-white text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Solicitar Cotización
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
-            <a
-              href={`tel:${COMPANY.phone}`}
-              className="inline-flex items-center justify-center gap-2 border-2 border-white/30 text-white px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-950/10 hover:border-white/50 transition-all duration-300"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              <Truck className="w-4 h-4" />
-              Envío a Domicilio
             </a>
           </motion.div>
         </div>

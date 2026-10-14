@@ -20,9 +20,9 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="py-20 lg:py-28 bg-neutral-950 relative overflow-hidden">
+    <section id="nosotros" className="py-20 lg:py-28 bg-white relative overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-red-900 rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#b7212c] rounded-full blur-3xl opacity-30 -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-amber-900 rounded-full blur-3xl opacity-20 translate-y-1/2 -translate-x-1/2" />
 
       <div className="container relative z-10">
@@ -50,13 +50,13 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.4 }}
-              className="absolute -bottom-6 left-4 lg:left-8 bg-red-700 text-white p-5 shadow-xl shadow-red-900/30"
+              className="absolute -bottom-6 left-4 lg:left-8 bg-[#b7212c] text-white p-5 shadow-xl shadow-[#b7212c]/30"
             >
               <div className="text-3xl font-bold leading-none" style={{ fontFamily: "var(--font-heading)" }}>10+</div>
               <div className="text-[10px] uppercase tracking-wider font-medium opacity-90 mt-1">Años de<br />Experiencia</div>
             </motion.div>
             {/* Corner decorations */}
-            <div className="absolute -top-3 -left-3 w-20 h-20 border-t-[3px] border-l-[3px] border-red-700 hidden lg:block" />
+            <div className="absolute -top-3 -left-3 w-20 h-20 border-t-[3px] border-l-[3px] border-[#b7212c] hidden lg:block" />
           </motion.div>
 
           {/* Content side */}
@@ -67,7 +67,7 @@ export default function AboutSection() {
             transition={{ duration: 0.7 }}
           >
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-[2px] bg-red-700" />
+              <div className="w-10 h-[2px] bg-[#b7212c]" />
               <span className="section-label">Conócenos</span>
             </div>
             <motion.h2
@@ -75,18 +75,18 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50 mb-6"
+              className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-900 mb-6"
             >
-              Sobre <span className="text-gradient-red text-shimmer">Nosotros</span>
+              Sobre <span className="text-gradient-red">Nosotros</span>
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-neutral-300 text-base leading-relaxed mb-4"
+              className="text-neutral-700 text-base leading-relaxed mb-4"
             >
-              <strong className="text-neutral-100">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
+              <strong className="text-neutral-900">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 18 }}
@@ -110,8 +110,8 @@ export default function AboutSection() {
                   transition={{ delay: i * 0.05 }}
                   className="flex items-start gap-2.5"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-red-600 shrink-0 mt-0.5" />
-                  <span className="text-neutral-300 text-sm leading-snug">{v}</span>
+                  <CheckCircle2 className="w-4 h-4 text-[#b7212c] shrink-0 mt-0.5" />
+                  <span className="text-neutral-700 text-sm leading-snug">{v}</span>
                 </motion.div>
               ))}
             </div>
@@ -125,11 +125,11 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="bg-neutral-900 border border-neutral-800 p-4 text-center group hover:border-red-900 hover:bg-red-950/40 transition-all duration-300 hover:-translate-y-1"
+                  className="bg-neutral-50 border border-neutral-200 p-4 text-center group hover:border-[#b7212c] hover:bg-red-50 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <h.icon className="w-6 h-6 text-red-700 mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <div className="text-xs font-bold text-neutral-100 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
-                  <p className="text-[10px] text-neutral-400 mt-1 leading-tight">{h.desc}</p>
+                  <h.icon className="w-6 h-6 text-[#b7212c] mx-auto mb-2 group-hover:scale-110 transition-transform" />
+                  <div className="text-xs font-bold text-neutral-900 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
+                  <p className="text-[10px] text-neutral-500 mt-1 leading-tight">{h.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -148,16 +148,16 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative bg-neutral-900 border border-neutral-800 p-8 lg:p-10 hover:border-red-900 hover:bg-red-950/40 hover:shadow-xl hover:shadow-red-950/50 transition-all duration-300"
+              className="group relative bg-neutral-50 border border-neutral-200 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-red-50 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-all duration-300"
             >
-              <div className="absolute top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-red-600 to-red-400 group-hover:w-full transition-all duration-500" />
+              <div className="absolute top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#b7212c] to-[#b7212c] group-hover:w-full transition-all duration-500" />
               <div className="flex items-center gap-4 mb-5">
-                <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-red-700 to-red-900 flex items-center justify-center shadow-md shadow-red-900/20">
+                <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#b7212c] to-[#b7212c] flex items-center justify-center shadow-md shadow-[#b7212c]/20">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="section-title text-2xl lg:text-3xl text-neutral-50">{item.title}</h3>
+                <h3 className="section-title text-neutral-900 text-[32px]">{item.title}</h3>
               </div>
-              <p className="text-neutral-300 text-base leading-relaxed">{item.text}</p>
+              <p className="text-neutral-700 text-base leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
         </div>

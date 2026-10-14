@@ -7,9 +7,9 @@ import { Send } from "lucide-react";
 import { CLIENT_TYPES, COMPANY, whatsappLink } from "@/lib/constants";
 
 const inputBase =
-  "w-full bg-neutral-950 border border-neutral-800 px-4 py-3 text-sm text-neutral-100 placeholder:text-neutral-500 focus:outline-none focus:border-red-600 focus:ring-1 focus:ring-red-600/20 transition-colors";
+  "w-full bg-white border border-neutral-200 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 const labelBase =
-  "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-neutral-500 uppercase tracking-wider mb-1.5";
 
 export default function QuoteSection() {
   const [nombre, setNombre] = useState("");
@@ -44,7 +44,7 @@ export default function QuoteSection() {
   };
 
   return (
-    <section id="cotizar" className="py-20 lg:py-28 bg-neutral-900">
+    <section id="cotizar" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-neutral-50">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -53,14 +53,14 @@ export default function QuoteSection() {
           className="mb-12 text-center"
         >
           <div className="flex items-center justify-center gap-3 mb-4">
-            <div className="w-10 h-[2px] bg-red-700" />
+            <div className="w-10 h-[2px] bg-[#b7212c]" />
             <span className="section-label">Compras por volumen</span>
-            <div className="w-10 h-[2px] bg-red-700" />
+            <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-50">
+          <h2 className="section-title text-neutral-900 text-[42px]">
             Solicitar <span className="text-gradient-red">cotización mayorista</span>
           </h2>
-          <p className="text-neutral-300 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-700 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
             Complete el formulario y uno de nuestros asesores comerciales se pondrá en contacto
             con usted.
           </p>
@@ -71,15 +71,15 @@ export default function QuoteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="max-w-3xl mx-auto bg-neutral-950 border border-neutral-800 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
+          className="max-w-3xl mx-auto bg-white border border-neutral-200 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
         >
-          <div className="absolute top-0 left-0 w-1 h-full bg-red-700" />
+          <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
 
           <form onSubmit={handleSubmit} className="space-y-5">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="q-nombre" className={labelBase}>
-                  Nombre completo <span className="text-red-500">*</span>
+                  Nombre completo <span className="text-[#b7212c]">*</span>
                 </label>
                 <input
                   id="q-nombre"
@@ -110,7 +110,7 @@ export default function QuoteSection() {
 
             <div>
               <label htmlFor="q-tipo" className={labelBase}>
-                Tipo de cliente <span className="text-red-500">*</span>
+                Tipo de cliente <span className="text-[#b7212c]">*</span>
               </label>
               <select
                 id="q-tipo"
@@ -123,7 +123,7 @@ export default function QuoteSection() {
                   Seleccione una opción
                 </option>
                 {CLIENT_TYPES.map(t => (
-                  <option key={t} value={t} className="text-neutral-100 bg-neutral-950">
+                  <option key={t} value={t} className="text-neutral-900 bg-white">
                     {t}
                   </option>
                 ))}
@@ -133,7 +133,7 @@ export default function QuoteSection() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="q-telefono" className={labelBase}>
-                  Teléfono <span className="text-red-500">*</span>
+                  Teléfono <span className="text-[#b7212c]">*</span>
                 </label>
                 <input
                   id="q-telefono"
@@ -164,7 +164,7 @@ export default function QuoteSection() {
 
             <div>
               <label htmlFor="q-mensaje" className={labelBase}>
-                Mensaje / Productos <span className="text-red-500">*</span>
+                Mensaje / Productos <span className="text-[#b7212c]">*</span>
               </label>
               <textarea
                 id="q-mensaje"
@@ -179,7 +179,7 @@ export default function QuoteSection() {
 
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2.5 bg-red-700 hover:bg-red-600 text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-colors"
+              className="w-full flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-colors"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Send className="w-4 h-4" />

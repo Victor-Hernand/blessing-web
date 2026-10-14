@@ -28,6 +28,7 @@ export const IMAGES = {
   realSellerRadio: "/images/real-seller-radio.jpeg",
   realEmployeeProducts: "/images/real-employee-products.jpeg",
   realDeliveryTeam: "/images/real-delivery-team.jpeg",
+  promoFrenos: "/images/promo-frenos.png",
   realDeliverySingle: "/images/real-delivery-single.jpeg",
   realEmployeeBag: "/images/real-employee-bag.jpeg",
   realSellerProducts: "/images/real-seller-products.jpeg",

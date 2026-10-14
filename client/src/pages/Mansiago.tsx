@@ -80,7 +80,7 @@ function useReveal() {
    ================================================================ */
 function MTopBar() {
   return (
-    <div className="bg-[#1a1a1a] text-gray-400 text-xs border-b border-[#333]" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <div className="bg-white text-gray-400 text-xs border-b border-[#333]" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-9">
         <div className="flex items-center gap-5">
           <a href={`tel:${MANSIAGO_INFO.phone}`} className="flex items-center gap-1.5 hover:text-[#e2d337] transition-colors">
@@ -125,8 +125,8 @@ function MHeader() {
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#1a1a1a]/95 backdrop-blur-lg shadow-lg shadow-black/30"
-          : "bg-[#2d2d2d]"
+          ? "bg-white/95 backdrop-blur-lg shadow-lg shadow-black/30"
+          : "bg-neutral-50"
       }`}
       style={{ fontFamily: "'Montserrat', sans-serif" }}
     >
@@ -146,7 +146,7 @@ function MHeader() {
             </svg>
           </div>
           <div className="hidden sm:block">
-            <div className="text-white font-extrabold text-sm tracking-wider leading-tight" style={{ fontStyle: "italic" }}>
+            <div className="text-neutral-900 font-extrabold text-sm tracking-wider leading-tight" style={{ fontStyle: "italic" }}>
               DISTRIBUIDORA
             </div>
             <div className="text-[#e2d337] font-black text-lg tracking-widest leading-tight -mt-0.5" style={{ fontStyle: "italic" }}>
@@ -178,21 +178,21 @@ function MHeader() {
         </nav>
 
         {/* Mobile toggle */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-white p-2">
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden text-neutral-900 p-2">
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-[#1a1a1a] border-t border-[#333] animate-in slide-in-from-top duration-300">
+        <div className="lg:hidden bg-white border-t border-[#333] animate-in slide-in-from-top duration-300">
           <nav className="flex flex-col p-4 gap-1">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 text-gray-300 font-semibold uppercase tracking-wider hover:text-[#e2d337] hover:bg-[#2d2d2d] transition-colors"
+                className="px-4 py-3 text-gray-300 font-semibold uppercase tracking-wider hover:text-[#e2d337] hover:bg-neutral-50 transition-colors"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {l.label}
@@ -221,7 +221,7 @@ function MHero() {
   useEffect(() => { setLoaded(true); }, []);
 
   return (
-    <section id="m-inicio" className="relative min-h-[85vh] flex items-center overflow-hidden bg-[#1a1a1a]">
+    <section id="m-inicio" className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -258,7 +258,7 @@ function MHero() {
             }`}
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
-            <span className="block text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase leading-[1.05] tracking-tight" style={{ fontStyle: "italic" }}>
+            <span className="block text-neutral-900 text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase leading-[1.05] tracking-tight" style={{ fontStyle: "italic" }}>
               Calidad que
             </span>
             <span className="block text-[#e2d337] text-5xl sm:text-6xl lg:text-7xl font-black uppercase leading-[1.05] tracking-tight" style={{ fontStyle: "italic" }}>
@@ -295,7 +295,7 @@ function MHero() {
             </a>
             <a
               href="#m-productos"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/20 text-white font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/20 text-neutral-900 font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-all"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Ver Catálogo
@@ -353,7 +353,7 @@ function MProducts() {
           <span className="inline-block px-4 py-1 bg-[#e2d337]/20 text-[#bc8827] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Nuestro Catálogo
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2d2d2d] uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <h2 className="font-black uppercase tracking-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Productos de <span className="text-[#bc8827]">Calidad</span>
           </h2>
           <p className="mt-4 text-[#585755] max-w-2xl mx-auto text-lg">
@@ -374,12 +374,12 @@ function MProducts() {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-14 h-14 flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
-                  activeProduct === i ? "bg-[#e2d337]" : "bg-[#2d2d2d]"
+                  activeProduct === i ? "bg-[#e2d337]" : "bg-neutral-50"
                 }`}>
                   <DynIcon name={p.icon} size={24} className={`transition-colors ${activeProduct === i ? "text-[#2d2d2d]" : "text-[#e2d337]"}`} />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-[#2d2d2d] group-hover:text-[#bc8827] transition-colors" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                  <h3 className="font-bold group-hover:text-[#bc8827] transition-colors text-[32px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     {p.title}
                   </h3>
                   <p className="text-[#585755] text-sm mt-1 leading-relaxed">{p.description}</p>
@@ -419,7 +419,7 @@ function MProducts() {
                 <span className="text-[#e2d337] text-xs font-bold uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                   {item.sub}
                 </span>
-                <h3 className="text-white text-xl font-bold mt-1" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+                <h3 className="text-neutral-900 font-bold mt-1 text-[32px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                   {item.label}
                 </h3>
               </div>
@@ -441,7 +441,7 @@ function MAbout() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="m-nosotros" className="bg-[#2d2d2d] py-20 lg:py-28 relative overflow-hidden">
+    <section id="m-nosotros" className="bg-neutral-50 py-20 lg:py-28 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#e2d337] via-[#bc8827] to-transparent" />
       <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#e2d337]/5 blur-3xl" />
@@ -453,12 +453,12 @@ function MAbout() {
             <span className="inline-block px-4 py-1 bg-[#e2d337]/10 border border-[#e2d337]/30 text-[#e2d337] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Quiénes Somos
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-[1.1]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+            <h2 className="font-black text-neutral-900 uppercase tracking-tight leading-[1.1] text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Tu socio <span className="text-[#e2d337]">estratégico</span> en autopartes
             </h2>
             <p className="mt-6 text-gray-300 text-lg leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
               Distribuidora Mansiago es una empresa hondureña dedicada a la importación y distribución de autopartes,
-              lubricantes e inyectores de combustible originales. Formamos parte del <strong className="text-white">Grupo CAP Honduras</strong> y
+              lubricantes e inyectores de combustible originales. Formamos parte del <strong className="text-neutral-900">Grupo CAP Honduras</strong> y
               nos especializamos en el modelo B2B, sirviendo a talleres, tiendas de repuestos y distribuidores en todo el país.
             </p>
             <p className="mt-4 text-gray-400 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -471,13 +471,13 @@ function MAbout() {
               {MANSIAGO_VALUES.map((v, i) => (
                 <div
                   key={v.title}
-                  className={`p-4 bg-[#1a1a1a] border border-[#333] hover:border-[#e2d337]/40 transition-all duration-500 group ${
+                  className={`p-4 bg-white border border-[#333] hover:border-[#e2d337]/40 transition-all duration-500 group ${
                     visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${(i + 2) * 150}ms` }}
                 >
                   <DynIcon name={v.icon} size={20} className="text-[#e2d337] mb-2 group-hover:scale-110 transition-transform" />
-                  <h4 className="text-white font-bold text-sm" style={{ fontFamily: "'Montserrat', sans-serif" }}>{v.title}</h4>
+                  <h4 className="text-neutral-900 font-bold text-sm" style={{ fontFamily: "'Montserrat', sans-serif" }}>{v.title}</h4>
                   <p className="text-gray-500 text-xs mt-1 leading-relaxed" style={{ fontFamily: "'Poppins', sans-serif" }}>{v.description}</p>
                 </div>
               ))}
@@ -494,7 +494,7 @@ function MAbout() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#2d2d2d] via-transparent to-transparent" />
               {/* Overlay badge */}
-              <div className="absolute bottom-6 left-6 right-6 bg-[#1a1a1a]/90 backdrop-blur-sm p-5 border-l-4 border-[#e2d337]">
+              <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm p-5 border-l-4 border-[#e2d337]">
                 <div className="text-[#e2d337] text-3xl font-black" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                   Grupo CAP
                 </div>
@@ -521,7 +521,7 @@ function MCoverage() {
   const [activeZone, setActiveZone] = useState(0);
 
   return (
-    <section id="m-cobertura" className="bg-[#1a1a1a] py-20 lg:py-28 relative" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <section id="m-cobertura" className="bg-white py-20 lg:py-28 relative" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#e2d337] to-transparent opacity-40" />
 
       <div ref={ref} className="max-w-7xl mx-auto px-4">
@@ -530,7 +530,7 @@ function MCoverage() {
           <span className="inline-block px-4 py-1 bg-[#e2d337]/10 border border-[#e2d337]/30 text-[#e2d337] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Cobertura Nacional
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <h2 className="font-black text-neutral-900 uppercase tracking-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Llegamos a <span className="text-[#e2d337]">todo Honduras</span>
           </h2>
           <p className="mt-4 text-gray-400 max-w-2xl mx-auto text-lg">
@@ -543,7 +543,7 @@ function MCoverage() {
           {MANSIAGO_SELLERS.map((seller, i) => (
             <div
               key={seller.name}
-              className={`relative bg-[#2d2d2d] border border-[#333] p-6 transition-all duration-500 cursor-pointer group ${
+              className={`relative bg-neutral-50 border border-[#333] p-6 transition-all duration-500 cursor-pointer group ${
                 activeZone === i ? "border-[#e2d337] shadow-lg shadow-[#e2d337]/10" : "hover:border-[#e2d337]/40"
               } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -551,19 +551,19 @@ function MCoverage() {
             >
               {/* Zone badge */}
               <div className={`inline-flex items-center gap-2 px-3 py-1 mb-4 text-xs font-bold uppercase tracking-wider transition-colors ${
-                activeZone === i ? "bg-[#e2d337] text-[#2d2d2d]" : "bg-[#1a1a1a] text-[#e2d337]"
+                activeZone === i ? "bg-[#e2d337] text-[#2d2d2d]" : "bg-white text-[#e2d337]"
               }`} style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 <MapPin size={12} />
                 {seller.zone}
               </div>
 
-              <h3 className="text-white text-xl font-bold" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+              <h3 className="text-neutral-900 font-bold text-[32px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                 {seller.name}
               </h3>
 
               <div className="mt-3 flex flex-wrap gap-2">
                 {seller.departments.map((dept) => (
-                  <span key={dept} className="text-xs px-2.5 py-1 bg-[#1a1a1a] text-gray-400 border border-[#333]">
+                  <span key={dept} className="text-xs px-2.5 py-1 bg-white text-gray-400 border border-[#333]">
                     {dept}
                   </span>
                 ))}
@@ -615,10 +615,10 @@ function MBrands() {
   const allBrands = [...MANSIAGO_BRANDS, ...MANSIAGO_BRANDS];
 
   return (
-    <section className="bg-[#2d2d2d] py-16 overflow-hidden border-y border-[#333]">
+    <section className="bg-neutral-50 py-16 overflow-hidden border-y border-[#333]">
       <div ref={ref} className={`transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
         <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-black text-white uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <h2 className="font-black text-neutral-900 uppercase tracking-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Marcas que <span className="text-[#e2d337]">Distribuimos</span>
           </h2>
         </div>
@@ -632,7 +632,7 @@ function MBrands() {
               {allBrands.map((brand, i) => (
                 <div
                   key={`${brand}-${i}`}
-                  className="flex-shrink-0 px-8 py-4 bg-[#1a1a1a] border border-[#333] hover:border-[#e2d337]/40 transition-all group"
+                  className="flex-shrink-0 px-8 py-4 bg-white border border-[#333] hover:border-[#e2d337]/40 transition-all group"
                 >
                   <span className="text-gray-400 group-hover:text-[#e2d337] font-bold text-lg tracking-wider uppercase transition-colors" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     {brand}
@@ -657,7 +657,7 @@ function MCta() {
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
         <img src={MANSIAGO_IMAGES.delivery} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-[#1a1a1a]/85" />
+        <div className="absolute inset-0 bg-white/85" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#e2d337]/10 to-transparent" />
       </div>
 
@@ -668,7 +668,7 @@ function MCta() {
             Únete a nuestra red
           </span>
         </div>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tight leading-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+        <h2 className="font-black text-neutral-900 uppercase tracking-tight leading-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
           ¿Tienes un taller o tienda de <span className="text-[#e2d337]">repuestos?</span>
         </h2>
         <p className="mt-4 text-gray-300 text-lg max-w-2xl mx-auto" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -687,7 +687,7 @@ function MCta() {
           </a>
           <a
             href={`tel:${MANSIAGO_INFO.phone}`}
-            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-white font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-neutral-900 font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-all"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <Phone size={16} />
@@ -712,7 +712,7 @@ function MContact() {
           <span className="inline-block px-4 py-1 bg-[#e2d337]/20 text-[#bc8827] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Contáctanos
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#2d2d2d] uppercase tracking-tight" style={{ fontFamily: "'Montserrat', sans-serif" }}>
+          <h2 className="font-black uppercase tracking-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Estamos para <span className="text-[#bc8827]">Servirte</span>
           </h2>
         </div>
@@ -727,7 +727,7 @@ function MContact() {
               { icon: Clock, label: "Horario", value: MANSIAGO_INFO.schedule },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 group">
-                <div className="w-12 h-12 bg-[#2d2d2d] flex items-center justify-center flex-shrink-0 group-hover:bg-[#e2d337] transition-colors">
+                <div className="w-12 h-12 bg-neutral-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#e2d337] transition-colors">
                   <item.icon size={20} className="text-[#e2d337] group-hover:text-[#2d2d2d] transition-colors" />
                 </div>
                 <div>
@@ -760,7 +760,7 @@ function MContact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener"
-                    className="w-10 h-10 bg-[#2d2d2d] flex items-center justify-center hover:bg-[#e2d337] transition-colors group"
+                    className="w-10 h-10 bg-neutral-50 flex items-center justify-center hover:bg-[#e2d337] transition-colors group"
                   >
                     <s.icon size={18} className="text-[#e2d337] group-hover:text-[#2d2d2d] transition-colors" />
                   </a>
@@ -771,7 +771,7 @@ function MContact() {
 
           {/* Map */}
           <div className={`transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div className="w-full aspect-[4/3] bg-[#2d2d2d] overflow-hidden border-4 border-[#2d2d2d]">
+            <div className="w-full aspect-[4/3] bg-neutral-50 overflow-hidden border-4 border-[#2d2d2d]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.123456789!2d-87.2!3d14.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA0JzQ4LjAiTiA4N8KwMTInMDAuMCJX!5e0!3m2!1ses!2shn!4v1234567890"
                 width="100%"
@@ -798,7 +798,7 @@ function MContact() {
    ================================================================ */
 function MFooter() {
   return (
-    <footer className="bg-[#1a1a1a] border-t border-[#333]" style={{ fontFamily: "'Poppins', sans-serif" }}>
+    <footer className="bg-white border-t border-[#333]" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div className="max-w-7xl mx-auto px-4 py-14">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
@@ -811,7 +811,7 @@ function MFooter() {
                 </svg>
               </div>
               <div>
-                <div className="text-white font-extrabold text-xs tracking-wider" style={{ fontStyle: "italic", fontFamily: "'Montserrat', sans-serif" }}>DISTRIBUIDORA</div>
+                <div className="text-neutral-900 font-extrabold text-xs tracking-wider" style={{ fontStyle: "italic", fontFamily: "'Montserrat', sans-serif" }}>DISTRIBUIDORA</div>
                 <div className="text-[#e2d337] font-black text-base tracking-widest -mt-0.5" style={{ fontStyle: "italic", fontFamily: "'Montserrat', sans-serif" }}>MANSIAGO</div>
               </div>
             </div>
@@ -822,7 +822,7 @@ function MFooter() {
 
           {/* Products */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Productos</h4>
+            <h4 className="text-neutral-900 font-bold text-sm uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Productos</h4>
             <ul className="space-y-2">
               {["Lubricantes", "Inyectores", "Filtros", "Baterías", "Sistema Eléctrico", "Accesorios"].map((p) => (
                 <li key={p}>
@@ -834,7 +834,7 @@ function MFooter() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Empresa</h4>
+            <h4 className="text-neutral-900 font-bold text-sm uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Empresa</h4>
             <ul className="space-y-2">
               {[
                 { label: "Nosotros", href: "#m-nosotros" },
@@ -851,7 +851,7 @@ function MFooter() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Contacto</h4>
+            <h4 className="text-neutral-900 font-bold text-sm uppercase tracking-wider mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>Contacto</h4>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-gray-500 text-sm">
                 <Phone size={14} className="text-[#e2d337]" />
@@ -929,7 +929,7 @@ function MScrollTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-[#2d2d2d] border border-[#e2d337]/40 flex items-center justify-center hover:bg-[#e2d337] hover:text-[#2d2d2d] text-[#e2d337] transition-all shadow-lg"
+      className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-neutral-50 border border-[#e2d337]/40 flex items-center justify-center hover:bg-[#e2d337] hover:text-[#2d2d2d] text-[#e2d337] transition-all shadow-lg"
     >
       <ArrowUp size={20} />
     </button>
@@ -941,7 +941,7 @@ function MScrollTop() {
    ================================================================ */
 export default function Mansiago() {
   return (
-    <div className="min-h-screen bg-[#1a1a1a]">
+    <div className="min-h-screen bg-white">
       <MTopBar />
       <MHeader />
       <MHero />

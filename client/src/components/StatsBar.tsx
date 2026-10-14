@@ -14,11 +14,11 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
       transition={{ delay: index * 0.1 }}
       className="text-center px-4 py-8 lg:py-10 relative group"
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-red-600/30 group-hover:w-16 group-hover:bg-red-600 transition-all duration-500" />
-      <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-red-800 mb-2" style={{ fontFamily: "var(--font-heading)" }}>
-        {count}<span className="text-red-500">{suffix}</span>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#b7212c]/30 group-hover:w-16 group-hover:bg-[#b7212c] transition-all duration-500" />
+      <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#b7212c] mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+        {count}<span className="text-[#b7212c]">{suffix}</span>
       </div>
-      <div className="text-neutral-400 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-neutral-500 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
         {label}
       </div>
     </motion.div>
@@ -27,9 +27,9 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
 
 export default function StatsBar() {
   return (
-    <section className="relative overflow-hidden bg-neutral-900 border-y border-neutral-800">
+    <section className="relative overflow-hidden bg-neutral-50 border-y border-neutral-200">
       {/* Top red line */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#b7212c] to-transparent" />
 
       <div className="container relative z-10">
         <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-neutral-800">
@@ -40,7 +40,7 @@ export default function StatsBar() {
       </div>
 
       {/* Bottom red line */}
-      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-red-600 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#b7212c] to-transparent" />
     </section>
   );
 }

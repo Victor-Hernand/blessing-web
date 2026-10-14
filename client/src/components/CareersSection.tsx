@@ -5,24 +5,24 @@ import { COMPANY } from "@/lib/constants";
 
 export default function CareersSection() {
   return (
-    <section id="empleo" className="pt-0 pb-20 lg:pb-28 bg-neutral-950">
-      <div className="container">
+    <section id="empleo" className="pt-0 pb-0 bg-white">
+      <div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-red-800 p-8 lg:p-12 shadow-2xl shadow-red-900/20"
+          className="bg-[#b7212c] py-5 lg:py-6 shadow-2xl shadow-[#b7212c]/20"
         >
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
+          <div className="container flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <div className="flex items-start gap-5">
-              <div className="hidden sm:flex w-12 h-12 shrink-0 bg-amber-400 items-center justify-center">
-                <Briefcase className="w-6 h-6 text-red-900" />
+              <div className="hidden sm:flex w-12 h-12 shrink-0 bg-white items-center justify-center">
+                <Briefcase className="w-6 h-6 text-[#b7212c]" />
               </div>
               <div>
-                <span className="block text-xs text-amber-300 uppercase tracking-[0.2em] font-medium mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                <span className="block text-xs text-white uppercase tracking-[0.2em] font-medium mb-2" style={{ fontFamily: "var(--font-heading)" }}>
                   Únete al equipo
                 </span>
-                <h2 className="section-title text-2xl sm:text-3xl lg:text-4xl text-white mb-3">
+                <h2 className="section-title text-white mb-2 text-[30px] lg:text-[34px]">
                   ¿Deseas trabajar con nosotros?
                 </h2>
                 <p className="text-red-100/80 text-sm leading-relaxed max-w-xl">
@@ -37,7 +37,7 @@ export default function CareersSection() {
                 href={COMPANY.careersUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-amber-400 hover:bg-amber-300 text-red-900 px-6 py-3.5 font-bold uppercase tracking-wider transition-all text-sm shadow-lg shadow-amber-900/20 hover:translate-y-[-2px]"
+                className="inline-flex items-center gap-2 bg-white hover:bg-neutral-100 text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-all text-sm shadow-lg shadow-black/20 hover:translate-y-[-2px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <Briefcase className="w-4 h-4" />
@@ -47,7 +47,7 @@ export default function CareersSection() {
                 href={COMPANY.careersLinkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-white/25 hover:border-amber-300 text-white hover:text-amber-300 px-6 py-3.5 font-bold uppercase tracking-wider transition-all text-sm"
+                className="inline-flex items-center gap-2 border-2 border-white bg-transparent text-white hover:bg-white hover:text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-all text-sm"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <Linkedin className="w-4 h-4" />

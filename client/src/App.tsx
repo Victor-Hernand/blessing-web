@@ -8,6 +8,8 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Garantia from "./pages/Garantia";
+import Nosotros from "./pages/Nosotros";
+import Contactos from "./pages/Contactos";
 import Home from "./pages/Home";
 import Mansiago from "./pages/Mansiago";
 
@@ -17,6 +19,8 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/mansiago"} component={Mansiago} />
       <Route path={"/garantia"} component={Garantia} />
+      <Route path={"/nosotros"} component={Nosotros} />
+      <Route path={"/contactos"} component={Contactos} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>
@@ -43,7 +47,7 @@ function ScrollToTopButton() {
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Subir arriba"
-          className="fixed bottom-6 right-[5.5rem] z-50 flex h-12 w-12 items-center justify-center rounded-full border border-red-400/60 bg-red-700 text-white shadow-lg shadow-red-900/30 transition-all duration-300 hover:bg-red-600 hover:shadow-red-700/40"
+          className="fixed bottom-6 right-[5.5rem] z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#b7212c]/60 bg-[#b7212c] text-white shadow-lg shadow-[#b7212c]/30 transition-all duration-300 hover:bg-[#b7212c] hover:shadow-[#b7212c]/40"
         >
           <ChevronUp className="h-5 w-5" />
         </motion.button>
@@ -55,7 +59,7 @@ function ScrollToTopButton() {
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider defaultTheme="dark">
+      <ThemeProvider defaultTheme="light">
         <TooltipProvider>
           <Toaster />
           <Router />
