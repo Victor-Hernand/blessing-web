@@ -172,7 +172,7 @@ export default function CategoriesSection() {
                     {cat.image ? (
                       <>
                         <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/92 via-[#1d1d1b]/65 to-[#1d1d1b]/30 group-hover:from-[#1d1d1b]/95 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/92 via-[#1d1d1b]/60 to-transparent group-hover:from-[#1d1d1b]/95 transition-all duration-500" />
                       </>
                     ) : (
                       /* Sin foto de producto todavía: panel de marca con el ícono de la categoría */
