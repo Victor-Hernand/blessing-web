@@ -25,7 +25,7 @@ export default function CareersSection() {
                 <h2 className="section-title text-white mb-2 text-[30px] lg:text-[34px]">
                   ¿Deseas trabajar con nosotros?
                 </h2>
-                <p className="text-red-100/80 text-sm leading-relaxed max-w-xl">
+                <p className="text-white/80 text-sm leading-relaxed max-w-xl">
                   Conoce nuestras vacantes disponibles, aplica en línea y mantente al día con
                   las oportunidades que publicamos en LinkedIn.
                 </p>

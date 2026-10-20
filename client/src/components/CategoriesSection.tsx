@@ -61,7 +61,7 @@ export default function CategoriesSection() {
             <span className="section-label">Nuestro catálogo</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="section-title text-neutral-900 text-[42px]">
+            <h2 className="section-title text-[#1d1d1b] text-[42px]">
               Categorías de <span className="text-gradient-red">Productos</span>
             </h2>
             <p className="text-neutral-500 font-bold max-w-md text-base leading-relaxed">
@@ -85,7 +85,7 @@ export default function CategoriesSection() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar repuesto: frenos, amortiguadores, dirección..."
               aria-label="Buscar repuestos"
-              className="w-full border border-neutral-200 bg-neutral-50 focus:bg-white pl-12 pr-12 py-4 text-sm text-neutral-900 placeholder:text-neutral-400 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-red-100 transition-all duration-300"
+              className="w-full border border-neutral-200 bg-neutral-50 focus:bg-white pl-12 pr-12 py-4 text-sm text-[#1d1d1b] placeholder:text-neutral-400 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-all duration-300"
             />
             {isSearching && (
               <button
@@ -118,13 +118,13 @@ export default function CategoriesSection() {
                     href={whatsappLink(`Hola, quiero consultar por: ${product} (${category.name})`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-neutral-50 border border-neutral-200 p-4 hover:border-[#b7212c] hover:bg-red-50 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-all duration-300"
+                    className="group flex items-center gap-4 bg-neutral-50 border border-neutral-200 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-all duration-300"
                   >
                     <div className="w-11 h-11 shrink-0 bg-white border border-neutral-200 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-all duration-300 shadow-sm">
-                      {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-neutral-900 transition-colors duration-300" />}
+                      {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-[#1d1d1b] transition-colors duration-300" />}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-bold text-neutral-900 group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+                      <h3 className="font-bold text-[#1d1d1b] group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                         {product}
                       </h3>
                       <p className="text-[11px] text-neutral-500 uppercase tracking-wider">{category.name}</p>
@@ -172,7 +172,7 @@ export default function CategoriesSection() {
                     {cat.image ? (
                       <>
                         <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/92 via-black/65 to-black/30 group-hover:from-black/95 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/92 via-[#1d1d1b]/65 to-[#1d1d1b]/30 group-hover:from-[#1d1d1b]/95 transition-all duration-500" />
                       </>
                     ) : (
                       /* Sin foto de producto todavía: panel de marca con el ícono de la categoría */
@@ -180,7 +180,7 @@ export default function CategoriesSection() {
                         {Icon && <Icon className="w-24 h-24 text-neutral-500 group-hover:scale-110 group-hover:text-neutral-500 transition-all duration-700" strokeWidth={1.2} />}
                       </div>
                     )}
-                    <span className="absolute top-3 right-3 w-8 h-8 bg-black/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                    <span className="absolute top-3 right-3 w-8 h-8 bg-[#1d1d1b]/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
                       <ZoomIn className="w-3.5 h-3.5 text-white" />
                     </span>
                     <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
@@ -210,27 +210,27 @@ export default function CategoriesSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 lg:p-8"
+            className="fixed inset-0 z-[100] bg-[#1d1d1b]/95 flex items-center justify-center p-4 lg:p-8"
             onClick={() => setLightbox(null)}
           >
             <button
               onClick={() => setLightbox(null)}
               aria-label="Cerrar"
-              className="absolute top-4 right-4 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); step(-1); }}
               aria-label="Categoría anterior"
-              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); step(1); }}
               aria-label="Categoría siguiente"
-              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -257,7 +257,7 @@ export default function CategoriesSection() {
 
                 <div className="flex flex-wrap justify-center gap-2 mt-5 max-h-[16vh] overflow-y-auto">
                   {CATEGORIES[lightbox].products.map((product) => (
-                    <span key={product} className="bg-neutral-950/10 text-gray-200 text-xs px-3 py-1.5">
+                    <span key={product} className="bg-[#1d1d1b]/10 text-gray-200 text-xs px-3 py-1.5">
                       {product}
                     </span>
                   ))}

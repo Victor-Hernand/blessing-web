@@ -6,7 +6,7 @@ export type Seleccion = { marca: string; modelo: string; anio: string; motor: st
 export const SELECCION_VACIA: Seleccion = { marca: "", modelo: "", anio: "", motor: "", tipo: "" };
 
 const selectClass =
-  "w-full bg-white border border-neutral-300 px-3 py-2.5 text-sm text-neutral-900 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c] disabled:bg-neutral-100 disabled:text-neutral-400";
+  "w-full bg-white border border-neutral-300 px-3 py-2.5 text-sm text-[#1d1d1b] focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c] disabled:bg-neutral-100 disabled:text-neutral-400";
 
 const labelClass =
   "block text-[11px] font-semibold text-white uppercase tracking-wider mb-1.5";
@@ -37,7 +37,7 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
       >
         ¡Encuentra los repuestos ideales para tu vehículo!
       </h2>
-      <p className="text-red-100 text-sm mt-1">
+      <p className="text-white/90 text-sm mt-1">
         Selecciona tu auto y descubre las piezas que necesita para seguir en marcha.
       </p>
 

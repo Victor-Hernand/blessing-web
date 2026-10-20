@@ -19,7 +19,7 @@ export default function ContactSection() {
             <span className="section-label">Comunícate con nosotros</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Contáctanos <span className="text-gradient-red">Ahora</span>
           </h2>
         </motion.div>
@@ -32,7 +32,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="font-bold text-neutral-900 uppercase tracking-wide mb-6 text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h3 className="font-bold text-[#1d1d1b] uppercase tracking-wide mb-6 text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
               Información de Contacto
             </h3>
 
@@ -42,7 +42,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="text-xs text-neutral-500 uppercase tracking-wider font-medium mb-0.5">Teléfono</div>
-                <div className="text-neutral-900 font-semibold group-hover:text-[#b7212c] transition-colors">{COMPANY.phone}</div>
+                <div className="text-[#1d1d1b] font-semibold group-hover:text-[#b7212c] transition-colors">{COMPANY.phone}</div>
               </div>
             </a>
 
@@ -52,7 +52,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="text-xs text-neutral-500 uppercase tracking-wider font-medium mb-0.5">Email</div>
-                <div className="text-neutral-900 font-semibold group-hover:text-[#b7212c] transition-colors text-sm">{COMPANY.email}</div>
+                <div className="text-[#1d1d1b] font-semibold group-hover:text-[#b7212c] transition-colors text-sm">{COMPANY.email}</div>
               </div>
             </a>
 
@@ -62,7 +62,7 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="text-xs text-neutral-500 uppercase tracking-wider font-medium mb-0.5">Dirección</div>
-                <div className="text-neutral-900 text-sm leading-relaxed">{COMPANY.address}</div>
+                <div className="text-[#1d1d1b] text-sm leading-relaxed">{COMPANY.address}</div>
               </div>
             </div>
 
@@ -72,8 +72,8 @@ export default function ContactSection() {
               </div>
               <div>
                 <div className="text-xs text-neutral-500 uppercase tracking-wider font-medium mb-0.5">Horario</div>
-                <div className="text-neutral-900 text-sm">{COMPANY.schedule.weekdays}</div>
-                <div className="text-neutral-900 text-sm">{COMPANY.schedule.saturday}</div>
+                <div className="text-[#1d1d1b] text-sm">{COMPANY.schedule.weekdays}</div>
+                <div className="text-[#1d1d1b] text-sm">{COMPANY.schedule.saturday}</div>
                 <div className="text-[#b7212c] text-sm font-medium">{COMPANY.schedule.sunday}</div>
               </div>
             </div>
@@ -90,7 +90,7 @@ export default function ContactSection() {
             <div className="bg-white border border-neutral-200 p-6 lg:p-8 shadow-lg shadow-black/50">
               <div className="flex items-center gap-3 mb-2">
                 <Users className="w-6 h-6 text-[#b7212c]" />
-                <h3 className="font-bold text-neutral-900 uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="font-bold text-[#1d1d1b] uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   Directorio de Vendedores
                 </h3>
               </div>
@@ -111,7 +111,7 @@ export default function ContactSection() {
                       <MessageCircle className="w-4 h-4 text-green-600 group-hover:text-white transition-colors" />
                     </div>
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-neutral-900 truncate group-hover:text-green-700 transition-colors">{seller.name}</div>
+                      <div className="text-sm font-semibold text-[#1d1d1b] truncate group-hover:text-green-700 transition-colors">{seller.name}</div>
                       <div className="text-xs text-neutral-500 flex items-center gap-1">
                         <Phone className="w-3 h-3" />
                         {seller.phone}

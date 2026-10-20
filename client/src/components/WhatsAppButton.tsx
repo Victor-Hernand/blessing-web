@@ -22,7 +22,7 @@ export default function WhatsAppButton() {
             >
               <X className="w-3.5 h-3.5" />
             </button>
-            <p className="text-sm font-bold text-neutral-900 mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-sm font-bold text-[#1d1d1b] mb-1" style={{ fontFamily: "var(--font-heading)" }}>
               ¿Necesitas ayuda?
             </p>
             <p className="text-xs text-neutral-500 mb-3">

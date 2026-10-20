@@ -32,7 +32,7 @@ export default function PromoBanner() {
               <br />
               <span className="text-white">por Volumen</span>
             </h2>
-            <p className="text-red-100/80 text-base sm:text-lg max-w-lg leading-relaxed">
+            <p className="text-white/80 text-base sm:text-lg max-w-lg leading-relaxed">
               Accede a precios competitivos y beneficios exclusivos en compras por volumen. Ofrecemos condiciones especiales para talleres mecánicos, distribuidores y clientes comerciales que buscan calidad, disponibilidad y el mejor valor para su inversión.
             </p>
           </motion.div>

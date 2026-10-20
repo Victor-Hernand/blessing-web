@@ -50,7 +50,7 @@ export default function ServicesSection() {
             </span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="font-bold text-neutral-900 uppercase text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
+          <h2 className="font-bold text-[#1d1d1b] uppercase text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
             Nuestros <span className="text-[#b7212c]">Servicios</span>
           </h2>
         </motion.div>
@@ -70,7 +70,7 @@ export default function ServicesSection() {
 
               <div className="p-6 lg:p-7 flex-1">
                 <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="text-neutral-900 font-bold uppercase tracking-wide text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3 className="text-[#1d1d1b] font-bold uppercase tracking-wide text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
                     {s.title}
                   </h3>
                   <div className="w-9 h-9 shrink-0 flex items-center justify-center bg-neutral-50 border border-neutral-200 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-all duration-300">
@@ -92,13 +92,13 @@ export default function ServicesSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 lg:p-8"
+            className="fixed inset-0 z-[100] bg-[#1d1d1b]/95 flex items-center justify-center p-4 lg:p-8"
             onClick={() => setLightbox(null)}
           >
             <button
               onClick={() => setLightbox(null)}
               aria-label="Cerrar"
-              className="absolute top-4 right-4 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>
@@ -106,14 +106,14 @@ export default function ServicesSection() {
             <button
               onClick={(e) => { e.stopPropagation(); step(-1); }}
               aria-label="Imagen anterior"
-              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={(e) => { e.stopPropagation(); step(1); }}
               aria-label="Imagen siguiente"
-              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
@@ -132,7 +132,7 @@ export default function ServicesSection() {
                 className="w-full flex-1 min-h-0 object-contain"
               />
               <div className="mt-4 text-center shrink-0">
-                <h3 className="text-neutral-900 font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="text-[#1d1d1b] font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {services[lightbox].title}
                 </h3>
                 <p className="text-neutral-500 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>

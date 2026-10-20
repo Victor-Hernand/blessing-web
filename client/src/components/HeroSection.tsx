@@ -30,8 +30,8 @@ export default function HeroSection() {
         />
       </div>
       {/* Gradient overlays — strong scrim only behind the text (left), clears toward the right to reveal the storefront */}
-      <div className="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/55 to-transparent lg:via-neutral-950/35" />
-      <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/45 via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1d1d1b] via-[#1d1d1b]/55 to-transparent lg:via-[#1d1d1b]/35" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/45 via-transparent to-transparent" />
 
       {/* Red accent line left */}
       <div className="absolute left-0 top-1/4 bottom-1/4 w-1 bg-gradient-to-b from-transparent via-[#b7212c] to-transparent hidden lg:block" />
@@ -66,7 +66,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h1 className="text-animate font-bold text-neutral-900 uppercase leading-[0.9] mb-2 text-float text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h1 className="text-animate font-bold text-[#1d1d1b] uppercase leading-[0.9] mb-2 text-float text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
               Auto
               <br />
               Repuestos
@@ -117,7 +117,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#categorias"
-              className="inline-flex items-center justify-center gap-2 border-2 border-neutral-200 hover:border-[#b7212c] text-neutral-900 hover:text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-red-50 hover:translate-y-[-2px]"
+              className="inline-flex items-center justify-center gap-2 border-2 border-neutral-200 hover:border-[#b7212c] text-[#1d1d1b] hover:text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#b7212c]/5 hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Ver Productos
@@ -134,7 +134,7 @@ export default function HeroSection() {
             {features.map((f, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 bg-neutral-950/70 backdrop-blur-sm border border-neutral-200 px-4 py-2.5 text-xs text-neutral-800 hover:border-[#b7212c] hover:bg-red-50 transition-all duration-300 shadow-sm"
+                className="flex items-center gap-2 bg-[#1d1d1b]/70 backdrop-blur-sm border border-neutral-200 px-4 py-2.5 text-xs text-[#1d1d1b] hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-all duration-300 shadow-sm"
               >
                 <f.icon className="w-3.5 h-3.5 text-[#b7212c]" />
                 <span className="uppercase tracking-wider font-medium" style={{ fontFamily: "var(--font-heading)" }}>{f.text}</span>

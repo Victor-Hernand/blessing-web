@@ -7,7 +7,7 @@ import { Send } from "lucide-react";
 import { CLIENT_TYPES, COMPANY, whatsappLink } from "@/lib/constants";
 
 const inputBase =
-  "w-full bg-white border border-neutral-200 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
+  "w-full bg-white border border-neutral-200 px-4 py-3 text-sm text-[#1d1d1b] placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 const labelBase =
   "block text-[11px] font-semibold text-neutral-500 uppercase tracking-wider mb-1.5";
 
@@ -57,7 +57,7 @@ export default function QuoteSection() {
             <span className="section-label">Compras por volumen</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Solicitar <span className="text-gradient-red">cotización mayorista</span>
           </h2>
           <p className="text-neutral-700 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -123,7 +123,7 @@ export default function QuoteSection() {
                   Seleccione una opción
                 </option>
                 {CLIENT_TYPES.map(t => (
-                  <option key={t} value={t} className="text-neutral-900 bg-white">
+                  <option key={t} value={t} className="text-[#1d1d1b] bg-white">
                     {t}
                   </option>
                 ))}

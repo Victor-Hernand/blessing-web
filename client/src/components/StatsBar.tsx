@@ -32,7 +32,7 @@ export default function StatsBar() {
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#b7212c] to-transparent" />
 
       <div className="container relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-neutral-800">
+        <div className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-[#1d1d1b]">
           {STATS.map((stat, i) => (
             <StatItem key={stat.label} value={stat.value} suffix={stat.suffix} label={stat.label} index={i} />
           ))}

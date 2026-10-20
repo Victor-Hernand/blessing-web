@@ -3,7 +3,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#b7212c] text-red-100/80 relative overflow-hidden">
+    <footer className="bg-[#b7212c] text-white/80 relative overflow-hidden">
       {/* Top gradient line */}
 
       <div className="container py-3 lg:py-4">
@@ -39,7 +39,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[#b7212c]/50">
         <div className="container py-2 flex flex-col items-center justify-center gap-1 text-center">
-          <p className="text-xs text-red-300/50">
+          <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Auto Repuestos Blessing. Todos los derechos reservados.
           </p>
         </div>

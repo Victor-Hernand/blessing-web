@@ -5,7 +5,7 @@
 
 /* ============================================================
  * DESIGN SYSTEM: Industrial Automotriz Premium — Clase Mundial
- * Rojo carmesí #b7212c / Negro carbón #111 / Blanco humo / Dorado #D4A843
+ * Rojo carmesí #b7212c / Negro carbón #1d1d1b / Blanco humo / Dorado #D4A843
  * ============================================================ */
 
 @theme inline {
@@ -48,7 +48,7 @@
   /* Custom brand colors */
   --color-blessing-red: #b7212c;
   --color-blessing-red-light: #b7212c;
-  --color-blessing-dark: oklch(0.15 0.005 285);
+  --color-blessing-dark: #1d1d1b;
   --color-blessing-gold: oklch(0.75 0.12 85);
 }
 
@@ -70,26 +70,26 @@
   --chart-5: oklch(0.25 0.005 285);
   --radius: 0.25rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: #1d1d1b;
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: #1d1d1b;
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: #1d1d1b;
   --secondary: oklch(0.96 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
+  --secondary-foreground: #1d1d1b;
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.95 0 0);
-  --accent-foreground: oklch(0.145 0 0);
+  --accent-foreground: #1d1d1b;
   --destructive: #b7212c;
   --destructive-foreground: oklch(0.98 0 0);
   --border: oklch(0.9 0 0);
   --input: oklch(0.9 0 0);
   --ring: #b7212c;
   --sidebar: oklch(1 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-foreground: #1d1d1b;
   --sidebar-accent: oklch(0.95 0 0);
-  --sidebar-accent-foreground: oklch(0.145 0 0);
+  --sidebar-accent-foreground: #1d1d1b;
   --sidebar-border: oklch(0.9 0 0);
   --sidebar-ring: #b7212c;
 }
@@ -137,7 +137,7 @@
 
   ::selection {
     background: rgba(183, 33, 44, 0.2);
-    color: #1a1a1a;
+    color: #1d1d1b;
   }
 
   /* Custom scrollbar */

@@ -29,7 +29,7 @@ export default function TestimonialsSection() {
             <span className="section-label">Testimonios</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Lo que dicen <span className="text-gradient-red">nuestros clientes</span>
           </h2>
         </motion.div>
@@ -61,7 +61,7 @@ export default function TestimonialsSection() {
 
               {/* Author */}
               <div className="border-t border-neutral-200 pt-4">
-                <div className="font-bold text-neutral-900 text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
+                <div className="font-bold text-[#1d1d1b] text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
                 <div className="text-xs text-neutral-500 mt-0.5">{t.role}</div>
               </div>
 

@@ -32,7 +32,7 @@ export default function BrandsSection() {
             <span className="section-label">Nuestros aliados</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Marcas <span className="text-gradient-red">Destacadas</span>
           </h2>
           <p className="text-neutral-500 mt-4 max-w-xl mx-auto text-base leading-relaxed font-bold">
