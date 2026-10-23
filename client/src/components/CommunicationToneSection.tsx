@@ -11,7 +11,7 @@ const tonePoints = [
 export default function CommunicationToneSection() {
   return (
     <section className="relative overflow-hidden bg-white pt-20 lg:pt-28 pb-6 lg:pb-8">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(127,29,29,0.18),transparent_45%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(183,33,44,0.18),transparent_45%)]" />
 
       <div className="container relative z-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -23,7 +23,7 @@ export default function CommunicationToneSection() {
           >
             <div className="mb-6">
               <h2
-                className="font-black uppercase leading-[0.92] tracking-[-0.04em] text-neutral-900 text-[42px]"
+                className="font-black uppercase leading-[0.92] tracking-[-0.04em] text-[#1d1d1b] text-[42px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Tono y Estilo de
@@ -40,7 +40,7 @@ export default function CommunicationToneSection() {
 
             <div className="mt-10 max-w-[720px]">
               <h3
-                className="mb-4 font-black uppercase tracking-[-0.03em] text-neutral-900 text-[32px]"
+                className="mb-4 font-black uppercase tracking-[-0.03em] text-[#1d1d1b] text-[32px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Tono General
@@ -52,7 +52,7 @@ export default function CommunicationToneSection() {
                 una comunicación coherente.
               </p>
 
-              <ol className="space-y-4 text-base leading-relaxed text-neutral-800 sm:text-lg">
+              <ol className="space-y-4 text-base leading-relaxed text-[#1d1d1b] sm:text-lg">
                 {tonePoints.map((point, index) => (
                   <li key={point} className="flex gap-3">
                     <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b7212c] text-xs font-bold text-white">
@@ -81,7 +81,7 @@ export default function CommunicationToneSection() {
                 alt="Equipo de Auto Repuestos Blessing en el mostrador de la tienda"
                 className="aspect-[4/3] w-full object-cover object-center lg:aspect-auto lg:h-[600px]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/25 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/25 via-transparent to-transparent" />
             </div>
           </motion.div>
         </div>

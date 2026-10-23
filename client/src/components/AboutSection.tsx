@@ -42,7 +42,7 @@ export default function AboutSection() {
                 alt="Equipo de entrega a domicilio de Auto Repuestos Blessing frente a la tienda"
                 className="w-full h-[320px] lg:h-[420px] object-cover object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/20 to-transparent" />
             </div>
             {/* Experience badge */}
             <motion.div
@@ -75,7 +75,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="section-title text-3xl sm:text-4xl lg:text-5xl text-neutral-900 mb-6"
+              className="section-title text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1b] mb-6"
             >
               Sobre <span className="text-gradient-red">Nosotros</span>
             </motion.h2>
@@ -86,7 +86,7 @@ export default function AboutSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-neutral-700 text-base leading-relaxed mb-4"
             >
-              <strong className="text-neutral-900">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
+              <strong className="text-[#1d1d1b]">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 18 }}
@@ -125,10 +125,10 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="bg-neutral-50 border border-neutral-200 p-4 text-center group hover:border-[#b7212c] hover:bg-red-50 transition-all duration-300 hover:-translate-y-1"
+                  className="bg-neutral-50 border border-neutral-200 p-4 text-center group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-all duration-300 hover:-translate-y-1"
                 >
                   <h.icon className="w-6 h-6 text-[#b7212c] mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <div className="text-xs font-bold text-neutral-900 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
+                  <div className="text-xs font-bold text-[#1d1d1b] uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
                   <p className="text-[10px] text-neutral-500 mt-1 leading-tight">{h.desc}</p>
                 </motion.div>
               ))}
@@ -148,14 +148,14 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group relative bg-neutral-50 border border-neutral-200 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-red-50 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-all duration-300"
+              className="group relative bg-neutral-50 border border-neutral-200 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-all duration-300"
             >
               <div className="absolute top-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#b7212c] to-[#b7212c] group-hover:w-full transition-all duration-500" />
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-12 h-12 shrink-0 bg-gradient-to-br from-[#b7212c] to-[#b7212c] flex items-center justify-center shadow-md shadow-[#b7212c]/20">
                   <item.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="section-title text-neutral-900 text-[32px]">{item.title}</h3>
+                <h3 className="section-title text-[#1d1d1b] text-[32px]">{item.title}</h3>
               </div>
               <p className="text-neutral-700 text-base leading-relaxed">{item.text}</p>
             </motion.div>

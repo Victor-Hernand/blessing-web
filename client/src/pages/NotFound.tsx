@@ -11,8 +11,8 @@ export default function NotFound() {
   };
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-neutral-950 to-neutral-900">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-neutral-950/80 backdrop-blur-sm">
+    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-[#1d1d1b] to-[#1d1d1b]">
+      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-[#1d1d1b]/80 backdrop-blur-sm">
         <CardContent className="pt-8 pb-8 text-center">
           <div className="flex justify-center mb-6">
             <div className="relative">
@@ -21,9 +21,9 @@ export default function NotFound() {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-neutral-900 mb-2">404</h1>
+          <h1 className="text-4xl font-bold text-[#1d1d1b] mb-2">404</h1>
 
-          <h2 className="text-xl font-semibold text-neutral-800 mb-4">
+          <h2 className="text-xl font-semibold text-[#1d1d1b] mb-4">
             Page Not Found
           </h2>
 

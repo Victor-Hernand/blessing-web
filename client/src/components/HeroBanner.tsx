@@ -25,7 +25,7 @@ export default function HeroBanner() {
     <section id="inicio" className="bg-white">
       <div className="container pt-10 lg:pt-14 text-center">
         <h1
-          className="section-title text-neutral-900 leading-tight text-[48px] sm:text-[60px] lg:text-[76px]"
+          className="section-title text-[#1d1d1b] leading-tight text-[48px] sm:text-[60px] lg:text-[76px]"
           style={{ fontFamily: "var(--font-heading)" }}
         >
           Auto Repuestos <span className="text-gradient-red">Blessing</span>
@@ -48,7 +48,7 @@ export default function HeroBanner() {
               <span className="w-7 h-7 shrink-0 bg-[#b7212c] rounded-full flex items-center justify-center">
                 <v.icon className="w-3.5 h-3.5 text-white" />
               </span>
-              <span className="text-neutral-800 text-[11px] font-semibold uppercase leading-tight">
+              <span className="text-[#1d1d1b] text-[11px] font-semibold uppercase leading-tight">
                 {v.label}
               </span>
             </li>

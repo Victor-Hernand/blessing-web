@@ -22,7 +22,7 @@ export default function ValuePropsSection() {
             <span className="section-label">Por qué elegirnos</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Nuestra <span className="text-gradient-red">propuesta de valor</span>
           </h2>
           <p className="text-neutral-700 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
@@ -50,7 +50,7 @@ export default function ValuePropsSection() {
                 </div>
 
                 <h3
-                  className="section-title text-neutral-900 mb-2 text-[24px] lg:text-[26px] leading-tight"
+                  className="section-title text-[#1d1d1b] mb-2 text-[24px] lg:text-[26px] leading-tight"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {p.title}

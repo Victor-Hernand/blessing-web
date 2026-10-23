@@ -19,7 +19,7 @@ export default function LocationSection() {
             <span className="section-label">Encuéntranos</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Nuestra <span className="text-gradient-red">Ubicación</span>
           </h2>
         </motion.div>
@@ -63,26 +63,26 @@ export default function LocationSection() {
                   Dirección
                 </h3>
               </div>
-              <p className="text-red-100/80 text-sm leading-relaxed mb-8">
+              <p className="text-white/80 text-sm leading-relaxed mb-8">
                 {COMPANY.address}
               </p>
 
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 bg-neutral-950/10 border border-white/15 flex items-center justify-center">
+                <div className="w-8 h-8 bg-[#1d1d1b]/10 border border-white/15 flex items-center justify-center">
                   <Clock className="w-4 h-4 text-white" />
                 </div>
-                <span className="text-xs text-red-200/70 uppercase tracking-wider font-medium" style={{ fontFamily: "var(--font-heading)" }}>Horario</span>
+                <span className="text-xs text-white/70 uppercase tracking-wider font-medium" style={{ fontFamily: "var(--font-heading)" }}>Horario</span>
               </div>
               <div className="space-y-3 mb-8 pl-11">
-                <div className="flex items-center gap-2 text-red-100/70 text-sm">
+                <div className="flex items-center gap-2 text-white/70 text-sm">
                   <div className="w-1.5 h-1.5 bg-green-400" />
                   {COMPANY.schedule.weekdays}
                 </div>
-                <div className="flex items-center gap-2 text-red-100/70 text-sm">
+                <div className="flex items-center gap-2 text-white/70 text-sm">
                   <div className="w-1.5 h-1.5 bg-white" />
                   {COMPANY.schedule.saturday}
                 </div>
-                <div className="flex items-center gap-2 text-red-200 text-sm font-medium">
+                <div className="flex items-center gap-2 text-white/90 text-sm font-medium">
                   <div className="w-1.5 h-1.5 bg-[#b7212c]" />
                   {COMPANY.schedule.sunday}
                 </div>

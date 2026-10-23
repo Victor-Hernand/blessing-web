@@ -67,7 +67,7 @@ export default function GallerySection() {
             <span className="section-label">Nuestro Equipo</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-neutral-900 text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Conoce <span className="text-gradient-red">Blessing</span>
           </h2>
           <p className="text-neutral-500 text-base max-w-2xl mx-auto mt-4">
@@ -94,9 +94,9 @@ export default function GallerySection() {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/80 via-[#1d1d1b]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 {/* Always visible bottom gradient */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1d1d1b]/60 to-transparent" />
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
                   <div className="text-white font-bold text-sm uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
@@ -104,7 +104,7 @@ export default function GallerySection() {
                   </div>
                 </div>
                 {/* Camera icon */}
-                <div className="absolute top-3 right-3 w-8 h-8 bg-neutral-950/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute top-3 right-3 w-8 h-8 bg-[#1d1d1b]/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <Camera className="w-4 h-4 text-white" />
                 </div>
                 {/* Red accent line */}
@@ -122,12 +122,12 @@ export default function GallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4 lg:p-8"
+            className="fixed inset-0 z-[100] bg-[#1d1d1b]/95 flex items-center justify-center p-4 lg:p-8"
             onClick={() => setLightbox(null)}
           >
             <button
               onClick={() => setLightbox(null)}
-              className="absolute top-4 right-4 w-12 h-12 bg-neutral-950/10 flex items-center justify-center text-white hover:bg-neutral-950/20 transition-colors z-10"
+              className="absolute top-4 right-4 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
             </button>

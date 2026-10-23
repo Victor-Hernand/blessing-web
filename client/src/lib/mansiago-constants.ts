@@ -1,6 +1,6 @@
 // ============================================================
 // MANSIAGO CONSTANTS — Distribuidora Mansiago
-// Colores: Negro #2d2d2d / Amarillo #e2d337 / Dorado #bc8827 / Crema #fef8de
+// Colores: Negro #1d1d1b / Amarillo #e2d337 / Dorado #bc8827 / Crema #fef8de
 // Tipografía: Poppins (body) + Montserrat Bold (headings)
 // ============================================================
 
