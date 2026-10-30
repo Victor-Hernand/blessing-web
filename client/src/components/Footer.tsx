@@ -42,6 +42,9 @@ export default function Footer() {
           <p className="text-xs text-white/50">
             &copy; {new Date().getFullYear()} Auto Repuestos Blessing. Todos los derechos reservados.
           </p>
+          <a href="/privacidad" className="text-xs text-white/70 hover:text-amber-300 underline underline-offset-2 transition-colors">
+            Política de privacidad
+          </a>
         </div>
       </div>
     </footer>

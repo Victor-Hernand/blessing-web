@@ -4,12 +4,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { Link } from "wouter";
 import { CLIENT_TYPES, COMPANY, whatsappLink } from "@/lib/constants";
 
 const inputBase =
   "w-full bg-white border border-neutral-200 px-4 py-3 text-sm text-[#1d1d1b] placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 const labelBase =
   "block text-[11px] font-semibold text-neutral-500 uppercase tracking-wider mb-1.5";
+// Debe coincidir con FECHA_VIGENTE de pages/Privacidad.tsx.
+const FECHA_POLITICA = "30/10/2026";
 
 export default function QuoteSection() {
   const [nombre, setNombre] = useState("");
@@ -18,6 +21,7 @@ export default function QuoteSection() {
   const [telefono, setTelefono] = useState("");
   const [correo, setCorreo] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,6 +40,7 @@ export default function QuoteSection() {
       "*Productos / mensaje:*",
       mensaje,
       "",
+      `*Acepta política de privacidad:* sí (versión ${FECHA_POLITICA})`,
       `_Enviado desde ${COMPANY.website}_`,
     ];
 
@@ -177,9 +182,28 @@ export default function QuoteSection() {
               />
             </div>
 
+            <label htmlFor="q-privacidad" className="flex items-start gap-3 text-sm text-neutral-700 leading-relaxed cursor-pointer">
+              <input
+                id="q-privacidad"
+                type="checkbox"
+                required
+                checked={aceptaPrivacidad}
+                onChange={e => setAceptaPrivacidad(e.target.checked)}
+                className="mt-1 h-4 w-4 accent-[#b7212c] shrink-0"
+              />
+              <span>
+                He leído y acepto la{" "}
+                <Link href="/privacidad" className="text-[#b7212c] underline underline-offset-2 hover:text-[#8f1a22]">
+                  Política de privacidad y uso de datos
+                </Link>
+                , y autorizo el tratamiento de mis datos personales para atender esta solicitud. <span className="text-[#b7212c]">*</span>
+              </span>
+            </label>
+
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-colors"
+              disabled={!aceptaPrivacidad}
+              className="w-full flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Send className="w-4 h-4" />
