@@ -43,13 +43,13 @@ function ScrollToTopButton() {
     <AnimatePresence>
       {visible && (
         <motion.button
-          initial={{ opacity: 0, scale: 0.8, y: 12 }}
+          initial={{ opacity: 0, scale: 0.92, y: 12 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.8, y: 12 }}
+          exit={{ opacity: 0, scale: 0.92, y: 12 }}
           transition={{ duration: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           aria-label="Subir arriba"
-          className="fixed bottom-6 right-[5.5rem] z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#b7212c]/60 bg-[#b7212c] text-white shadow-lg shadow-[#b7212c]/30 transition-all duration-300 hover:bg-[#b7212c] hover:shadow-[#b7212c]/40"
+          className="fixed bottom-6 right-[5.5rem] z-50 flex h-12 w-12 items-center justify-center rounded-full border border-[#b7212c]/60 bg-[#b7212c] text-white shadow-lg shadow-[#b7212c]/30 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:bg-[#b7212c] hover:shadow-[#b7212c]/40 active:scale-[0.97]"
         >
           <ChevronUp className="h-5 w-5" />
         </motion.button>

@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cog, CircleDot, ArrowUpDown, LifeBuoy, Zap, Thermometer, Settings, Filter, Droplets, Wrench, ArrowRight, Search, X, MessageCircle, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { CATEGORIES, whatsappLink } from "@/lib/constants";
+import CompanyCarousel from "@/components/CompanyCarousel";
 
 const iconMap: Record<string, React.ElementType> = {
   Cog, CircleDot, ArrowUpDown, LifeBuoy, Zap, Thermometer, Settings, Filter, Droplets, Wrench,
@@ -47,8 +48,29 @@ export default function CategoriesSection() {
   }, [lightbox]);
 
   return (
-    <section id="categorias" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-white">
+    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12]">
       <div className="container">
+        {/* Presentación de la empresa, antes del catálogo */}
+        <div className="mb-12 lg:mb-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div>
+          <h2 className="section-title text-white text-[28px] lg:text-[36px] mb-4">
+            Conoce nuestra empresa
+          </h2>
+          <p className="text-neutral-300 text-base leading-relaxed text-justify mb-6">
+            Auto Repuestos Blessing es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
+          </p>
+          <a
+            href="/nosotros"
+            className="inline-flex items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Conocer más sobre nosotros
+            <ArrowRight className="w-4 h-4" />
+          </a>
+          </div>
+          <CompanyCarousel />
+        </div>
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -61,10 +83,10 @@ export default function CategoriesSection() {
             <span className="section-label">Nuestro catálogo</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="section-title text-[#1d1d1b] text-[42px]">
+            <h2 className="section-title text-white text-[42px]">
               Categorías de <span className="text-gradient-red">Productos</span>
             </h2>
-            <p className="text-neutral-500 font-bold max-w-md text-base leading-relaxed">
+            <p className="text-neutral-400 font-bold max-w-md text-base leading-relaxed">
               Trabajamos con las mejores marcas del mercado automotriz para garantizar calidad y rendimiento en cada producto.
             </p>
           </div>
@@ -78,27 +100,27 @@ export default function CategoriesSection() {
           className="mb-10"
         >
           <div className="relative max-w-2xl">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500 pointer-events-none" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 pointer-events-none" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar repuesto: frenos, amortiguadores, dirección..."
               aria-label="Buscar repuestos"
-              className="w-full border border-neutral-200 bg-neutral-50 focus:bg-white pl-12 pr-12 py-4 text-sm text-[#1d1d1b] placeholder:text-neutral-400 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-all duration-300"
+              className="w-full border border-white/10 bg-[#171a1e] focus:bg-[#0d0f12] pl-12 pr-12 py-4 text-sm text-white placeholder:text-neutral-400 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
             />
             {isSearching && (
               <button
                 onClick={() => setQuery("")}
                 aria-label="Limpiar búsqueda"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-500 hover:text-[#b7212c] transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-[#b7212c] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             )}
           </div>
           {isSearching && (
-            <p className="mt-3 text-sm text-neutral-500">
+            <p className="mt-3 text-sm text-neutral-400">
               {results.length > 0
                 ? `${results.length} ${results.length === 1 ? "repuesto encontrado" : "repuestos encontrados"} para «${query.trim()}»`
                 : `Sin coincidencias para «${query.trim()}»`}
@@ -118,32 +140,32 @@ export default function CategoriesSection() {
                     href={whatsappLink(`Hola, quiero consultar por: ${product} (${category.name})`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-neutral-50 border border-neutral-200 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-all duration-300"
+                    className="group flex items-center gap-4 bg-[#171a1e] border border-white/10 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
                   >
-                    <div className="w-11 h-11 shrink-0 bg-white border border-neutral-200 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-all duration-300 shadow-sm">
-                      {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-[#1d1d1b] transition-colors duration-300" />}
+                    <div className="w-11 h-11 shrink-0 bg-[#0d0f12] border border-white/10 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
+                      {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-white transition-colors duration-300" />}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-bold text-[#1d1d1b] group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+                      <h3 className="font-bold text-white group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                         {product}
                       </h3>
-                      <p className="text-[11px] text-neutral-500 uppercase tracking-wider">{category.name}</p>
+                      <p className="text-[11px] text-neutral-400 uppercase tracking-wider">{category.name}</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 shrink-0 text-gray-300 group-hover:text-[#b7212c] group-hover:translate-x-1 transition-all duration-300" />
+                    <ArrowRight className="w-4 h-4 shrink-0 text-gray-300 group-hover:text-[#b7212c] group-hover:translate-x-1 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300" />
                   </a>
                 );
               })}
             </div>
           ) : (
-            <div className="border border-dashed border-neutral-200 bg-neutral-50 p-10 text-center">
-              <p className="text-neutral-700 mb-5">
+            <div className="border border-dashed border-white/20 bg-[#171a1e] p-10 text-center">
+              <p className="text-neutral-300 mb-5">
                 No listamos ese repuesto en el sitio, pero es muy probable que lo tengamos en tienda.
               </p>
               <a
                 href={whatsappLink(`Hola, ¿tienen disponible: ${query.trim()}?`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#b7212c] to-[#b7212c] hover:from-[#b7212c] hover:to-[#b7212c] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md"
+                className="inline-flex items-center gap-2 bg-[#b7212c] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <MessageCircle className="w-4 h-4" />
@@ -163,21 +185,24 @@ export default function CategoriesSection() {
                     type="button"
                     onClick={() => setLightbox(i)}
                     aria-label={`Ver ${cat.name}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    /* Entrada: ease-out fuerte, sin partir de escala 0 y con retardo escalonado */
+                    initial={{ opacity: 0, scale: 0.95, y: 12 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: (i % 5) * 0.05 }}
+                    transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1], delay: (i % 5) * 0.05 }}
+                    whileTap={{ scale: 0.97 }}
                     className="group relative h-52 w-full text-left overflow-hidden block cursor-zoom-in"
                   >
                     {cat.image ? (
                       <>
-                        <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/92 via-[#1d1d1b]/60 to-transparent group-hover:from-[#1d1d1b]/95 transition-all duration-500" />
+                        <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" />
+                        <div className="absolute inset-0 bg-[#0d0f12]/40" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f12]/95 via-[#0d0f12]/50 to-transparent" />
                       </>
                     ) : (
                       /* Sin foto de producto todavía: panel de marca con el ícono de la categoría */
-                      <div className="absolute inset-0 bg-gradient-to-br from-[#b7212c] to-[#b7212c] flex items-center justify-center overflow-hidden">
-                        {Icon && <Icon className="w-24 h-24 text-neutral-500 group-hover:scale-110 group-hover:text-neutral-500 transition-all duration-700" strokeWidth={1.2} />}
+                      <div className="absolute inset-0 bg-[#b7212c] flex items-center justify-center overflow-hidden">
+                        {Icon && <Icon className="w-24 h-24 text-neutral-400 group-hover:scale-110 group-hover:text-neutral-400 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400" strokeWidth={1.2} />}
                       </div>
                     )}
                     <span className="absolute top-3 right-3 w-8 h-8 bg-[#1d1d1b]/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
@@ -185,16 +210,16 @@ export default function CategoriesSection() {
                     </span>
                     <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
                       <div className="flex flex-col sm:flex-row sm:items-center items-start gap-1.5 sm:gap-2.5 mb-1.5 min-w-0">
-                        <div className="w-8 h-8 shrink-0 bg-[#b7212c]/80 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#b7212c] transition-colors duration-300">
+                        <div className="w-8 h-8 shrink-0 bg-[#b7212c]/80 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#b7212c] transition-colors duration-300 active:scale-[0.97]">
                           {Icon && <Icon className="w-4 h-4 text-white" />}
                         </div>
-                        <h3 className="font-bold text-white uppercase tracking-wide leading-tight min-w-0 text-[16px] sm:text-[28px] lg:text-[32px] whitespace-normal" style={{ fontFamily: "var(--font-heading)" }}>
+                        <h3 className="font-bold text-white uppercase tracking-wide leading-tight min-w-0 text-[17px] sm:text-[19px] xl:text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
                           {cat.name}
                         </h3>
                       </div>
-                      <p className="text-gray-300 text-[11px] leading-snug line-clamp-2">{cat.description}</p>
+                      <p className="text-neutral-200 text-[12px] leading-snug line-clamp-2">{cat.description}</p>
                     </div>
-                    <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#b7212c] to-[#b7212c] group-hover:w-full transition-all duration-500" />
+                    <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[width] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]" />
                   </motion.button>
                 );
               })}
@@ -253,7 +278,7 @@ export default function CategoriesSection() {
                 <h3 className="text-white font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {CATEGORIES[lightbox].name}
                 </h3>
-                <p className="text-neutral-500 text-sm mt-2">{CATEGORIES[lightbox].description}</p>
+                <p className="text-neutral-400 text-sm mt-2">{CATEGORIES[lightbox].description}</p>
 
                 <div className="flex flex-wrap justify-center gap-2 mt-5 max-h-[16vh] overflow-y-auto">
                   {CATEGORIES[lightbox].products.map((product) => (
@@ -267,14 +292,14 @@ export default function CategoriesSection() {
                   href={whatsappLink(`Hola, quiero consultar por repuestos de ${CATEGORIES[lightbox].name}`)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-6 bg-gradient-to-r from-[#b7212c] to-[#b7212c] hover:from-[#b7212c] hover:to-[#b7212c] text-white px-7 py-3 text-xs font-semibold uppercase tracking-wider transition-all duration-300 shadow-md"
+                  className="inline-flex items-center gap-2 mt-6 bg-[#b7212c] text-white px-7 py-3 text-xs font-semibold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   <MessageCircle className="w-4 h-4" />
                   Consultar por WhatsApp
                 </a>
 
-                <p className="text-neutral-500 text-xs mt-5 tracking-widest">{lightbox + 1} / {CATEGORIES.length}</p>
+                <p className="text-neutral-400 text-xs mt-5 tracking-widest">{lightbox + 1} / {CATEGORIES.length}</p>
               </div>
             </motion.div>
           </motion.div>

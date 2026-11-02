@@ -6,10 +6,10 @@ export type Seleccion = { marca: string; modelo: string; anio: string; motor: st
 export const SELECCION_VACIA: Seleccion = { marca: "", modelo: "", anio: "", motor: "", tipo: "" };
 
 const selectClass =
-  "w-full bg-white border border-neutral-300 px-3 py-2.5 text-sm text-[#1d1d1b] focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c] disabled:bg-neutral-100 disabled:text-neutral-400";
+  "w-full bg-[#0d0f12] border border-white/15 px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c] disabled:bg-[#0d0f12]/50 disabled:text-neutral-400";
 
 const labelClass =
-  "block text-[11px] font-semibold text-white uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
 
 interface Props {
   value: Seleccion;
@@ -29,19 +29,24 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
   const anios = Array.from({ length: anioActual - 2001 + 1 }, (_, i) => anioActual - i);
 
   return (
-    <div className="mt-6 bg-[#b7212c] py-6">
-     <div className="container">
+    <div className="bg-[#171a1e] border-y border-white/10 px-4 py-6 sm:px-6 lg:px-12 lg:py-8">
+      <p
+        className="text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+        style={{ fontFamily: "var(--font-heading)" }}
+      >
+        Encuentra tu repuesto
+      </p>
       <h2
-        className="section-title text-white text-[42px]"
+        className="section-title text-white text-[26px] lg:text-[32px]"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         ¡Encuentra los repuestos ideales para tu vehículo!
       </h2>
-      <p className="text-white/90 text-sm mt-1">
+      <p className="text-neutral-400 text-sm mt-1">
         Selecciona tu auto y descubre las piezas que necesita para seguir en marcha.
       </p>
 
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mt-4">
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mt-5">
         <div>
           <label className={labelClass} htmlFor="veh-marca">Marca</label>
           <select
@@ -156,19 +161,18 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
         </div>
       </div>
 
-      <div className="mt-6 flex justify-center">
+      <div className="mt-5">
         <a
           href={cotizarHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="group inline-flex items-center justify-center gap-2 bg-white hover:bg-neutral-50 text-[#b7212c] px-6 py-2.5 text-sm font-bold uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
+          className="group w-full inline-flex items-center justify-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 active:scale-[0.97]"
         >
           <Phone className="w-4 h-4" />
-          Cotizar
+          Cotizar por WhatsApp
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </a>
       </div>
-     </div>
     </div>
   );
 }

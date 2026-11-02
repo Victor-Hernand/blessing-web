@@ -11,10 +11,8 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-white relative overflow-hidden">
+    <section className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12] relative overflow-hidden">
       {/* Subtle decorative elements */}
-      <div className="absolute top-20 left-10 w-40 h-40 bg-[#b7212c] rounded-full blur-3xl opacity-40" />
-      <div className="absolute bottom-20 right-10 w-60 h-60 bg-[#b7212c] rounded-full blur-3xl opacity-30" />
 
       <div className="container relative z-10">
         {/* Header */}
@@ -29,7 +27,7 @@ export default function TestimonialsSection() {
             <span className="section-label">Testimonios</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-[#1d1d1b] text-[42px]">
+          <h2 className="section-title text-white text-[42px]">
             Lo que dicen <span className="text-gradient-red">nuestros clientes</span>
           </h2>
         </motion.div>
@@ -43,8 +41,8 @@ export default function TestimonialsSection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="w-72 sm:w-96 shrink-0 bg-neutral-50 border border-neutral-200 p-6 relative group hover:shadow-xl hover:shadow-[#b7212c]/50 hover:border-[#b7212c] transition-all duration-500 hover:-translate-y-1"
+              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.1 }}
+              className="w-72 sm:w-96 shrink-0 bg-[#171a1e] border border-white/10 p-6 relative group hover:shadow-xl hover:shadow-[#b7212c]/50 hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
             >
               {/* Quote icon */}
               <Quote className="w-8 h-8 text-[#b7212c] group-hover:text-[#b7212c] transition-colors mb-4" />
@@ -57,16 +55,16 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Text */}
-              <p className="text-neutral-700 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
+              <p className="text-neutral-300 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
 
               {/* Author */}
-              <div className="border-t border-neutral-200 pt-4">
-                <div className="font-bold text-[#1d1d1b] text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
-                <div className="text-xs text-neutral-500 mt-0.5">{t.role}</div>
+              <div className="border-t border-white/10 pt-4">
+                <div className="font-bold text-white text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
+                <div className="text-xs text-neutral-400 mt-0.5">{t.role}</div>
               </div>
 
               {/* Bottom line */}
-              <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-gradient-to-r from-[#b7212c] to-[#b7212c] group-hover:w-full transition-all duration-500" />
+              <div className="absolute bottom-0 left-0 w-0 h-[2px] bg-[#b7212c] group-hover:w-full transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />
             </motion.div>
           ))}
           </div>

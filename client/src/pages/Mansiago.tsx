@@ -123,7 +123,7 @@ function MHeader() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-500 ${
+      className={`sticky top-0 z-50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-lg shadow-lg shadow-black/30"
           : "bg-neutral-50"
@@ -164,14 +164,14 @@ function MHeader() {
               className="relative px-4 py-2 text-sm font-semibold text-gray-300 uppercase tracking-wider hover:text-[#e2d337] transition-colors group"
             >
               {l.label}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#e2d337] group-hover:w-3/4 transition-all duration-300" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-[#e2d337] group-hover:w-3/4 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300" />
             </a>
           ))}
           <a
             href={MANSIAGO_INFO.whatsappLink}
             target="_blank"
             rel="noopener"
-            className="ml-4 px-5 py-2 bg-[#e2d337] text-[#1d1d1b] font-bold text-sm uppercase tracking-wider hover:bg-[#efc715] transition-all hover:shadow-lg hover:shadow-[#e2d337]/20"
+            className="ml-4 px-5 py-2 bg-[#e2d337] text-[#1d1d1b] font-bold text-sm uppercase tracking-wider hover:bg-[#efc715] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] hover:shadow-lg hover:shadow-[#e2d337]/20"
           >
             Cotizar Ahora
           </a>
@@ -241,7 +241,7 @@ function MHero() {
         <div className="max-w-2xl">
           {/* Badge */}
           <div
-            className={`inline-flex items-center gap-2 px-4 py-1.5 border border-[#e2d337]/40 bg-[#e2d337]/10 mb-6 transition-all duration-700 ${
+            className={`inline-flex items-center gap-2 px-4 py-1.5 border border-[#e2d337]/40 bg-[#e2d337]/10 mb-6 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
           >
@@ -253,7 +253,7 @@ function MHero() {
 
           {/* Heading */}
           <h1
-            className={`transition-all duration-700 delay-200 ${
+            className={`transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-200 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
             style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -268,7 +268,7 @@ function MHero() {
 
           {/* Subtitle */}
           <p
-            className={`mt-6 text-gray-300 text-lg sm:text-xl leading-relaxed max-w-lg transition-all duration-700 delay-400 ${
+            className={`mt-6 text-gray-300 text-lg sm:text-xl leading-relaxed max-w-lg transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-400 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
             style={{ fontFamily: "'Poppins', sans-serif" }}
@@ -279,7 +279,7 @@ function MHero() {
 
           {/* CTA buttons */}
           <div
-            className={`mt-8 flex flex-wrap gap-4 transition-all duration-700 delay-500 ${
+            className={`mt-8 flex flex-wrap gap-4 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-500 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
@@ -287,7 +287,7 @@ function MHero() {
               href={MANSIAGO_INFO.whatsappLink}
               target="_blank"
               rel="noopener"
-              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#e2d337] text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:bg-[#efc715] transition-all hover:shadow-xl hover:shadow-[#e2d337]/25"
+              className="group inline-flex items-center gap-2 px-7 py-3.5 bg-[#e2d337] text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:bg-[#efc715] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] hover:shadow-xl hover:shadow-[#e2d337]/25"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Solicitar Cotización
@@ -295,7 +295,7 @@ function MHero() {
             </a>
             <a
               href="#m-productos"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/20 text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/20 text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height]"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               Ver Catálogo
@@ -349,7 +349,7 @@ function MProducts() {
     <section id="m-productos" className="bg-[#fef8de] py-20 lg:py-28" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div ref={ref} className="max-w-7xl mx-auto px-4">
         {/* Section header */}
-        <div className={`text-center mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`text-center mb-14 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block px-4 py-1 bg-[#e2d337]/20 text-[#bc8827] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Nuestro Catálogo
           </span>
@@ -366,7 +366,7 @@ function MProducts() {
           {MANSIAGO_PRODUCTS.map((p, i) => (
             <div
               key={p.id}
-              className={`group relative bg-white border-2 border-transparent hover:border-[#e2d337] p-6 transition-all duration-500 cursor-pointer ${
+              className={`group relative bg-white border-2 border-transparent hover:border-[#e2d337] p-6 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 cursor-pointer ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               } ${activeProduct === i ? "border-[#e2d337] shadow-lg shadow-[#e2d337]/10" : ""}`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -408,12 +408,12 @@ function MProducts() {
           ].map((item, i) => (
             <div
               key={i}
-              className={`relative group overflow-hidden aspect-[4/3] transition-all duration-700 ${
+              className={`relative group overflow-hidden aspect-[4/3] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${
                 visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
               style={{ transitionDelay: `${(i + 6) * 100}ms` }}
             >
-              <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+              <img src={item.img} alt={item.label} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b] via-[#1d1d1b]/30 to-transparent" />
               <div className="absolute bottom-0 left-0 p-5">
                 <span className="text-[#e2d337] text-xs font-bold uppercase tracking-wider" style={{ fontFamily: "'Montserrat', sans-serif" }}>
@@ -423,7 +423,7 @@ function MProducts() {
                   {item.label}
                 </h3>
               </div>
-              <div className="absolute top-4 right-4 w-10 h-10 bg-[#e2d337] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 translate-x-4 group-hover:translate-x-0">
+              <div className="absolute top-4 right-4 w-10 h-10 bg-[#e2d337] flex items-center justify-center opacity-0 group-hover:opacity-100 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 translate-x-4 group-hover:translate-x-0">
                 <ChevronRight size={18} className="text-[#1d1d1b]" />
               </div>
             </div>
@@ -449,7 +449,7 @@ function MAbout() {
       <div ref={ref} className="max-w-7xl mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-14 items-center">
           {/* Left: Text */}
-          <div className={`transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
+          <div className={`transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             <span className="inline-block px-4 py-1 bg-[#e2d337]/10 border border-[#e2d337]/30 text-[#e2d337] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
               Quiénes Somos
             </span>
@@ -471,7 +471,7 @@ function MAbout() {
               {MANSIAGO_VALUES.map((v, i) => (
                 <div
                   key={v.title}
-                  className={`p-4 bg-white border border-[#333] hover:border-[#e2d337]/40 transition-all duration-500 group ${
+                  className={`p-4 bg-white border border-[#333] hover:border-[#e2d337]/40 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 group ${
                     visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                   }`}
                   style={{ transitionDelay: `${(i + 2) * 150}ms` }}
@@ -485,7 +485,7 @@ function MAbout() {
           </div>
 
           {/* Right: Image composition */}
-          <div className={`relative transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
+          <div className={`relative transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
             <div className="relative">
               <img
                 src={MANSIAGO_IMAGES.hero}
@@ -526,7 +526,7 @@ function MCoverage() {
 
       <div ref={ref} className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div className={`text-center mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`text-center mb-14 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block px-4 py-1 bg-[#e2d337]/10 border border-[#e2d337]/30 text-[#e2d337] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Cobertura Nacional
           </span>
@@ -543,7 +543,7 @@ function MCoverage() {
           {MANSIAGO_SELLERS.map((seller, i) => (
             <div
               key={seller.name}
-              className={`relative bg-neutral-50 border border-[#333] p-6 transition-all duration-500 cursor-pointer group ${
+              className={`relative bg-neutral-50 border border-[#333] p-6 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 cursor-pointer group ${
                 activeZone === i ? "border-[#e2d337] shadow-lg shadow-[#e2d337]/10" : "hover:border-[#e2d337]/40"
               } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -589,12 +589,12 @@ function MCoverage() {
         </div>
 
         {/* CTA */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`mt-12 text-center transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-500 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <a
             href={MANSIAGO_INFO.whatsappLink}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#e2d337] text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:bg-[#efc715] transition-all hover:shadow-xl hover:shadow-[#e2d337]/25"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-[#e2d337] text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:bg-[#efc715] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] hover:shadow-xl hover:shadow-[#e2d337]/25"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <Truck size={18} />
@@ -616,7 +616,7 @@ function MBrands() {
 
   return (
     <section className="bg-neutral-50 py-16 overflow-hidden border-y border-[#333]">
-      <div ref={ref} className={`transition-all duration-700 ${visible ? "opacity-100" : "opacity-0"}`}>
+      <div ref={ref} className={`transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100" : "opacity-0"}`}>
         <div className="text-center mb-10">
           <h2 className="font-black text-[#1d1d1b] uppercase tracking-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Marcas que <span className="text-[#e2d337]">Distribuimos</span>
@@ -632,7 +632,7 @@ function MBrands() {
               {allBrands.map((brand, i) => (
                 <div
                   key={`${brand}-${i}`}
-                  className="flex-shrink-0 px-8 py-4 bg-white border border-[#333] hover:border-[#e2d337]/40 transition-all group"
+                  className="flex-shrink-0 px-8 py-4 bg-white border border-[#333] hover:border-[#e2d337]/40 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group"
                 >
                   <span className="text-gray-400 group-hover:text-[#e2d337] font-bold text-lg tracking-wider uppercase transition-colors" style={{ fontFamily: "'Montserrat', sans-serif" }}>
                     {brand}
@@ -661,7 +661,7 @@ function MCta() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#e2d337]/10 to-transparent" />
       </div>
 
-      <div ref={ref} className={`relative z-10 max-w-4xl mx-auto px-4 text-center transition-all duration-700 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
+      <div ref={ref} className={`relative z-10 max-w-4xl mx-auto px-4 text-center transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100 scale-100" : "opacity-0 scale-95"}`}>
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-[#e2d337]/10 border border-[#e2d337]/30 mb-6">
           <Star size={14} className="text-[#e2d337]" />
           <span className="text-[#e2d337] text-xs font-bold uppercase tracking-[0.2em]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
@@ -679,7 +679,7 @@ function MCta() {
             href={MANSIAGO_INFO.whatsappLink}
             target="_blank"
             rel="noopener"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#e2d337] text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:bg-[#efc715] transition-all hover:shadow-xl hover:shadow-[#e2d337]/25"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#e2d337] text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:bg-[#efc715] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] hover:shadow-xl hover:shadow-[#e2d337]/25"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             Quiero ser Distribuidor
@@ -687,7 +687,7 @@ function MCta() {
           </a>
           <a
             href={`tel:${MANSIAGO_INFO.phone}`}
-            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/20 text-[#1d1d1b] font-bold uppercase tracking-wider text-sm hover:border-[#e2d337] hover:text-[#e2d337] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height]"
             style={{ fontFamily: "'Montserrat', sans-serif" }}
           >
             <Phone size={16} />
@@ -708,7 +708,7 @@ function MContact() {
   return (
     <section id="m-contacto" className="bg-[#fef8de] py-20 lg:py-28" style={{ fontFamily: "'Poppins', sans-serif" }}>
       <div ref={ref} className="max-w-7xl mx-auto px-4">
-        <div className={`text-center mb-14 transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
+        <div className={`text-center mb-14 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}>
           <span className="inline-block px-4 py-1 bg-[#e2d337]/20 text-[#bc8827] text-xs font-bold uppercase tracking-[0.2em] mb-4" style={{ fontFamily: "'Montserrat', sans-serif" }}>
             Contáctanos
           </span>
@@ -719,7 +719,7 @@ function MContact() {
 
         <div className="grid lg:grid-cols-2 gap-10">
           {/* Contact info */}
-          <div className={`space-y-6 transition-all duration-700 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
+          <div className={`space-y-6 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"}`}>
             {[
               { icon: MapPin, label: "Dirección", value: MANSIAGO_INFO.address },
               { icon: Phone, label: "WhatsApp", value: MANSIAGO_INFO.phoneDisplay, link: MANSIAGO_INFO.whatsappLink },
@@ -770,7 +770,7 @@ function MContact() {
           </div>
 
           {/* Map */}
-          <div className={`transition-all duration-700 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
+          <div className={`transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
             <div className="w-full aspect-[4/3] bg-neutral-50 overflow-hidden border-4 border-[#1d1d1b]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.123456789!2d-87.2!3d14.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA0JzQ4LjAiTiA4N8KwMTInMDAuMCJX!5e0!3m2!1ses!2shn!4v1234567890"
@@ -929,7 +929,7 @@ function MScrollTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-neutral-50 border border-[#e2d337]/40 flex items-center justify-center hover:bg-[#e2d337] hover:text-[#1d1d1b] text-[#e2d337] transition-all shadow-lg"
+      className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-neutral-50 border border-[#e2d337]/40 flex items-center justify-center hover:bg-[#e2d337] hover:text-[#1d1d1b] text-[#e2d337] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] shadow-lg"
     >
       <ArrowUp size={20} />
     </button>

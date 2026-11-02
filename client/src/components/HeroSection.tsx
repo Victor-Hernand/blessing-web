@@ -51,7 +51,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
             className="flex items-center gap-3 mb-6"
           >
             <div className="w-12 h-[2px] bg-[#b7212c]" />
@@ -64,7 +64,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 0.4 }}
           >
             <h1 className="text-animate font-bold text-[#1d1d1b] uppercase leading-[0.9] mb-2 text-float text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
               Auto
@@ -80,7 +80,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 0.7 }}
             className="text-animate text-animate-delay-2 text-amber-700 text-xl sm:text-2xl lg:text-[1.65rem] mt-5 mb-3 italic"
             style={{ fontFamily: "var(--font-accent)" }}
           >
@@ -91,7 +91,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 0.9 }}
             className="text-animate text-animate-delay-3 text-neutral-700 text-base sm:text-lg max-w-lg leading-relaxed mb-8"
           >
             Más de 10 años brindando autopartes de calidad a precios justos. Amplio inventario para todas las marcas y modelos de vehículos.
@@ -101,14 +101,14 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.1 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 1.1 }}
             className="flex flex-col sm:flex-row gap-3 mb-10"
           >
             <a
               href={COMPANY.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg shadow-[#b7212c]/30 hover:shadow-[#b7212c]/40 hover:translate-y-[-2px]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-sm font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:shadow-[#b7212c]/40 hover:translate-y-[-2px] active:scale-[0.97]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Phone className="w-4 h-4" />
@@ -117,7 +117,7 @@ export default function HeroSection() {
             </a>
             <a
               href="#categorias"
-              className="inline-flex items-center justify-center gap-2 border-2 border-neutral-200 hover:border-[#b7212c] text-[#1d1d1b] hover:text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:bg-[#b7212c]/5 hover:translate-y-[-2px]"
+              className="inline-flex items-center justify-center gap-2 border-2 border-neutral-200 hover:border-[#b7212c] text-[#1d1d1b] hover:text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:bg-[#b7212c]/5 hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Ver Productos
@@ -128,13 +128,13 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.3 }}
+            transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 1.3 }}
             className="flex flex-wrap gap-3"
           >
             {features.map((f, i) => (
               <div
                 key={i}
-                className="flex items-center gap-2 bg-[#1d1d1b]/70 backdrop-blur-sm border border-neutral-200 px-4 py-2.5 text-xs text-[#1d1d1b] hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-all duration-300 shadow-sm"
+                className="flex items-center gap-2 bg-[#1d1d1b]/70 backdrop-blur-sm border border-neutral-200 px-4 py-2.5 text-xs text-[#1d1d1b] hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
               >
                 <f.icon className="w-3.5 h-3.5 text-[#b7212c]" />
                 <span className="uppercase tracking-wider font-medium" style={{ fontFamily: "var(--font-heading)" }}>{f.text}</span>
@@ -151,12 +151,12 @@ export default function HeroSection() {
         transition={{ delay: 2 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-neutral-500 text-[10px] uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>Scroll</span>
+        <span className="text-neutral-400 text-[10px] uppercase tracking-[0.3em]" style={{ fontFamily: "var(--font-heading)" }}>Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
         >
-          <ChevronDown className="w-5 h-5 text-neutral-500" />
+          <ChevronDown className="w-5 h-5 text-neutral-400" />
         </motion.div>
       </motion.div>
 

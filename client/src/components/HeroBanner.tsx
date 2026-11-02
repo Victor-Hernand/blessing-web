@@ -1,5 +1,5 @@
 import { ChevronRight, MapPin, ShieldCheck, Truck, Tag, Headphones } from "lucide-react";
-import { whatsappLink } from "@/lib/constants";
+import { IMAGES, whatsappLink } from "@/lib/constants";
 import { useState } from "react";
 import VehicleSelector, { SELECCION_VACIA, type Seleccion } from "@/components/VehicleSelector";
 
@@ -22,48 +22,74 @@ export default function HeroBanner() {
     : `Hola, quisiera cotizar ${vehiculo.tipo ? "" : "un "}${repuesto} para mi vehículo.`;
 
   return (
-    <section id="inicio" className="bg-white">
-      <div className="container pt-10 lg:pt-14 text-center">
-        <h1
-          className="section-title text-[#1d1d1b] leading-tight text-[48px] sm:text-[60px] lg:text-[76px]"
-          style={{ fontFamily: "var(--font-heading)" }}
-        >
-          Auto Repuestos <span className="text-gradient-red">Blessing</span>
-        </h1>
-        <p className="text-neutral-500 text-lg sm:text-xl lg:text-2xl font-semibold tracking-wide mt-2">
-          La calidad, no es cara
-        </p>
+    <section id="inicio" className="bg-blueprint">
+      <div>
+        {/* Foto de punta a punta con el titular encima, en el lado derecho */}
+        <div className="relative w-full h-[68vh] min-h-[460px] overflow-hidden border-y border-white/10 bg-[#171a1e]">
+          {/* Sin recorte: se muestra la foto completa, con todo el equipo */}
+          <img
+            src={IMAGES.heroPremium}
+            alt="Equipo de Auto Repuestos Blessing frente a su tienda"
+            fetchPriority="high"
+            className="img-reveal absolute inset-0 w-full h-full object-cover object-[50%_70%]"
+          />
+          <div className="absolute inset-0 flex flex-col justify-center items-start text-left p-6 sm:p-10 lg:p-14">
+            <h1
+              className="section-title text-white leading-[0.95] text-[44px] sm:text-[60px] lg:text-[80px] [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              La calidad <br />
+              no es <span className="text-[#b7212c]">cara.</span>
+            </h1>
+
+            <p className="text-neutral-200 text-sm sm:text-base lg:text-lg leading-relaxed mt-4 lg:mt-6 max-w-md [text-shadow:0_1px_12px_rgba(0,0,0,0.75)]">
+              Repuestos originales y alternos para tu vehículo con variedad, precios accesibles y entrega el mismo día en Tegucigalpa.
+            </p>
+          </div>
+
+          <span
+            className="absolute bottom-4 left-4 bg-[#b7212c] text-white text-xs font-semibold uppercase tracking-wider px-3 py-1.5"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Entrega hoy
+          </span>
+        </div>
+
       </div>
 
-      <VehicleSelector
-        value={vehiculo}
-        onChange={setVehiculo}
-        cotizarHref={whatsappLink(mensajeCotizar)}
-      />
+      {/* Buscador de punta a punta de la pantalla */}
+      <div>
+        <VehicleSelector
+          value={vehiculo}
+          onChange={setVehiculo}
+          cotizarHref={whatsappLink(mensajeCotizar)}
+        />
+      </div>
 
-      <div className="container pt-8">
-        <ul className="grid grid-cols-2 lg:grid-cols-4 gap-x-3 gap-y-2.5">
+      {/* Barra de confianza */}
+      <div className="bg-[#171a1e] border-y border-white/10">
+        <ul className="container grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-5 py-6">
           {VENTAJAS.map(v => (
-            <li key={v.label} className="flex items-center gap-2">
-              <span className="w-7 h-7 shrink-0 bg-[#b7212c] rounded-full flex items-center justify-center">
-                <v.icon className="w-3.5 h-3.5 text-white" />
+            <li key={v.label} className="flex items-center gap-3">
+              <span className="w-10 h-10 shrink-0 border border-[#b7212c]/60 flex items-center justify-center">
+                <v.icon className="w-[18px] h-[18px] text-[#b7212c]" />
               </span>
-              <span className="text-[#1d1d1b] text-[11px] font-semibold uppercase leading-tight">
+              <span className="text-white text-sm font-semibold leading-tight">
                 {v.label}
               </span>
             </li>
           ))}
         </ul>
-        <a
-          href="#ubicacion"
-          className="flex items-center gap-2 mt-5 bg-[#b7212c] hover:bg-[#b7212c] text-white text-xs font-semibold px-3 py-2.5 transition-colors"
-        >
-          <MapPin className="w-4 h-4 shrink-0" />
-          <span className="flex-1">Col. Kennedy, frente al Instituto Técnico Honduras</span>
-          <ChevronRight className="w-4 h-4 shrink-0" />
-        </a>
       </div>
 
+      <a
+        href="#ubicacion"
+        className="flex items-center justify-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white text-xs sm:text-sm font-semibold px-4 py-3 transition-colors active:scale-[0.97]"
+      >
+        <MapPin className="w-4 h-4 shrink-0" />
+        <span>Col. Kennedy, frente al Instituto Técnico Honduras</span>
+        <ChevronRight className="w-4 h-4 shrink-0" />
+      </a>
     </section>
   );
 }

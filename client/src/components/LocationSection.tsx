@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function LocationSection() {
   return (
-    <section id="ubicacion" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-white">
+    <section id="ubicacion" className="pt-10 lg:pt-12 pb-12 lg:pb-16 bg-[#0d0f12]">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -19,7 +19,7 @@ export default function LocationSection() {
             <span className="section-label">Encuéntranos</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-[#1d1d1b] text-[42px]">
+          <h2 className="section-title text-white text-[42px]">
             Nuestra <span className="text-gradient-red">Ubicación</span>
           </h2>
         </motion.div>
@@ -32,7 +32,7 @@ export default function LocationSection() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-white border border-neutral-200 p-2 shadow-lg shadow-black/5">
+            <div className="bg-[#171a1e] border border-white/10 p-2">
               <iframe
                 src={COMPANY.mapsEmbedUrl}
                 width="100%"
@@ -52,7 +52,7 @@ export default function LocationSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#b7212c] p-6 lg:p-8 flex flex-col justify-between shadow-2xl shadow-[#b7212c]/20"
+            className="bg-[#b7212c] p-6 lg:p-8 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center gap-3 mb-5">
@@ -92,7 +92,7 @@ export default function LocationSection() {
               href={COMPANY.mapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white hover:bg-neutral-100 text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-all text-sm shadow-lg shadow-black/20 hover:translate-y-[-2px]"
+              className="flex items-center justify-center gap-2 bg-white hover:bg-neutral-100 text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Navigation className="w-4 h-4" />

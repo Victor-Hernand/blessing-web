@@ -14,7 +14,7 @@ export default function WhatsAppButton() {
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="bg-white border border-neutral-200 shadow-xl p-4 max-w-[260px] relative"
+            className="bg-white border border-neutral-200 p-4 max-w-[260px] relative"
           >
             <button
               onClick={() => setShowTooltip(false)}
@@ -43,7 +43,7 @@ export default function WhatsAppButton() {
       </AnimatePresence>
 
       <motion.button
-        initial={{ scale: 0 }}
+        initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1, type: "spring", stiffness: 200 }}
         onClick={() => {
@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
             setShowTooltip(true);
           }
         }}
-        className="w-14 h-14 bg-green-600 hover:bg-green-500 text-white flex items-center justify-center shadow-lg shadow-green-600/30 pulse-glow transition-colors relative"
+        className="w-14 h-14 bg-green-600 hover:bg-green-500 text-white flex items-center justify-center pulse-glow transition-colors relative"
         aria-label="WhatsApp"
       >
         <svg className="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
