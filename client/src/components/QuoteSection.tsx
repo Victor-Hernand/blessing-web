@@ -4,12 +4,15 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { Link } from "wouter";
 import { CLIENT_TYPES, COMPANY, whatsappLink } from "@/lib/constants";
 
 const inputBase =
-  "w-full bg-white border border-neutral-200 px-4 py-3 text-sm text-[#1d1d1b] placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
+  "w-full bg-[#171a1e] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 const labelBase =
-  "block text-[11px] font-semibold text-neutral-500 uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
+// Debe coincidir con FECHA_VIGENTE de pages/Privacidad.tsx.
+const FECHA_POLITICA = "30/10/2026";
 
 export default function QuoteSection() {
   const [nombre, setNombre] = useState("");
@@ -18,6 +21,7 @@ export default function QuoteSection() {
   const [telefono, setTelefono] = useState("");
   const [correo, setCorreo] = useState("");
   const [mensaje, setMensaje] = useState("");
+  const [aceptaPrivacidad, setAceptaPrivacidad] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,6 +40,7 @@ export default function QuoteSection() {
       "*Productos / mensaje:*",
       mensaje,
       "",
+      `*Acepta política de privacidad:* sí (versión ${FECHA_POLITICA})`,
       `_Enviado desde ${COMPANY.website}_`,
     ];
 
@@ -44,7 +49,7 @@ export default function QuoteSection() {
   };
 
   return (
-    <section id="cotizar" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-neutral-50">
+    <section id="cotizar" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-[#0d0f12]">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -57,10 +62,10 @@ export default function QuoteSection() {
             <span className="section-label">Compras por volumen</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-[#1d1d1b] text-[42px]">
+          <h2 className="section-title text-white text-[42px]">
             Solicitar <span className="text-gradient-red">cotización mayorista</span>
           </h2>
-          <p className="text-neutral-700 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-neutral-200 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
             Complete el formulario y uno de nuestros asesores comerciales se pondrá en contacto
             con usted.
           </p>
@@ -71,7 +76,7 @@ export default function QuoteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="max-w-3xl mx-auto bg-white border border-neutral-200 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
+          className="max-w-3xl mx-auto bg-[#171a1e] border border-white/10 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
 
@@ -117,13 +122,13 @@ export default function QuoteSection() {
                 required
                 value={tipo}
                 onChange={e => setTipo(e.target.value)}
-                className={`${inputBase} ${tipo ? "" : "text-neutral-500"}`}
+                className={`${inputBase} ${tipo ? "" : "text-neutral-400"}`}
               >
                 <option value="" disabled>
                   Seleccione una opción
                 </option>
                 {CLIENT_TYPES.map(t => (
-                  <option key={t} value={t} className="text-[#1d1d1b] bg-white">
+                  <option key={t} value={t} className="text-white bg-[#171a1e]">
                     {t}
                   </option>
                 ))}
@@ -177,16 +182,35 @@ export default function QuoteSection() {
               />
             </div>
 
+            <label htmlFor="q-privacidad" className="flex items-start gap-3 text-sm text-neutral-200 leading-relaxed cursor-pointer">
+              <input
+                id="q-privacidad"
+                type="checkbox"
+                required
+                checked={aceptaPrivacidad}
+                onChange={e => setAceptaPrivacidad(e.target.checked)}
+                className="mt-1 h-4 w-4 accent-[#b7212c] shrink-0"
+              />
+              <span>
+                He leído y acepto la{" "}
+                <Link href="/privacidad" className="text-[#b7212c] underline underline-offset-2 hover:text-[#8f1a22]">
+                  Política de privacidad y uso de datos
+                </Link>
+                , y autorizo el tratamiento de mis datos personales para atender esta solicitud. <span className="text-[#b7212c]">*</span>
+              </span>
+            </label>
+
             <button
               type="submit"
-              className="w-full flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-colors"
+              disabled={!aceptaPrivacidad}
+              className="w-full flex items-center justify-center gap-2.5 bg-[#b7212c] hover:bg-[#b7212c] text-white px-8 py-4 text-xs font-bold uppercase tracking-wider transition-colors disabled:opacity-40 disabled:cursor-not-allowed active:scale-[0.97]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Send className="w-4 h-4" />
               Enviar solicitud de cotización
             </button>
 
-            <p className="text-[11px] text-neutral-500 text-center">
+            <p className="text-[11px] text-neutral-400 text-center">
               Al enviar, será redirigido a WhatsApp con su mensaje ya cargado.
             </p>
           </form>

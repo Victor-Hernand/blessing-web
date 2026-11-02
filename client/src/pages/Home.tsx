@@ -1,6 +1,6 @@
 /* ============================================================
- * DESIGN: Industrial Automotriz Moderno
- * Rojo carmesí + Negro carbón + Blanco humo + Amarillo dorado
+ * DESIGN: Industrial Automotriz Moderno — tema oscuro de taller
+ * Rojo #b7212c + Carbón #0d0f12 / #171a1e + Gris claro #f4f5f7
  * Oswald (headings) + Roboto (body) + Playfair Display (slogan)
  * ============================================================ */
 import Header from "@/components/Header";
@@ -16,7 +16,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[#0d0f12] text-[#f4f5f7]">
       <Header />
       <main>
         <HeroBanner />

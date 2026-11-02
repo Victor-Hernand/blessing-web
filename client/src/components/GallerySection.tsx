@@ -1,7 +1,7 @@
 /* DESIGN: Industrial Automotriz Premium — Galería de fotos reales */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Camera } from "lucide-react";
+import { X, Camera, ChevronLeft, ChevronRight } from "lucide-react";
 import { IMAGES } from "@/lib/constants";
 
 const galleryItems = [
@@ -52,8 +52,25 @@ const galleryItems = [
 export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
 
+  /** Avanza o retrocede, dando la vuelta en los extremos. */
+  const step = (delta: number) =>
+    setLightbox((current) =>
+      current === null ? current : (current + delta + galleryItems.length) % galleryItems.length,
+    );
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [lightbox]);
+
   return (
-    <section id="galeria" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-neutral-50 relative overflow-hidden">
+    <section id="galeria" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-[#0d0f12] relative overflow-hidden">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -67,10 +84,10 @@ export default function GallerySection() {
             <span className="section-label">Nuestro Equipo</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-[#1d1d1b] text-[42px]">
+          <h2 className="section-title text-white text-[42px]">
             Conoce <span className="text-gradient-red">Blessing</span>
           </h2>
-          <p className="text-neutral-500 text-base max-w-2xl mx-auto mt-4">
+          <p className="text-neutral-400 text-base max-w-2xl mx-auto mt-4">
             Un equipo comprometido con brindarte la mejor experiencia en autopartes. Conoce a las personas detrás de nuestro servicio.
           </p>
         </motion.div>
@@ -83,7 +100,7 @@ export default function GallerySection() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
+              transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.08 }}
               className={`${item.span} group relative overflow-hidden cursor-pointer`}
               onClick={() => setLightbox(i)}
             >
@@ -91,10 +108,10 @@ export default function GallerySection() {
                 <img
                   src={item.src}
                   alt={item.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-400 group-hover:scale-110"
                 />
                 {/* Overlay on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/80 via-[#1d1d1b]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1d1d1b]/80 via-[#1d1d1b]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 {/* Always visible bottom gradient */}
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1d1d1b]/60 to-transparent" />
                 {/* Caption */}
@@ -108,7 +125,7 @@ export default function GallerySection() {
                   <Camera className="w-4 h-4 text-white" />
                 </div>
                 {/* Red accent line */}
-                <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />
               </div>
             </motion.div>
           ))}
@@ -127,9 +144,24 @@ export default function GallerySection() {
           >
             <button
               onClick={() => setLightbox(null)}
+              aria-label="Cerrar"
               className="absolute top-4 right-4 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(-1); }}
+              aria-label="Foto anterior"
+              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#b7212c] transition-colors z-10"
+            >
+              <ChevronLeft className="w-7 h-7" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(1); }}
+              aria-label="Foto siguiente"
+              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#b7212c] transition-colors z-10"
+            >
+              <ChevronRight className="w-7 h-7" />
             </button>
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -138,16 +170,26 @@ export default function GallerySection() {
               className="max-w-5xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={galleryItems[lightbox].src}
-                alt={galleryItems[lightbox].alt}
-                className="w-full max-h-[80vh] object-contain"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={lightbox}
+                  src={galleryItems[lightbox].src}
+                  alt={galleryItems[lightbox].alt}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.25 }}
+                  className="w-full max-h-[80vh] object-contain"
+                />
+              </AnimatePresence>
               <div className="mt-4 text-center">
                 <h3 className="text-white font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {galleryItems[lightbox].caption}
                 </h3>
                 <p className="text-white/70 text-sm mt-1">{galleryItems[lightbox].desc}</p>
+                <p className="text-[#b7212c] text-xs font-bold tracking-widest mt-3">
+                  {lightbox + 1} / {galleryItems.length}
+                </p>
               </div>
             </motion.div>
           </motion.div>

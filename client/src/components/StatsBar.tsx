@@ -14,11 +14,11 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
       transition={{ delay: index * 0.1 }}
       className="text-center px-4 py-8 lg:py-10 relative group"
     >
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#b7212c]/30 group-hover:w-16 group-hover:bg-[#b7212c] transition-all duration-500" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#b7212c]/30 group-hover:w-16 group-hover:bg-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />
       <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#b7212c] mb-2" style={{ fontFamily: "var(--font-heading)" }}>
         {count}<span className="text-[#b7212c]">{suffix}</span>
       </div>
-      <div className="text-neutral-500 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-neutral-400 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
         {label}
       </div>
     </motion.div>

@@ -8,12 +8,11 @@ export default function PromoBanner() {
     <section className="relative overflow-hidden">
       {/* Background image - real delivery team photo */}
       <div className="absolute inset-0">
-        <img src={IMAGES.promoFrenos} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#b7212c]/92 via-[#b7212c]/88 to-[#b7212c]/80" />
+        <img src={IMAGES.realDeliverySingle} alt="" className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/90 via-[#0d0f12]/65 to-[#0d0f12]/25" />
       </div>
 
       {/* Top accent */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
 
       <div className="container relative z-10 py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -47,7 +46,7 @@ export default function PromoBanner() {
               href={COMPANY.whatsapp}
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-white text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:translate-y-[-2px]"
+              className="group inline-flex items-center justify-center gap-2.5 bg-white text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-100 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Solicitar Cotización
@@ -58,7 +57,6 @@ export default function PromoBanner() {
       </div>
 
       {/* Bottom accent */}
-      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
     </section>
   );
 }

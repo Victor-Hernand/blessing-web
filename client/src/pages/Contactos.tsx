@@ -7,7 +7,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Contactos() {
   return (
-    <div className="min-h-screen flex flex-col bg-white">
+    <div className="min-h-screen flex flex-col bg-[#171a1e]">
       <Header />
       <main>
         <ContactSection />

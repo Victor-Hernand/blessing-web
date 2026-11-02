@@ -5,7 +5,7 @@
  * ============================================================ */
 
 export const IMAGES = {
-  heroPremium: "/images/hero-blessing.jpg",
+  heroPremium: "/images/real-team-store.jpg",
   bannerLocal: "/images/banner-local.jpg",
   // Category images (real store photos)
   categoryEngine: "/images/category-motor.jpg",
