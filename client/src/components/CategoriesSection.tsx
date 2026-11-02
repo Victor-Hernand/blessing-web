@@ -52,7 +52,12 @@ export default function CategoriesSection() {
       <div className="container">
         {/* Presentación de la empresa, antes del catálogo */}
         <div className="mb-12 lg:mb-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
           <h2 className="section-title text-white text-[28px] lg:text-[36px] mb-4">
             Conoce nuestra empresa
           </h2>
@@ -61,14 +66,21 @@ export default function CategoriesSection() {
           </p>
           <a
             href="/nosotros"
-            className="inline-flex items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
+            className="group inline-flex items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             Conocer más sobre nosotros
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
-          </div>
-          <CompanyCarousel />
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+          >
+            <CompanyCarousel />
+          </motion.div>
         </div>
 
         {/* Header */}

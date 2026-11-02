@@ -166,7 +166,7 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
           href={cotizarHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="group w-full inline-flex items-center justify-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 active:scale-[0.97]"
+          className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 sm:px-10 py-3 text-sm font-bold uppercase tracking-wider transition-colors duration-300 active:scale-[0.97]"
         >
           <Phone className="w-4 h-4" />
           Cotizar por WhatsApp

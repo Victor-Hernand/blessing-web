@@ -1,7 +1,7 @@
 /* DESIGN: Industrial Automotriz Premium — Galería de fotos reales */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Camera } from "lucide-react";
+import { X, Camera, ChevronLeft, ChevronRight } from "lucide-react";
 import { IMAGES } from "@/lib/constants";
 
 const galleryItems = [
@@ -51,6 +51,23 @@ const galleryItems = [
 
 export default function GallerySection() {
   const [lightbox, setLightbox] = useState<number | null>(null);
+
+  /** Avanza o retrocede, dando la vuelta en los extremos. */
+  const step = (delta: number) =>
+    setLightbox((current) =>
+      current === null ? current : (current + delta + galleryItems.length) % galleryItems.length,
+    );
+
+  useEffect(() => {
+    if (lightbox === null) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+      if (e.key === "ArrowRight") step(1);
+      if (e.key === "ArrowLeft") step(-1);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [lightbox]);
 
   return (
     <section id="galeria" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-[#0d0f12] relative overflow-hidden">
@@ -127,9 +144,24 @@ export default function GallerySection() {
           >
             <button
               onClick={() => setLightbox(null)}
+              aria-label="Cerrar"
               className="absolute top-4 right-4 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#1d1d1b]/20 transition-colors z-10"
             >
               <X className="w-6 h-6" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(-1); }}
+              aria-label="Foto anterior"
+              className="absolute left-2 lg:left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#b7212c] transition-colors z-10"
+            >
+              <ChevronLeft className="w-7 h-7" />
+            </button>
+            <button
+              onClick={(e) => { e.stopPropagation(); step(1); }}
+              aria-label="Foto siguiente"
+              className="absolute right-2 lg:right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#1d1d1b]/10 flex items-center justify-center text-white hover:bg-[#b7212c] transition-colors z-10"
+            >
+              <ChevronRight className="w-7 h-7" />
             </button>
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
@@ -138,16 +170,26 @@ export default function GallerySection() {
               className="max-w-5xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={galleryItems[lightbox].src}
-                alt={galleryItems[lightbox].alt}
-                className="w-full max-h-[80vh] object-contain"
-              />
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={lightbox}
+                  src={galleryItems[lightbox].src}
+                  alt={galleryItems[lightbox].alt}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.25 }}
+                  className="w-full max-h-[80vh] object-contain"
+                />
+              </AnimatePresence>
               <div className="mt-4 text-center">
                 <h3 className="text-white font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {galleryItems[lightbox].caption}
                 </h3>
                 <p className="text-white/70 text-sm mt-1">{galleryItems[lightbox].desc}</p>
+                <p className="text-[#b7212c] text-xs font-bold tracking-widest mt-3">
+                  {lightbox + 1} / {galleryItems.length}
+                </p>
               </div>
             </motion.div>
           </motion.div>

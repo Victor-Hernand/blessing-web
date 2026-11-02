@@ -1,6 +1,7 @@
 import { ChevronRight, MapPin, ShieldCheck, Truck, Tag, Headphones } from "lucide-react";
 import { IMAGES, whatsappLink } from "@/lib/constants";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import VehicleSelector, { SELECCION_VACIA, type Seleccion } from "@/components/VehicleSelector";
 
 const VENTAJAS = [
@@ -68,16 +69,23 @@ export default function HeroBanner() {
 
       {/* Barra de confianza */}
       <div className="bg-[#171a1e] border-y border-white/10">
-        <ul className="container grid grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-5 py-6">
-          {VENTAJAS.map(v => (
-            <li key={v.label} className="flex items-center gap-3">
-              <span className="w-10 h-10 shrink-0 border border-[#b7212c]/60 flex items-center justify-center">
-                <v.icon className="w-[18px] h-[18px] text-[#b7212c]" />
+        <ul className="container grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6 py-4 sm:py-5">
+          {VENTAJAS.map((v, i) => (
+            <motion.li
+              key={v.label}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: "easeOut" }}
+              className="group flex items-center gap-4"
+            >
+              <span className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 border border-[#b7212c]/60 flex items-center justify-center transition-all duration-300 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] group-hover:-translate-y-1">
+                <v.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#b7212c] group-hover:text-white transition-colors duration-300" />
               </span>
-              <span className="text-white text-sm font-semibold leading-tight">
+              <span className="text-white text-base sm:text-lg font-semibold leading-tight transition-colors duration-300 group-hover:text-[#b7212c]">
                 {v.label}
               </span>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </div>
