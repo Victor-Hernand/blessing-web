@@ -7,7 +7,7 @@ const icons = { Gem, Package, Users } as const;
 
 export default function ValuePropsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-[#0d0f12] relative overflow-hidden">
+    <section className="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-[#0d0f12] relative overflow-hidden">
 
       <div className="container relative z-10">
         <motion.div

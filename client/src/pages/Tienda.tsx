@@ -138,7 +138,7 @@ export default function Tienda() {
       <main>
         {/* Cabecera de la tienda */}
         <section className="bg-blueprint border-b border-white/10">
-          <div className="container py-12 lg:py-16">
+          <div className="container pt-4 lg:pt-6 pb-6 lg:pb-8">
             <nav aria-label="Ruta" className="flex items-center gap-2 text-xs text-neutral-400 uppercase tracking-wider mb-6">
               <a href="/" className="hover:text-white transition-colors">Inicio</a>
               <ChevronRight className="w-3 h-3" />

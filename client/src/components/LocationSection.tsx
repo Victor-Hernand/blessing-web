@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function LocationSection() {
   return (
-    <section id="ubicacion" className="pt-10 lg:pt-12 pb-12 lg:pb-16 bg-[#0d0f12] overflow-x-clip">
+    <section id="ubicacion" className="pt-4 lg:pt-6 pb-12 lg:pb-16 bg-[#0d0f12] overflow-x-clip">
       <div className="container">
         {/* Header */}
         <motion.div

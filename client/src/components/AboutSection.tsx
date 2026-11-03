@@ -20,7 +20,7 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="py-20 lg:py-28 bg-[#171a1e] relative overflow-hidden">
+    <section id="nosotros" className="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-[#171a1e] relative overflow-hidden">
       {/* Decorative background elements */}
 
       <div className="container relative z-10">
