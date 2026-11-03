@@ -11,7 +11,7 @@ const TARJETAS = [
 
 export default function HelpSection() {
   return (
-    <section className="py-14 lg:py-20 bg-[#0d0f12] border-t border-white/10" aria-labelledby="help-t">
+    <section className="pt-8 lg:pt-10 pb-14 lg:pb-20 bg-[#0d0f12] border-t border-white/10" aria-labelledby="help-t">
       <div className="container">
         <div className="mb-10 lg:mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>

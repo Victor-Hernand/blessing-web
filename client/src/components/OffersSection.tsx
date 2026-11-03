@@ -26,10 +26,10 @@ const TICKETS = [
   {
     etiqueta: "Liquidación",
     titulo: "Liquidación",
-    detalle: "Accesorios seleccionados",
-    imagen: "/images/oferta-cut-accesorios.webp",
-    mensaje: "Hola, me interesa la oferta: Liquidación — Accesorios seleccionados.",
-    franja: "bg-[#b7212c] text-white",
+    detalle: "El mejor refrigerante para tu vehículo. Últimas unidades.",
+    imagen: "/images/oferta-liquidacion.webp",
+    mensaje: "Hola, me interesa la oferta: Liquidación — El mejor refrigerante para tu vehículo. Últimas unidades.",
+    franja: "bg-[#0d0f12] text-white",
   },
 ];
 

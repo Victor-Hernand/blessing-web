@@ -148,18 +148,31 @@ export default function Tienda() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-[2px] bg-[#b7212c]" />
-                  <span className="section-label">Tienda en línea</span>
+                  <span className="section-label">Catálogo de repuestos</span>
                 </div>
                 <h1 className="section-title text-white text-[44px] lg:text-[60px] leading-[0.95]">
                   Repuestos para <span className="text-[#b7212c]">tu vehículo.</span>
                 </h1>
+                <dl className="flex flex-wrap gap-x-8 gap-y-3 mt-6">
+                  {[
+                    { n: PRODUCTOS_TIENDA.length, l: "Repuestos" },
+                    { n: MARCAS.length, l: "Marcas" },
+                    { n: CATEGORIAS.length, l: "Categorías" },
+                  ].map((d) => (
+                    <div key={d.l} className="flex items-baseline gap-2">
+                      <dt className="sr-only">{d.l}</dt>
+                      <dd className="text-white text-3xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>{d.n}</dd>
+                      <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">{d.l}</span>
+                    </div>
+                  ))}
+                </dl>
               </div>
-              <p className="text-neutral-400 max-w-md text-sm leading-relaxed">
+              <p className="text-neutral-300 max-w-sm text-sm leading-relaxed border-l-2 border-[#b7212c] pl-4">
                 Fotos de referencia de nuestra tienda. Precio y existencia se confirman por WhatsApp antes de facturar.
               </p>
             </div>
 
-            <div className="mt-10">
+            <div className="mt-8">
               <label htmlFor="buscar-tienda" className="sr-only">Buscar repuesto</label>
               <div className="relative max-w-xl">
                 <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />

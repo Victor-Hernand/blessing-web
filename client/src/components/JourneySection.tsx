@@ -113,18 +113,22 @@ export default function JourneySection() {
           </div>
 
           {/* Foto del capítulo activo */}
-          <div className="relative aspect-[4/3] bg-[#171a1e] border border-white/10 overflow-hidden">
-            <AnimatePresence mode="wait">
+          <div className="relative aspect-[4/3] bg-[#171a1e] border-2 border-white/25 ring-1 ring-[#b7212c]/60 ring-offset-4 ring-offset-[#0d0f12] overflow-hidden isolate">
+            {/* Las fotos se cruzan (fundido) y cada una crece lentamente mientras está visible */}
+            <AnimatePresence initial={false}>
               <motion.img
                 key={cap.imagen}
                 src={cap.imagen}
                 alt={cap.alt}
                 loading="lazy"
-                initial={{ opacity: 0, scale: 1.03 }}
-                animate={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, scale: 1 }}
+                animate={{ opacity: 1, scale: 1.08 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
-                className="absolute inset-0 w-full h-full object-cover"
+                transition={{
+                  opacity: { duration: 0.9, ease: [0.23, 1, 0.32, 1] },
+                  scale: { duration: 8, ease: "linear" },
+                }}
+                className="absolute inset-0 w-full h-full object-cover [backface-visibility:hidden] [transform:translateZ(0)]"
               />
             </AnimatePresence>
             <span

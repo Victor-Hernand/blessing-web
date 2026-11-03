@@ -48,7 +48,7 @@ export default function CategoriesSection() {
   }, [lightbox]);
 
   return (
-    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12]">
+    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12] overflow-x-clip">
       <div className="container">
         {/* Presentación de la empresa, antes del catálogo */}
         <div className="mb-12 lg:mb-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
