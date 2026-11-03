@@ -95,12 +95,21 @@ export default function CategoriesSection() {
             <span className="section-label">Nuestro catálogo</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="section-title text-white text-[42px]">
-              Categorías de <span className="text-gradient-red">Productos</span>
+            <h2 className="font-bold uppercase text-white text-[44px] lg:text-[64px] leading-[0.95]" style={{ fontFamily: "var(--font-heading)" }}>
+              Todo lo que tu<br /><span className="text-[#b7212c]">vehículo necesita.</span>
             </h2>
-            <p className="text-neutral-400 font-bold max-w-md text-base leading-relaxed">
-              Trabajamos con las mejores marcas del mercado automotriz para garantizar calidad y rendimiento en cada producto.
-            </p>
+            <div className="flex flex-col gap-5 max-w-md">
+              <p className="text-neutral-300 text-base leading-relaxed">
+                Diez líneas de repuesto, marcas premium y convencionales, listas para tu vehículo.
+              </p>
+              <a
+                href="/tienda"
+                className="inline-flex w-fit items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Ver toda la tienda <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -187,51 +196,62 @@ export default function CategoriesSection() {
           )
         ) : (
           <>
-            {/* Todas las categorías, en tarjetas del mismo tamaño (2 filas de 5) */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {/* Bento: 10 categorías. 01 Motor ocupa 2x2; 02 Frenos ocupa 2 columnas; 03–04 van debajo; 05–10 en filas de 4. */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 auto-rows-[260px] gap-px bg-white/10 border border-white/10">
               {CATEGORIES.map((cat, i) => {
-                const Icon = iconMap[cat.icon];
+                const clave = normalize(cat.name);
+                const numero = String(i + 1).padStart(2, "0");
+                const span =
+                  i === 0 ? "col-span-2 row-span-2 lg:row-span-2" :
+                  i === 1 ? "col-span-2" :
+                  i >= 8 ? "col-span-2" : "";
                 return (
                   <motion.button
                     key={cat.name}
                     type="button"
                     onClick={() => setLightbox(i)}
                     aria-label={`Ver ${cat.name}`}
-                    /* Entrada: ease-out fuerte, sin partir de escala 0 y con retardo escalonado */
-                    initial={{ opacity: 0, scale: 0.95, y: 12 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1], delay: (i % 5) * 0.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="group relative h-52 w-full text-left overflow-hidden block cursor-zoom-in"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: (i % 4) * 0.08, ease: [0.23, 1, 0.32, 1] }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`group relative w-full h-full overflow-hidden bg-[#0d0f12] text-left cursor-zoom-in ${span}`}
                   >
-                    {cat.image ? (
-                      <>
-                        <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" />
-                        <div className="absolute inset-0 bg-[#0d0f12]/40" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f12]/95 via-[#0d0f12]/50 to-transparent" />
-                      </>
-                    ) : (
-                      /* Sin foto de producto todavía: panel de marca con el ícono de la categoría */
-                      <div className="absolute inset-0 bg-[#b7212c] flex items-center justify-center overflow-hidden">
-                        {Icon && <Icon className="w-24 h-24 text-neutral-400 group-hover:scale-110 group-hover:text-neutral-400 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400" strokeWidth={1.2} />}
-                      </div>
-                    )}
-                    <span className="absolute top-3 right-3 w-8 h-8 bg-[#1d1d1b]/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                      <ZoomIn className="w-3.5 h-3.5 text-white" />
+                    {/* Brillo rojo detrás del producto */}
+                    <span className="absolute inset-0 bg-[radial-gradient(circle_at_65%_35%,rgba(183,33,44,0.35),transparent_60%)] opacity-70 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
+                    {/* Marca de agua con el nombre de la categoría */}
+                    <span
+                      className="absolute bottom-0 left-2 text-white/[0.05] font-bold uppercase leading-none whitespace-nowrap select-none text-[72px] lg:text-[96px]"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                      aria-hidden="true"
+                    >
+                      {cat.name}
                     </span>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                      <div className="flex flex-col sm:flex-row sm:items-center items-start gap-1.5 sm:gap-2.5 mb-1.5 min-w-0">
-                        <div className="w-8 h-8 shrink-0 bg-[#b7212c]/80 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#b7212c] transition-colors duration-300 active:scale-[0.97]">
-                          {Icon && <Icon className="w-4 h-4 text-white" />}
-                        </div>
-                        <h3 className="font-bold text-white uppercase tracking-wide leading-tight min-w-0 text-[17px] sm:text-[19px] xl:text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
-                          {cat.name}
-                        </h3>
-                      </div>
-                      <p className="text-neutral-200 text-[12px] leading-snug line-clamp-2">{cat.description}</p>
+
+                    <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                      <span className="flex items-center gap-2 text-white text-[11px] tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
+                        <span className="w-4 h-px bg-[#b7212c]" />{numero}
+                      </span>
+                      <span className="text-[9px] uppercase tracking-[0.25em] text-neutral-500">Blessing</span>
                     </div>
-                    <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[width] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]" />
+
+                    <img
+                      src={`/images/cut-${clave}.webp`}
+                      alt=""
+                      loading="lazy"
+                      className="absolute left-1/2 top-[14%] -translate-x-1/2 h-[46%] w-auto max-w-[70%] object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.6)] transition-transform duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:-translate-y-2 group-hover:scale-105"
+                    />
+
+                    <div className="absolute bottom-0 left-0 right-0 p-5 z-10 bg-gradient-to-t from-[#0d0f12] via-[#0d0f12]/85 to-transparent">
+                      <h3 className="font-bold text-white uppercase leading-tight text-[24px] lg:text-[28px] mb-1" style={{ fontFamily: "var(--font-heading)" }}>
+                        {cat.name}
+                      </h3>
+                      <p className="text-neutral-300 text-[12px] leading-snug line-clamp-2 mb-2">{cat.description}</p>
+                      <span className="inline-flex items-center gap-1.5 text-[#b7212c] group-hover:text-white text-[11px] font-bold uppercase tracking-wider transition-colors duration-300" style={{ fontFamily: "var(--font-heading)" }}>
+                        Ver repuestos <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                      </span>
+                    </div>
                   </motion.button>
                 );
               })}

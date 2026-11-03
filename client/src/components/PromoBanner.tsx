@@ -1,20 +1,21 @@
 /* DESIGN: Industrial Automotriz Premium — Banner promocional — Tema Claro */
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { COMPANY, IMAGES } from "@/lib/constants";
+import { COMPANY } from "@/lib/constants";
 
 export default function PromoBanner() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden min-h-[460px] lg:min-h-[560px] flex items-center">
       {/* Background image - real delivery team photo */}
       <div className="absolute inset-0">
-        <img src={IMAGES.realDeliverySingle} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/90 via-[#0d0f12]/65 to-[#0d0f12]/25" />
+        <img src="/images/mayoristas-equipo.jpg" alt="Equipo de Blessing frente al mostrador, con aceites y repuestos al fondo" loading="lazy" className="w-full h-full object-cover object-[50%_75%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/95 via-[#0d0f12]/70 to-[#0d0f12]/15" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0f12]/80 to-transparent" />
       </div>
 
       {/* Top accent */}
 
-      <div className="container relative z-10 py-16 lg:py-20">
+      <div className="container relative z-10 py-16 lg:py-20 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}

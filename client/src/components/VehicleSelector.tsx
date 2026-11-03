@@ -31,18 +31,18 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
   return (
     <div className="bg-[#171a1e] border-y border-white/10 px-4 py-6 sm:px-6 lg:px-12 lg:py-8">
       <p
-        className="text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+        className="text-center text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         Encuentra tu repuesto
       </p>
       <h2
-        className="section-title text-white text-[26px] lg:text-[32px]"
+        className="section-title text-center text-white text-[26px] lg:text-[32px]"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         ¡Encuentra los repuestos ideales para tu vehículo!
       </h2>
-      <p className="text-neutral-400 text-sm mt-1">
+      <p className="text-center text-neutral-400 text-sm mt-1">
         Selecciona tu auto y descubre las piezas que necesita para seguir en marcha.
       </p>
 
@@ -161,7 +161,7 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
         </div>
       </div>
 
-      <div className="mt-5">
+      <div className="mt-5 flex justify-center">
         <a
           href={cotizarHref}
           target="_blank"
