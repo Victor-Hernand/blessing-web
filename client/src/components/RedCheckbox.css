@@ -1,0 +1,111 @@
+/* Checkbox animado en rojo de marca — basado en el diseño de Uiverse (variación de @mrhyddenn) */
+
+.rc-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rc-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.rc-box {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  transform: translate3d(0, 0, 0);
+}
+
+/* Halo al pasar el cursor */
+.rc-box::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(183, 33, 44, 0.15);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.rc-box svg {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #6b7280;
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+}
+
+.rc-box svg path {
+  stroke-dasharray: 60;
+  stroke-dashoffset: 0;
+  fill: rgba(183, 33, 44, 0);
+  transition: fill 0.3s ease;
+}
+
+.rc-box svg polyline {
+  stroke: #ffffff;
+  stroke-dasharray: 22;
+  stroke-dashoffset: 66;
+}
+
+.rc-label:hover .rc-box::before {
+  opacity: 1;
+}
+
+.rc-label:hover .rc-box svg {
+  stroke: #b7212c;
+}
+
+/* Marcado: caja roja con check blanco */
+.rc-input:checked + .rc-box svg {
+  stroke: #b7212c;
+}
+
+.rc-input:checked + .rc-box svg path {
+  stroke-dashoffset: 60;
+  fill: #b7212c;
+  transition: all 0.3s linear;
+}
+
+.rc-input:checked + .rc-box svg polyline {
+  stroke-dashoffset: 42;
+  transition: all 0.2s linear;
+  transition-delay: 0.15s;
+}
+
+/* Teclado: anillo visible al enfocar */
+.rc-input:focus-visible + .rc-box {
+  outline: 2px solid #b7212c;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rc-box,
+  .rc-box svg,
+  .rc-box svg path,
+  .rc-box svg polyline,
+  .rc-box::before {
+    transition: none !important;
+  }
+}

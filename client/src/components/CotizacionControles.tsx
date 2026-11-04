@@ -1,8 +1,9 @@
 /* DESIGN: Chips "Mi vehículo" y "Mi lista" del header, con su modal y panel lateral — réplica del index.html */
 import { Fragment, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Car, List, X, Trash2, MessageCircle } from "lucide-react";
+import { Car, List, X, Trash2, MessageCircle, ShoppingCart } from "lucide-react";
 import { whatsappLink } from "@/lib/constants";
+import IconSlideButton from "@/components/IconSlideButton";
 import { MARCAS } from "@/lib/vehiculos";
 import {
   useCotizacion, guardarVehiculo, quitarVehiculo, quitarDeLista, vaciarLista, type Vehiculo,
@@ -167,7 +168,7 @@ export default function CotizacionControles() {
                 {lista.length === 0 ? (
                   <div className="text-center py-10">
                     <p className="text-neutral-300 mb-5">Tu lista está vacía.</p>
-                    <a href="/tienda" onClick={() => setAbierto(null)} className="inline-flex border border-white/20 hover:border-white text-white px-5 py-2.5 text-xs font-semibold uppercase tracking-wider">Ir a la tienda</a>
+                    <IconSlideButton href="/tienda" label="Ir a la tienda" onClick={() => setAbierto(null)} icon={<ShoppingCart />} />
                   </div>
                 ) : (
                   <ul className="divide-y divide-white/10">

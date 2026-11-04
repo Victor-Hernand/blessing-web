@@ -2,6 +2,7 @@ import { ChevronRight, MapPin, Store, Truck, Clock } from "lucide-react";
 import { IMAGES, whatsappLink } from "@/lib/constants";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import TiendaButton from "@/components/TiendaButton";
 import VehicleSelector, { SELECCION_VACIA, type Seleccion } from "@/components/VehicleSelector";
 
 /* Mismas garantías de servicio que la página de referencia */
@@ -56,20 +57,8 @@ export default function HeroBanner() {
             </p>
 
             <div className="flex flex-wrap gap-3 mt-6 lg:mt-8">
-              <a
-                href="#buscador"
-                className="inline-flex items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                Encontrar mi repuesto <ChevronRight className="w-4 h-4" />
-              </a>
-              <a
-                href="/tienda"
-                className="inline-flex items-center gap-2 border border-white/40 hover:border-white text-white px-6 py-3.5 text-xs sm:text-sm font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                Tienda en línea
-              </a>
+              <TiendaButton href="#buscador" label="Encontrar mi repuesto" />
+              <TiendaButton href="/tienda" />
             </div>
           </div>
 

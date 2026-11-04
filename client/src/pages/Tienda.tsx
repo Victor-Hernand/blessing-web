@@ -1,13 +1,17 @@
 /* DESIGN: Tienda en línea — catálogo con fotos reales de la tienda, filtros laterales como en catalogo.html — Tema oscuro de taller */
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, MessageCircle, ChevronRight, SlidersHorizontal, X } from "lucide-react";
+import { MessageCircle, ChevronRight, SlidersHorizontal, X } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { CATEGORIES, whatsappLink } from "@/lib/constants";
+import { CATEGORIES, COMPANY, whatsappLink } from "@/lib/constants";
 import { PRODUCTOS_TIENDA, type ProductoTienda } from "@/lib/tienda-productos";
 import { alternarEnLista, useCotizacion } from "@/lib/cotizacion-store";
+import RedCheckbox from "@/components/RedCheckbox";
+import RedRadio from "@/components/RedRadio";
+import SearchBar from "@/components/SearchBar";
+import InfoGlowCard from "@/components/InfoGlowCard";
 
 /* Marcas premium, igual que la lista PREMIUM de catalogo.html. */
 const MARCAS_PREMIUM = ["Aisin", "Bosch", "Excedi", "NPW", "Three Five"];
@@ -99,11 +103,10 @@ export default function Tienda() {
         <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Categoría</legend>
         <div className="space-y-1">
           {[{ key: "", name: "Todas", total: PRODUCTOS_TIENDA.length }, ...CATEGORIAS.map((c) => ({ key: c.key, name: c.name, total: conteoCat[c.key] ?? 0 }))].map((c) => (
-            <label key={c.key || "todas"} className="flex items-center gap-3 py-1.5 cursor-pointer text-sm text-neutral-200 hover:text-white">
-              <input type="radio" name="cat" value={c.key} checked={categoria === c.key} onChange={() => setCategoria(c.key)} className="accent-[#b7212c] w-4 h-4" />
+            <RedRadio key={c.key || "todas"} name="cat" value={c.key} checked={categoria === c.key} onChange={() => setCategoria(c.key)} className="py-1.5 text-sm text-neutral-200 hover:text-white">
               <span className="flex-1">{c.name}</span>
               <i className="not-italic text-xs text-neutral-500">{c.total}</i>
-            </label>
+            </RedRadio>
           ))}
         </div>
       </fieldset>
@@ -112,22 +115,20 @@ export default function Tienda() {
         <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Marca de repuesto</legend>
         <div className="space-y-1 max-h-72 overflow-y-auto pr-1">
           {MARCAS.map((m) => (
-            <label key={m} className="flex items-center gap-3 py-1.5 cursor-pointer text-sm text-neutral-200 hover:text-white">
-              <input type="checkbox" checked={marcas.includes(m)} onChange={() => toggleMarca(m)} className="accent-[#b7212c] w-4 h-4" />
+            <RedCheckbox key={m} checked={marcas.includes(m)} onChange={() => toggleMarca(m)} className="py-1.5 text-sm text-neutral-200 hover:text-white">
               <span className="flex-1">{m}</span>
               {esPremium(m) && <span className="text-[9px] font-bold uppercase tracking-wider bg-[#b7212c] text-white px-1.5 py-0.5">Premium</span>}
               <i className="not-italic text-xs text-neutral-500">{conteoMarca[m]}</i>
-            </label>
+            </RedCheckbox>
           ))}
         </div>
       </fieldset>
 
       <fieldset>
         <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Calidad</legend>
-        <label className="flex items-center gap-3 py-1.5 cursor-pointer text-sm text-neutral-200 hover:text-white">
-          <input type="checkbox" checked={soloPremium} onChange={(e) => setSoloPremium(e.target.checked)} className="accent-[#b7212c] w-4 h-4" />
+        <RedCheckbox checked={soloPremium} onChange={setSoloPremium} className="py-1.5 text-sm text-neutral-200 hover:text-white">
           Solo marcas premium
-        </label>
+        </RedCheckbox>
       </fieldset>
     </>
   );
@@ -167,25 +168,22 @@ export default function Tienda() {
                   ))}
                 </dl>
               </div>
-              <p className="text-neutral-300 max-w-sm text-sm leading-relaxed border-l-2 border-[#b7212c] pl-4">
-                Fotos de referencia de nuestra tienda. Precio y existencia se confirman por WhatsApp antes de facturar.
-              </p>
+              <InfoGlowCard
+                title="Importante"
+                text="Fotos de referencia de nuestra tienda. Precio y existencia se confirman por WhatsApp antes de facturar."
+                linkHref={COMPANY.whatsapp}
+                linkLabel="Consultar por WhatsApp"
+              />
             </div>
 
             <div className="mt-8">
-              <label htmlFor="buscar-tienda" className="sr-only">Buscar repuesto</label>
-              <div className="relative max-w-xl">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-neutral-400" />
-                <input
-                  id="buscar-tienda"
-                  type="search"
-                  value={busqueda}
-                  onChange={(e) => setBusqueda(e.target.value)}
-                  placeholder="Busca por repuesto o marca: pastillas, Wagner, bomba de agua…"
-                  autoComplete="off"
-                  className="w-full bg-[#171a1e] border border-white/15 focus:border-[#b7212c] focus:outline-none focus:ring-1 focus:ring-[#b7212c] pl-11 pr-4 py-3.5 text-sm text-white placeholder:text-neutral-500"
-                />
-              </div>
+              <SearchBar
+                id="buscar-tienda"
+                value={busqueda}
+                onChange={setBusqueda}
+                placeholder="Busca por repuesto o marca: pastillas, Wagner, bomba de agua…"
+                ariaLabel="Buscar repuesto"
+              />
             </div>
           </div>
         </section>

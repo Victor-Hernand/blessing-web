@@ -1,0 +1,112 @@
+/* Radio animado en rojo de marca — basado en el diseño de Uiverse (variación cyan) */
+
+.rr-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.rr-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.rr-selector {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #6b7280;
+  border-radius: 50%;
+  background: rgba(13, 15, 18, 0.8);
+  transition: all 0.3s ease;
+}
+
+/* Halo al pasar el cursor */
+.rr-selector::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(183, 33, 44, 0.35), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+/* Punto central */
+.rr-selector::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff3b4a, #b7212c);
+  box-shadow: 0 0 0.5rem rgba(183, 33, 44, 0.8);
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6), opacity 0.3s ease;
+}
+
+.rr-label:hover .rr-selector {
+  border-color: #b7212c;
+  transform: scale(1.08);
+}
+
+.rr-label:hover .rr-selector::after {
+  opacity: 1;
+}
+
+.rr-input:checked + .rr-selector {
+  border-color: #b7212c;
+  box-shadow: inset 0 0 0.6rem rgba(183, 33, 44, 0.35), 0 0 0.8rem rgba(183, 33, 44, 0.5);
+  animation: rr-pulse 2s infinite;
+}
+
+.rr-input:checked + .rr-selector::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.rr-label:active .rr-selector {
+  transform: scale(0.95);
+}
+
+/* Teclado: anillo visible al enfocar */
+.rr-input:focus-visible + .rr-selector {
+  outline: 2px solid #b7212c;
+  outline-offset: 3px;
+}
+
+@keyframes rr-pulse {
+  0%,
+  100% {
+    box-shadow: inset 0 0 0.6rem rgba(183, 33, 44, 0.35), 0 0 0.6rem rgba(183, 33, 44, 0.4);
+  }
+  50% {
+    box-shadow: inset 0 0 0.9rem rgba(183, 33, 44, 0.5), 0 0 1.2rem rgba(183, 33, 44, 0.7);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rr-selector,
+  .rr-selector::before,
+  .rr-selector::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
