@@ -1,5 +1,5 @@
 /* DESIGN: Industrial Automotriz Premium — Categorías con tarjetas impactantes */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cog, CircleDot, ArrowUpDown, LifeBuoy, Zap, Thermometer, Settings, Filter, Droplets, Wrench, ArrowRight, Search, X, MessageCircle, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { CATEGORIES, whatsappLink } from "@/lib/constants";
@@ -47,8 +47,59 @@ export default function CategoriesSection() {
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [lightbox]);
 
+  /* ── Carrusel del catálogo ── */
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [pagina, setPagina] = useState(0);
+  const [visibles, setVisibles] = useState(1);
+  const [pausadoCarrusel, setPausadoCarrusel] = useState(false);
+  const movimientoReducido =
+    typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const maxIndice = Math.max(0, CATEGORIES.length - visibles);
+
+  /** Distancia en píxeles entre una tarjeta y la siguiente (ancho + separación). */
+  const pasoPx = () => {
+    const t = trackRef.current;
+    if (!t || t.children.length < 2) return 0;
+    return (t.children[1] as HTMLElement).offsetLeft - (t.children[0] as HTMLElement).offsetLeft;
+  };
+
+  const irA = (i: number) => {
+    const t = trackRef.current;
+    const paso = pasoPx();
+    if (!t || !paso) return;
+    const destino = Math.min(Math.max(i, 0), maxIndice);
+    t.scrollTo({ left: destino * paso, behavior: "smooth" });
+    setPagina(destino);
+  };
+
+  const alDesplazar = () => {
+    const t = trackRef.current;
+    const paso = pasoPx();
+    if (!t || !paso) return;
+    setPagina(Math.min(maxIndice, Math.round(t.scrollLeft / paso)));
+  };
+
+  // Cuántas tarjetas caben a la vez, según el ancho actual.
+  useEffect(() => {
+    const medir = () => {
+      const t = trackRef.current;
+      const paso = pasoPx();
+      if (t && paso) setVisibles(Math.max(1, Math.round(t.clientWidth / paso)));
+    };
+    medir();
+    window.addEventListener("resize", medir);
+    return () => window.removeEventListener("resize", medir);
+  }, []);
+
+  // Avance automático cada 5 s. Se detiene al pasar el cursor o enfocar, y no corre si el sistema pide menos movimiento.
+  useEffect(() => {
+    if (pausadoCarrusel || movimientoReducido || isSearching) return;
+    const id = window.setInterval(() => irA(pagina >= maxIndice ? 0 : pagina + 1), 5000);
+    return () => window.clearInterval(id);
+  }, [pausadoCarrusel, pagina, maxIndice, isSearching, movimientoReducido]);
+
   return (
-    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12]">
+    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12] overflow-x-clip">
       <div className="container">
         {/* Presentación de la empresa, antes del catálogo */}
         <div className="mb-12 lg:mb-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -95,12 +146,21 @@ export default function CategoriesSection() {
             <span className="section-label">Nuestro catálogo</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="section-title text-white text-[42px]">
-              Categorías de <span className="text-gradient-red">Productos</span>
+            <h2 className="font-bold uppercase text-white text-[44px] lg:text-[64px] leading-[0.95]" style={{ fontFamily: "var(--font-heading)" }}>
+              Todo lo que tu<br /><span className="text-[#b7212c]">vehículo necesita.</span>
             </h2>
-            <p className="text-neutral-400 font-bold max-w-md text-base leading-relaxed">
-              Trabajamos con las mejores marcas del mercado automotriz para garantizar calidad y rendimiento en cada producto.
-            </p>
+            <div className="flex flex-col gap-5 max-w-md">
+              <p className="text-neutral-300 text-base leading-relaxed">
+                Diez líneas de repuesto, marcas premium y convencionales, listas para tu vehículo.
+              </p>
+              <a
+                href="/tienda"
+                className="inline-flex w-fit items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
+                Ver toda la tienda <ArrowRight className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </motion.div>
 
@@ -187,54 +247,128 @@ export default function CategoriesSection() {
           )
         ) : (
           <>
-            {/* Todas las categorías, en tarjetas del mismo tamaño (2 filas de 5) */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {/* Carrusel de 10 categorías: deslizable, con controles y avance automático. */}
+            <div
+              role="region"
+              aria-roledescription="carrusel"
+              aria-label="Catálogo por categorías"
+              onMouseEnter={() => setPausadoCarrusel(true)}
+              onMouseLeave={() => setPausadoCarrusel(false)}
+              onFocus={() => setPausadoCarrusel(true)}
+              onBlur={() => setPausadoCarrusel(false)}
+            >
+            <div
+              ref={trackRef}
+              onScroll={alDesplazar}
+              className="flex gap-px overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+            >
               {CATEGORIES.map((cat, i) => {
-                const Icon = iconMap[cat.icon];
+                const clave = normalize(cat.name);
+                const numero = String(i + 1).padStart(2, "0");
                 return (
+                  <div key={cat.name} className="shrink-0 snap-start w-[85%] sm:w-[calc((100%-1px)/2)] lg:w-[calc((100%-2px)/3)] h-[420px]">
                   <motion.button
-                    key={cat.name}
                     type="button"
                     onClick={() => setLightbox(i)}
                     aria-label={`Ver ${cat.name}`}
-                    /* Entrada: ease-out fuerte, sin partir de escala 0 y con retardo escalonado */
-                    initial={{ opacity: 0, scale: 0.95, y: 12 }}
-                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1], delay: (i % 5) * 0.05 }}
-                    whileTap={{ scale: 0.97 }}
-                    className="group relative h-52 w-full text-left overflow-hidden block cursor-zoom-in"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: (i % 4) * 0.08, ease: [0.23, 1, 0.32, 1] }}
+                    whileTap={{ scale: 0.98 }}
+                    className={`group relative flex flex-col w-full h-full overflow-hidden bg-[#171a1e] text-left cursor-zoom-in rounded-br-3xl ring-1 ring-inset ring-transparent hover:ring-[#b7212c]/50 transition-[box-shadow,ring-color] duration-500`}
                   >
-                    {cat.image ? (
-                      <>
-                        <img src={cat.image} alt={cat.name} className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)]" />
-                        <div className="absolute inset-0 bg-[#0d0f12]/40" />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0f12]/95 via-[#0d0f12]/50 to-transparent" />
-                      </>
-                    ) : (
-                      /* Sin foto de producto todavía: panel de marca con el ícono de la categoría */
-                      <div className="absolute inset-0 bg-[#b7212c] flex items-center justify-center overflow-hidden">
-                        {Icon && <Icon className="w-24 h-24 text-neutral-400 group-hover:scale-110 group-hover:text-neutral-400 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400" strokeWidth={1.2} />}
+                    {/* Panel de imagen: gradiente de marca que sube de contraste al pasar el cursor */}
+                    <div className="relative flex-1 min-h-0 overflow-hidden p-3">
+                      <span
+                        className="absolute inset-0 bg-gradient-to-bl from-[#0d0f12] via-[#3b0c12] to-[#b7212c] contrast-50 group-hover:contrast-100 transition-[filter] duration-500"
+                        aria-hidden="true"
+                      />
+                      {/* Brillo rojo detrás del producto */}
+                      <span className="absolute inset-0 bg-[radial-gradient(circle_at_65%_35%,rgba(183,33,44,0.35),transparent_60%)] opacity-70 group-hover:opacity-100 transition-opacity duration-500" aria-hidden="true" />
+                      {/* Destello que cruza la tarjeta al pasar el cursor */}
+                      <span
+                        className="pointer-events-none absolute inset-y-0 left-0 w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-[150%] group-hover:translate-x-[250%] transition-transform duration-[1000ms] ease-out z-[5]"
+                        aria-hidden="true"
+                      />
+                      {/* Marca de agua con el nombre de la categoría */}
+                      <span
+                        className="absolute bottom-0 left-2 text-white/[0.06] font-bold uppercase leading-none whitespace-nowrap select-none text-[56px] lg:text-[64px]"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                        aria-hidden="true"
+                      >
+                        {cat.name}
+                      </span>
+
+                      <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
+                        <span className="flex items-center gap-2 text-white text-[11px] tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
+                          <span className="w-4 h-px bg-[#b7212c]" />{numero}
+                        </span>
+                        <span className="text-[9px] uppercase tracking-[0.25em] text-neutral-400">Blessing</span>
                       </div>
-                    )}
-                    <span className="absolute top-3 right-3 w-8 h-8 bg-[#1d1d1b]/45 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                      <ZoomIn className="w-3.5 h-3.5 text-white" />
-                    </span>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                      <div className="flex flex-col sm:flex-row sm:items-center items-start gap-1.5 sm:gap-2.5 mb-1.5 min-w-0">
-                        <div className="w-8 h-8 shrink-0 bg-[#b7212c]/80 backdrop-blur-sm flex items-center justify-center group-hover:bg-[#b7212c] transition-colors duration-300 active:scale-[0.97]">
-                          {Icon && <Icon className="w-4 h-4 text-white" />}
-                        </div>
-                        <h3 className="font-bold text-white uppercase tracking-wide leading-tight min-w-0 text-[17px] sm:text-[19px] xl:text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
-                          {cat.name}
-                        </h3>
-                      </div>
-                      <p className="text-neutral-200 text-[12px] leading-snug line-clamp-2">{cat.description}</p>
+
+                      <img
+                        src={`/images/cut-${clave}.webp`}
+                        alt=""
+                        loading="lazy"
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-auto max-w-[78%] h-[72%] object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.6)] transition-[transform,filter] duration-500 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:scale-110 group-hover:drop-shadow-[0_0_30px_rgba(183,33,44,0.5)]"
+                      />
                     </div>
-                    <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[width] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] active:scale-[0.97]" />
+
+                    {/* Texto de la tarjeta */}
+                    <div className="relative bg-[#0d0f12] px-5 pt-4 pb-3">
+                      <h3 className="font-bold text-white uppercase leading-tight text-[24px] lg:text-[28px] mb-1 transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-[#ff3b47]" style={{ fontFamily: "var(--font-heading)" }}>
+                        {cat.name}
+                      </h3>
+                      <p className="text-neutral-300 text-[12px] leading-snug line-clamp-2">{cat.description}</p>
+                    </div>
+
+                    {/* Botón inferior, mismo lenguaje que la tarjeta de referencia */}
+                    <span
+                      className="flex items-center justify-between bg-[#b7212c] group-hover:bg-[#c92a35] text-white px-5 py-2.5 rounded-br-xl text-[11px] font-bold uppercase tracking-wider transition-colors duration-300"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      Ver repuestos <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
+                    </span>
                   </motion.button>
+                  </div>
                 );
               })}
+            </div>
+
+            {/* Controles: anterior, puntos y siguiente */}
+            <div className="mt-6 flex items-center justify-center gap-3">
+              <button
+                type="button"
+                onClick={() => irA(pagina === 0 ? maxIndice : pagina - 1)}
+                aria-label="Categorías anteriores"
+                className="w-10 h-10 bg-[#171a1e] border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <div className="flex items-center gap-2">
+                {Array.from({ length: maxIndice + 1 }, (_, k) => (
+                  <button
+                    key={k}
+                    type="button"
+                    onClick={() => irA(k)}
+                    aria-label={`Ver grupo de categorías ${k + 1}`}
+                    aria-current={k === pagina}
+                    className={`h-2 transition-all duration-300 ${
+                      k === pagina ? "w-6 bg-[#b7212c]" : "w-2 bg-white/30 hover:bg-white/60"
+                    }`}
+                  />
+                ))}
+              </div>
+              <button
+                type="button"
+                onClick={() => irA(pagina >= maxIndice ? 0 : pagina + 1)}
+                aria-label="Categorías siguientes"
+                className="w-10 h-10 bg-[#171a1e] border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
             </div>
           </>
         )}

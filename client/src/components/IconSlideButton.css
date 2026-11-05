@@ -1,0 +1,86 @@
+/* Botón rojo en que el texto sube y aparece un icono al pasar el cursor — basado en el diseño de Uiverse */
+
+.isb {
+  --isb-width: 210px;
+  --isb-height: 44px;
+  --isb-color: #b7212c;
+  position: relative;
+  display: inline-block;
+  width: var(--isb-width);
+  height: var(--isb-height);
+  background: var(--isb-color);
+  border-radius: 0.45em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.3s;
+  overflow: hidden;
+}
+
+.isb:hover,
+.isb:focus-visible {
+  background: #8f1a22;
+}
+
+.isb:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.isb__wrapper,
+.isb__text,
+.isb__icon {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.isb__text,
+.isb__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: top 0.5s;
+}
+
+.isb__text {
+  top: 0;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.isb__icon {
+  top: 100%;
+}
+
+.isb__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.isb:hover .isb__text,
+.isb:focus-visible .isb__text {
+  top: -100%;
+}
+
+.isb:hover .isb__icon,
+.isb:focus-visible .isb__icon {
+  top: 0;
+}
+
+.isb:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .isb,
+  .isb__text,
+  .isb__icon {
+    transition: none !important;
+  }
+}

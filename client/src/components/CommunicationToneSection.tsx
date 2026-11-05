@@ -10,7 +10,7 @@ const tonePoints = [
 
 export default function CommunicationToneSection() {
   return (
-    <section className="relative overflow-hidden bg-[#171a1e] pt-20 lg:pt-28 pb-6 lg:pb-8">
+    <section className="relative overflow-hidden bg-[#171a1e] pt-8 lg:pt-10 pb-6 lg:pb-8">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(183,33,44,0.18),transparent_45%)]" />
 
       <div className="container relative z-10">

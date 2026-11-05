@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function LocationSection() {
   return (
-    <section id="ubicacion" className="pt-10 lg:pt-12 pb-12 lg:pb-16 bg-[#0d0f12]">
+    <section id="ubicacion" className="pt-4 lg:pt-6 pb-12 lg:pb-16 bg-[#0d0f12] overflow-x-clip">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -24,13 +24,13 @@ export default function LocationSection() {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-[minmax(0,1fr)] lg:grid-cols-3 gap-6">
           {/* Map */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-2"
+            className="lg:col-span-2 min-w-0"
           >
             <div className="bg-[#171a1e] border border-white/10 p-2">
               <iframe
@@ -52,7 +52,7 @@ export default function LocationSection() {
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="bg-[#b7212c] p-6 lg:p-8 flex flex-col justify-between"
+            className="bg-[#b7212c] p-6 lg:p-8 flex flex-col justify-between min-w-0"
           >
             <div>
               <div className="flex items-center gap-3 mb-5">

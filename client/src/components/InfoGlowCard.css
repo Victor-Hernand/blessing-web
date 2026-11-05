@@ -1,0 +1,97 @@
+/* Tarjeta de nota con hover en rojo de marca — basada en el diseño de Uiverse */
+
+.igc-card {
+  position: relative;
+  width: 100%;
+  max-width: 22rem;
+  min-height: 11rem;
+  box-sizing: border-box;
+  background-color: #212121;
+  border: 5px solid #222;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 1.25rem 1.25rem 2.25rem;
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px,
+    inset rgba(0, 0, 0, 0.19) 0px 10px 20px, inset rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  transition: all ease-in-out 0.3s;
+  overflow: hidden;
+}
+
+.igc-card:hover {
+  border-color: #b7212c;
+  box-shadow: rgba(183, 33, 44, 0.3) 0px 10px 20px, rgba(183, 33, 44, 0.25) 0px 6px 6px,
+    inset rgba(0, 0, 0, 0.19) 0px 10px 20px, inset rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.igc-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: var(--font-heading);
+}
+
+.igc-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #d1d5db;
+}
+
+.igc-link {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 0;
+  transition: all ease-in-out 0.3s;
+  animation: igc-nudge 0.8s alternate infinite;
+}
+
+.igc-card:hover .igc-link,
+.igc-link:focus-visible {
+  opacity: 1;
+}
+
+.igc-link:hover {
+  color: #ff4d5a;
+}
+
+.igc-link:focus-visible {
+  outline: 2px solid #b7212c;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.igc-arrow {
+  width: 1em;
+  height: 1em;
+}
+
+@keyframes igc-nudge {
+  0% {
+    right: 20px;
+  }
+  100% {
+    right: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .igc-card,
+  .igc-link {
+    transition: none !important;
+    animation: none !important;
+  }
+}

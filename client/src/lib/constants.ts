@@ -5,7 +5,7 @@
  * ============================================================ */
 
 export const IMAGES = {
-  heroPremium: "/images/real-team-store.jpg",
+  heroPremium: "/images/hero-fachada-render.jpg",
   bannerLocal: "/images/banner-local.jpg",
   // Category images (real store photos)
   categoryEngine: "/images/category-motor.jpg",
@@ -34,6 +34,12 @@ export const IMAGES = {
   realSellerProducts: "/images/real-seller-products.jpeg",
   realClientDelivery: "/images/real-client-delivery.jpeg",
   realTeamStore: "/images/real-team-store.jpg",
+  // Fotos del carrusel "Conoce nuestra empresa"
+  empresaCarrusel1: "/images/empresa-carrusel-1.jpg",
+  empresaCarrusel2: "/images/empresa-carrusel-2.jpg",
+  empresaCarrusel3: "/images/empresa-carrusel-3.jpg",
+  empresaCarrusel4: "/images/empresa-carrusel-4.jpg",
+  empresaCarrusel5: "/images/empresa-carrusel-5.jpg",
 };
 
 export const COMPANY = {
@@ -65,15 +71,19 @@ export const COMPANY = {
 };
 
 export const SELLERS = [
-  { name: "Gustavo Adolfo Solorzano", phone: "9615-1780" },
-  { name: "Ariel Ivan Silva Bustillo", phone: "9615-1932" },
-  { name: "Edgar Hernan Montoya Banegas", phone: "9615-2437" },
-  { name: "Nolvin Mondragón", phone: "9509-4935" },
-  { name: "Gerson Raudales ", phone: "9509-5106" },
-  { name: "Oscar David Alvarado Reyes", phone: "9509-5163" },
-  { name: "Marvin Antonio Martínez Mendéz", phone: "9509-5454" },
-  { name: "Yonathan Triminio", phone: "9762-6848" },
+  { name: "Ariel Silva", phone: "9615-1932" },
+  { name: "Josue Maradiaga", phone: "9461-9640" },
+  { name: "Jose Zepeda", phone: "9705-1427" },
+  { name: "Oscar Matamoros", phone: "9461-9674" },
+  { name: "Seydi Rodriguez", phone: "3332-5519" },
+  { name: "Oscar Alvarado", phone: "9509-5163" },
+  { name: "Nolvin Mondragon", phone: "9509-4935" },
+  { name: "Gustavo Solorzano", phone: "9615-1780" },
   { name: "Allan Palma", phone: "9452-5432" },
+  { name: "Gerson Raudales", phone: "3206-5465" },
+  { name: "Marvin Martinez", phone: "9509-5454" },
+  { name: "Edgar Montoya", phone: "9615-2437" },
+  { name: "Yonathan Triminio", phone: "9762-6848" },
 ];
 
 export const CATEGORIES = [
@@ -261,8 +271,8 @@ export const VALUES = [
 ];
 
 export const STATS = [
-  { value: 10, suffix: "+", label: "Años de Experiencia" },
-  { value: 46, suffix: "+", label: "Colaboradores" },
-  { value: 10, suffix: "", label: "Categorías de Productos" },
-  { value: 11, suffix: "", label: "Vendedores Especializados" },
+  { value: 10, suffix: "+", label: "Años en el mercado" },
+  { value: 16, suffix: "", label: "Marcas aliadas" },
+  { value: 18, suffix: "", label: "Líneas de repuesto" },
+  { value: 60, suffix: "+", label: "Marcas de vehículos" },
 ];

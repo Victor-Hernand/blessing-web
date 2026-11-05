@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { IMAGES } from "@/lib/constants";
 
-/* Fotos reales de la empresa ya incluidas en el sistema. */
+/* Fotos reales de la empresa para el carrusel. */
 const FOTOS = [
-  { src: IMAGES.realTeamStore, alt: "Equipo de Blessing detrás del mostrador de la tienda", posicion: "50% 50%" },
-  { src: IMAGES.realCustomerService, alt: "Atención al cliente en Auto Repuestos Blessing", posicion: "50% 50%" },
-  { src: IMAGES.realSellerProducts, alt: "Vendedores con los productos de Blessing", posicion: "50% 50%" },
-  { src: IMAGES.realDeliveryTeam, alt: "Equipo de entregas de Auto Repuestos Blessing", posicion: "50% 50%" },
-  { src: IMAGES.realEmployeeBag, alt: "Colaborador de Blessing con sus productos", posicion: "50% 12%" },
+  { src: IMAGES.empresaCarrusel1, alt: "Colaborador de Blessing atendiendo en el mostrador de la tienda", posicion: "50% 50%" },
+  { src: IMAGES.empresaCarrusel2, alt: "Asesor de Blessing atendiendo una llamada en el mostrador", posicion: "50% 50%" },
+  { src: IMAGES.empresaCarrusel3, alt: "Vendedor de Blessing trabajando en la computadora del mostrador", posicion: "50% 50%" },
+  { src: IMAGES.empresaCarrusel4, alt: "Colaboradora de Blessing con culatas de motor", posicion: "50% 30%" },
+  { src: IMAGES.empresaCarrusel5, alt: "Colaborador de Blessing con aceites Valvoline", posicion: "50% 50%" },
 ];
 
 export default function CompanyCarousel() {

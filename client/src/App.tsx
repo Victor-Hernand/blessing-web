@@ -13,6 +13,7 @@ import Contactos from "./pages/Contactos";
 import Home from "./pages/Home";
 import Mansiago from "./pages/Mansiago";
 import Privacidad from "./pages/Privacidad";
+import Tienda from "./pages/Tienda";
 
 function Router() {
   return (
@@ -23,6 +24,7 @@ function Router() {
       <Route path={"/nosotros"} component={Nosotros} />
       <Route path={"/contactos"} component={Contactos} />
       <Route path={"/privacidad"} component={Privacidad} />
+      <Route path={"/tienda"} component={Tienda} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

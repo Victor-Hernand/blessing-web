@@ -1,14 +1,14 @@
-import { ChevronRight, MapPin, ShieldCheck, Truck, Tag, Headphones } from "lucide-react";
+import { ChevronRight, MapPin, Store, Truck, Clock } from "lucide-react";
 import { IMAGES, whatsappLink } from "@/lib/constants";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import VehicleSelector, { SELECCION_VACIA, type Seleccion } from "@/components/VehicleSelector";
 
+/* Mismas garantías de servicio que la página de referencia */
 const VENTAJAS = [
-  { icon: ShieldCheck, label: "Productos de calidad" },
-  { icon: Truck, label: "Envíos gratis" },
-  { icon: Tag, label: "Precios accesibles" },
-  { icon: Headphones, label: "Atención personalizada" },
+  { icon: Store, label: "Retiro en tienda" },
+  { icon: Truck, label: "Envío a domicilio" },
+  { icon: Clock, label: "Abierto de lunes a sábado" },
 ];
 
 export default function HeroBanner() {
@@ -32,9 +32,17 @@ export default function HeroBanner() {
             src={IMAGES.heroPremium}
             alt="Equipo de Auto Repuestos Blessing frente a su tienda"
             fetchPriority="high"
-            className="img-reveal absolute inset-0 w-full h-full object-cover object-[50%_70%]"
+            className="img-reveal absolute inset-0 w-full h-full object-cover object-center"
           />
-          <div className="absolute inset-0 flex flex-col justify-center items-start text-left p-6 sm:p-10 lg:p-14">
+          {/* Degradado oscuro a la izquierda, para que el titular se lea sobre la fachada */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/90 via-[#0d0f12]/55 to-transparent" />
+          <div className="absolute inset-0 flex flex-col justify-start items-start text-left p-6 pt-4 sm:p-10 sm:pt-12 lg:p-14 lg:pt-16">
+            <span
+              className="text-[#b7212c] text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] mb-3"
+              style={{ fontFamily: "var(--font-heading)" }}
+            >
+              Auto Repuestos Blessing
+            </span>
             <h1
               className="section-title text-white leading-[0.95] text-[44px] sm:text-[60px] lg:text-[80px] [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -44,7 +52,7 @@ export default function HeroBanner() {
             </h1>
 
             <p className="text-neutral-200 text-sm sm:text-base lg:text-lg leading-relaxed mt-4 lg:mt-6 max-w-md [text-shadow:0_1px_12px_rgba(0,0,0,0.75)]">
-              Repuestos originales y alternos para tu vehículo con variedad, precios accesibles y entrega el mismo día en Tegucigalpa.
+              Repuestos para más de 60 marcas de vehículos, con asesoría experta, retiro en tienda y entrega a domicilio en Tegucigalpa.
             </p>
           </div>
 
@@ -52,14 +60,14 @@ export default function HeroBanner() {
             className="absolute bottom-4 left-4 bg-[#b7212c] text-white text-xs font-semibold uppercase tracking-wider px-3 py-1.5"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Entrega hoy
+            Desde 2016
           </span>
         </div>
 
       </div>
 
       {/* Buscador de punta a punta de la pantalla */}
-      <div>
+      <div id="buscador">
         <VehicleSelector
           value={vehiculo}
           onChange={setVehiculo}
@@ -69,7 +77,7 @@ export default function HeroBanner() {
 
       {/* Barra de confianza */}
       <div className="bg-[#171a1e] border-y border-white/10">
-        <ul className="container grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-6 py-4 sm:py-5">
+        <ul className="container grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 py-4 sm:py-5">
           {VENTAJAS.map((v, i) => (
             <motion.li
               key={v.label}

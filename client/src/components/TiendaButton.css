@@ -1,0 +1,150 @@
+/* Botón "Tienda en línea" — basado en Uiverse.io by marcelodolza, con colores de la marca */
+
+.tienda-btn {
+  --tb-primary: #ffb3b8;
+  --tb-neutral-1: #c92a35;
+  --tb-neutral-2: #8f1a22;
+  --tb-radius: 14px;
+
+  cursor: pointer;
+  border-radius: var(--tb-radius);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  border: none;
+  box-shadow: 0 0.5px 0.5px 1px rgba(255, 255, 255, 0.2), 0 10px 20px rgba(0, 0, 0, 0.2), 0 4px 5px 0px rgba(0, 0, 0, 0.05);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+  min-width: 200px;
+  padding: 20px;
+  height: 68px;
+  font-family: var(--font-heading), "Galano Grotesque", Poppins, Montserrat, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.tienda-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3), 0 15px 30px rgba(0, 0, 0, 0.3), 0 10px 3px -3px rgba(0, 0, 0, 0.04);
+}
+
+.tienda-btn:active {
+  transform: scale(1);
+  box-shadow: 0 0 1px 2px rgba(255, 255, 255, 0.3), 0 10px 3px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Borde biselado */
+.tienda-btn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--tb-radius);
+  border: 2.5px solid transparent;
+  background: linear-gradient(var(--tb-neutral-1), var(--tb-neutral-2)) padding-box, linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.45)) border-box;
+  z-index: 0;
+  transition: all 0.4s ease;
+}
+
+.tienda-btn:hover::after {
+  transform: scale(1.05, 1.1);
+  box-shadow: inset 0 -1px 3px 0 rgba(255, 255, 255, 1);
+}
+
+/* Superficie interior */
+.tienda-btn::before {
+  content: "";
+  inset: 7px 6px 6px 6px;
+  position: absolute;
+  background: linear-gradient(to top, var(--tb-neutral-1), var(--tb-neutral-2));
+  border-radius: 30px;
+  filter: blur(0.5px);
+  z-index: 2;
+}
+
+/* Contorno giratorio al hacer hover */
+.tienda-btn__outline {
+  position: absolute;
+  border-radius: inherit;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  inset: -2px -3.5px;
+  pointer-events: none;
+}
+
+.tienda-btn__outline::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  background: conic-gradient(from 180deg, transparent 60%, white 80%, transparent 100%);
+  animation: tienda-spin 2s linear infinite;
+  animation-play-state: paused;
+}
+
+@keyframes tienda-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tienda-btn:hover .tienda-btn__outline {
+  opacity: 1;
+}
+
+.tienda-btn:hover .tienda-btn__outline::before {
+  animation-play-state: running;
+}
+
+/* Texto: letras con animación de ola en hover */
+.tienda-btn__label {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tienda-btn__label span {
+  display: block;
+  white-space: pre;
+  opacity: 1;
+}
+
+.tienda-btn:hover .tienda-btn__label span {
+  animation: tienda-wave 0.5s ease forwards calc(var(--i) * 0.02s);
+}
+
+@keyframes tienda-wave {
+  30% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: var(--tb-primary);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tienda-btn,
+  .tienda-btn::after,
+  .tienda-btn__outline::before,
+  .tienda-btn__label span {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,21 +1,19 @@
 /* DESIGN: Industrial Automotriz Premium — Banner promocional — Tema Claro */
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { COMPANY, IMAGES } from "@/lib/constants";
 
 export default function PromoBanner() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background image - real delivery team photo */}
-      <div className="absolute inset-0">
-        <img src={IMAGES.realDeliverySingle} alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/90 via-[#0d0f12]/65 to-[#0d0f12]/25" />
+    <section className="relative overflow-hidden bg-[#0d0f12] min-h-[460px] lg:min-h-[560px] flex flex-col justify-between">
+      {/* Escritorio: foto de fondo detrás de todo el banner */}
+      <div className="absolute inset-0 hidden lg:block">
+        <img src="/images/promo-equipo-tienda.jpg" alt="Equipo de Blessing frente a su tienda" loading="lazy" className="w-full h-full object-cover object-[50%_40%]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/95 via-[#0d0f12]/70 to-[#0d0f12]/15" />
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0f12]/80 to-transparent" />
       </div>
 
-      {/* Top accent */}
-
-      <div className="container relative z-10 py-16 lg:py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      {/* 1. Texto arriba: en horizontal, para no tapar los rostros de la foto */}
+      <div className="container relative z-10 pt-12 lg:pt-16 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -31,32 +29,29 @@ export default function PromoBanner() {
               <br />
               <span className="text-white">por Volumen</span>
             </h2>
-            <p className="text-white/80 text-base sm:text-lg max-w-lg leading-relaxed">
-              Accede a precios competitivos y beneficios exclusivos en compras por volumen. Ofrecemos condiciones especiales para talleres mecánicos, distribuidores y clientes comerciales que buscan calidad, disponibilidad y el mejor valor para su inversión.
-            </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 lg:justify-end"
+            className="lg:pt-10"
           >
-            <a
-              href={COMPANY.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2.5 bg-white text-[#b7212c] px-8 py-4 text-sm font-bold uppercase tracking-wider hover:bg-neutral-100 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:translate-y-[-2px]"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Solicitar Cotización
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <p className="text-white/80 text-base sm:text-lg leading-relaxed">
+              Accede a precios competitivos y beneficios exclusivos en compras por volumen. Ofrecemos condiciones especiales para talleres mecánicos, distribuidores y clientes comerciales que buscan calidad, disponibilidad y el mejor valor para su inversión.
+            </p>
           </motion.div>
         </div>
       </div>
 
-      {/* Bottom accent */}
+      {/* 2. Móvil: franja de la foto entre el texto y el botón */}
+      <div className="relative z-0 mt-8 h-[300px] lg:hidden">
+        <img src="/images/promo-equipo-tienda.jpg" alt="Equipo de Blessing frente a su tienda" loading="lazy" className="w-full h-full object-cover object-[50%_45%]" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0d0f12] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0d0f12] to-transparent" />
+      </div>
+
+      <div className="pb-12 lg:pb-16" />
     </section>
   );
 }
