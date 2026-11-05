@@ -81,8 +81,8 @@ export default function OffersSection() {
       className="relative overflow-hidden bg-[#b7212c] text-white"
       style={{ backgroundImage: `${FONDO_RAYAS}, linear-gradient(160deg, #c4262f 0%, #a51d26 100%)` }}
     >
-      {/* Cinta negra inclinada con texto alterno relleno / contorno */}
-      <div className="relative -rotate-[1.5deg] bg-[#0d0f12] py-3 overflow-hidden" aria-hidden="true">
+      {/* Cinta negra recta con texto alterno relleno / contorno */}
+      <div className="relative bg-[#0d0f12] py-3 overflow-hidden" aria-hidden="true">
         <div className="flex w-max animate-marquee">
           {cintaDoble.map((t, i) => {
             const contorno = i % 2 === 1;
@@ -100,7 +100,7 @@ export default function OffersSection() {
         </div>
       </div>
 
-      <div className="container py-16 lg:py-24">
+      <div className="container pt-16 lg:pt-24 pb-6 lg:pb-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-14 items-center">
           {/* Texto y cuenta regresiva */}
           <motion.div

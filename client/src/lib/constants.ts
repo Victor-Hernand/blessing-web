@@ -5,7 +5,7 @@
  * ============================================================ */
 
 export const IMAGES = {
-  heroPremium: "/images/hero-fachada.jpg",
+  heroPremium: "/images/hero-fachada-render.jpg",
   bannerLocal: "/images/banner-local.jpg",
   // Category images (real store photos)
   categoryEngine: "/images/category-motor.jpg",
@@ -34,6 +34,12 @@ export const IMAGES = {
   realSellerProducts: "/images/real-seller-products.jpeg",
   realClientDelivery: "/images/real-client-delivery.jpeg",
   realTeamStore: "/images/real-team-store.jpg",
+  // Fotos del carrusel "Conoce nuestra empresa"
+  empresaCarrusel1: "/images/empresa-carrusel-1.jpg",
+  empresaCarrusel2: "/images/empresa-carrusel-2.jpg",
+  empresaCarrusel3: "/images/empresa-carrusel-3.jpg",
+  empresaCarrusel4: "/images/empresa-carrusel-4.jpg",
+  empresaCarrusel5: "/images/empresa-carrusel-5.jpg",
 };
 
 export const COMPANY = {

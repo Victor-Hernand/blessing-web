@@ -2,7 +2,6 @@ import { ChevronRight, MapPin, Store, Truck, Clock } from "lucide-react";
 import { IMAGES, whatsappLink } from "@/lib/constants";
 import { useState } from "react";
 import { motion } from "framer-motion";
-import TiendaButton from "@/components/TiendaButton";
 import VehicleSelector, { SELECCION_VACIA, type Seleccion } from "@/components/VehicleSelector";
 
 /* Mismas garantías de servicio que la página de referencia */
@@ -37,7 +36,7 @@ export default function HeroBanner() {
           />
           {/* Degradado oscuro a la izquierda, para que el titular se lea sobre la fachada */}
           <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/90 via-[#0d0f12]/55 to-transparent" />
-          <div className="absolute inset-0 flex flex-col justify-center items-start text-left p-6 sm:p-10 lg:p-14">
+          <div className="absolute inset-0 flex flex-col justify-start items-start text-left p-6 pt-4 sm:p-10 sm:pt-12 lg:p-14 lg:pt-16">
             <span
               className="text-[#b7212c] text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] mb-3"
               style={{ fontFamily: "var(--font-heading)" }}
@@ -55,11 +54,6 @@ export default function HeroBanner() {
             <p className="text-neutral-200 text-sm sm:text-base lg:text-lg leading-relaxed mt-4 lg:mt-6 max-w-md [text-shadow:0_1px_12px_rgba(0,0,0,0.75)]">
               Repuestos para más de 60 marcas de vehículos, con asesoría experta, retiro en tienda y entrega a domicilio en Tegucigalpa.
             </p>
-
-            <div className="flex flex-wrap gap-3 mt-6 lg:mt-8">
-              <TiendaButton href="#buscador" label="Encontrar mi repuesto" />
-              <TiendaButton href="/tienda" />
-            </div>
           </div>
 
           <span

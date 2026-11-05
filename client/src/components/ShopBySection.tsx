@@ -46,7 +46,7 @@ export default function ShopBySection() {
   const baseTab = "flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider border-b-2 transition-colors duration-200";
 
   return (
-    <section id="buscar" className="pt-8 lg:pt-10 pb-6 lg:pb-8 bg-[#171a1e] border-t border-white/10" aria-labelledby="sb-t">
+    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-[#171a1e] border-t border-white/10" aria-labelledby="sb-t">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
