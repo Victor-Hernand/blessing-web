@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Cog, CircleDot, ArrowUpDown, LifeBuoy, Zap, Thermometer, Settings, Filter, Droplets, Wrench, ArrowRight, Search, X, MessageCircle, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 import { CATEGORIES, whatsappLink } from "@/lib/constants";
 import CompanyCarousel from "@/components/CompanyCarousel";
+import { TIENDA_HABILITADA } from "@/lib/flags";
 
 const iconMap: Record<string, React.ElementType> = {
   Cog, CircleDot, ArrowUpDown, LifeBuoy, Zap, Thermometer, Settings, Filter, Droplets, Wrench,
@@ -153,13 +154,15 @@ export default function CategoriesSection() {
               <p className="text-neutral-300 text-base leading-relaxed">
                 Diez líneas de repuesto, marcas premium y convencionales, listas para tu vehículo.
               </p>
-              <a
-                href="/tienda"
-                className="inline-flex w-fit items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
-                style={{ fontFamily: "var(--font-heading)" }}
-              >
-                Ver toda la tienda <ArrowRight className="w-4 h-4" />
-              </a>
+              {TIENDA_HABILITADA && (
+                <a
+                  href="/tienda"
+                  className="inline-flex w-fit items-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  Ver toda la tienda <ArrowRight className="w-4 h-4" />
+                </a>
+              )}
             </div>
           </div>
         </motion.div>
