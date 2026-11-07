@@ -5,11 +5,12 @@ import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
 import { COMPANY } from "@/lib/constants";
 import { destino } from "@/lib/navegacion";
 import CotizacionControles from "@/components/CotizacionControles";
+import { TIENDA_HABILITADA } from "@/lib/flags";
 
 /* El orden sigue el de las secciones en la página; Garantía va al final
    por ser una página aparte. */
 const NAV_LINKS = [
-  { label: "Tienda", href: "/tienda" },
+  ...(TIENDA_HABILITADA ? [{ label: "Tienda", href: "/tienda" }] : []),
   { label: "Ofertas", href: "#ofertas" },
   { label: "Marcas", href: "#marcas" },
   { label: "Cómo comprar", href: "#proceso" },
