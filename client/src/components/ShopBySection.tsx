@@ -30,7 +30,7 @@ export default function ShopBySection() {
   const baseTab = "flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider border-b-2 transition-colors duration-200";
 
   return (
-    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-[#171a1e] border-t border-white/10" aria-labelledby="sb-t">
+    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-metal border-t border-white/10" aria-labelledby="sb-t">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -47,7 +47,7 @@ export default function ShopBySection() {
               Encuentra tu pieza <span className="text-[#b7212c]">a tu manera.</span>
             </h2>
           </div>
-          <p className="text-neutral-400 max-w-md text-base leading-relaxed">
+          <p className="text-neutral-300 max-w-md text-base leading-relaxed">
             Busca por la marca de tu vehículo, por la marca del repuesto o encuentra la batería exacta en segundos.
           </p>
         </motion.div>
@@ -67,7 +67,7 @@ export default function ShopBySection() {
                 onClick={() => setActiva(p.id)}
                 onKeyDown={(e) => onKeyDown(e, i)}
                 style={{ fontFamily: "var(--font-heading)" }}
-                className={`${baseTab} ${selected ? "border-[#b7212c] text-white" : "border-transparent text-neutral-400 hover:text-white"}`}
+                className={`${baseTab} ${selected ? "border-[#b7212c] text-white" : "border-transparent text-neutral-300 hover:text-white"}`}
               >
                 {p.label}
               </button>
@@ -95,16 +95,16 @@ export default function ShopBySection() {
                       href={whatsappLink(`Hola, busco repuestos para ${m}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-[#0d0f12] p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-3"
+                      className="group bg-white p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-3"
                     >
-                      <b className="text-white uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{m}</b>
-                      <span className="inline-flex items-center gap-1.5 text-[11px] text-neutral-400 group-hover:text-[#b7212c] uppercase tracking-wider transition-colors">
+                      <b className="text-neutral-900 uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{m}</b>
+                      <span className="inline-flex items-center gap-1.5 text-[11px] text-neutral-600 group-hover:text-[#b7212c] uppercase tracking-wider transition-colors">
                         Ver repuestos <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                     </a>
                   ))}
                 </div>
-                <p className="mt-5 text-sm text-neutral-400">
+                <p className="mt-5 text-sm text-neutral-300">
                   ¿No ves tu marca? <a href="#buscador" className="text-white underline underline-offset-4 hover:text-[#b7212c]">Elige entre más de {MARCAS.length} marcas</a>, arriba en el buscador.
                 </p>
               </div>
@@ -118,10 +118,10 @@ export default function ShopBySection() {
                     href={whatsappLink(`Hola, quiero cotizar repuestos ${b.nombre}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-[#0d0f12] p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-2"
+                    className="group bg-white p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-2"
                   >
-                    <b className="text-white uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{b.nombre}</b>
-                    <small className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-white">
+                    <b className="text-neutral-900 uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{b.nombre}</b>
+                    <small className="text-[10px] uppercase tracking-widest text-neutral-600 group-hover:text-neutral-900">
                       {b.premium ? <span className="bg-[#b7212c] px-2 py-0.5 text-white">Premium</span> : "Aliada"}
                     </small>
                   </a>

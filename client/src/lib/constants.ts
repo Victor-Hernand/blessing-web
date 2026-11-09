@@ -33,6 +33,12 @@ export const IMAGES = {
   realEmployeeBag: "/images/real-employee-bag.jpeg",
   realSellerProducts: "/images/real-seller-products.jpeg",
   realClientDelivery: "/images/real-client-delivery.jpeg",
+  // Fotos de la galería "Nuestro Equipo"
+  galeriaAtencion: "/images/galeria-atencion.jpg",
+  galeriaAsesoria: "/images/galeria-asesoria.jpg",
+  galeriaInventario: "/images/galeria-inventario.jpg",
+  galeriaPreparacion: "/images/galeria-preparacion.jpg",
+  galeriaVendedores: "/images/galeria-vendedores.jpg",
   realTeamStore: "/images/real-team-store.jpg",
   // Fotos del carrusel "Conoce nuestra empresa"
   empresaCarrusel1: "/images/empresa-carrusel-1.jpg",

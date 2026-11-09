@@ -71,7 +71,7 @@ function Accordion({ title, subtitle, children, index, defaultOpen = false }: { 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.04 }}
-      className={`relative border-b border-white/10 ${open ? "bg-[#171a1e]" : "bg-[#171a1e] hover:bg-[#0d0f12]"} transition-colors`}
+      className={`relative border-b border-white/10 ${open ? "bg-metal" : "bg-metal hover:bg-metal"} transition-colors`}
     >
       {open && <span className="absolute left-0 top-0 bottom-0 w-1 bg-[#b7212c]" />}
       <button onClick={() => setOpen(!open)} className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left group">
@@ -81,7 +81,7 @@ function Accordion({ title, subtitle, children, index, defaultOpen = false }: { 
           </span>
           <div className="min-w-0">
             <span className={`text-base font-bold transition-colors ${open ? "text-[#b7212c]" : "text-white group-hover:text-[#b7212c]"}`} style={{ fontFamily: "var(--font-heading)" }}>{title}</span>
-            {subtitle && <span className="block text-xs text-neutral-400 mt-0.5">{subtitle}</span>}
+            {subtitle && <span className="block text-xs text-neutral-300 mt-0.5">{subtitle}</span>}
           </div>
         </div>
         <div className={`shrink-0 w-8 h-8 border border-white/15 flex items-center justify-center transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 ${open ? "rotate-180 border-[#b7212c] text-[#b7212c]" : "text-neutral-300"}`}>
@@ -119,39 +119,39 @@ function ClaimForm() {
     window.open(`https://wa.me/50492507107?text=${msg}`, "_blank");
   };
 
-  const inputBase = "w-full bg-[#171a1e] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
+  const inputBase = "w-full bg-metal border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-300 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Nombre completo</label>
+          <label className="block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Nombre completo</label>
           <input type="text" required value={name} onChange={e => setName(e.target.value)} placeholder="Ej: Juan Pérez" className={inputBase} />
         </div>
         <div>
-          <label className="block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>No. de factura</label>
+          <label className="block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>No. de factura</label>
           <input type="text" required value={invoiceNum} onChange={e => setInvoiceNum(e.target.value)} placeholder="Ej: FAC-001234" className={inputBase} />
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Producto / Repuesto</label>
+          <label className="block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Producto / Repuesto</label>
           <input type="text" required value={product} onChange={e => setProduct(e.target.value)} placeholder="Ej: Amortiguador delantero Corolla" className={inputBase} />
         </div>
         <div>
-          <label className="block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Fecha de compra</label>
+          <label className="block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Fecha de compra</label>
           <input type="date" required value={purchaseDate} onChange={e => setPurchaseDate(e.target.value)} className={inputBase} />
         </div>
       </div>
       <div>
-        <label className="block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Descripción del problema</label>
+        <label className="block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5" style={{ fontFamily: "var(--font-heading)" }}>Descripción del problema</label>
         <textarea required rows={3} value={description} onChange={e => setDescription(e.target.value)} placeholder="Describa brevemente qué problema presenta el repuesto..." className={`${inputBase} resize-none`} />
       </div>
       <button type="submit" className="w-full sm:w-auto flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-8 py-3.5 text-xs font-bold uppercase tracking-wider transition-colors" style={{ fontFamily: "var(--font-heading)" }}>
         <Send className="w-4 h-4" />
         Enviar reclamo por WhatsApp
       </button>
-      <p className="text-[11px] text-neutral-400 mt-2">
+      <p className="text-[11px] text-neutral-300 mt-2">
         Al presionar "Enviar", se abrirá WhatsApp con su información pre-llenada para que nuestro equipo la reciba directamente.
       </p>
     </form>
@@ -161,14 +161,14 @@ function ClaimForm() {
 /* ─── MAIN PAGE ─── */
 export default function Garantia() {
   return (
-    <div className="min-h-screen bg-[#171a1e] overflow-x-hidden" style={{ fontFamily: "var(--font-body)" }}>
+    <div className="min-h-screen bg-metal overflow-x-hidden" style={{ fontFamily: "var(--font-body)" }}>
 
       <Header />
 
       {/* ═══ Hero — Ejecutivo Corporativo ═══ */}
-      <section className="relative bg-[#171a1e] text-white border-b border-white/10 overflow-hidden">
+      <section className="relative bg-metal text-white border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-[#0d0f12]" />
+          <div className="absolute inset-0 bg-metal" />
           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")` }} />
         </div>
         <div className="max-w-6xl mx-auto px-5 pt-8 pb-12 lg:pt-10 lg:pb-14 relative z-10">
@@ -176,19 +176,19 @@ export default function Garantia() {
             <h1 className="font-bold leading-[1.1] tracking-tight mb-6 text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
               Política de <span className="text-[#b7212c]">Garantía</span>
             </h1>
-            <p className="text-neutral-400 text-base lg:text-lg leading-relaxed max-w-lg mx-auto">
+            <p className="text-neutral-300 text-base lg:text-lg leading-relaxed max-w-lg mx-auto">
               Respaldamos cada producto que vendemos. Aquí encontrará los términos, condiciones y tiempos de cobertura de nuestra garantía.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-3 mt-10">
-              <div className="flex items-center gap-2.5 bg-[#171a1e] border border-white/10 px-4 py-2.5">
+              <div className="flex items-center gap-2.5 bg-metal border border-white/10 px-4 py-2.5">
                 <Shield className="w-5 h-5 text-[#b7212c]" />
                 <span className="text-sm text-white font-semibold">Hasta 30 días</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-[#171a1e] border border-white/10 px-4 py-2.5">
+              <div className="flex items-center gap-2.5 bg-metal border border-white/10 px-4 py-2.5">
                 <CheckCircle2 className="w-5 h-5 text-[#b7212c]" />
                 <span className="text-sm text-white font-semibold">Defectos de fábrica</span>
               </div>
-              <div className="flex items-center gap-2.5 bg-[#171a1e] border border-white/10 px-4 py-2.5">
+              <div className="flex items-center gap-2.5 bg-metal border border-white/10 px-4 py-2.5">
                 <RefreshCw className="w-5 h-5 text-[#b7212c]" />
                 <span className="text-sm text-white font-semibold">Reemplazo directo</span>
               </div>
@@ -212,7 +212,7 @@ export default function Garantia() {
         <div className="max-w-6xl mx-auto px-5">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Qué cubre */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-[#171a1e] border border-white/10 p-7 relative overflow-hidden group hover:border-green-200 transition-colors">
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-metal border border-white/10 p-7 relative overflow-hidden group hover:border-green-200 transition-colors">
               <div className="absolute top-0 left-0 w-1 h-full bg-[#1d1d1b]" />
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 bg-[#1d1d1b] flex items-center justify-center rounded-sm">
@@ -228,7 +228,7 @@ export default function Garantia() {
             </motion.div>
 
             {/* Qué NO cubre */}
-            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#171a1e] border border-white/10 p-7 relative overflow-hidden group hover:border-[#b7212c]/30 transition-colors">
+            <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-metal border border-white/10 p-7 relative overflow-hidden group hover:border-[#b7212c]/30 transition-colors">
               <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
               <div className="flex items-center gap-3 mb-5">
                 <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center rounded-sm">
@@ -265,7 +265,7 @@ export default function Garantia() {
           </motion.div>
 
           {/* ═══ Resultado del Reclamo ═══ */}
-          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-6 bg-[#171a1e] border border-white/10 p-7 relative overflow-hidden">
+          <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-6 bg-metal border border-white/10 p-7 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
             <div className="flex items-center gap-3 mb-5">
               <div className="w-10 h-10 bg-[#b7212c]/10 flex items-center justify-center rounded-sm">
@@ -280,7 +280,7 @@ export default function Garantia() {
                 </div>
                 <div>
                   <p className="text-[13px] font-semibold text-white" style={{ fontFamily: "var(--font-heading)" }}>Reemplazo del producto</p>
-                  <p className="text-[12px] text-neutral-400 mt-0.5">Se le entrega un repuesto nuevo del mismo tipo y especificación.</p>
+                  <p className="text-[12px] text-neutral-300 mt-0.5">Se le entrega un repuesto nuevo del mismo tipo y especificación.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -289,7 +289,7 @@ export default function Garantia() {
                 </div>
                 <div>
                   <p className="text-[13px] font-semibold text-white" style={{ fontFamily: "var(--font-heading)" }}>Crédito en tienda</p>
-                  <p className="text-[12px] text-neutral-400 mt-0.5">En casos especiales, se otorga un crédito equivalente para usar en nuestra tienda.</p>
+                  <p className="text-[12px] text-neutral-300 mt-0.5">En casos especiales, se otorga un crédito equivalente para usar en nuestra tienda.</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
@@ -298,7 +298,7 @@ export default function Garantia() {
                 </div>
                 <div>
                   <p className="text-[13px] font-semibold text-white" style={{ fontFamily: "var(--font-heading)" }}>Tiempo de evaluación</p>
-                  <p className="text-[12px] text-neutral-400 mt-0.5">El proceso de evaluación toma de 3 a 5 días hábiles después de recibir el repuesto.</p>
+                  <p className="text-[12px] text-neutral-300 mt-0.5">El proceso de evaluación toma de 3 a 5 días hábiles después de recibir el repuesto.</p>
                 </div>
               </div>
             </div>
@@ -307,7 +307,7 @@ export default function Garantia() {
       </section>
 
       {/* ═══ Tabla de Garantías ═══ */}
-      <section className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-[#0d0f12]">
+      <section className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-metal">
         <div className="max-w-6xl mx-auto px-5">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <div className="flex items-center gap-4 mb-4">
@@ -315,10 +315,10 @@ export default function Garantia() {
               <span className="text-[11px] font-semibold tracking-[0.2em] text-[#b7212c] uppercase" style={{ fontFamily: "var(--font-heading)" }}>Tabla de Garantías</span>
             </div>
             <h2 className="font-bold text-white tracking-tight text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>Tiempos de cobertura por producto</h2>
-            <p className="text-neutral-400 mt-2 text-sm">Todos los períodos se expresan en días calendario a partir de la fecha de compra.</p>
+            <p className="text-neutral-300 mt-2 text-sm">Todos los períodos se expresan en días calendario a partir de la fecha de compra.</p>
           </motion.div>
 
-          <div className="bg-[#171a1e] border border-white/10 overflow-hidden">
+          <div className="bg-metal border border-white/10 overflow-hidden">
             <div className="hidden sm:grid grid-cols-12 bg-white/5 text-white text-[11px] font-semibold uppercase tracking-[0.15em] py-4 px-6" style={{ fontFamily: "var(--font-heading)" }}>
               <div className="col-span-3">Categoría</div>
               <div className="col-span-6">Repuestos incluidos</div>
@@ -347,7 +347,7 @@ export default function Garantia() {
               ))
             ))}
           </div>
-          <div className="flex items-center gap-5 mt-5 text-xs text-neutral-400">
+          <div className="flex items-center gap-5 mt-5 text-xs text-neutral-300">
             <div className="flex items-center gap-1.5"><div className="w-3 h-3 bg-[#b7212c] rounded-sm" /> 30 días</div>
             <div className="flex items-center gap-1.5"><div className="w-3 h-3 bg-white/10 rounded-sm" /> 30 días</div>
             <div className="flex items-center gap-1.5"><div className="w-3 h-3 bg-white/5 rounded-sm" /> 15 días</div>
@@ -364,9 +364,9 @@ export default function Garantia() {
               <span className="text-[11px] font-semibold tracking-[0.2em] text-[#b7212c] uppercase" style={{ fontFamily: "var(--font-heading)" }}>Condiciones Específicas</span>
             </div>
             <h2 className="font-bold text-white tracking-tight text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>Exclusiones por categoría</h2>
-            <p className="text-neutral-400 mt-2 text-sm">Seleccione una categoría para ver las condiciones que invalidan el reclamo de garantía.</p>
+            <p className="text-neutral-300 mt-2 text-sm">Seleccione una categoría para ver las condiciones que invalidan el reclamo de garantía.</p>
           </motion.div>
-          <div className="bg-[#171a1e] border border-white/10 overflow-hidden">
+          <div className="bg-metal border border-white/10 overflow-hidden">
             {CONDITIONS.map((cond, i) => (
               <Accordion key={cond.title} title={cond.title} subtitle={cond.subtitle} index={i}>
                 <p className="text-[11px] font-semibold text-[#b7212c] uppercase tracking-[0.15em] mb-3" style={{ fontFamily: "var(--font-heading)" }}>La garantía no procede cuando:</p>
@@ -384,7 +384,7 @@ export default function Garantia() {
       </section>
 
       {/* ═══ Proceso de Reclamo — 3 pasos ═══ */}
-      <section className="pt-6 lg:pt-8 pb-12 lg:pb-16 bg-[#0d0f12]">
+      <section className="pt-6 lg:pt-8 pb-12 lg:pb-16 bg-metal">
         <div className="max-w-6xl mx-auto px-5">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-12">
             <div className="flex items-center gap-4 mb-4">
@@ -393,17 +393,17 @@ export default function Garantia() {
             </div>
             <h2 className="font-bold text-white tracking-tight text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>¿Cómo hacer válida su garantía?</h2>
           </motion.div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-[#171a1e] border border-white/10 overflow-hidden">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 bg-metal border border-white/10 overflow-hidden">
             {[
               { icon: FileText, num: "01", title: "Presente su factura", desc: "Lleve su comprobante de compra original con la fecha de adquisición del producto. Sin factura no se puede procesar ningún reclamo." },
               { icon: Wrench, num: "02", title: "Traiga el repuesto", desc: "Presente el repuesto defectuoso junto con su identidad en nuestra tienda o inicie el proceso por WhatsApp." },
               { icon: Clock, num: "03", title: "Dentro del plazo", desc: "El reclamo debe presentarse dentro del período indicado en la tabla. El tiempo de evaluación es de 3 a 5 días hábiles." },
             ].map((step, i) => (
               <motion.div key={step.num} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className={`p-8 relative ${i < 2 ? "border-b md:border-b-0 md:border-r border-white/10" : ""}`}>
-                <span className="absolute top-6 right-6 text-5xl font-bold text-neutral-400" style={{ fontFamily: "var(--font-heading)" }}>{step.num}</span>
+                <span className="absolute top-6 right-6 text-5xl font-bold text-neutral-300" style={{ fontFamily: "var(--font-heading)" }}>{step.num}</span>
                 <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center mb-5"><step.icon className="w-4 h-4 text-white" /></div>
                 <h3 className="font-bold text-white uppercase tracking-wide mb-2 text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>{step.title}</h3>
-                <p className="text-[13px] text-neutral-400 leading-relaxed">{step.desc}</p>
+                <p className="text-[13px] text-neutral-300 leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -421,29 +421,29 @@ export default function Garantia() {
                   <span className="text-[11px] font-semibold tracking-[0.2em] text-[#b7212c] uppercase" style={{ fontFamily: "var(--font-heading)" }}>Reclamo en Línea</span>
                 </div>
                 <h2 className="font-bold text-white tracking-tight mb-4 text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>Inicie su reclamo por WhatsApp</h2>
-                <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+                <p className="text-neutral-300 text-sm leading-relaxed mb-6">
                   Complete el formulario y su información será enviada directamente a nuestro equipo de atención por WhatsApp. Recibirá respuesta en un plazo de 24 horas.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-[#0d0f12] flex items-center justify-center shrink-0 rounded-sm"><FileText className="w-3.5 h-3.5 text-neutral-200" /></div>
+                    <div className="w-8 h-8 bg-metal flex items-center justify-center shrink-0 rounded-sm"><FileText className="w-3.5 h-3.5 text-neutral-200" /></div>
                     <div>
                       <p className="text-[13px] font-semibold text-white">Tenga a mano su factura</p>
-                      <p className="text-[12px] text-neutral-400">Necesitará el número de factura y la fecha de compra.</p>
+                      <p className="text-[12px] text-neutral-300">Necesitará el número de factura y la fecha de compra.</p>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-[#0d0f12] flex items-center justify-center shrink-0 rounded-sm"><MessageCircle className="w-3.5 h-3.5 text-neutral-200" /></div>
+                    <div className="w-8 h-8 bg-metal flex items-center justify-center shrink-0 rounded-sm"><MessageCircle className="w-3.5 h-3.5 text-neutral-200" /></div>
                     <div>
                       <p className="text-[13px] font-semibold text-white">Respuesta rápida</p>
-                      <p className="text-[12px] text-neutral-400">Nuestro equipo le contactará para coordinar la evaluación.</p>
+                      <p className="text-[12px] text-neutral-300">Nuestro equipo le contactará para coordinar la evaluación.</p>
                     </div>
                   </div>
                 </div>
               </motion.div>
             </div>
             <div className="lg:col-span-3">
-              <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-[#0d0f12] border border-white/10 p-7">
+              <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-metal border border-white/10 p-7">
                 <ClaimForm />
               </motion.div>
             </div>
@@ -452,7 +452,7 @@ export default function Garantia() {
       </section>
 
       {/* ═══ FAQ ═══ */}
-      <section className="pt-6 lg:pt-8 pb-12 lg:pb-16 bg-[#0d0f12]">
+      <section className="pt-6 lg:pt-8 pb-12 lg:pb-16 bg-metal">
         <div className="max-w-6xl mx-auto px-5">
           <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
             <div className="flex items-center gap-4 mb-4">
@@ -460,9 +460,9 @@ export default function Garantia() {
               <span className="text-[11px] font-semibold tracking-[0.2em] text-[#b7212c] uppercase" style={{ fontFamily: "var(--font-heading)" }}>Preguntas Frecuentes</span>
             </div>
             <h2 className="font-bold text-white tracking-tight text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>Dudas sobre garantías</h2>
-            <p className="text-neutral-400 mt-2 text-sm">Respuestas a las consultas más comunes de nuestros clientes.</p>
+            <p className="text-neutral-300 mt-2 text-sm">Respuestas a las consultas más comunes de nuestros clientes.</p>
           </motion.div>
-          <div className="bg-[#171a1e] border border-white/10 overflow-hidden">
+          <div className="bg-metal border border-white/10 overflow-hidden">
             {FAQ_ITEMS.map((faq, i) => (
               <Accordion key={i} title={faq.q} index={i}>
                 <p className="text-sm text-neutral-300 leading-relaxed">{faq.a}</p>
@@ -473,11 +473,11 @@ export default function Garantia() {
       </section>
 
       {/* ═══ Disclaimer Legal ═══ */}
-      <section className="bg-[#0d0f12] border-t border-white/10">
+      <section className="bg-metal border-t border-white/10">
         <div className="max-w-6xl mx-auto px-5 py-6">
           <div className="flex items-start gap-3">
-            <Info className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
-            <div className="text-[12px] text-neutral-400 leading-relaxed space-y-1.5">
+            <Info className="w-4 h-4 text-neutral-300 shrink-0 mt-0.5" />
+            <div className="text-[12px] text-neutral-300 leading-relaxed space-y-1.5">
               <p>
                 <strong className="text-neutral-200">Aviso legal:</strong> Auto Repuestos Blessing se reserva el derecho de inspeccionar y evaluar cualquier producto antes de aprobar un reclamo de garantía. El tiempo de evaluación es de 3 a 5 días hábiles a partir de la recepción del repuesto y la documentación completa.
               </p>
@@ -504,7 +504,7 @@ export default function Garantia() {
               <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 bg-[#b7212c] hover:opacity-90 text-white px-6 py-3.5 text-xs font-bold uppercase tracking-wider transition-opacity active:scale-[0.97]" style={{ fontFamily: "var(--font-heading)" }}>
                 <MessageCircle className="w-4 h-4" />WhatsApp
               </a>
-              <a href="/" className="flex items-center gap-2 border-2 border-white text-white hover:bg-[#171a1e] hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-wider transition-colors" style={{ fontFamily: "var(--font-heading)" }}>
+              <a href="/" className="flex items-center gap-2 border-2 border-white text-white hover:bg-metal hover:text-white px-6 py-3 text-xs font-bold uppercase tracking-wider transition-colors" style={{ fontFamily: "var(--font-heading)" }}>
                 <ArrowLeft className="w-4 h-4" />Inicio
               </a>
             </div>

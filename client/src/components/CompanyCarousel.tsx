@@ -39,7 +39,7 @@ export default function CompanyCarousel() {
       onBlur={() => setPausado(false)}
       className="w-full max-w-md lg:ml-auto"
     >
-      <div className="relative aspect-[16/10] overflow-hidden bg-[#171a1e]">
+      <div className="relative aspect-[16/10] overflow-hidden bg-metal">
         {FOTOS.map((foto, k) => (
           <img
             key={foto.src}
@@ -58,7 +58,7 @@ export default function CompanyCarousel() {
           type="button"
           onClick={() => avanzar(-1)}
           aria-label="Foto anterior"
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0d0f12]/80 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#3a3e45]/80 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -66,7 +66,7 @@ export default function CompanyCarousel() {
           type="button"
           onClick={() => avanzar(1)}
           aria-label="Foto siguiente"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#0d0f12]/80 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#3a3e45]/80 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
         >
           <ChevronRight className="w-5 h-5" />
         </button>

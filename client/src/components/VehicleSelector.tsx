@@ -6,10 +6,10 @@ export type Seleccion = { marca: string; modelo: string; anio: string; vin: stri
 export const SELECCION_VACIA: Seleccion = { marca: "", modelo: "", anio: "", vin: "", tipo: "" };
 
 const selectClass =
-  "w-full bg-[#0d0f12] border border-white/15 px-3 py-2.5 text-sm text-white placeholder:text-neutral-500 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]";
+  "w-full bg-white border border-white/15 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-500 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]";
 
 const labelClass =
-  "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5";
 
 interface Props {
   value: Seleccion;
@@ -26,20 +26,20 @@ export default function VehicleSelector({ value, onChange, cotizarHref }: Props)
   const anios = Array.from({ length: anioActual - 2001 + 1 }, (_, i) => anioActual - i);
 
   return (
-    <div className="bg-[#171a1e] border-y border-white/10 px-4 py-6 sm:px-6 lg:px-12 lg:py-8">
+    <div className="bg-metal border-y border-white/10 px-4 py-6 sm:px-6 lg:px-12 lg:py-8">
       <p
-        className="text-center text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+        className="text-center text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         Encuentra tu repuesto
       </p>
       <h2
-        className="section-title text-center text-white text-[26px] lg:text-[32px]"
+        className="section-title text-center text-white text-[26px] lg:text-[32px] [text-shadow:0_3px_10px_rgba(0,0,0,0.8),0_0_2px_rgba(0,0,0,0.9)]"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         ¡Encuentra los repuestos ideales para tu vehículo!
       </h2>
-      <p className="text-center text-neutral-400 text-sm mt-1">
+      <p className="text-center text-neutral-300 text-sm mt-1 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]">
         Selecciona tu auto o escribe sus datos y descubre las piezas que necesita para seguir en marcha.
       </p>
 

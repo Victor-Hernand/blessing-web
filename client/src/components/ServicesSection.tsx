@@ -34,7 +34,7 @@ export default function ServicesSection() {
   }, [lightbox]);
 
   return (
-    <section id="servicios" className="pt-10 lg:pt-12 pb-10 lg:pb-12 relative overflow-hidden bg-[#171a1e]">
+    <section id="servicios" className="pt-10 lg:pt-12 pb-10 lg:pb-12 relative overflow-hidden bg-metal">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -64,20 +64,20 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.08 }}
-              className="group relative overflow-hidden transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border border-white/10 hover:border-[#b7212c] bg-[#0d0f12] hover:shadow-lg hover:shadow-black/40 flex flex-col"
+              className="group relative overflow-hidden transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border border-neutral-300 hover:border-[#b7212c] bg-[#d9dde3] hover:shadow-lg hover:shadow-black/40 flex flex-col"
             >
               <div className="h-1.5 w-full shrink-0 bg-[#b7212c]" />
 
               <div className="p-6 lg:p-7 flex-1">
                 <div className="flex items-start justify-between gap-4 mb-3">
-                  <h3 className="text-white font-bold uppercase tracking-wide text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
+                  <h3 className="text-neutral-900 font-bold uppercase tracking-wide text-[20px]" style={{ fontFamily: "var(--font-heading)" }}>
                     {s.title}
                   </h3>
-                  <div className="w-9 h-9 shrink-0 flex items-center justify-center bg-[#0d0f12] border border-white/10 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
+                  <div className="w-9 h-9 shrink-0 flex items-center justify-center bg-white border border-neutral-300 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
                     <s.icon className="w-4 h-4 text-[#b7212c] group-hover:text-white transition-colors duration-300" />
                   </div>
                 </div>
-                <p className="text-neutral-400 text-sm leading-relaxed">{s.desc}</p>
+                <p className="text-neutral-700 text-sm leading-relaxed">{s.desc}</p>
               </div>
               <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />
             </motion.div>
@@ -135,8 +135,8 @@ export default function ServicesSection() {
                 <h3 className="text-white font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {services[lightbox].title}
                 </h3>
-                <p className="text-neutral-400 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>
-                <p className="text-neutral-400 text-xs mt-3 tracking-widest">{lightbox + 1} / {services.length}</p>
+                <p className="text-neutral-300 text-sm mt-1 max-w-2xl mx-auto">{services[lightbox].desc}</p>
+                <p className="text-neutral-300 text-xs mt-3 tracking-widest">{lightbox + 1} / {services.length}</p>
               </div>
             </motion.div>
           </motion.div>

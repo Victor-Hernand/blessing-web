@@ -2,12 +2,12 @@
 import { COMPANY } from "@/lib/constants";
 import SquircleDefs from "@/components/SquircleDefs";
 
-const titulo = "text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-400 mb-2";
+const titulo = "text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-300 mb-2";
 const enlace = "text-sm text-neutral-300 hover:text-white transition-colors";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0c0e] text-neutral-300 border-t border-white/10">
+    <footer className="bg-[#30343b] text-neutral-300 border-t border-white/10">
       <div className="container py-4 lg:py-5 flex flex-col items-center text-center gap-3">
         {/* Marca */}
         <div className="flex flex-col items-center w-full max-w-xs">
@@ -16,7 +16,7 @@ export default function Footer() {
             alt="Auto Repuestos Blessing"
             className="h-14 w-auto mb-3"
           />
-          <p className="text-sm leading-relaxed text-neutral-400">
+          <p className="text-sm leading-relaxed text-neutral-300">
             Empresa hondureña de autopartes. Variedad, calidad y precios accesibles.
           </p>
         </div>
@@ -42,10 +42,10 @@ export default function Footer() {
       {/* Barra inferior */}
       <div className="border-t border-white/10">
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-neutral-300">
             &copy; {new Date().getFullYear()} Auto Repuestos Blessing. Todos los derechos reservados. Tegucigalpa, Honduras
           </p>
-          <a href="/privacidad" className="text-xs text-neutral-400 hover:text-white underline underline-offset-2 transition-colors">
+          <a href="/privacidad" className="text-xs text-neutral-300 hover:text-white underline underline-offset-2 transition-colors">
             Política de privacidad
           </a>
         </div>

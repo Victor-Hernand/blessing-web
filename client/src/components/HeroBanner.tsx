@@ -26,7 +26,7 @@ export default function HeroBanner() {
     <section id="inicio" className="bg-blueprint">
       <div>
         {/* Foto de punta a punta con el titular encima, en el lado derecho */}
-        <div className="relative w-full h-[68vh] min-h-[460px] overflow-hidden border-y border-white/10 bg-[#171a1e]">
+        <div className="relative w-full h-[68vh] min-h-[460px] overflow-hidden border-y border-white/10 bg-metal">
           {/* Sin recorte: se muestra la foto completa, con todo el equipo */}
           <img
             src={IMAGES.heroPremium}
@@ -34,17 +34,15 @@ export default function HeroBanner() {
             fetchPriority="high"
             className="img-reveal absolute inset-0 w-full h-full object-cover object-center"
           />
-          {/* Degradado oscuro a la izquierda, para que el titular se lea sobre la fachada */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/90 via-[#0d0f12]/55 to-transparent" />
           <div className="absolute inset-0 flex flex-col justify-start items-start text-left p-6 pt-4 sm:p-10 sm:pt-12 lg:p-14 lg:pt-16">
             <span
-              className="text-[#b7212c] text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] mb-3"
+              className="text-[#b7212c] text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] mb-3 [text-shadow:0_1px_6px_rgba(0,0,0,0.8)]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               Auto Repuestos Blessing
             </span>
             <h1
-              className="section-title text-white leading-[0.95] text-[44px] sm:text-[60px] lg:text-[80px] [text-shadow:0_2px_24px_rgba(0,0,0,0.55)]"
+              className="section-title text-white leading-[0.95] text-[44px] sm:text-[60px] lg:text-[80px] [text-shadow:0_2px_4px_rgba(0,0,0,0.7),0_4px_18px_rgba(0,0,0,0.7)]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               La calidad <br />
@@ -76,7 +74,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Barra de confianza */}
-      <div className="bg-[#171a1e] border-y border-white/10">
+      <div className="bg-metal border-y border-white/10">
         <ul className="container grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 py-4 sm:py-5">
           {VENTAJAS.map((v, i) => (
             <motion.li

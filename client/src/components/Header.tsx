@@ -49,8 +49,8 @@ export default function Header() {
     <header
       className={`sticky top-0 z-50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border-b border-white/10 ${
         scrolled
-          ? "bg-[#0d0f12]/95 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
-          : "bg-[#0d0f12]"
+          ? "bg-[#3a3e45]/95 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+          : "bg-metal"
       }`}
     >
       {/* Línea de acento roja + progreso de lectura */}
@@ -133,7 +133,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-[#0d0f12] border-t border-white/10 overflow-hidden"
+            className="lg:hidden bg-metal border-t border-white/10 overflow-hidden"
           >
             <nav className="container py-4 flex flex-col gap-1">
               {NAV_LINKS.map((link, i) => (

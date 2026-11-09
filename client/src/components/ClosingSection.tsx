@@ -4,9 +4,8 @@ import { COMPANY } from "@/lib/constants";
 
 export default function ClosingSection() {
   return (
-    <section className="relative overflow-hidden bg-[#171a1e] border-t border-white/10 isolate" aria-labelledby="cl-t">
+    <section className="relative overflow-hidden bg-metal border-t border-white/10 isolate" aria-labelledby="cl-t">
       <img src="/images/cierre-mecanico.jpg" alt="Mecánico de Blessing revisando el sistema de aire acondicionado de un vehículo" loading="lazy" className="absolute inset-0 -z-10 w-full h-full object-cover object-[50%_40%]" />
-      <div className="absolute inset-0 -z-10 bg-[#0d0f12]/80" aria-hidden="true" />
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#b7212c] to-transparent" />
       <div className="container pt-8 lg:pt-10 pb-8 lg:pb-10 text-center">
         <div className="flex items-center justify-center gap-3 mb-4">

@@ -10,7 +10,7 @@ const tonePoints = [
 
 export default function CommunicationToneSection() {
   return (
-    <section className="relative overflow-hidden bg-[#171a1e] pt-8 lg:pt-10 pb-6 lg:pb-8">
+    <section className="relative overflow-hidden bg-metal pt-8 lg:pt-10 pb-6 lg:pb-8">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(183,33,44,0.18),transparent_45%)]" />
 
       <div className="container relative z-10">
@@ -75,7 +75,7 @@ export default function CommunicationToneSection() {
             <div className="pointer-events-none absolute -right-2 top-2 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-[#b7212c]/90 lg:block" />
             <div className="pointer-events-none absolute -left-2 bottom-6 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-[#b7212c]/90 lg:block" />
 
-            <div className="relative w-full overflow-hidden rounded-[28px] border border-white/10 bg-[#0d0f12]">
+            <div className="relative w-full overflow-hidden rounded-[28px] border border-white/10 bg-metal">
               <img
                 src={IMAGES.realTeamStore}
                 alt="Equipo de Auto Repuestos Blessing en el mostrador de la tienda"

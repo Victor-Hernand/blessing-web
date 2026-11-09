@@ -7,7 +7,7 @@ import SquircleDefs from "@/components/SquircleDefs";
 
 export default function ContactSection() {
   return (
-    <section id="contacto" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-[#0d0f12]">
+    <section id="contacto" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-metal">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -38,44 +38,44 @@ export default function ContactSection() {
               Información de Contacto
             </h3>
 
-            <a href={`tel:${COMPANY.phone}`} className="flex items-start gap-4 p-4 bg-[#171a1e] border border-white/10 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
+            <a href={`tel:${COMPANY.phone}`} className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
-                <Phone className="w-4 h-4 text-white" />
+                <Phone className="w-4 h-4 text-neutral-900" />
               </div>
               <div>
-                <div className="text-xs text-neutral-400 uppercase tracking-wider font-medium mb-0.5">Teléfono</div>
-                <div className="text-white font-semibold group-hover:text-[#b7212c] transition-colors">{COMPANY.phone}</div>
+                <div className="text-xs text-neutral-700 uppercase tracking-wider font-medium mb-0.5">Teléfono</div>
+                <div className="text-neutral-900 font-semibold group-hover:text-[#b7212c] transition-colors">{COMPANY.phone}</div>
               </div>
             </a>
 
-            <a href={`mailto:${COMPANY.email}`} className="flex items-start gap-4 p-4 bg-[#171a1e] border border-white/10 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
+            <a href={`mailto:${COMPANY.email}`} className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
-                <Mail className="w-4 h-4 text-white" />
+                <Mail className="w-4 h-4 text-neutral-900" />
               </div>
               <div>
-                <div className="text-xs text-neutral-400 uppercase tracking-wider font-medium mb-0.5">Email</div>
-                <div className="text-white font-semibold group-hover:text-[#b7212c] transition-colors text-sm">{COMPANY.email}</div>
+                <div className="text-xs text-neutral-700 uppercase tracking-wider font-medium mb-0.5">Email</div>
+                <div className="text-neutral-900 font-semibold group-hover:text-[#b7212c] transition-colors text-sm">{COMPANY.email}</div>
               </div>
             </a>
 
-            <div className="flex items-start gap-4 p-4 bg-[#171a1e] border border-white/10">
+            <div className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
-                <MapPin className="w-4 h-4 text-white" />
+                <MapPin className="w-4 h-4 text-neutral-900" />
               </div>
               <div>
-                <div className="text-xs text-neutral-400 uppercase tracking-wider font-medium mb-0.5">Dirección</div>
-                <div className="text-white text-sm leading-relaxed">{COMPANY.address}</div>
+                <div className="text-xs text-neutral-700 uppercase tracking-wider font-medium mb-0.5">Dirección</div>
+                <div className="text-neutral-900 text-sm leading-relaxed">{COMPANY.address}</div>
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 bg-[#171a1e] border border-white/10">
+            <div className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
-                <Clock className="w-4 h-4 text-white" />
+                <Clock className="w-4 h-4 text-neutral-900" />
               </div>
               <div>
-                <div className="text-xs text-neutral-400 uppercase tracking-wider font-medium mb-0.5">Horario</div>
-                <div className="text-white text-sm">{COMPANY.schedule.weekdays}</div>
-                <div className="text-white text-sm">{COMPANY.schedule.saturday}</div>
+                <div className="text-xs text-neutral-700 uppercase tracking-wider font-medium mb-0.5">Horario</div>
+                <div className="text-neutral-900 text-sm">{COMPANY.schedule.weekdays}</div>
+                <div className="text-neutral-900 text-sm">{COMPANY.schedule.saturday}</div>
                 <div className="text-[#b7212c] text-sm font-medium">{COMPANY.schedule.sunday}</div>
               </div>
             </div>
@@ -89,14 +89,14 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-[#171a1e] border border-white/10 p-6 lg:p-8">
+            <div className="bg-[#d9dde3] border border-neutral-300 p-6 lg:p-8">
               <div className="flex items-center gap-3 mb-2">
                 <Users className="w-6 h-6 text-[#b7212c]" />
-                <h3 className="font-bold text-white uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="font-bold text-neutral-900 uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   Directorio de Vendedores
                 </h3>
               </div>
-              <p className="text-neutral-400 text-sm mb-6">
+              <p className="text-neutral-700 text-sm mb-6">
                 Contáctanos directamente con cualquiera de nuestros vendedores especializados para asesoría personalizada.
               </p>
               <div className="overflow-hidden">
@@ -107,14 +107,14 @@ export default function ContactSection() {
                     href={`https://wa.me/504${seller.phone.replace(/-/g, "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-72 shrink-0 flex items-center gap-3 p-3 bg-[#0d0f12] border border-white/10 hover:border-green-400 hover:bg-green-950/40 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
+                    className="group w-72 shrink-0 flex items-center gap-3 p-3 bg-[#d9dde3] border border-neutral-300 hover:border-green-400 hover:bg-green-950/40 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
                   >
                     <div className="w-9 h-9 bg-green-500/15 border border-green-900/60 flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:border-green-600 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300">
                       <MessageCircle className="w-4 h-4 text-green-600 group-hover:text-white transition-colors" />
                     </div>
                     <div className="min-w-0">
-                      <div className="text-sm font-semibold text-white truncate group-hover:text-green-700 transition-colors">{seller.name}</div>
-                      <div className="text-xs text-neutral-400 flex items-center gap-1">
+                      <div className="text-sm font-semibold text-neutral-900 truncate group-hover:text-green-700 transition-colors">{seller.name}</div>
+                      <div className="text-xs text-neutral-700 flex items-center gap-1">
                         <Phone className="w-3 h-3" />
                         {seller.phone}
                         <ExternalLink className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity ml-1" />

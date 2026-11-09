@@ -8,9 +8,9 @@ import { Link } from "wouter";
 import { CLIENT_TYPES, COMPANY, whatsappLink } from "@/lib/constants";
 
 const inputBase =
-  "w-full bg-[#171a1e] border border-white/10 px-4 py-3 text-sm text-white placeholder:text-neutral-400 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
+  "w-full bg-[#d9dde3] border border-neutral-300 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 const labelBase =
-  "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5";
 // Debe coincidir con FECHA_VIGENTE de pages/Privacidad.tsx.
 const FECHA_POLITICA = "30/10/2026";
 
@@ -49,7 +49,7 @@ export default function QuoteSection() {
   };
 
   return (
-    <section id="cotizar" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-[#0d0f12]">
+    <section id="cotizar" className="pt-6 lg:pt-8 pb-6 lg:pb-8 bg-metal">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function QuoteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="max-w-3xl mx-auto bg-[#171a1e] border border-white/10 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
+          className="max-w-3xl mx-auto bg-metal border border-white/10 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
 
@@ -122,13 +122,13 @@ export default function QuoteSection() {
                 required
                 value={tipo}
                 onChange={e => setTipo(e.target.value)}
-                className={`${inputBase} ${tipo ? "" : "text-neutral-400"}`}
+                className={`${inputBase} ${tipo ? "" : "text-neutral-300"}`}
               >
                 <option value="" disabled>
                   Seleccione una opción
                 </option>
                 {CLIENT_TYPES.map(t => (
-                  <option key={t} value={t} className="text-white bg-[#171a1e]">
+                  <option key={t} value={t} className="text-neutral-900 bg-[#d9dde3]">
                     {t}
                   </option>
                 ))}
@@ -210,7 +210,7 @@ export default function QuoteSection() {
               Enviar solicitud de cotización
             </button>
 
-            <p className="text-[11px] text-neutral-400 text-center">
+            <p className="text-[11px] text-neutral-300 text-center">
               Al enviar, será redirigido a WhatsApp con su mensaje ya cargado.
             </p>
           </form>

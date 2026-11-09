@@ -13,7 +13,7 @@ const TICKETS = [
     detalle: "Aceite, filtro de aceite y filtro de aire",
     imagen: "/images/oferta-cut-filtros.webp",
     mensaje: "Hola, me interesa la oferta: Mantenimiento — Aceite, filtro de aceite y filtro de aire.",
-    franja: "bg-[#0d0f12] text-white",
+    franja: "bg-metal text-white",
   },
   {
     etiqueta: "Oferta del mes",
@@ -21,7 +21,7 @@ const TICKETS = [
     detalle: "Amortiguadores y rótulas",
     imagen: "/images/oferta-cut-suspension.webp",
     mensaje: "Hola, me interesa la oferta: Suspensión — Amortiguadores y rótulas.",
-    franja: "bg-[#0d0f12] text-white",
+    franja: "bg-metal text-white",
   },
   {
     etiqueta: "Liquidación",
@@ -29,7 +29,7 @@ const TICKETS = [
     detalle: "El mejor refrigerante para tu vehículo. Últimas unidades.",
     imagen: "/images/oferta-liquidacion.webp",
     mensaje: "Hola, me interesa la oferta: Liquidación — El mejor refrigerante para tu vehículo. Últimas unidades.",
-    franja: "bg-[#0d0f12] text-white",
+    franja: "bg-metal text-white",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function OffersSection() {
       style={{ backgroundImage: `${FONDO_RAYAS}, linear-gradient(160deg, #c4262f 0%, #a51d26 100%)` }}
     >
       {/* Cinta negra recta con texto alterno relleno / contorno */}
-      <div className="relative bg-[#0d0f12] py-3 overflow-hidden" aria-hidden="true">
+      <div className="relative bg-metal py-3 overflow-hidden" aria-hidden="true">
         <div className="flex w-max animate-marquee">
           {cintaDoble.map((t, i) => {
             const contorno = i % 2 === 1;
@@ -116,8 +116,8 @@ export default function OffersSection() {
               <Zap className="w-3.5 h-3.5" /> Zona de ofertas
             </span>
             <h2 id="of-t" className="font-bold uppercase text-[56px] lg:text-[84px] leading-[0.9] mb-6" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="block text-white">Ofertas que</span>
-              <span className="block text-[#0d0f12]">no esperan.</span>
+              <span className="block text-white [text-shadow:0_3px_8px_rgba(0,0,0,0.75),0_0_2px_rgba(0,0,0,0.9)]">Ofertas que</span>
+              <span className="block text-[#3a3e45] [text-shadow:0_3px_8px_rgba(0,0,0,0.75),0_0_2px_rgba(0,0,0,0.9)]">no esperan.</span>
             </h2>
             <p className="text-white/90 text-base lg:text-lg leading-relaxed max-w-md mb-8">
               Promociones del mes y liquidaciones por tiempo limitado. Cuando se acaban, se acaban.
@@ -131,7 +131,7 @@ export default function OffersSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.15 + i * 0.08, ease: [0.23, 1, 0.32, 1] }}
-                  className="flex-1 bg-[#0d0f12] py-3 text-center overflow-hidden"
+                  className="flex-1 bg-metal py-3 text-center overflow-hidden"
                 >
                   <div className="relative h-10 overflow-hidden">
                     <AnimatePresence mode="popLayout" initial={false}>
@@ -148,7 +148,7 @@ export default function OffersSection() {
                       </motion.b>
                     </AnimatePresence>
                   </div>
-                  <small className="text-neutral-400 text-[10px] uppercase tracking-widest">{c.etiqueta}</small>
+                  <small className="text-neutral-300 text-[10px] uppercase tracking-widest">{c.etiqueta}</small>
                 </motion.div>
               ))}
             </div>
@@ -161,14 +161,14 @@ export default function OffersSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-            className="relative bg-[#0d0f12] shadow-2xl shadow-black/40"
+            className="relative bg-metal shadow-2xl shadow-black/40"
           >
             <span className="absolute -top-8 -right-6 z-10 w-28 h-28 bg-white rounded-full flex items-center justify-center shadow-lg" aria-hidden="true">
               <svg viewBox="0 0 120 120" className="absolute inset-0 w-full h-full animate-[spin_18s_linear_infinite]">
                 <defs>
                   <path id="sc-oferta" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" />
                 </defs>
-                <text className="fill-[#0d0f12] text-[11px] font-bold uppercase tracking-[0.15em]" style={{ fontFamily: "var(--font-heading)" }}>
+                <text className="fill-[#3a3e45] text-[11px] font-bold uppercase tracking-[0.15em]" style={{ fontFamily: "var(--font-heading)" }}>
                   <textPath href="#sc-oferta">OFERTA DEL MES · OFERTA DEL MES · </textPath>
                 </text>
               </svg>
@@ -195,7 +195,7 @@ export default function OffersSection() {
                 </h3>
                 <p className="text-neutral-300 mt-2 mb-5">Pastillas y discos para tu vehículo</p>
                 <div className="flex items-center gap-4 border-y border-white/10 py-4 mb-5">
-                  <span className="text-neutral-400 text-[11px] uppercase tracking-widest">Precio</span>
+                  <span className="text-neutral-300 text-[11px] uppercase tracking-widest">Precio</span>
                   <b className="text-white text-2xl" style={{ fontFamily: "var(--font-heading)" }}>Especial</b>
                 </div>
                 <motion.a
@@ -224,7 +224,7 @@ export default function OffersSection() {
               whileHover={{ y: -6 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, delay: i * 0.12, ease: [0.23, 1, 0.32, 1] }}
-              className="group relative flex bg-white text-[#0d0f12] shadow-xl shadow-black/20 min-h-[210px] transition-shadow duration-300 hover:shadow-2xl"
+              className="group relative flex bg-white text-[#3a3e45] shadow-xl shadow-black/20 min-h-[210px] transition-shadow duration-300 hover:shadow-2xl"
             >
               <div className={`${t.franja} w-12 shrink-0 flex items-center justify-center`}>
                 <span className="[writing-mode:vertical-rl] rotate-180 text-[11px] font-bold uppercase tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
@@ -245,7 +245,7 @@ export default function OffersSection() {
                     href={whatsappLink(t.mensaje)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#b7212c] hover:text-[#0d0f12] text-xs font-bold uppercase tracking-wider transition-colors"
+                    className="inline-flex items-center gap-2 text-[#b7212c] hover:text-[#3a3e45] text-xs font-bold uppercase tracking-wider transition-colors"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     <MessageCircle className="w-3.5 h-3.5" /> La quiero <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function LocationSection() {
   return (
-    <section id="ubicacion" className="pt-4 lg:pt-6 pb-12 lg:pb-16 bg-[#0d0f12] overflow-x-clip">
+    <section id="ubicacion" className="pt-4 lg:pt-6 pb-12 lg:pb-16 bg-metal overflow-x-clip">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -32,7 +32,7 @@ export default function LocationSection() {
             viewport={{ once: true }}
             className="lg:col-span-2 min-w-0"
           >
-            <div className="bg-[#171a1e] border border-white/10 p-2">
+            <div className="bg-metal border border-white/10 p-2">
               <iframe
                 src={COMPANY.mapsEmbedUrl}
                 width="100%"

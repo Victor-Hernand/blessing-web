@@ -100,7 +100,7 @@ export default function CategoriesSection() {
   }, [pausadoCarrusel, pagina, maxIndice, isSearching, movimientoReducido]);
 
   return (
-    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12] overflow-x-clip">
+    <section id="categorias" className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-metal overflow-x-clip">
       <div className="container">
         {/* Presentación de la empresa, antes del catálogo */}
         <div className="mb-12 lg:mb-14 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -172,27 +172,27 @@ export default function CategoriesSection() {
           className="mb-10"
         >
           <div className="relative max-w-2xl">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400 pointer-events-none" />
+            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-500 pointer-events-none" />
             <input
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar repuesto: frenos, amortiguadores, dirección..."
               aria-label="Buscar repuestos"
-              className="w-full border border-white/10 bg-[#171a1e] focus:bg-[#0d0f12] pl-12 pr-12 py-4 text-sm text-white placeholder:text-neutral-400 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
+              className="w-full border border-white/10 bg-white focus:bg-white pl-12 pr-12 py-4 text-sm text-neutral-900 placeholder:text-neutral-500 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
             />
             {isSearching && (
               <button
                 onClick={() => setQuery("")}
                 aria-label="Limpiar búsqueda"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-[#b7212c] transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-300 hover:text-[#b7212c] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             )}
           </div>
           {isSearching && (
-            <p className="mt-3 text-sm text-neutral-400">
+            <p className="mt-3 text-sm text-neutral-300">
               {results.length > 0
                 ? `${results.length} ${results.length === 1 ? "repuesto encontrado" : "repuestos encontrados"} para «${query.trim()}»`
                 : `Sin coincidencias para «${query.trim()}»`}
@@ -212,16 +212,16 @@ export default function CategoriesSection() {
                     href={whatsappLink(`Hola, quiero consultar por: ${product} (${category.name})`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-[#171a1e] border border-white/10 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
+                    className="group flex items-center gap-4 bg-[#d9dde3] border border-neutral-300 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
                   >
-                    <div className="w-11 h-11 shrink-0 bg-[#0d0f12] border border-white/10 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
+                    <div className="w-11 h-11 shrink-0 bg-[#d9dde3] border border-neutral-300 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
                       {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-white transition-colors duration-300" />}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <h3 className="font-bold text-white group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+                      <h3 className="font-bold text-neutral-900 group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                         {product}
                       </h3>
-                      <p className="text-[11px] text-neutral-400 uppercase tracking-wider">{category.name}</p>
+                      <p className="text-[11px] text-neutral-700 uppercase tracking-wider">{category.name}</p>
                     </div>
                     <ArrowRight className="w-4 h-4 shrink-0 text-gray-300 group-hover:text-[#b7212c] group-hover:translate-x-1 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300" />
                   </a>
@@ -229,7 +229,7 @@ export default function CategoriesSection() {
               })}
             </div>
           ) : (
-            <div className="border border-dashed border-white/20 bg-[#171a1e] p-10 text-center">
+            <div className="border border-dashed border-white/20 bg-metal p-10 text-center">
               <p className="text-neutral-300 mb-5">
                 No listamos ese repuesto en el sitio, pero es muy probable que lo tengamos en tienda.
               </p>
@@ -276,12 +276,12 @@ export default function CategoriesSection() {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: (i % 4) * 0.08, ease: [0.23, 1, 0.32, 1] }}
                     whileTap={{ scale: 0.98 }}
-                    className={`group relative flex flex-col w-full h-full overflow-hidden bg-[#171a1e] text-left cursor-zoom-in rounded-br-3xl ring-1 ring-inset ring-transparent hover:ring-[#b7212c]/50 transition-[box-shadow,ring-color] duration-500`}
+                    className={`group relative flex flex-col w-full h-full overflow-hidden bg-[#d9dde3] text-left cursor-zoom-in rounded-br-3xl ring-1 ring-inset ring-transparent hover:ring-[#b7212c]/50 transition-[box-shadow,ring-color] duration-500`}
                   >
                     {/* Panel de imagen: gradiente de marca que sube de contraste al pasar el cursor */}
                     <div className="relative flex-1 min-h-0 overflow-hidden p-3">
                       <span
-                        className="absolute inset-0 bg-gradient-to-bl from-[#0d0f12] via-[#3b0c12] to-[#b7212c] contrast-50 group-hover:contrast-100 transition-[filter] duration-500"
+                        className="absolute inset-0 bg-gradient-to-bl from-[#3a3e45] via-[#3b0c12] to-[#b7212c] contrast-50 group-hover:contrast-100 transition-[filter] duration-500"
                         aria-hidden="true"
                       />
                       {/* Brillo rojo detrás del producto */}
@@ -304,7 +304,7 @@ export default function CategoriesSection() {
                         <span className="flex items-center gap-2 text-white text-[11px] tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
                           <span className="w-4 h-px bg-[#b7212c]" />{numero}
                         </span>
-                        <span className="text-[9px] uppercase tracking-[0.25em] text-neutral-400">Blessing</span>
+                        <span className="text-[9px] uppercase tracking-[0.25em] text-neutral-300">Blessing</span>
                       </div>
 
                       <img
@@ -316,11 +316,11 @@ export default function CategoriesSection() {
                     </div>
 
                     {/* Texto de la tarjeta */}
-                    <div className="relative bg-[#0d0f12] px-5 pt-4 pb-3">
-                      <h3 className="font-bold text-white uppercase leading-tight text-[24px] lg:text-[28px] mb-1 transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-[#ff3b47]" style={{ fontFamily: "var(--font-heading)" }}>
+                    <div className="relative bg-[#d9dde3] px-5 pt-4 pb-3">
+                      <h3 className="font-bold text-neutral-900 uppercase leading-tight text-[24px] lg:text-[28px] mb-1 transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-[#ff3b47]" style={{ fontFamily: "var(--font-heading)" }}>
                         {cat.name}
                       </h3>
-                      <p className="text-neutral-300 text-[12px] leading-snug line-clamp-2">{cat.description}</p>
+                      <p className="text-neutral-700 text-[12px] leading-snug line-clamp-2">{cat.description}</p>
                     </div>
 
                     {/* Botón inferior, mismo lenguaje que la tarjeta de referencia */}
@@ -342,7 +342,7 @@ export default function CategoriesSection() {
                 type="button"
                 onClick={() => irA(pagina === 0 ? maxIndice : pagina - 1)}
                 aria-label="Categorías anteriores"
-                className="w-10 h-10 bg-[#171a1e] border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
+                className="w-10 h-10 bg-metal border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -364,7 +364,7 @@ export default function CategoriesSection() {
                 type="button"
                 onClick={() => irA(pagina >= maxIndice ? 0 : pagina + 1)}
                 aria-label="Categorías siguientes"
-                className="w-10 h-10 bg-[#171a1e] border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
+                className="w-10 h-10 bg-metal border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -424,7 +424,7 @@ export default function CategoriesSection() {
                 <h3 className="text-white font-bold uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {CATEGORIES[lightbox].name}
                 </h3>
-                <p className="text-neutral-400 text-sm mt-2">{CATEGORIES[lightbox].description}</p>
+                <p className="text-neutral-300 text-sm mt-2">{CATEGORIES[lightbox].description}</p>
 
                 <div className="flex flex-wrap justify-center gap-2 mt-5 max-h-[16vh] overflow-y-auto">
                   {CATEGORIES[lightbox].products.map((product) => (
@@ -445,7 +445,7 @@ export default function CategoriesSection() {
                   Consultar por WhatsApp
                 </a>
 
-                <p className="text-neutral-400 text-xs mt-5 tracking-widest">{lightbox + 1} / {CATEGORIES.length}</p>
+                <p className="text-neutral-300 text-xs mt-5 tracking-widest">{lightbox + 1} / {CATEGORIES.length}</p>
               </div>
             </motion.div>
           </motion.div>

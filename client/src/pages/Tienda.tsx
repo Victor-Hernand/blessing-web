@@ -100,32 +100,32 @@ export default function Tienda() {
       </div>
 
       <fieldset className="mb-8">
-        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Categoría</legend>
+        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-300 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Categoría</legend>
         <div className="space-y-1">
           {[{ key: "", name: "Todas", total: PRODUCTOS_TIENDA.length }, ...CATEGORIAS.map((c) => ({ key: c.key, name: c.name, total: conteoCat[c.key] ?? 0 }))].map((c) => (
             <RedRadio key={c.key || "todas"} name="cat" value={c.key} checked={categoria === c.key} onChange={() => setCategoria(c.key)} className="py-1.5 text-sm text-neutral-200 hover:text-white">
               <span className="flex-1">{c.name}</span>
-              <i className="not-italic text-xs text-neutral-500">{c.total}</i>
+              <i className="not-italic text-xs text-neutral-300">{c.total}</i>
             </RedRadio>
           ))}
         </div>
       </fieldset>
 
       <fieldset className="mb-8">
-        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Marca de repuesto</legend>
+        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-300 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Marca de repuesto</legend>
         <div className="space-y-1 max-h-72 overflow-y-auto pr-1">
           {MARCAS.map((m) => (
             <RedCheckbox key={m} checked={marcas.includes(m)} onChange={() => toggleMarca(m)} className="py-1.5 text-sm text-neutral-200 hover:text-white">
               <span className="flex-1">{m}</span>
               {esPremium(m) && <span className="text-[9px] font-bold uppercase tracking-wider bg-[#b7212c] text-white px-1.5 py-0.5">Premium</span>}
-              <i className="not-italic text-xs text-neutral-500">{conteoMarca[m]}</i>
+              <i className="not-italic text-xs text-neutral-300">{conteoMarca[m]}</i>
             </RedCheckbox>
           ))}
         </div>
       </fieldset>
 
       <fieldset>
-        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-400 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Calidad</legend>
+        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-300 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Calidad</legend>
         <RedCheckbox checked={soloPremium} onChange={setSoloPremium} className="py-1.5 text-sm text-neutral-200 hover:text-white">
           Solo marcas premium
         </RedCheckbox>
@@ -134,13 +134,13 @@ export default function Tienda() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#0d0f12] text-[#f4f5f7]">
+    <div className="min-h-screen flex flex-col bg-metal text-[#f4f5f7]">
       <Header />
       <main>
         {/* Cabecera de la tienda */}
         <section className="bg-blueprint border-b border-white/10">
           <div className="container pt-4 lg:pt-6 pb-6 lg:pb-8">
-            <nav aria-label="Ruta" className="flex items-center gap-2 text-xs text-neutral-400 uppercase tracking-wider mb-6">
+            <nav aria-label="Ruta" className="flex items-center gap-2 text-xs text-neutral-300 uppercase tracking-wider mb-6">
               <a href="/" className="hover:text-white transition-colors">Inicio</a>
               <ChevronRight className="w-3 h-3" />
               <span className="text-white" aria-current="page">Tienda en línea</span>
@@ -163,7 +163,7 @@ export default function Tienda() {
                     <div key={d.l} className="flex items-baseline gap-2">
                       <dt className="sr-only">{d.l}</dt>
                       <dd className="text-white text-3xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>{d.n}</dd>
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-400">{d.l}</span>
+                      <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-300">{d.l}</span>
                     </div>
                   ))}
                 </dl>
@@ -203,7 +203,7 @@ export default function Tienda() {
                   exit={{ x: "-100%" }}
                   transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                   aria-label="Filtros"
-                  className="fixed inset-y-0 left-0 z-[60] w-[86%] max-w-sm bg-[#0d0f12] border-r border-white/10 p-6 overflow-y-auto lg:hidden"
+                  className="fixed inset-y-0 left-0 z-[60] w-[86%] max-w-sm bg-metal border-r border-white/10 p-6 overflow-y-auto lg:hidden"
                 >
                   {panelFiltros}
                 </motion.aside>
@@ -213,7 +213,7 @@ export default function Tienda() {
             <div>
               {/* Barra: conteo, filtros móviles y orden */}
               <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                <p className="text-sm text-neutral-400" aria-live="polite">
+                <p className="text-sm text-neutral-300" aria-live="polite">
                   <span className="text-white font-semibold">{productos.length}</span> {productos.length === 1 ? "repuesto" : "repuestos"}
                   {categoria && <> en <span className="text-white">{nombreCategoria(categoria)}</span></>}
                 </p>
@@ -226,12 +226,12 @@ export default function Tienda() {
                   >
                     <SlidersHorizontal className="w-4 h-4" /> Filtros
                   </button>
-                  <label className="flex items-center gap-2 text-sm text-neutral-400">
+                  <label className="flex items-center gap-2 text-sm text-neutral-300">
                     <span className="sr-only">Ordenar</span>
                     <select
                       value={orden}
                       onChange={(e) => setOrden(e.target.value as Orden)}
-                      className="bg-[#171a1e] border border-white/15 text-sm text-white px-3 py-2 focus:outline-none focus:border-[#b7212c]"
+                      className="bg-metal border border-white/15 text-sm text-white px-3 py-2 focus:outline-none focus:border-[#b7212c]"
                     >
                       <option value="cat">Ordenar por categoría</option>
                       <option value="az">Nombre A–Z</option>
@@ -257,7 +257,7 @@ export default function Tienda() {
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3, delay: Math.min(i, 12) * 0.02, ease: [0.23, 1, 0.32, 1] }}
-                      className="group bg-[#0d0f12] flex flex-col hover:bg-[#171a1e] transition-colors duration-300"
+                      className="group bg-metal flex flex-col hover:bg-metal transition-colors duration-300"
                     >
                       <div className="aspect-square bg-neutral-100 flex items-center justify-center overflow-hidden">
                         <img
@@ -269,15 +269,15 @@ export default function Tienda() {
                       </div>
                       <div className="p-4 lg:p-5 flex-1 flex flex-col">
                         <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="text-[10px] uppercase tracking-widest text-neutral-400">{nombreCategoria(p.categoria)}</span>
+                          <span className="text-[10px] uppercase tracking-widest text-neutral-300">{nombreCategoria(p.categoria)}</span>
                           {p.marca && (
                             <span className="text-[10px] font-bold uppercase tracking-wider bg-[#b7212c] text-white px-2 py-0.5">{p.marca}</span>
                           )}
                         </div>
                         <h2 className="text-white font-semibold text-[15px] leading-snug mb-2">{p.nombre}</h2>
-                        <p className="text-neutral-400 text-xs leading-relaxed mb-3">{p.descripcion}</p>
+                        <p className="text-neutral-300 text-xs leading-relaxed mb-3">{p.descripcion}</p>
                         <p className="text-[11px] text-neutral-300 border-l-2 border-[#b7212c] pl-2 mb-4 flex-1">
-                          <span className="block text-[10px] uppercase tracking-widest text-neutral-500 mb-0.5">Para</span>
+                          <span className="block text-[10px] uppercase tracking-widest text-neutral-300 mb-0.5">Para</span>
                           {p.vehiculos}
                         </p>
                         <button
@@ -285,7 +285,7 @@ export default function Tienda() {
                           onClick={() => alternarEnLista({ id: p.id, nombre: p.nombre, marca: p.marca })}
                           aria-pressed={lista.some((i) => i.id === p.id)}
                           className={`mb-2 inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold uppercase tracking-wider transition-colors duration-300 active:scale-[0.97] ${
-                            lista.some((i) => i.id === p.id) ? "bg-white text-[#0d0f12]" : "bg-[#b7212c] hover:bg-[#c92a35] text-white"
+                            lista.some((i) => i.id === p.id) ? "bg-white text-[#3a3e45]" : "bg-[#b7212c] hover:bg-[#c92a35] text-white"
                           }`}
                           style={{ fontFamily: "var(--font-heading)" }}
                         >
@@ -305,7 +305,7 @@ export default function Tienda() {
                   ))}
                 </div>
               ) : (
-                <div className="border border-dashed border-white/20 bg-[#171a1e] p-10 text-center">
+                <div className="border border-dashed border-white/20 bg-metal p-10 text-center">
                   <h2 className="section-title text-white text-2xl mb-3">No encontramos ese repuesto en la vista previa</h2>
                   <p className="text-neutral-300 mb-6">Pero seguro lo conseguimos. Escríbenos y un asesor lo busca por ti.</p>
                   <a
@@ -334,7 +334,7 @@ function Chip({ texto, onQuitar }: { texto: string; onQuitar: () => void }) {
     <button
       type="button"
       onClick={onQuitar}
-      className="inline-flex items-center gap-2 bg-[#171a1e] border border-white/15 hover:border-[#b7212c] px-3 py-1.5 text-xs text-white"
+      className="inline-flex items-center gap-2 bg-metal border border-white/15 hover:border-[#b7212c] px-3 py-1.5 text-xs text-white"
     >
       {texto} <X className="w-3 h-3" />
     </button>

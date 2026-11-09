@@ -8,7 +8,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Nosotros() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#171a1e]">
+    <div className="min-h-screen flex flex-col bg-metal">
       <Header />
       <main>
         <AboutSection />

@@ -7,7 +7,7 @@ const icons = { Gem, Package, Users } as const;
 
 export default function ValuePropsSection() {
   return (
-    <section className="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-[#0d0f12] relative overflow-hidden">
+    <section className="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-metal relative overflow-hidden">
 
       <div className="container relative z-10">
         <motion.div
@@ -39,23 +39,23 @@ export default function ValuePropsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.12 }}
-                className="relative bg-[#171a1e] border border-white/10 p-8 group hover:shadow-xl hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
+                className="relative bg-[#d9dde3] border border-neutral-300 p-8 group hover:shadow-xl hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
               >
                 {/* Barra lateral de acento */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
 
                 <div className="w-12 h-12 bg-[#b7212c] flex items-center justify-center mb-5 transition-colors active:scale-[0.97]">
-                  <Icon className="w-6 h-6 text-white" />
+                  <Icon className="w-6 h-6 text-neutral-900" />
                 </div>
 
                 <h3
-                  className="section-title text-white mb-2 text-[24px] lg:text-[26px] leading-tight"
+                  className="section-title text-neutral-900 mb-2 text-[24px] lg:text-[26px] leading-tight"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {p.title}
                 </h3>
                 <p className="text-[#b7212c] text-sm font-bold mb-3">{p.lead}</p>
-                <p className="text-neutral-200 text-sm leading-relaxed">{p.text}</p>
+                <p className="text-neutral-800 text-sm leading-relaxed">{p.text}</p>
               </motion.article>
             );
           })}

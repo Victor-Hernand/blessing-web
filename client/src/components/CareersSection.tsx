@@ -5,7 +5,7 @@ import { COMPANY } from "@/lib/constants";
 
 export default function CareersSection() {
   return (
-    <section id="empleo" className="pt-0 pb-0 bg-[#171a1e]">
+    <section id="empleo" className="pt-0 pb-0 bg-metal">
       <div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -15,7 +15,7 @@ export default function CareersSection() {
         >
           <div className="container flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
             <div className="flex items-start gap-5">
-              <div className="hidden sm:flex w-12 h-12 shrink-0 bg-[#171a1e] items-center justify-center">
+              <div className="hidden sm:flex w-12 h-12 shrink-0 bg-metal items-center justify-center">
                 <Briefcase className="w-6 h-6 text-[#b7212c]" />
               </div>
               <div>
@@ -47,7 +47,7 @@ export default function CareersSection() {
                 href={COMPANY.careersLinkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border-2 border-white bg-transparent text-white hover:bg-[#171a1e] hover:text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm"
+                className="inline-flex items-center gap-2 border-2 border-white bg-transparent text-white hover:bg-metal hover:text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <Linkedin className="w-4 h-4" />
