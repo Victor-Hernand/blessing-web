@@ -64,7 +64,7 @@ export const COMPANY = {
   mapsDirectionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=14.0641018%2C-87.176339",
   schedule: {
-    weekdays: "Lunes a Viernes: 8:00 AM - 5:30 PM",
+    weekdays: "Lunes a Viernes: 8:00 AM - 5:00 PM",
     saturday: "Sábados: 8:00 AM - 4:00 PM",
     sunday: "Domingos: Cerrado",
   },
@@ -185,7 +185,7 @@ export const VISION =
 export const BRANDS = {
   premium: ["Bosch", "Aisin", "NPW", "Tree Five", "Excedi"],
   conventional: [
-    "Welmet", "Motorteck", "EDK", "Syntecfil", "Freemap", "Kaizen",
+    "Welmet", "Motorteck", "EDK", "Syntecfil", "Freemap", "Motormap", "Aeromap",
     "Wagner", "Endo", "Peak", "Koyo", "Honda",
   ],
 };

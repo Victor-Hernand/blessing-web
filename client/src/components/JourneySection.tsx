@@ -67,6 +67,7 @@ export default function JourneySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Texto del capítulo activo */}
           <div>
+            <h2 className="section-title text-white text-[36px] lg:text-[42px] mb-4">¿Cómo comprar?</h2>
             <span className="inline-flex items-center gap-3 text-[#b7212c] text-xs font-semibold uppercase tracking-[0.25em] mb-6" style={{ fontFamily: "var(--font-heading)" }}>
               <span className="w-10 h-[2px] bg-[#b7212c]" /> Del mostrador a tu puerta
             </span>

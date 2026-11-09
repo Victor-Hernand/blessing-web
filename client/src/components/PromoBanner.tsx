@@ -21,13 +21,13 @@ export default function PromoBanner() {
           >
             <div className="flex items-center gap-3 mb-5">
               <span className="text-white text-xs font-bold uppercase tracking-[0.25em]" style={{ fontFamily: "var(--font-heading)" }}>
-                Beneficios Exclusivos para Compras al por Mayor
+                Beneficios Exclusivos para Compras al detalle
               </span>
             </div>
             <h2 className="font-bold text-white uppercase leading-tight mb-5 text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
-              Precios Preferenciales
+              Precios Competitivos
               <br />
-              <span className="text-white">por Volumen</span>
+              <span className="text-white">en cada compra</span>
             </h2>
           </motion.div>
 
@@ -38,7 +38,7 @@ export default function PromoBanner() {
             className="lg:pt-10"
           >
             <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-              Accede a precios competitivos y beneficios exclusivos en compras por volumen. Ofrecemos condiciones especiales para talleres mecánicos, distribuidores y clientes comerciales que buscan calidad, disponibilidad y el mejor valor para su inversión.
+              Encuentra repuestos de calidad a precios competitivos en cada compra. Te atendemos con asesoría personalizada para que encuentres la pieza exacta para tu vehículo, con disponibilidad inmediata y el mejor valor para tu bolsillo.
             </p>
           </motion.div>
         </div>

@@ -151,9 +151,6 @@ export default function CategoriesSection() {
               Todo lo que tu<br /><span className="text-[#b7212c]">vehículo necesita.</span>
             </h2>
             <div className="flex flex-col gap-5 max-w-md">
-              <p className="text-neutral-300 text-base leading-relaxed">
-                Diez líneas de repuesto, marcas premium y convencionales, listas para tu vehículo.
-              </p>
               {TIENDA_HABILITADA && (
                 <a
                   href="/tienda"

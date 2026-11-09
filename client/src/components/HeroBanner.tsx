@@ -13,9 +13,9 @@ const VENTAJAS = [
 
 export default function HeroBanner() {
   const [vehiculo, setVehiculo] = useState<Seleccion>(SELECCION_VACIA);
-  const completo = Boolean(vehiculo.marca && vehiculo.modelo && vehiculo.anio && vehiculo.motor);
+  const completo = Boolean(vehiculo.marca && vehiculo.modelo && vehiculo.anio);
   const descripcionVehiculo = completo
-    ? `${vehiculo.marca} ${vehiculo.modelo} ${vehiculo.anio} ${vehiculo.motor}`
+    ? `${vehiculo.marca} ${vehiculo.modelo} ${vehiculo.anio}${vehiculo.vin ? ` (VIN ${vehiculo.vin})` : ""}`
     : "";
   const repuesto = vehiculo.tipo ? vehiculo.tipo.toLowerCase() : "repuesto";
   const mensajeCotizar = completo
