@@ -3,12 +3,10 @@ import { motion } from "framer-motion";
 
 export default function PromoBanner() {
   return (
-    <section className="relative overflow-hidden bg-[#0d0f12] min-h-[460px] lg:min-h-[560px] flex flex-col justify-between">
+    <section className="relative overflow-hidden bg-metal min-h-[460px] lg:min-h-[560px] flex flex-col justify-between">
       {/* Escritorio: foto de fondo detrás de todo el banner */}
       <div className="absolute inset-0 hidden lg:block">
         <img src="/images/promo-equipo-tienda.jpg" alt="Equipo de Blessing frente a su tienda" loading="lazy" className="w-full h-full object-cover object-[50%_40%]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d0f12]/95 via-[#0d0f12]/70 to-[#0d0f12]/15" />
-        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0d0f12]/80 to-transparent" />
       </div>
 
       {/* 1. Texto arriba: en horizontal, para no tapar los rostros de la foto */}
@@ -21,13 +19,13 @@ export default function PromoBanner() {
           >
             <div className="flex items-center gap-3 mb-5">
               <span className="text-white text-xs font-bold uppercase tracking-[0.25em]" style={{ fontFamily: "var(--font-heading)" }}>
-                Beneficios Exclusivos para Compras al por Mayor
+                Beneficios Exclusivos para Compras al detalle
               </span>
             </div>
             <h2 className="font-bold text-white uppercase leading-tight mb-5 text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
-              Precios Preferenciales
+              Precios Competitivos
               <br />
-              <span className="text-white">por Volumen</span>
+              <span className="text-white">en cada compra</span>
             </h2>
           </motion.div>
 
@@ -38,7 +36,7 @@ export default function PromoBanner() {
             className="lg:pt-10"
           >
             <p className="text-white/80 text-base sm:text-lg leading-relaxed">
-              Accede a precios competitivos y beneficios exclusivos en compras por volumen. Ofrecemos condiciones especiales para talleres mecánicos, distribuidores y clientes comerciales que buscan calidad, disponibilidad y el mejor valor para su inversión.
+              Encuentra repuestos de calidad a precios competitivos en cada compra. Te atendemos con asesoría personalizada para que encuentres la pieza exacta para tu vehículo, con disponibilidad inmediata y el mejor valor para tu bolsillo.
             </p>
           </motion.div>
         </div>
@@ -47,8 +45,8 @@ export default function PromoBanner() {
       {/* 2. Móvil: franja de la foto entre el texto y el botón */}
       <div className="relative z-0 mt-8 h-[300px] lg:hidden">
         <img src="/images/promo-equipo-tienda.jpg" alt="Equipo de Blessing frente a su tienda" loading="lazy" className="w-full h-full object-cover object-[50%_45%]" />
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#0d0f12] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0d0f12] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#3a3e45] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#3a3e45] to-transparent" />
       </div>
 
       <div className="pb-12 lg:pb-16" />

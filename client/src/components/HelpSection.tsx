@@ -11,7 +11,7 @@ const TARJETAS = [
 
 export default function HelpSection() {
   return (
-    <section className="pt-8 lg:pt-10 pb-14 lg:pb-20 bg-[#0d0f12] border-t border-white/10" aria-labelledby="help-t">
+    <section className="pt-8 lg:pt-10 pb-14 lg:pb-20 bg-metal border-t border-white/10" aria-labelledby="help-t">
       <div className="container">
         <div className="mb-10 lg:mb-12 flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>
@@ -23,7 +23,7 @@ export default function HelpSection() {
               ¿No encontraste <span className="text-[#b7212c]">lo que buscabas?</span>
             </h2>
           </div>
-          <p className="text-neutral-400 max-w-md text-base leading-relaxed">
+          <p className="text-neutral-300 max-w-md text-base leading-relaxed">
             ¿No sabes qué repuesto necesitas o cómo comprar? Escríbenos y un asesor te guía con la pieza exacta.
           </p>
         </div>
@@ -34,16 +34,16 @@ export default function HelpSection() {
               key={t.titulo}
               href={t.href}
               {...(t.externo ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="group flex items-center gap-4 bg-[#0d0f12] p-6 hover:bg-[#171a1e] transition-colors duration-300"
+              className="group flex items-center gap-4 bg-[#d9dde3] p-6 hover:bg-[#d9dde3] transition-colors duration-300"
             >
               <span className="w-12 h-12 shrink-0 flex items-center justify-center border border-[#b7212c]/60 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-colors duration-300">
                 <t.icon className="w-5 h-5 text-[#b7212c] group-hover:text-white transition-colors duration-300" />
               </span>
               <span className="min-w-0">
-                <b className="block text-white uppercase tracking-wide text-[17px]" style={{ fontFamily: "var(--font-heading)" }}>
+                <b className="block text-neutral-900 uppercase tracking-wide text-[17px]" style={{ fontFamily: "var(--font-heading)" }}>
                   {t.titulo}
                 </b>
-                <small className="block text-neutral-400 text-xs leading-snug">{t.detalle}</small>
+                <small className="block text-neutral-700 text-xs leading-snug">{t.detalle}</small>
               </span>
             </a>
           ))}

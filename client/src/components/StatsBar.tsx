@@ -19,7 +19,7 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
         {count}
         <span className="text-[#b7212c]">{suffix}</span>
       </div>
-      <div className="text-neutral-400 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-neutral-300 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
         {label}
       </div>
     </motion.div>
@@ -28,7 +28,7 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
 
 export default function StatsBar() {
   return (
-    <section className="relative overflow-hidden bg-[#171a1e] border-y border-white/10" aria-label="Blessing en cifras">
+    <section className="relative overflow-hidden bg-metal border-y border-white/10" aria-label="Blessing en cifras">
       {/* Top red line */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#b7212c] to-transparent" />
 

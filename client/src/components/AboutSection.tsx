@@ -20,7 +20,7 @@ const values = [
 
 export default function AboutSection() {
   return (
-    <section id="nosotros" className="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-[#171a1e] relative overflow-hidden">
+    <section id="nosotros" className="pt-8 lg:pt-10 pb-20 lg:pb-28 bg-metal relative overflow-hidden">
       {/* Decorative background elements */}
 
       <div className="container relative z-10">
@@ -123,11 +123,11 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="bg-[#0d0f12] border border-white/10 p-4 text-center group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1 active:scale-[0.97]"
+                  className="bg-[#d9dde3] border border-neutral-300 p-4 text-center group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1 active:scale-[0.97]"
                 >
                   <h.icon className="w-6 h-6 text-[#b7212c] mx-auto mb-2 group-hover:scale-110 transition-transform" />
-                  <div className="text-xs font-bold text-white uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
-                  <p className="text-[10px] text-neutral-400 mt-1 leading-tight">{h.desc}</p>
+                  <div className="text-xs font-bold text-neutral-900 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
+                  <p className="text-[10px] text-neutral-700 mt-1 leading-tight">{h.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -146,16 +146,16 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.15 }}
-              className="group relative bg-[#0d0f12] border border-white/10 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
+              className="group relative bg-[#d9dde3] border border-neutral-300 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
             >
               <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />
               <div className="flex items-center gap-4 mb-5">
                 <div className="w-12 h-12 shrink-0 bg-[#b7212c] flex items-center justify-center">
-                  <item.icon className="w-6 h-6 text-white" />
+                  <item.icon className="w-6 h-6 text-neutral-900" />
                 </div>
-                <h3 className="section-title text-white text-[32px]">{item.title}</h3>
+                <h3 className="section-title text-neutral-900 text-[32px]">{item.title}</h3>
               </div>
-              <p className="text-neutral-200 text-base leading-relaxed">{item.text}</p>
+              <p className="text-neutral-800 text-base leading-relaxed">{item.text}</p>
             </motion.div>
           ))}
         </div>

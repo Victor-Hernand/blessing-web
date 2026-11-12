@@ -1,15 +1,15 @@
 import { ArrowRight, Phone } from "lucide-react";
 import { MARCAS, TIPOS_REPUESTO, VEHICULOS } from "@/lib/vehiculos";
 
-export type Seleccion = { marca: string; modelo: string; anio: string; motor: string; tipo: string };
+export type Seleccion = { marca: string; modelo: string; anio: string; vin: string; tipo: string };
 
-export const SELECCION_VACIA: Seleccion = { marca: "", modelo: "", anio: "", motor: "", tipo: "" };
+export const SELECCION_VACIA: Seleccion = { marca: "", modelo: "", anio: "", vin: "", tipo: "" };
 
 const selectClass =
-  "w-full bg-[#0d0f12] border border-white/15 px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c] disabled:bg-[#0d0f12]/50 disabled:text-neutral-400";
+  "w-full bg-white border border-white/15 px-3 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-500 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]";
 
 const labelClass =
-  "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5";
 
 interface Props {
   value: Seleccion;
@@ -18,146 +18,122 @@ interface Props {
 }
 
 export default function VehicleSelector({ value, onChange, cotizarHref }: Props) {
-  const { marca, modelo, anio, motor, tipo } = value;
+  const { marca, modelo, anio, vin, tipo } = value;
   const catalogo = marca ? VEHICULOS[marca] : undefined;
-  // Marca sin catálogo: el cliente escribe modelo, año y motor.
-  const libre = Boolean(marca) && !catalogo;
   const modelos = catalogo ? Object.keys(catalogo) : [];
-  const detalle = catalogo && modelo ? catalogo[modelo] : undefined;
   // Años del 2001 al año actual, del más reciente al más antiguo.
   const anioActual = new Date().getFullYear();
   const anios = Array.from({ length: anioActual - 2001 + 1 }, (_, i) => anioActual - i);
 
   return (
-    <div className="bg-[#171a1e] border-y border-white/10 px-4 py-6 sm:px-6 lg:px-12 lg:py-8">
+    <div className="bg-metal border-y border-white/10 px-4 py-6 sm:px-6 lg:px-12 lg:py-8">
       <p
-        className="text-center text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1"
+        className="text-center text-[#ff5c66] text-[11px] font-medium uppercase tracking-[0.2em] mb-1 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         Encuentra tu repuesto
       </p>
       <h2
-        className="section-title text-center text-white text-[26px] lg:text-[32px]"
+        className="section-title text-center text-white text-[26px] lg:text-[32px] [text-shadow:0_3px_10px_rgba(0,0,0,0.8),0_0_2px_rgba(0,0,0,0.9)]"
         style={{ fontFamily: "var(--font-heading)" }}
       >
         ¡Encuentra los repuestos ideales para tu vehículo!
       </h2>
-      <p className="text-center text-neutral-400 text-sm mt-1">
-        Selecciona tu auto y descubre las piezas que necesita para seguir en marcha.
+      <p className="text-center text-neutral-300 text-sm mt-1 [text-shadow:0_1px_6px_rgba(0,0,0,0.85)]">
+        Selecciona tu auto o escribe sus datos y descubre las piezas que necesita para seguir en marcha.
       </p>
 
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mt-5">
         <div>
           <label className={labelClass} htmlFor="veh-marca">Marca</label>
-          <select
+          <input
             id="veh-marca"
+            type="text"
+            list="veh-marcas-lista"
             className={selectClass}
+            placeholder="Escribe o selecciona"
+            autoComplete="off"
             value={marca}
             onChange={e => onChange({ ...SELECCION_VACIA, tipo, marca: e.target.value })}
-          >
-            <option value="">[Seleccionar]</option>
+          />
+          <datalist id="veh-marcas-lista">
             {MARCAS.map(m => (
-              <option key={m} value={m}>{m}</option>
+              <option key={m} value={m} />
             ))}
-          </select>
+          </datalist>
         </div>
 
         <div>
           <label className={labelClass} htmlFor="veh-modelo">Modelo</label>
-          {libre ? (
-            <input
-              id="veh-modelo"
-              type="text"
-              className={selectClass}
-              placeholder="Escribe el modelo"
-              value={modelo}
-              onChange={e => onChange({ ...value, modelo: e.target.value, anio: "", motor: "" })}
-            />
-          ) : (
-            <select
-              id="veh-modelo"
-              className={selectClass}
-              value={modelo}
-              disabled={!marca}
-              onChange={e => onChange({ ...value, modelo: e.target.value, anio: "", motor: "" })}
-            >
-              <option value="">[Seleccionar]</option>
-              {modelos.map(m => (
-                <option key={m} value={m}>{m}</option>
-              ))}
-            </select>
-          )}
+          <input
+            id="veh-modelo"
+            type="text"
+            list="veh-modelos-lista"
+            className={selectClass}
+            placeholder="Escribe o selecciona"
+            autoComplete="off"
+            value={modelo}
+            onChange={e => onChange({ ...value, modelo: e.target.value, anio: "", vin: "" })}
+          />
+          <datalist id="veh-modelos-lista">
+            {modelos.map(m => (
+              <option key={m} value={m} />
+            ))}
+          </datalist>
         </div>
 
         <div>
           <label className={labelClass} htmlFor="veh-anio">Año</label>
-          {libre ? (
-            <input
-              id="veh-anio"
-              type="number"
-              inputMode="numeric"
-              className={selectClass}
-              placeholder="Ej. 2016"
-              disabled={!modelo}
-              value={anio}
-              onChange={e => onChange({ ...value, anio: e.target.value })}
-            />
-          ) : (
-            <select
-              id="veh-anio"
-              className={selectClass}
-              value={anio}
-              disabled={!modelo}
-              onChange={e => onChange({ ...value, anio: e.target.value })}
-            >
-              <option value="">[Seleccionar]</option>
-              {anios.map(a => (
-                <option key={a} value={a}>{a}</option>
-              ))}
-            </select>
-          )}
+          <input
+            id="veh-anio"
+            type="text"
+            inputMode="numeric"
+            list="veh-anios-lista"
+            maxLength={4}
+            className={selectClass}
+            placeholder="Ej. 2016"
+            autoComplete="off"
+            value={anio}
+            onChange={e => onChange({ ...value, anio: e.target.value.replace(/\D/g, "") })}
+          />
+          <datalist id="veh-anios-lista">
+            {anios.map(a => (
+              <option key={a} value={a} />
+            ))}
+          </datalist>
         </div>
 
         <div>
-          <label className={labelClass} htmlFor="veh-motor">Motor</label>
-          {libre ? (
-            <input
-              id="veh-motor"
-              type="text"
-              className={selectClass}
-              placeholder="Ej. 1.8L"
-              disabled={!modelo}
-              value={motor}
-              onChange={e => onChange({ ...value, motor: e.target.value })}
-            />
-          ) : (
-            <select
-              id="veh-motor"
-              className={selectClass}
-              value={motor}
-              disabled={!detalle}
-              onChange={e => onChange({ ...value, motor: e.target.value })}
-            >
-              <option value="">[Seleccionar]</option>
-              {detalle?.motores.map(m => (
-                <option key={m} value={m}>{m}</option>
-              ))}
-            </select>
-          )}
+          <label className={labelClass} htmlFor="veh-vin">VIN</label>
+          <input
+            id="veh-vin"
+            type="text"
+            maxLength={17}
+            className={`${selectClass} uppercase`}
+            placeholder="Ej. JTDKB20U123456789"
+            autoComplete="off"
+            value={vin}
+            onChange={e => onChange({ ...value, vin: e.target.value.toUpperCase().replace(/\s/g, "") })}
+          />
         </div>
+
         <div className="col-span-2 lg:col-span-1">
           <label className={labelClass} htmlFor="veh-tipo">Tipo de repuesto</label>
-          <select
+          <input
             id="veh-tipo"
+            type="text"
+            list="veh-tipos-lista"
             className={selectClass}
+            placeholder="Escribe o selecciona"
+            autoComplete="off"
             value={tipo}
             onChange={e => onChange({ ...value, tipo: e.target.value })}
-          >
-            <option value="">[Seleccionar]</option>
+          />
+          <datalist id="veh-tipos-lista">
             {TIPOS_REPUESTO.map(t => (
-              <option key={t} value={t}>{t}</option>
+              <option key={t} value={t} />
             ))}
-          </select>
+          </datalist>
         </div>
       </div>
 

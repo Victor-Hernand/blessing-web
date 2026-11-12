@@ -6,22 +6,22 @@ import { IMAGES } from "@/lib/constants";
 
 const galleryItems = [
   {
-    src: IMAGES.realClientDelivery,
+    src: IMAGES.galeriaAtencion,
     alt: "Atención al cliente en el mostrador de Auto Repuestos Blessing",
     caption: "Atención Personalizada",
     desc: "Nuestro equipo entregando productos de calidad a nuestros clientes.",
     span: "col-span-2",
   },
   {
-    src: IMAGES.realSellerRadio,
+    src: IMAGES.galeriaAsesoria,
     alt: "Asesora especializada de Blessing brindando atención personalizada",
     caption: "Asesoría Técnica",
     desc: "Vendedores expertos que te ayudan a encontrar el repuesto exacto.",
     span: "col-span-1",
   },
   {
-    src: IMAGES.realEmployeeProducts,
-    alt: "Colaboradora de Blessing con productos en exhibición",
+    src: IMAGES.galeriaInventario,
+    alt: "Inventario de Blessing con productos en exhibición",
     caption: "Inventario Completo",
     desc: "Amplia variedad de marcas reconocidas en nuestro inventario.",
     span: "col-span-1",
@@ -34,14 +34,14 @@ const galleryItems = [
     span: "col-span-1",
   },
   {
-    src: IMAGES.realEmployeeBag,
-    alt: "Colaborador de Blessing con producto en tienda",
+    src: IMAGES.galeriaPreparacion,
+    alt: "Colaborador de Blessing preparando un pedido en el mostrador",
     caption: "Preparación de Pedidos",
     desc: "Empacamos con cuidado cada pedido para garantizar su integridad.",
     span: "col-span-1",
   },
   {
-    src: IMAGES.realSellerProducts,
+    src: IMAGES.galeriaVendedores,
     alt: "Vendedor especializado de Blessing con productos",
     caption: "Vendedores Especializados",
     desc: "Nuestro equipo conoce cada producto para brindarte la mejor asesoría.",
@@ -70,7 +70,7 @@ export default function GallerySection() {
   }, [lightbox]);
 
   return (
-    <section id="galeria" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-[#0d0f12] relative overflow-hidden">
+    <section id="galeria" className="pt-6 lg:pt-8 pb-20 lg:pb-28 bg-metal relative overflow-hidden">
       <div className="container relative z-10">
         {/* Header */}
         <motion.div
@@ -87,7 +87,7 @@ export default function GallerySection() {
           <h2 className="section-title text-white text-[42px]">
             Conoce <span className="text-gradient-red">Blessing</span>
           </h2>
-          <p className="text-neutral-400 text-base max-w-2xl mx-auto mt-4">
+          <p className="text-neutral-300 text-base max-w-2xl mx-auto mt-4">
             Un equipo comprometido con brindarte la mejor experiencia en autopartes. Conoce a las personas detrás de nuestro servicio.
           </p>
         </motion.div>

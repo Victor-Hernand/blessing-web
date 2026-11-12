@@ -11,7 +11,7 @@ const testimonials = [
 
 export default function TestimonialsSection() {
   return (
-    <section className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-[#0d0f12] relative overflow-hidden">
+    <section className="pt-10 lg:pt-12 pb-10 lg:pb-12 bg-metal relative overflow-hidden">
       {/* Subtle decorative elements */}
 
       <div className="container relative z-10">
@@ -42,7 +42,7 @@ export default function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.1 }}
-              className="w-72 sm:w-96 shrink-0 bg-[#171a1e] border border-white/10 p-6 relative group hover:shadow-xl hover:shadow-[#b7212c]/50 hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
+              className="w-72 sm:w-96 shrink-0 bg-[#d9dde3] border border-neutral-300 p-6 relative group hover:shadow-xl hover:shadow-[#b7212c]/50 hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
             >
               {/* Quote icon */}
               <Quote className="w-8 h-8 text-[#b7212c] group-hover:text-[#b7212c] transition-colors mb-4" />
@@ -55,12 +55,12 @@ export default function TestimonialsSection() {
               </div>
 
               {/* Text */}
-              <p className="text-neutral-300 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
+              <p className="text-neutral-700 text-sm leading-relaxed mb-6 italic">"{t.text}"</p>
 
               {/* Author */}
               <div className="border-t border-white/10 pt-4">
-                <div className="font-bold text-white text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
-                <div className="text-xs text-neutral-400 mt-0.5">{t.role}</div>
+                <div className="font-bold text-neutral-900 text-sm" style={{ fontFamily: "var(--font-heading)" }}>{t.name}</div>
+                <div className="text-xs text-neutral-700 mt-0.5">{t.role}</div>
               </div>
 
               {/* Bottom line */}

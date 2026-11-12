@@ -59,7 +59,7 @@ export default function JourneySection() {
       id="proceso"
       ref={contenedor}
       aria-label="Cómo compras en Blessing"
-      className="relative bg-[#0d0f12] border-t border-white/10"
+      className="relative bg-metal border-t border-white/10"
       style={{ height: `${CAPITULOS.length * ALTO_POR_CAPITULO}vh` }}
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
@@ -67,6 +67,7 @@ export default function JourneySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Texto del capítulo activo */}
           <div>
+            <h2 className="section-title text-white text-[36px] lg:text-[42px] mb-4">¿Cómo comprar?</h2>
             <span className="inline-flex items-center gap-3 text-[#b7212c] text-xs font-semibold uppercase tracking-[0.25em] mb-6" style={{ fontFamily: "var(--font-heading)" }}>
               <span className="w-10 h-[2px] bg-[#b7212c]" /> Del mostrador a tu puerta
             </span>
@@ -79,7 +80,7 @@ export default function JourneySection() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               >
-                <span className="block text-neutral-500 text-sm font-semibold tracking-widest mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                <span className="block text-neutral-300 text-sm font-semibold tracking-widest mb-3" style={{ fontFamily: "var(--font-heading)" }}>
                   {String(activo + 1).padStart(2, "0")} / {String(CAPITULOS.length).padStart(2, "0")}
                 </span>
                 <h2 className="section-title text-white text-[44px] lg:text-[60px] leading-[0.95] mb-5">
@@ -113,7 +114,7 @@ export default function JourneySection() {
           </div>
 
           {/* Foto del capítulo activo */}
-          <div className="relative aspect-[4/3] bg-[#171a1e] border-2 border-white/25 ring-1 ring-[#b7212c]/60 ring-offset-4 ring-offset-[#0d0f12] overflow-hidden isolate">
+          <div className="relative aspect-[4/3] bg-metal border-2 border-white/25 ring-1 ring-[#b7212c]/60 ring-offset-4 ring-offset-[#3a3e45] overflow-hidden isolate">
             {/* Las fotos se cruzan (fundido) y cada una crece lentamente mientras está visible */}
             <AnimatePresence initial={false}>
               <motion.img

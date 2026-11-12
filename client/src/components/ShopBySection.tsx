@@ -1,14 +1,13 @@
 /* DESIGN: Industrial Automotriz Premium — Formas de buscar (vehículo, marca de repuesto, batería) — Tema oscuro de taller */
 import { useState, type KeyboardEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Zap, MessageCircle } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { BRANDS, whatsappLink } from "@/lib/constants";
 import { MARCAS } from "@/lib/vehiculos";
 
-const PESTANAS: { id: "vehiculo" | "marca" | "bateria"; label: string; icon?: boolean }[] = [
+const PESTANAS: { id: "vehiculo" | "marca"; label: string }[] = [
   { id: "vehiculo", label: "Por vehículo" },
   { id: "marca", label: "Por marca de repuesto" },
-  { id: "bateria", label: "Encuentra tu batería", icon: true },
 ];
 
 type PestanaId = (typeof PESTANAS)[number]["id"];
@@ -16,15 +15,8 @@ type PestanaId = (typeof PESTANAS)[number]["id"];
 /* Marcas más vendidas, en el orden de la referencia */
 const MARCAS_DESTACADAS = ["Toyota", "Nissan", "Honda", "Hyundai", "Kia", "Mitsubishi", "Isuzu", "Mazda", "Chevrolet", "Ford", "Suzuki", "Volkswagen"];
 
-const selectClass =
-  "w-full bg-[#0d0f12] border border-white/15 px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]";
-const labelClass = "block text-[11px] font-semibold text-neutral-400 uppercase tracking-wider mb-1.5";
-
 export default function ShopBySection() {
   const [activa, setActiva] = useState<PestanaId>("vehiculo");
-  const [bateria, setBateria] = useState({ marca: "", modelo: "", anio: "", motor: "" });
-  const anioActual = new Date().getFullYear();
-  const anios = Array.from({ length: anioActual - 2001 + 1 }, (_, i) => anioActual - i);
 
   // Flechas izquierda/derecha entre pestañas, como un tablist accesible.
   const onKeyDown = (e: KeyboardEvent<HTMLButtonElement>, index: number) => {
@@ -35,18 +27,10 @@ export default function ShopBySection() {
     document.getElementById(`tb-${siguiente.id}`)?.focus();
   };
 
-  const enviarBateria = () => {
-    const vehiculo = [bateria.marca, bateria.modelo, bateria.anio, bateria.motor].filter(Boolean).join(" ");
-    const texto = vehiculo
-      ? `Hola, necesito una batería para mi ${vehiculo}.`
-      : "Hola, necesito una batería para mi vehículo.";
-    window.open(whatsappLink(texto), "_blank", "noopener,noreferrer");
-  };
-
   const baseTab = "flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider border-b-2 transition-colors duration-200";
 
   return (
-    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-[#171a1e] border-t border-white/10" aria-labelledby="sb-t">
+    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-metal border-t border-white/10" aria-labelledby="sb-t">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -63,7 +47,7 @@ export default function ShopBySection() {
               Encuentra tu pieza <span className="text-[#b7212c]">a tu manera.</span>
             </h2>
           </div>
-          <p className="text-neutral-400 max-w-md text-base leading-relaxed">
+          <p className="text-neutral-300 max-w-md text-base leading-relaxed">
             Busca por la marca de tu vehículo, por la marca del repuesto o encuentra la batería exacta en segundos.
           </p>
         </motion.div>
@@ -83,9 +67,8 @@ export default function ShopBySection() {
                 onClick={() => setActiva(p.id)}
                 onKeyDown={(e) => onKeyDown(e, i)}
                 style={{ fontFamily: "var(--font-heading)" }}
-                className={`${baseTab} ${selected ? "border-[#b7212c] text-white" : "border-transparent text-neutral-400 hover:text-white"}`}
+                className={`${baseTab} ${selected ? "border-[#b7212c] text-white" : "border-transparent text-neutral-300 hover:text-white"}`}
               >
-                {p.icon && <Zap className="w-4 h-4 text-[#b7212c]" />}
                 {p.label}
               </button>
             );
@@ -112,16 +95,16 @@ export default function ShopBySection() {
                       href={whatsappLink(`Hola, busco repuestos para ${m}.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group bg-[#0d0f12] p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-3"
+                      className="group bg-white p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-3"
                     >
-                      <b className="text-white uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{m}</b>
-                      <span className="inline-flex items-center gap-1.5 text-[11px] text-neutral-400 group-hover:text-[#b7212c] uppercase tracking-wider transition-colors">
+                      <b className="text-neutral-900 uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{m}</b>
+                      <span className="inline-flex items-center gap-1.5 text-[11px] text-neutral-600 group-hover:text-[#b7212c] uppercase tracking-wider transition-colors">
                         Ver repuestos <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                     </a>
                   ))}
                 </div>
-                <p className="mt-5 text-sm text-neutral-400">
+                <p className="mt-5 text-sm text-neutral-300">
                   ¿No ves tu marca? <a href="#buscador" className="text-white underline underline-offset-4 hover:text-[#b7212c]">Elige entre más de {MARCAS.length} marcas</a>, arriba en el buscador.
                 </p>
               </div>
@@ -135,10 +118,10 @@ export default function ShopBySection() {
                     href={whatsappLink(`Hola, quiero cotizar repuestos ${b.nombre}.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group bg-[#0d0f12] p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-2"
+                    className="group bg-white p-5 hover:bg-[#b7212c]/10 transition-colors duration-300 flex flex-col gap-2"
                   >
-                    <b className="text-white uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{b.nombre}</b>
-                    <small className="text-[10px] uppercase tracking-widest text-neutral-400 group-hover:text-white">
+                    <b className="text-neutral-900 uppercase tracking-wide text-lg" style={{ fontFamily: "var(--font-heading)" }}>{b.nombre}</b>
+                    <small className="text-[10px] uppercase tracking-widest text-neutral-600 group-hover:text-neutral-900">
                       {b.premium ? <span className="bg-[#b7212c] px-2 py-0.5 text-white">Premium</span> : "Aliada"}
                     </small>
                   </a>
@@ -146,54 +129,6 @@ export default function ShopBySection() {
               </div>
             )}
 
-            {activa === "bateria" && (
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                <div>
-                  <span className="inline-flex w-12 h-12 items-center justify-center border border-[#b7212c]/60 mb-5">
-                    <Zap className="w-5 h-5 text-[#b7212c]" />
-                  </span>
-                  <h3 className="section-title text-white text-[28px] mb-3">¿Qué batería necesita tu carro?</h3>
-                  <p className="text-neutral-300 leading-relaxed mb-5">
-                    Dinos tu vehículo y un asesor te confirma el tamaño, amperaje y polaridad correctos, con precio y existencia.
-                  </p>
-                  <ul className="space-y-2 text-sm text-neutral-200">
-                    <li>Revisión de compatibilidad</li>
-                    <li>Marcas reconocidas como Bosch</li>
-                    <li>Retiro en tienda o envío</li>
-                  </ul>
-                </div>
-                <form
-                  className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-[#0d0f12] border border-white/10 p-6"
-                  onSubmit={(e) => { e.preventDefault(); enviarBateria(); }}
-                >
-                  <div>
-                    <label htmlFor="bt-marca" className={labelClass}>Marca</label>
-                    <select id="bt-marca" className={selectClass} value={bateria.marca} onChange={(e) => setBateria({ ...bateria, marca: e.target.value })}>
-                      <option value="">Seleccionar</option>
-                      {MARCAS.map((m) => <option key={m} value={m}>{m}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="bt-modelo" className={labelClass}>Modelo</label>
-                    <input id="bt-modelo" className={selectClass} placeholder="Ej.: Corolla" value={bateria.modelo} onChange={(e) => setBateria({ ...bateria, modelo: e.target.value })} autoComplete="off" />
-                  </div>
-                  <div>
-                    <label htmlFor="bt-anio" className={labelClass}>Año</label>
-                    <select id="bt-anio" className={selectClass} value={bateria.anio} onChange={(e) => setBateria({ ...bateria, anio: e.target.value })}>
-                      <option value="">Seleccionar</option>
-                      {anios.map((a) => <option key={a} value={a}>{a}</option>)}
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="bt-motor" className={labelClass}>Motor <span className="normal-case tracking-normal text-neutral-500">(opcional)</span></label>
-                    <input id="bt-motor" className={selectClass} placeholder="Ej.: 1.8 gasolina" value={bateria.motor} onChange={(e) => setBateria({ ...bateria, motor: e.target.value })} autoComplete="off" />
-                  </div>
-                  <button type="submit" className="sm:col-span-2 inline-flex items-center justify-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white px-6 py-3 text-xs font-semibold uppercase tracking-wider transition-colors active:scale-[0.97]" style={{ fontFamily: "var(--font-heading)" }}>
-                    <MessageCircle className="w-4 h-4" /> Consultar batería
-                  </button>
-                </form>
-              </div>
-            )}
           </motion.div>
         </AnimatePresence>
       </div>

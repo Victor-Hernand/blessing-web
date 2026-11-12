@@ -33,6 +33,12 @@ export const IMAGES = {
   realEmployeeBag: "/images/real-employee-bag.jpeg",
   realSellerProducts: "/images/real-seller-products.jpeg",
   realClientDelivery: "/images/real-client-delivery.jpeg",
+  // Fotos de la galería "Nuestro Equipo"
+  galeriaAtencion: "/images/galeria-atencion.jpg",
+  galeriaAsesoria: "/images/galeria-asesoria.jpg",
+  galeriaInventario: "/images/galeria-inventario.jpg",
+  galeriaPreparacion: "/images/galeria-preparacion.jpg",
+  galeriaVendedores: "/images/galeria-vendedores.jpg",
   realTeamStore: "/images/real-team-store.jpg",
   // Fotos del carrusel "Conoce nuestra empresa"
   empresaCarrusel1: "/images/empresa-carrusel-1.jpg",
@@ -64,7 +70,7 @@ export const COMPANY = {
   mapsDirectionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=14.0641018%2C-87.176339",
   schedule: {
-    weekdays: "Lunes a Viernes: 8:00 AM - 5:30 PM",
+    weekdays: "Lunes a Viernes: 8:00 AM - 5:00 PM",
     saturday: "Sábados: 8:00 AM - 4:00 PM",
     sunday: "Domingos: Cerrado",
   },
@@ -185,7 +191,7 @@ export const VISION =
 export const BRANDS = {
   premium: ["Bosch", "Aisin", "NPW", "Tree Five", "Excedi"],
   conventional: [
-    "Welmet", "Motorteck", "EDK", "Syntecfil", "Freemap", "Kaizen",
+    "Welmet", "Motorteck", "EDK", "Syntecfil", "Freemap", "Motormap", "Aeromap",
     "Wagner", "Endo", "Peak", "Koyo", "Honda",
   ],
 };
