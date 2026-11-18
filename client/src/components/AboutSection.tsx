@@ -73,7 +73,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
-              className="section-title text-3xl sm:text-4xl lg:text-5xl text-white mb-6"
+              className="section-title text-3xl sm:text-4xl lg:text-5xl text-[#1d1d1b] mb-6"
             >
               Sobre <span className="text-gradient-red">Nosotros</span>
             </motion.h2>
@@ -82,9 +82,9 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: 0.1 }}
-              className="text-neutral-200 text-base leading-relaxed mb-4"
+              className="text-[#3a3e45] text-base leading-relaxed mb-4"
             >
-              <strong className="text-white">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
+              <strong className="text-[#1d1d1b]">Auto Repuestos Blessing</strong> es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
             </motion.p>
             <motion.p
               initial={{ opacity: 0, y: 18 }}
@@ -109,7 +109,7 @@ export default function AboutSection() {
                   className="flex items-start gap-2.5"
                 >
                   <CheckCircle2 className="w-4 h-4 text-[#b7212c] shrink-0 mt-0.5" />
-                  <span className="text-neutral-200 text-sm leading-snug">{v}</span>
+                  <span className="text-[#3a3e45] text-sm leading-snug">{v}</span>
                 </motion.div>
               ))}
             </div>
@@ -123,7 +123,7 @@ export default function AboutSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className="bg-[#d9dde3] border border-neutral-300 p-4 text-center group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1 active:scale-[0.97]"
+                  className="bg-[#FFFFFF] border border-neutral-300 p-4 text-center group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1 active:scale-[0.97]"
                 >
                   <h.icon className="w-6 h-6 text-[#b7212c] mx-auto mb-2 group-hover:scale-110 transition-transform" />
                   <div className="text-xs font-bold text-neutral-900 uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>{h.title}</div>
@@ -146,7 +146,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.15 }}
-              className="group relative bg-[#d9dde3] border border-neutral-300 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
+              className="group relative bg-[#FFFFFF] border border-neutral-300 p-8 lg:p-10 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-xl hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
             >
               <div className="absolute top-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />
               <div className="flex items-center gap-4 mb-5">

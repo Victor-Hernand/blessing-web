@@ -130,7 +130,7 @@ export default function Privacidad() {
     <div className="min-h-screen flex flex-col bg-white">
       <Header />
       <main className="flex-1">
-        <section className="bg-neutral-50 py-12 lg:py-16">
+        <section className="bg-[#FFFFFF] py-12 lg:py-16">
           <div className="container max-w-3xl">
             <Link href="/contactos" className="text-xs font-semibold uppercase tracking-wider text-[#b7212c] hover:underline">
               ← Volver a contactos

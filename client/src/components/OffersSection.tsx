@@ -13,7 +13,7 @@ const TICKETS = [
     detalle: "Aceite, filtro de aceite y filtro de aire",
     imagen: "/images/oferta-cut-filtros.webp",
     mensaje: "Hola, me interesa la oferta: Mantenimiento — Aceite, filtro de aceite y filtro de aire.",
-    franja: "bg-metal text-white",
+    franja: "bg-metal text-[#1d1d1b]",
   },
   {
     etiqueta: "Oferta del mes",
@@ -21,7 +21,7 @@ const TICKETS = [
     detalle: "Amortiguadores y rótulas",
     imagen: "/images/oferta-cut-suspension.webp",
     mensaje: "Hola, me interesa la oferta: Suspensión — Amortiguadores y rótulas.",
-    franja: "bg-metal text-white",
+    franja: "bg-metal text-[#1d1d1b]",
   },
   {
     etiqueta: "Liquidación",
@@ -29,7 +29,7 @@ const TICKETS = [
     detalle: "El mejor refrigerante para tu vehículo. Últimas unidades.",
     imagen: "/images/oferta-liquidacion.webp",
     mensaje: "Hola, me interesa la oferta: Liquidación — El mejor refrigerante para tu vehículo. Últimas unidades.",
-    franja: "bg-metal text-white",
+    franja: "bg-metal text-[#1d1d1b]",
   },
 ];
 
@@ -89,7 +89,7 @@ export default function OffersSection() {
             return (
               <span key={i} className="flex items-center gap-6 px-6 whitespace-nowrap" style={{ fontFamily: "var(--font-heading)" }}>
                 <span
-                  className={`text-[26px] sm:text-[32px] font-bold uppercase tracking-wide ${contorno ? "text-transparent [-webkit-text-stroke:1px_#f4f5f7]" : "text-white"}`}
+                  className={`text-[26px] sm:text-[32px] font-bold uppercase tracking-wide ${contorno ? "text-transparent [-webkit-text-stroke:1px_#1d1d1b]" : "text-[#1d1d1b]"}`}
                 >
                   {t}
                 </span>
@@ -116,10 +116,10 @@ export default function OffersSection() {
               <Zap className="w-3.5 h-3.5" /> Zona de ofertas
             </span>
             <h2 id="of-t" className="font-bold uppercase text-[56px] lg:text-[84px] leading-[0.9] mb-6" style={{ fontFamily: "var(--font-heading)" }}>
-              <span className="block text-white [text-shadow:0_3px_8px_rgba(0,0,0,0.75),0_0_2px_rgba(0,0,0,0.9)]">Ofertas que</span>
+              <span className="block text-[#1d1d1b] [text-shadow:0_3px_8px_rgba(0,0,0,0.75),0_0_2px_rgba(0,0,0,0.9)]">Ofertas que</span>
               <span className="block text-[#3a3e45] [text-shadow:0_3px_8px_rgba(0,0,0,0.75),0_0_2px_rgba(0,0,0,0.9)]">no esperan.</span>
             </h2>
-            <p className="text-white/90 text-base lg:text-lg leading-relaxed max-w-md mb-8">
+            <p className="text-[#1d1d1b]/90 text-base lg:text-lg leading-relaxed max-w-md mb-8">
               Promociones del mes y liquidaciones por tiempo limitado. Cuando se acaban, se acaban.
             </p>
 
@@ -141,18 +141,18 @@ export default function OffersSection() {
                         animate={{ y: "0%", opacity: 1 }}
                         exit={{ y: "-100%", opacity: 0 }}
                         transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
-                        className="absolute inset-0 flex items-center justify-center text-white text-4xl"
+                        className="absolute inset-0 flex items-center justify-center text-[#1d1d1b] text-4xl"
                         style={{ fontFamily: "var(--font-heading)" }}
                       >
                         {pad(tiempo[c.k])}
                       </motion.b>
                     </AnimatePresence>
                   </div>
-                  <small className="text-neutral-300 text-[10px] uppercase tracking-widest">{c.etiqueta}</small>
+                  <small className="text-[#585755] text-[10px] uppercase tracking-widest">{c.etiqueta}</small>
                 </motion.div>
               ))}
             </div>
-            <p className="text-white/85 text-sm mt-4 max-w-md">Vigentes hasta el {mesFin} o hasta agotar existencias.</p>
+            <p className="text-[#1d1d1b]/85 text-sm mt-4 max-w-md">Vigentes hasta el {mesFin} o hasta agotar existencias.</p>
           </motion.div>
 
           {/* Oferta destacada */}
@@ -190,13 +190,13 @@ export default function OffersSection() {
               </div>
               <div>
                 <small className="text-[#b7212c] text-[11px] font-bold uppercase tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>Destacada</small>
-                <h3 className="text-white font-bold uppercase text-[40px] lg:text-[48px] leading-[0.95] mt-1" style={{ fontFamily: "var(--font-heading)" }}>
+                <h3 className="text-[#1d1d1b] font-bold uppercase text-[40px] lg:text-[48px] leading-[0.95] mt-1" style={{ fontFamily: "var(--font-heading)" }}>
                   Combo<br />frenos
                 </h3>
-                <p className="text-neutral-300 mt-2 mb-5">Pastillas y discos para tu vehículo</p>
-                <div className="flex items-center gap-4 border-y border-white/10 py-4 mb-5">
-                  <span className="text-neutral-300 text-[11px] uppercase tracking-widest">Precio</span>
-                  <b className="text-white text-2xl" style={{ fontFamily: "var(--font-heading)" }}>Especial</b>
+                <p className="text-[#585755] mt-2 mb-5">Pastillas y discos para tu vehículo</p>
+                <div className="flex items-center gap-4 border-y border-[#1d1d1b]/10 py-4 mb-5">
+                  <span className="text-[#585755] text-[11px] uppercase tracking-widest">Precio</span>
+                  <b className="text-[#1d1d1b] text-2xl" style={{ fontFamily: "var(--font-heading)" }}>Especial</b>
                 </div>
                 <motion.a
                   whileHover={{ scale: 1.02 }}
@@ -255,7 +255,7 @@ export default function OffersSection() {
             </motion.article>
           ))}
         </div>
-        <p className="text-white/70 text-xs mt-8">Contenido de ejemplo: Mercadeo define cada mes los productos, precios y vigencia.</p>
+        <p className="text-[#1d1d1b]/70 text-xs mt-8">Contenido de ejemplo: Mercadeo define cada mes los productos, precios y vigencia.</p>
       </div>
     </section>
   );

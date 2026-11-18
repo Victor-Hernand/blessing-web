@@ -74,7 +74,7 @@ export default function HeroBanner() {
       </div>
 
       {/* Barra de confianza */}
-      <div className="bg-metal border-y border-white/10">
+      <div className="bg-metal border-y border-[#1d1d1b]/10">
         <ul className="container grid grid-cols-1 sm:grid-cols-3 gap-x-6 gap-y-6 py-4 sm:py-5">
           {VENTAJAS.map((v, i) => (
             <motion.li
@@ -88,7 +88,7 @@ export default function HeroBanner() {
               <span className="w-12 h-12 sm:w-14 sm:h-14 shrink-0 border border-[#b7212c]/60 flex items-center justify-center transition-all duration-300 group-hover:bg-[#b7212c] group-hover:border-[#b7212c] group-hover:-translate-y-1">
                 <v.icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#b7212c] group-hover:text-white transition-colors duration-300" />
               </span>
-              <span className="text-white text-base sm:text-lg font-semibold leading-tight transition-colors duration-300 group-hover:text-[#b7212c]">
+              <span className="text-[#1d1d1b] text-base sm:text-lg font-semibold leading-tight transition-colors duration-300 group-hover:text-[#b7212c]">
                 {v.label}
               </span>
             </motion.li>

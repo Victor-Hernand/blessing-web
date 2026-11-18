@@ -110,10 +110,10 @@ export default function CategoriesSection() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
-          <h2 className="section-title text-white text-[28px] lg:text-[36px] mb-4">
+          <h2 className="section-title text-[#1d1d1b] text-[28px] lg:text-[36px] mb-4">
             Conoce nuestra empresa
           </h2>
-          <p className="text-neutral-300 text-base leading-relaxed text-justify mb-6">
+          <p className="text-[#585755] text-base leading-relaxed text-justify mb-6">
             Auto Repuestos Blessing es una empresa hondureña dedicada a la venta de autopartes y accesorios vehiculares. Nos hemos consolidado como referentes en el mercado gracias a nuestra amplia variedad de productos, precios accesibles y un equipo de profesionales comprometidos con brindar la mejor atención.
           </p>
           <a
@@ -147,7 +147,7 @@ export default function CategoriesSection() {
             <span className="section-label">Nuestro catálogo</span>
           </div>
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
-            <h2 className="font-bold uppercase text-white text-[44px] lg:text-[64px] leading-[0.95]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h2 className="font-bold uppercase text-[#1d1d1b] text-[44px] lg:text-[64px] leading-[0.95]" style={{ fontFamily: "var(--font-heading)" }}>
               Todo lo que tu<br /><span className="text-[#b7212c]">vehículo necesita.</span>
             </h2>
             <div className="flex flex-col gap-5 max-w-md">
@@ -179,20 +179,20 @@ export default function CategoriesSection() {
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Buscar repuesto: frenos, amortiguadores, dirección..."
               aria-label="Buscar repuestos"
-              className="w-full border border-white/10 bg-white focus:bg-white pl-12 pr-12 py-4 text-sm text-neutral-900 placeholder:text-neutral-500 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
+              className="w-full border border-[#1d1d1b]/10 bg-white focus:bg-white pl-12 pr-12 py-4 text-sm text-neutral-900 placeholder:text-neutral-500 outline-none focus:border-[#b7212c] focus:ring-2 focus:ring-[#b7212c]/15 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
             />
             {isSearching && (
               <button
                 onClick={() => setQuery("")}
                 aria-label="Limpiar búsqueda"
-                className="absolute right-4 top-1/2 -translate-y-1/2 text-neutral-300 hover:text-[#b7212c] transition-colors"
+                className="absolute right-4 top-1/2 -translate-y-1/2 text-[#585755] hover:text-[#b7212c] transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             )}
           </div>
           {isSearching && (
-            <p className="mt-3 text-sm text-neutral-300">
+            <p className="mt-3 text-sm text-[#585755]">
               {results.length > 0
                 ? `${results.length} ${results.length === 1 ? "repuesto encontrado" : "repuestos encontrados"} para «${query.trim()}»`
                 : `Sin coincidencias para «${query.trim()}»`}
@@ -212,10 +212,10 @@ export default function CategoriesSection() {
                     href={whatsappLink(`Hola, quiero consultar por: ${product} (${category.name})`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 bg-[#d9dde3] border border-neutral-300 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
+                    className="group flex items-center gap-4 bg-[#FFFFFF] border border-neutral-300 p-4 hover:border-[#b7212c] hover:bg-[#b7212c]/5 hover:shadow-lg hover:shadow-[#b7212c]/50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
                   >
-                    <div className="w-11 h-11 shrink-0 bg-[#d9dde3] border border-neutral-300 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
-                      {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-white transition-colors duration-300" />}
+                    <div className="w-11 h-11 shrink-0 bg-[#FFFFFF] border border-neutral-300 flex items-center justify-center group-hover:bg-[#b7212c] group-hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]">
+                      {Icon && <Icon className="w-5 h-5 text-[#b7212c] group-hover:text-[#b7212c] transition-colors duration-300" />}
                     </div>
                     <div className="min-w-0 flex-1">
                       <h3 className="font-bold text-neutral-900 group-hover:text-[#b7212c] transition-colors truncate text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
@@ -223,14 +223,14 @@ export default function CategoriesSection() {
                       </h3>
                       <p className="text-[11px] text-neutral-700 uppercase tracking-wider">{category.name}</p>
                     </div>
-                    <ArrowRight className="w-4 h-4 shrink-0 text-gray-300 group-hover:text-[#b7212c] group-hover:translate-x-1 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300" />
+                    <ArrowRight className="w-4 h-4 shrink-0 text-[#585755] group-hover:text-[#b7212c] group-hover:translate-x-1 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300" />
                   </a>
                 );
               })}
             </div>
           ) : (
-            <div className="border border-dashed border-white/20 bg-metal p-10 text-center">
-              <p className="text-neutral-300 mb-5">
+            <div className="border border-dashed border-[#1d1d1b]/20 bg-metal p-10 text-center">
+              <p className="text-[#585755] mb-5">
                 No listamos ese repuesto en el sitio, pero es muy probable que lo tengamos en tienda.
               </p>
               <a
@@ -276,7 +276,7 @@ export default function CategoriesSection() {
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.5, delay: (i % 4) * 0.08, ease: [0.23, 1, 0.32, 1] }}
                     whileTap={{ scale: 0.98 }}
-                    className={`group relative flex flex-col w-full h-full overflow-hidden bg-[#d9dde3] text-left cursor-zoom-in rounded-br-3xl ring-1 ring-inset ring-transparent hover:ring-[#b7212c]/50 transition-[box-shadow,ring-color] duration-500`}
+                    className={`group relative flex flex-col w-full h-full overflow-hidden bg-[#FFFFFF] text-left cursor-zoom-in rounded-br-3xl ring-1 ring-inset ring-transparent hover:ring-[#b7212c]/50 transition-[box-shadow,ring-color] duration-500`}
                   >
                     {/* Panel de imagen: gradiente de marca que sube de contraste al pasar el cursor */}
                     <div className="relative flex-1 min-h-0 overflow-hidden p-3">
@@ -293,7 +293,7 @@ export default function CategoriesSection() {
                       />
                       {/* Marca de agua con el nombre de la categoría */}
                       <span
-                        className="absolute bottom-0 left-2 text-white/[0.06] font-bold uppercase leading-none whitespace-nowrap select-none text-[56px] lg:text-[64px]"
+                        className="absolute bottom-0 left-2 text-[#1d1d1b]/[0.06] font-bold uppercase leading-none whitespace-nowrap select-none text-[56px] lg:text-[64px]"
                         style={{ fontFamily: "var(--font-heading)" }}
                         aria-hidden="true"
                       >
@@ -301,10 +301,10 @@ export default function CategoriesSection() {
                       </span>
 
                       <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-10">
-                        <span className="flex items-center gap-2 text-white text-[11px] tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
+                        <span className="flex items-center gap-2 text-[#1d1d1b] text-[11px] tracking-[0.2em]" style={{ fontFamily: "var(--font-heading)" }}>
                           <span className="w-4 h-px bg-[#b7212c]" />{numero}
                         </span>
-                        <span className="text-[9px] uppercase tracking-[0.25em] text-neutral-300">Blessing</span>
+                        <span className="text-[9px] uppercase tracking-[0.25em] text-[#585755]">Blessing</span>
                       </div>
 
                       <img
@@ -316,7 +316,7 @@ export default function CategoriesSection() {
                     </div>
 
                     {/* Texto de la tarjeta */}
-                    <div className="relative bg-[#d9dde3] px-5 pt-4 pb-3">
+                    <div className="relative bg-[#FFFFFF] px-5 pt-4 pb-3">
                       <h3 className="font-bold text-neutral-900 uppercase leading-tight text-[24px] lg:text-[28px] mb-1 transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-[#ff3b47]" style={{ fontFamily: "var(--font-heading)" }}>
                         {cat.name}
                       </h3>
@@ -342,7 +342,7 @@ export default function CategoriesSection() {
                 type="button"
                 onClick={() => irA(pagina === 0 ? maxIndice : pagina - 1)}
                 aria-label="Categorías anteriores"
-                className="w-10 h-10 bg-metal border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
+                className="w-10 h-10 bg-[#1d1d1b]/85 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -355,7 +355,7 @@ export default function CategoriesSection() {
                     aria-label={`Ver grupo de categorías ${k + 1}`}
                     aria-current={k === pagina}
                     className={`h-2 transition-all duration-300 ${
-                      k === pagina ? "w-6 bg-[#b7212c]" : "w-2 bg-white/30 hover:bg-white/60"
+                      k === pagina ? "w-6 bg-[#b7212c]" : "w-2 bg-[#1d1d1b]/25 hover:bg-[#1d1d1b]/50"
                     }`}
                   />
                 ))}
@@ -364,7 +364,7 @@ export default function CategoriesSection() {
                 type="button"
                 onClick={() => irA(pagina >= maxIndice ? 0 : pagina + 1)}
                 aria-label="Categorías siguientes"
-                className="w-10 h-10 bg-metal border border-white/10 text-white flex items-center justify-center hover:bg-[#b7212c] hover:border-[#b7212c] transition-colors active:scale-[0.97]"
+                className="w-10 h-10 bg-[#1d1d1b]/85 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>

@@ -58,7 +58,7 @@ export default function CompanyCarousel() {
           type="button"
           onClick={() => avanzar(-1)}
           aria-label="Foto anterior"
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#3a3e45]/80 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1d1d1b]/85 text-white shadow-md flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -66,7 +66,7 @@ export default function CompanyCarousel() {
           type="button"
           onClick={() => avanzar(1)}
           aria-label="Foto siguiente"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#3a3e45]/80 text-white flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#1d1d1b]/85 text-white shadow-md flex items-center justify-center hover:bg-[#b7212c] transition-colors active:scale-[0.97]"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -81,7 +81,7 @@ export default function CompanyCarousel() {
             aria-label={`Ver foto ${k + 1}`}
             aria-current={k === actual}
             className={`h-2 transition-all duration-300 ${
-              k === actual ? "w-6 bg-[#b7212c]" : "w-2 bg-white/30 hover:bg-white/60"
+              k === actual ? "w-6 bg-[#b7212c]" : "w-2 bg-[#1d1d1b]/25 hover:bg-[#1d1d1b]/50"
             }`}
           />
         ))}

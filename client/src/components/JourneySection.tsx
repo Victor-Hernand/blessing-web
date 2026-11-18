@@ -59,7 +59,7 @@ export default function JourneySection() {
       id="proceso"
       ref={contenedor}
       aria-label="Cómo compras en Blessing"
-      className="relative bg-metal border-t border-white/10"
+      className="relative bg-metal border-t border-[#1d1d1b]/10"
       style={{ height: `${CAPITULOS.length * ALTO_POR_CAPITULO}vh` }}
     >
       <div className="sticky top-0 h-screen flex items-center overflow-hidden">
@@ -67,7 +67,7 @@ export default function JourneySection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Texto del capítulo activo */}
           <div>
-            <h2 className="section-title text-white text-[36px] lg:text-[42px] mb-4">¿Cómo comprar?</h2>
+            <h2 className="section-title text-[#1d1d1b] text-[36px] lg:text-[42px] mb-4">¿Cómo comprar?</h2>
             <span className="inline-flex items-center gap-3 text-[#b7212c] text-xs font-semibold uppercase tracking-[0.25em] mb-6" style={{ fontFamily: "var(--font-heading)" }}>
               <span className="w-10 h-[2px] bg-[#b7212c]" /> Del mostrador a tu puerta
             </span>
@@ -80,14 +80,14 @@ export default function JourneySection() {
                 exit={{ opacity: 0, y: -14 }}
                 transition={{ duration: 0.35, ease: [0.23, 1, 0.32, 1] }}
               >
-                <span className="block text-neutral-300 text-sm font-semibold tracking-widest mb-3" style={{ fontFamily: "var(--font-heading)" }}>
+                <span className="block text-[#585755] text-sm font-semibold tracking-widest mb-3" style={{ fontFamily: "var(--font-heading)" }}>
                   {String(activo + 1).padStart(2, "0")} / {String(CAPITULOS.length).padStart(2, "0")}
                 </span>
-                <h2 className="section-title text-white text-[44px] lg:text-[60px] leading-[0.95] mb-5">
+                <h2 className="section-title text-[#1d1d1b] text-[44px] lg:text-[60px] leading-[0.95] mb-5">
                   {cap.titulo[0]}<br /><span className="text-[#b7212c]">{cap.titulo[1]}</span>
                 </h2>
-                <p className="text-neutral-300 text-base lg:text-lg leading-relaxed max-w-md mb-6">{cap.texto}</p>
-                <ul className="space-y-2 text-sm text-neutral-200">
+                <p className="text-[#585755] text-base lg:text-lg leading-relaxed max-w-md mb-6">{cap.texto}</p>
+                <ul className="space-y-2 text-sm text-[#3a3e45]">
                   {cap.puntos.map((p) => (
                     <li key={p} className="flex items-center gap-3">
                       <span className="w-1.5 h-1.5 bg-[#b7212c] rotate-45 shrink-0" />
@@ -101,7 +101,7 @@ export default function JourneySection() {
             {/* Riel de capítulos: se llena a medida que avanza el scroll */}
             <div className="flex gap-2 mt-10" role="list" aria-label="Pasos de la compra">
               {CAPITULOS.map((c, i) => (
-                <div key={c.etiqueta} role="listitem" aria-current={i === activo ? "step" : undefined} className="flex-1 h-1.5 bg-white/10 overflow-hidden">
+                <div key={c.etiqueta} role="listitem" aria-current={i === activo ? "step" : undefined} className="flex-1 h-1.5 bg-[#1d1d1b]/10 overflow-hidden">
                   <motion.span
                     className="block h-full bg-[#b7212c]"
                     initial={false}
@@ -114,7 +114,7 @@ export default function JourneySection() {
           </div>
 
           {/* Foto del capítulo activo */}
-          <div className="relative aspect-[4/3] bg-metal border-2 border-white/25 ring-1 ring-[#b7212c]/60 ring-offset-4 ring-offset-[#3a3e45] overflow-hidden isolate">
+          <div className="relative aspect-[4/3] bg-metal border-2 border-[#1d1d1b]/20 ring-1 ring-[#b7212c]/60 ring-offset-4 ring-offset-[#FFFFFF] overflow-hidden isolate">
             {/* Las fotos se cruzan (fundido) y cada una crece lentamente mientras está visible */}
             <AnimatePresence initial={false}>
               <motion.img

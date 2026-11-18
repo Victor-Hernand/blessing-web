@@ -19,7 +19,7 @@ export default function LocationSection() {
             <span className="section-label">Encuéntranos</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-white text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Nuestra <span className="text-gradient-red">Ubicación</span>
           </h2>
         </motion.div>
@@ -32,7 +32,7 @@ export default function LocationSection() {
             viewport={{ once: true }}
             className="lg:col-span-2 min-w-0"
           >
-            <div className="bg-metal border border-white/10 p-2">
+            <div className="bg-metal border border-[#1d1d1b]/10 p-2">
               <iframe
                 src={COMPANY.mapsEmbedUrl}
                 width="100%"
@@ -92,7 +92,7 @@ export default function LocationSection() {
               href={COMPANY.mapsDirectionsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white hover:bg-neutral-100 text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm hover:translate-y-[-2px]"
+              className="flex items-center justify-center gap-2 bg-white hover:bg-[#F3F4F6] text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm hover:translate-y-[-2px]"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               <Navigation className="w-4 h-4" />

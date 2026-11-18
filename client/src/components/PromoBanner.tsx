@@ -45,8 +45,8 @@ export default function PromoBanner() {
       {/* 2. Móvil: franja de la foto entre el texto y el botón */}
       <div className="relative z-0 mt-8 h-[300px] lg:hidden">
         <img src="/images/promo-equipo-tienda.jpg" alt="Equipo de Blessing frente a su tienda" loading="lazy" className="w-full h-full object-cover object-[50%_45%]" />
-        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#3a3e45] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#3a3e45] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#FFFFFF] to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#FFFFFF] to-transparent" />
       </div>
 
       <div className="pb-12 lg:pb-16" />

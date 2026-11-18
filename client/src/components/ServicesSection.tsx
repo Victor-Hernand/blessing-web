@@ -50,7 +50,7 @@ export default function ServicesSection() {
             </span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="font-bold text-white uppercase text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
+          <h2 className="font-bold text-[#1d1d1b] uppercase text-[42px]" style={{ fontFamily: "var(--font-heading)" }}>
             Nuestros <span className="text-[#b7212c]">Servicios</span>
           </h2>
         </motion.div>
@@ -64,7 +64,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.08 }}
-              className="group relative overflow-hidden transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border border-neutral-300 hover:border-[#b7212c] bg-[#d9dde3] hover:shadow-lg hover:shadow-black/40 flex flex-col"
+              className="group relative overflow-hidden transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border border-neutral-300 hover:border-[#b7212c] bg-[#FFFFFF] hover:shadow-lg hover:shadow-black/40 flex flex-col"
             >
               <div className="h-1.5 w-full shrink-0 bg-[#b7212c]" />
 

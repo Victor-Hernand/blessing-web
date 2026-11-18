@@ -6,7 +6,7 @@ const allBrands = [...BRANDS.premium, ...BRANDS.conventional];
 
 function BrandCard({ name, isPremium }: { name: string; isPremium: boolean }) {
   return (
-    <div className="group flex-shrink-0 w-44 sm:w-52 h-28 bg-[#d9dde3] border border-neutral-300 hover:border-[#b7212c] flex flex-col items-center justify-center px-4 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 mx-2.5 hover:-translate-y-1">
+    <div className="group flex-shrink-0 w-44 sm:w-52 h-28 bg-[#FFFFFF] border border-neutral-300 hover:border-[#b7212c] flex flex-col items-center justify-center px-4 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 mx-2.5 hover:-translate-y-1">
       {/* Logos en escala de grises: a color solo al pasar el cursor */}
       <span className="text-lg font-bold text-neutral-700 group-hover:text-neutral-900 uppercase tracking-wider transition-colors duration-300" style={{ fontFamily: "var(--font-heading)" }}>
         {name}
@@ -33,10 +33,10 @@ export default function BrandsSection() {
             <span className="section-label">Nuestros aliados</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-white text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Marcas <span className="text-gradient-red">Destacadas</span>
           </h2>
-          <p className="text-neutral-300 mt-4 max-w-xl mx-auto text-base leading-relaxed font-bold">
+          <p className="text-[#585755] mt-4 max-w-xl mx-auto text-base leading-relaxed font-bold">
             Trabajamos con las mejores marcas del mercado automotriz para garantizar calidad y rendimiento en cada producto.
           </p>
         </motion.div>

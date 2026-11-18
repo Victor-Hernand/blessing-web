@@ -84,10 +84,10 @@ export default function GallerySection() {
             <span className="section-label">Nuestro Equipo</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-white text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Conoce <span className="text-gradient-red">Blessing</span>
           </h2>
-          <p className="text-neutral-300 text-base max-w-2xl mx-auto mt-4">
+          <p className="text-[#585755] text-base max-w-2xl mx-auto mt-4">
             Un equipo comprometido con brindarte la mejor experiencia en autopartes. Conoce a las personas detrás de nuestro servicio.
           </p>
         </motion.div>
@@ -116,13 +116,13 @@ export default function GallerySection() {
                 <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#1d1d1b]/60 to-transparent" />
                 {/* Caption */}
                 <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-white font-bold text-sm uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
+                  <div className="text-[#1d1d1b] font-bold text-sm uppercase tracking-wide" style={{ fontFamily: "var(--font-heading)" }}>
                     {item.caption}
                   </div>
                 </div>
                 {/* Camera icon */}
                 <div className="absolute top-3 right-3 w-8 h-8 bg-[#1d1d1b]/10 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Camera className="w-4 h-4 text-white" />
+                  <Camera className="w-4 h-4 text-[#1d1d1b]" />
                 </div>
                 {/* Red accent line */}
                 <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-[#b7212c] group-hover:w-full transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]" />

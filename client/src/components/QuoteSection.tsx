@@ -8,9 +8,9 @@ import { Link } from "wouter";
 import { CLIENT_TYPES, COMPANY, whatsappLink } from "@/lib/constants";
 
 const inputBase =
-  "w-full bg-[#d9dde3] border border-neutral-300 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
+  "w-full bg-[#FFFFFF] border border-neutral-300 px-4 py-3 text-sm text-neutral-900 placeholder:text-neutral-600 focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]/20 transition-colors";
 const labelBase =
-  "block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5";
+  "block text-[11px] font-semibold text-[#585755] uppercase tracking-wider mb-1.5";
 // Debe coincidir con FECHA_VIGENTE de pages/Privacidad.tsx.
 const FECHA_POLITICA = "30/10/2026";
 
@@ -62,10 +62,10 @@ export default function QuoteSection() {
             <span className="section-label">Compras por volumen</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-white text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Solicitar <span className="text-gradient-red">cotización mayorista</span>
           </h2>
-          <p className="text-neutral-200 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#3a3e45] text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
             Complete el formulario y uno de nuestros asesores comerciales se pondrá en contacto
             con usted.
           </p>
@@ -76,7 +76,7 @@ export default function QuoteSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="max-w-3xl mx-auto bg-metal border border-white/10 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
+          className="max-w-3xl mx-auto bg-metal border border-[#1d1d1b]/10 p-6 sm:p-8 lg:p-10 relative overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
 
@@ -122,13 +122,13 @@ export default function QuoteSection() {
                 required
                 value={tipo}
                 onChange={e => setTipo(e.target.value)}
-                className={`${inputBase} ${tipo ? "" : "text-neutral-300"}`}
+                className={`${inputBase} ${tipo ? "" : "text-[#585755]"}`}
               >
                 <option value="" disabled>
                   Seleccione una opción
                 </option>
                 {CLIENT_TYPES.map(t => (
-                  <option key={t} value={t} className="text-neutral-900 bg-[#d9dde3]">
+                  <option key={t} value={t} className="text-neutral-900 bg-[#FFFFFF]">
                     {t}
                   </option>
                 ))}
@@ -182,7 +182,7 @@ export default function QuoteSection() {
               />
             </div>
 
-            <label htmlFor="q-privacidad" className="flex items-start gap-3 text-sm text-neutral-200 leading-relaxed cursor-pointer">
+            <label htmlFor="q-privacidad" className="flex items-start gap-3 text-sm text-[#3a3e45] leading-relaxed cursor-pointer">
               <input
                 id="q-privacidad"
                 type="checkbox"
@@ -210,7 +210,7 @@ export default function QuoteSection() {
               Enviar solicitud de cotización
             </button>
 
-            <p className="text-[11px] text-neutral-300 text-center">
+            <p className="text-[11px] text-[#585755] text-center">
               Al enviar, será redirigido a WhatsApp con su mensaje ya cargado.
             </p>
           </form>
