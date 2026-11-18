@@ -12,7 +12,7 @@ export default function Footer() {
         {/* Marca */}
         <div className="flex flex-col items-center w-full max-w-xs">
           <img
-            src="/images/logo-white.png"
+            src="/images/logo.png"
             alt="Auto Repuestos Blessing"
             className="h-14 w-auto mb-3"
           />

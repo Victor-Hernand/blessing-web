@@ -66,7 +66,7 @@ export default function Header() {
         {/* Logo */}
         <a href={destino("#inicio")} className="flex items-center shrink-0 group" aria-label="Auto Repuestos Blessing, inicio">
           <img
-            src="/images/logo-white.png"
+            src="/images/logo.png"
             alt="Auto Repuestos Blessing"
             className="h-12 lg:h-14 w-auto transition-transform duration-300 group-hover:scale-[1.03]"
           />
