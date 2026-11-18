@@ -47,9 +47,9 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border-b border-white/10 ${
+      className={`sticky top-0 z-50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 border-b border-[#1d1d1b]/10 ${
         scrolled
-          ? "bg-[#3a3e45]/95 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+          ? "bg-[#FFFFFF]/95 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
           : "bg-metal"
       }`}
     >
@@ -81,7 +81,7 @@ export default function Header() {
                 key={link.href}
                 href={destino(link.href)}
                 className={`relative whitespace-nowrap px-2 2xl:px-3 py-2 text-[12px] 2xl:text-[13px] font-medium transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-200 uppercase tracking-wider ${
-                  isActive ? "text-[#b7212c]" : "text-neutral-200 hover:text-white"
+                  isActive ? "text-[#b7212c]" : "text-[#3a3e45] hover:text-[#b7212c]"
                 }`}
                 style={{ fontFamily: "var(--font-heading)" }}
               >
@@ -117,7 +117,7 @@ export default function Header() {
           </a>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="lg:hidden p-2 text-gray-300 hover:text-[#b7212c] transition-colors"
+            className="lg:hidden p-2 text-[#585755] hover:text-[#b7212c] transition-colors"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -133,7 +133,7 @@ export default function Header() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden bg-metal border-t border-white/10 overflow-hidden"
+            className="lg:hidden bg-metal border-t border-[#1d1d1b]/10 overflow-hidden"
           >
             <nav className="container py-4 flex flex-col gap-1">
               {NAV_LINKS.map((link, i) => (
@@ -144,7 +144,7 @@ export default function Header() {
                   initial={{ x: -20, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.05 }}
-                  className="px-4 py-3 text-sm font-medium text-neutral-200 hover:text-white hover:bg-white/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] uppercase tracking-wide border-l-2 border-transparent hover:border-[#b7212c]"
+                  className="px-4 py-3 text-sm font-medium text-[#3a3e45] hover:text-[#b7212c] hover:bg-[#1d1d1b]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] uppercase tracking-wide border-l-2 border-transparent hover:border-[#b7212c]"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {link.label}

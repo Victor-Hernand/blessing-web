@@ -14,10 +14,10 @@ const ANIO_ACTUAL = new Date().getFullYear();
 const ANIOS = Array.from({ length: ANIO_ACTUAL - 2001 + 1 }, (_, i) => String(ANIO_ACTUAL - i));
 
 const chip =
-  "hidden lg:inline-flex items-center gap-2 border border-white/20 hover:border-white/60 text-white px-4 py-3 text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap";
+  "hidden lg:inline-flex items-center gap-2 border border-[#1d1d1b]/20 hover:border-[#1d1d1b]/60 text-[#1d1d1b] px-4 py-3 text-xs font-semibold uppercase tracking-wider transition-colors whitespace-nowrap";
 const campo =
-  "w-full bg-metal border border-white/15 px-3 py-2.5 text-sm text-white focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]";
-const etiqueta = "block text-[11px] font-semibold text-neutral-300 uppercase tracking-wider mb-1.5";
+  "w-full bg-metal border border-[#1d1d1b]/10 px-3 py-2.5 text-sm text-[#1d1d1b] focus:outline-none focus:border-[#b7212c] focus:ring-1 focus:ring-[#b7212c]";
+const etiqueta = "block text-[11px] font-semibold text-[#585755] uppercase tracking-wider mb-1.5";
 
 function Fondo({ onCerrar }: { onCerrar: () => void }) {
   return (
@@ -93,14 +93,14 @@ export default function CotizacionControles() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 16 }}
-              className="fixed left-1/2 top-24 -translate-x-1/2 z-[70] w-[min(92vw,460px)] bg-metal border border-white/10 p-6"
+              className="fixed left-1/2 top-24 -translate-x-1/2 z-[70] w-[min(92vw,460px)] bg-metal border border-[#1d1d1b]/10 p-6"
             >
               <div className="flex items-start justify-between mb-5">
                 <div>
                   <span className="text-[#b7212c] text-xs font-semibold uppercase tracking-[0.2em]">Mi vehículo</span>
-                  <h2 id="veh-t" className="text-white text-2xl font-bold uppercase" style={{ fontFamily: "var(--font-heading)" }}>¿Qué vehículo tienes?</h2>
+                  <h2 id="veh-t" className="text-[#1d1d1b] text-2xl font-bold uppercase" style={{ fontFamily: "var(--font-heading)" }}>¿Qué vehículo tienes?</h2>
                 </div>
-                <button type="button" onClick={() => setAbierto(null)} aria-label="Cerrar" className="text-white p-1"><X className="w-5 h-5" /></button>
+                <button type="button" onClick={() => setAbierto(null)} aria-label="Cerrar" className="text-[#1d1d1b] p-1"><X className="w-5 h-5" /></button>
               </div>
               <form onSubmit={guardar} className="space-y-4">
                 <div>
@@ -122,14 +122,14 @@ export default function CotizacionControles() {
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="cv-motor" className={etiqueta}>Motor <span className="normal-case tracking-normal text-neutral-300">(opcional)</span></label>
+                  <label htmlFor="cv-motor" className={etiqueta}>Motor <span className="normal-case tracking-normal text-[#585755]">(opcional)</span></label>
                   <input id="cv-motor" className={campo} placeholder="Ej.: 2.4 diésel" value={borrador.motor} onChange={(e) => setBorrador({ ...borrador, motor: e.target.value })} autoComplete="off" />
                 </div>
-                <p className="text-xs text-neutral-300">Lo guardamos en este navegador para filtrar la tienda y armar tus cotizaciones.</p>
+                <p className="text-xs text-[#585755]">Lo guardamos en este navegador para filtrar la tienda y armar tus cotizaciones.</p>
                 <div className="flex gap-3 pt-2">
                   <button type="submit" className="flex-1 bg-[#b7212c] hover:bg-[#c92a35] text-white py-3 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "var(--font-heading)" }}>Guardar vehículo</button>
                   {vehiculo && (
-                    <button type="button" onClick={() => { quitarVehiculo(); setAbierto(null); }} className="border border-white/20 hover:border-white text-white px-4 py-3 text-xs font-semibold uppercase tracking-wider">Quitar</button>
+                    <button type="button" onClick={() => { quitarVehiculo(); setAbierto(null); }} className="border border-[#1d1d1b]/20 hover:border-[#1d1d1b] text-[#1d1d1b] px-4 py-3 text-xs font-semibold uppercase tracking-wider">Quitar</button>
                   )}
                 </div>
               </form>
@@ -148,19 +148,19 @@ export default function CotizacionControles() {
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
               transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
-              className="fixed inset-y-0 right-0 z-[70] w-full max-w-md bg-metal border-l border-white/10 flex flex-col"
+              className="fixed inset-y-0 right-0 z-[70] w-full max-w-md bg-metal border-l border-[#1d1d1b]/10 flex flex-col"
             >
-              <div className="flex items-start justify-between p-6 border-b border-white/10">
+              <div className="flex items-start justify-between p-6 border-b border-[#1d1d1b]/10">
                 <div>
                   <span className="text-[#b7212c] text-xs font-semibold uppercase tracking-[0.2em]">Cotización</span>
-                  <h2 id="ld-t" className="text-white text-2xl font-bold uppercase" style={{ fontFamily: "var(--font-heading)" }}>Mi lista</h2>
+                  <h2 id="ld-t" className="text-[#1d1d1b] text-2xl font-bold uppercase" style={{ fontFamily: "var(--font-heading)" }}>Mi lista</h2>
                 </div>
-                <button type="button" onClick={() => setAbierto(null)} aria-label="Cerrar" className="text-white p-1"><X className="w-5 h-5" /></button>
+                <button type="button" onClick={() => setAbierto(null)} aria-label="Cerrar" className="text-[#1d1d1b] p-1"><X className="w-5 h-5" /></button>
               </div>
 
               {vehiculo && (
-                <p className="px-6 py-3 text-xs text-neutral-300 border-b border-white/10">
-                  <span className="text-neutral-300 uppercase tracking-wider mr-2">Para</span>
+                <p className="px-6 py-3 text-xs text-[#585755] border-b border-[#1d1d1b]/10">
+                  <span className="text-[#585755] uppercase tracking-wider mr-2">Para</span>
                   {vehiculo.marca} {vehiculo.modelo} {vehiculo.anio} {vehiculo.motor}
                 </p>
               )}
@@ -168,7 +168,7 @@ export default function CotizacionControles() {
               <div className="flex-1 overflow-y-auto p-6">
                 {lista.length === 0 ? (
                   <div className="text-center py-10">
-                    <p className="text-neutral-300 mb-5">Tu lista está vacía.</p>
+                    <p className="text-[#585755] mb-5">Tu lista está vacía.</p>
                     {TIENDA_HABILITADA && (
                       <IconSlideButton href="/tienda" label="Ir a la tienda" onClick={() => setAbierto(null)} icon={<ShoppingCart />} />
                     )}
@@ -178,10 +178,10 @@ export default function CotizacionControles() {
                     {lista.map((i) => (
                       <li key={i.id} className="flex items-center justify-between gap-3 py-3">
                         <div className="min-w-0">
-                          <p className="text-sm text-white leading-snug">{i.nombre}</p>
-                          {i.marca && <p className="text-[11px] uppercase tracking-wider text-neutral-300">{i.marca}</p>}
+                          <p className="text-sm text-[#1d1d1b] leading-snug">{i.nombre}</p>
+                          {i.marca && <p className="text-[11px] uppercase tracking-wider text-[#585755]">{i.marca}</p>}
                         </div>
-                        <button type="button" onClick={() => quitarDeLista(i.id)} aria-label={`Quitar ${i.nombre}`} className="text-neutral-300 hover:text-[#b7212c] p-2">
+                        <button type="button" onClick={() => quitarDeLista(i.id)} aria-label={`Quitar ${i.nombre}`} className="text-[#585755] hover:text-[#b7212c] p-2">
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </li>
@@ -191,7 +191,7 @@ export default function CotizacionControles() {
               </div>
 
               {lista.length > 0 && (
-                <form onSubmit={enviarLista} className="p-6 border-t border-white/10 space-y-4">
+                <form onSubmit={enviarLista} className="p-6 border-t border-[#1d1d1b]/10 space-y-4">
                   <fieldset>
                     <legend className={etiqueta}>¿Cómo lo quieres?</legend>
                     <div className="grid grid-cols-2 gap-2">
@@ -204,14 +204,14 @@ export default function CotizacionControles() {
                     </div>
                   </fieldset>
                   <div>
-                    <label htmlFor="cl-nombre" className={etiqueta}>Tu nombre <span className="normal-case tracking-normal text-neutral-300">(opcional)</span></label>
+                    <label htmlFor="cl-nombre" className={etiqueta}>Tu nombre <span className="normal-case tracking-normal text-[#585755]">(opcional)</span></label>
                     <input id="cl-nombre" className={campo} value={nombre} onChange={(e) => setNombre(e.target.value)} autoComplete="name" />
                   </div>
                   <button type="submit" className="w-full inline-flex items-center justify-center gap-2 bg-[#b7212c] hover:bg-[#c92a35] text-white py-3 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "var(--font-heading)" }}>
                     <MessageCircle className="w-4 h-4" /> Enviar lista por WhatsApp
                   </button>
-                  <p className="text-[11px] text-neutral-300 text-center">
-                    Un asesor confirma compatibilidad, precio y existencia antes de facturar. <button type="button" onClick={vaciarLista} className="underline hover:text-white">Vaciar lista</button>
+                  <p className="text-[11px] text-[#585755] text-center">
+                    Un asesor confirma compatibilidad, precio y existencia antes de facturar. <button type="button" onClick={vaciarLista} className="underline hover:text-[#b7212c]">Vaciar lista</button>
                   </p>
                 </form>
               )}

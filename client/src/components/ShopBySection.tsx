@@ -30,7 +30,7 @@ export default function ShopBySection() {
   const baseTab = "flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-semibold uppercase tracking-wider border-b-2 transition-colors duration-200";
 
   return (
-    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-metal border-t border-white/10" aria-labelledby="sb-t">
+    <section id="buscar" className="pt-8 lg:pt-10 pb-0 bg-metal border-t border-[#1d1d1b]/10" aria-labelledby="sb-t">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,16 +43,16 @@ export default function ShopBySection() {
               <div className="w-10 h-[2px] bg-[#b7212c]" />
               <span className="section-label">Compra como prefieras</span>
             </div>
-            <h2 id="sb-t" className="section-title text-white text-[36px] lg:text-[42px]">
+            <h2 id="sb-t" className="section-title text-[#1d1d1b] text-[36px] lg:text-[42px]">
               Encuentra tu pieza <span className="text-[#b7212c]">a tu manera.</span>
             </h2>
           </div>
-          <p className="text-neutral-300 max-w-md text-base leading-relaxed">
+          <p className="text-[#585755] max-w-md text-base leading-relaxed">
             Busca por la marca de tu vehículo, por la marca del repuesto o encuentra la batería exacta en segundos.
           </p>
         </motion.div>
 
-        <div role="tablist" aria-label="Formas de buscar" className="flex flex-wrap border-b border-white/10 mb-8">
+        <div role="tablist" aria-label="Formas de buscar" className="flex flex-wrap border-b border-[#1d1d1b]/10 mb-8">
           {PESTANAS.map((p, i) => {
             const selected = activa === p.id;
             return (
@@ -67,7 +67,7 @@ export default function ShopBySection() {
                 onClick={() => setActiva(p.id)}
                 onKeyDown={(e) => onKeyDown(e, i)}
                 style={{ fontFamily: "var(--font-heading)" }}
-                className={`${baseTab} ${selected ? "border-[#b7212c] text-white" : "border-transparent text-neutral-300 hover:text-white"}`}
+                className={`${baseTab} ${selected ? "border-[#b7212c] text-[#1d1d1b]" : "border-transparent text-[#585755] hover:text-[#b7212c]"}`}
               >
                 {p.label}
               </button>
@@ -88,7 +88,7 @@ export default function ShopBySection() {
           >
             {activa === "vehiculo" && (
               <div>
-                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 border border-white/10">
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-[#1d1d1b]/10 border border-[#1d1d1b]/10">
                   {MARCAS_DESTACADAS.map((m) => (
                     <a
                       key={m}
@@ -104,14 +104,14 @@ export default function ShopBySection() {
                     </a>
                   ))}
                 </div>
-                <p className="mt-5 text-sm text-neutral-300">
-                  ¿No ves tu marca? <a href="#buscador" className="text-white underline underline-offset-4 hover:text-[#b7212c]">Elige entre más de {MARCAS.length} marcas</a>, arriba en el buscador.
+                <p className="mt-5 text-sm text-[#585755]">
+                  ¿No ves tu marca? <a href="#buscador" className="text-[#1d1d1b] underline underline-offset-4 hover:text-[#b7212c]">Elige entre más de {MARCAS.length} marcas</a>, arriba en el buscador.
                 </p>
               </div>
             )}
 
             {activa === "marca" && (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-white/10 border border-white/10">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-[#1d1d1b]/10 border border-[#1d1d1b]/10">
                 {[...BRANDS.premium.map((b) => ({ nombre: b, premium: true })), ...BRANDS.conventional.map((b) => ({ nombre: b, premium: false }))].map((b) => (
                   <a
                     key={b.nombre}

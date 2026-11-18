@@ -49,7 +49,7 @@ export default function ValuesSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: (i % 3) * 0.1 }}
-                className="bg-neutral-50 border border-neutral-200 p-6 group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
+                className="bg-[#FFFFFF] border border-neutral-200 p-6 group hover:border-[#b7212c] hover:bg-[#b7212c]/5 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 active:scale-[0.97]"
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 shrink-0 bg-[#b7212c]/5 border border-[#b7212c]/60 flex items-center justify-center group-hover:bg-[#b7212c]/50 transition-colors active:scale-[0.97]">

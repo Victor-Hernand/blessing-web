@@ -87,46 +87,46 @@ export default function Tienda() {
 
   const panelFiltros = (
     <>
-      <div className="flex items-center justify-between pb-3 border-b-2 border-white/80 mb-5">
-        <b className="text-white uppercase tracking-wider text-sm" style={{ fontFamily: "var(--font-heading)" }}>Filtrar</b>
+      <div className="flex items-center justify-between pb-3 border-b-2 border-[#1d1d1b]/80 mb-5">
+        <b className="text-[#1d1d1b] uppercase tracking-wider text-sm" style={{ fontFamily: "var(--font-heading)" }}>Filtrar</b>
         <div className="flex items-center gap-3">
-          <button type="button" onClick={limpiar} className="text-[#b7212c] underline underline-offset-4 text-xs font-semibold uppercase tracking-wider hover:text-white transition-colors">
+          <button type="button" onClick={limpiar} className="text-[#b7212c] underline underline-offset-4 text-xs font-semibold uppercase tracking-wider hover:text-[#b7212c] transition-colors">
             Limpiar
           </button>
-          <button type="button" onClick={() => setFiltrosAbiertos(false)} aria-label="Cerrar filtros" className="lg:hidden text-white p-1">
+          <button type="button" onClick={() => setFiltrosAbiertos(false)} aria-label="Cerrar filtros" className="lg:hidden text-[#1d1d1b] p-1">
             <X className="w-5 h-5" />
           </button>
         </div>
       </div>
 
       <fieldset className="mb-8">
-        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-300 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Categoría</legend>
+        <legend className="text-[11px] uppercase tracking-[0.2em] text-[#585755] mb-3" style={{ fontFamily: "var(--font-heading)" }}>Categoría</legend>
         <div className="space-y-1">
           {[{ key: "", name: "Todas", total: PRODUCTOS_TIENDA.length }, ...CATEGORIAS.map((c) => ({ key: c.key, name: c.name, total: conteoCat[c.key] ?? 0 }))].map((c) => (
-            <RedRadio key={c.key || "todas"} name="cat" value={c.key} checked={categoria === c.key} onChange={() => setCategoria(c.key)} className="py-1.5 text-sm text-neutral-200 hover:text-white">
+            <RedRadio key={c.key || "todas"} name="cat" value={c.key} checked={categoria === c.key} onChange={() => setCategoria(c.key)} className="py-1.5 text-sm text-[#3a3e45] hover:text-[#b7212c]">
               <span className="flex-1">{c.name}</span>
-              <i className="not-italic text-xs text-neutral-300">{c.total}</i>
+              <i className="not-italic text-xs text-[#585755]">{c.total}</i>
             </RedRadio>
           ))}
         </div>
       </fieldset>
 
       <fieldset className="mb-8">
-        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-300 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Marca de repuesto</legend>
+        <legend className="text-[11px] uppercase tracking-[0.2em] text-[#585755] mb-3" style={{ fontFamily: "var(--font-heading)" }}>Marca de repuesto</legend>
         <div className="space-y-1 max-h-72 overflow-y-auto pr-1">
           {MARCAS.map((m) => (
-            <RedCheckbox key={m} checked={marcas.includes(m)} onChange={() => toggleMarca(m)} className="py-1.5 text-sm text-neutral-200 hover:text-white">
+            <RedCheckbox key={m} checked={marcas.includes(m)} onChange={() => toggleMarca(m)} className="py-1.5 text-sm text-[#3a3e45] hover:text-[#b7212c]">
               <span className="flex-1">{m}</span>
               {esPremium(m) && <span className="text-[9px] font-bold uppercase tracking-wider bg-[#b7212c] text-white px-1.5 py-0.5">Premium</span>}
-              <i className="not-italic text-xs text-neutral-300">{conteoMarca[m]}</i>
+              <i className="not-italic text-xs text-[#585755]">{conteoMarca[m]}</i>
             </RedCheckbox>
           ))}
         </div>
       </fieldset>
 
       <fieldset>
-        <legend className="text-[11px] uppercase tracking-[0.2em] text-neutral-300 mb-3" style={{ fontFamily: "var(--font-heading)" }}>Calidad</legend>
-        <RedCheckbox checked={soloPremium} onChange={setSoloPremium} className="py-1.5 text-sm text-neutral-200 hover:text-white">
+        <legend className="text-[11px] uppercase tracking-[0.2em] text-[#585755] mb-3" style={{ fontFamily: "var(--font-heading)" }}>Calidad</legend>
+        <RedCheckbox checked={soloPremium} onChange={setSoloPremium} className="py-1.5 text-sm text-[#3a3e45] hover:text-[#b7212c]">
           Solo marcas premium
         </RedCheckbox>
       </fieldset>
@@ -134,16 +134,16 @@ export default function Tienda() {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-metal text-[#f4f5f7]">
+    <div className="min-h-screen flex flex-col bg-metal text-[#1d1d1b]">
       <Header />
       <main>
         {/* Cabecera de la tienda */}
         <section className="bg-blueprint border-b border-white/10">
           <div className="container pt-4 lg:pt-6 pb-6 lg:pb-8">
-            <nav aria-label="Ruta" className="flex items-center gap-2 text-xs text-neutral-300 uppercase tracking-wider mb-6">
-              <a href="/" className="hover:text-white transition-colors">Inicio</a>
+            <nav aria-label="Ruta" className="flex items-center gap-2 text-xs text-[#585755] uppercase tracking-wider mb-6">
+              <a href="/" className="hover:text-[#b7212c] transition-colors">Inicio</a>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-white" aria-current="page">Tienda en línea</span>
+              <span className="text-[#1d1d1b]" aria-current="page">Tienda en línea</span>
             </nav>
             <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
               <div>
@@ -151,7 +151,7 @@ export default function Tienda() {
                   <div className="w-10 h-[2px] bg-[#b7212c]" />
                   <span className="section-label">Catálogo de repuestos</span>
                 </div>
-                <h1 className="section-title text-white text-[44px] lg:text-[60px] leading-[0.95]">
+                <h1 className="section-title text-[#1d1d1b] text-[44px] lg:text-[60px] leading-[0.95]">
                   Repuestos para <span className="text-[#b7212c]">tu vehículo.</span>
                 </h1>
                 <dl className="flex flex-wrap gap-x-8 gap-y-3 mt-6">
@@ -162,8 +162,8 @@ export default function Tienda() {
                   ].map((d) => (
                     <div key={d.l} className="flex items-baseline gap-2">
                       <dt className="sr-only">{d.l}</dt>
-                      <dd className="text-white text-3xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>{d.n}</dd>
-                      <span className="text-[11px] uppercase tracking-[0.2em] text-neutral-300">{d.l}</span>
+                      <dd className="text-[#1d1d1b] text-3xl font-bold" style={{ fontFamily: "var(--font-heading)" }}>{d.n}</dd>
+                      <span className="text-[11px] uppercase tracking-[0.2em] text-[#585755]">{d.l}</span>
                     </div>
                   ))}
                 </dl>
@@ -203,7 +203,7 @@ export default function Tienda() {
                   exit={{ x: "-100%" }}
                   transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                   aria-label="Filtros"
-                  className="fixed inset-y-0 left-0 z-[60] w-[86%] max-w-sm bg-metal border-r border-white/10 p-6 overflow-y-auto lg:hidden"
+                  className="fixed inset-y-0 left-0 z-[60] w-[86%] max-w-sm bg-metal border-r border-[#1d1d1b]/10 p-6 overflow-y-auto lg:hidden"
                 >
                   {panelFiltros}
                 </motion.aside>
@@ -213,25 +213,25 @@ export default function Tienda() {
             <div>
               {/* Barra: conteo, filtros móviles y orden */}
               <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
-                <p className="text-sm text-neutral-300" aria-live="polite">
-                  <span className="text-white font-semibold">{productos.length}</span> {productos.length === 1 ? "repuesto" : "repuestos"}
-                  {categoria && <> en <span className="text-white">{nombreCategoria(categoria)}</span></>}
+                <p className="text-sm text-[#585755]" aria-live="polite">
+                  <span className="text-[#1d1d1b] font-semibold">{productos.length}</span> {productos.length === 1 ? "repuesto" : "repuestos"}
+                  {categoria && <> en <span className="text-[#1d1d1b]">{nombreCategoria(categoria)}</span></>}
                 </p>
                 <div className="flex items-center gap-3">
                   <button
                     type="button"
                     onClick={() => setFiltrosAbiertos(true)}
-                    className="lg:hidden inline-flex items-center gap-2 border border-white/20 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white"
+                    className="lg:hidden inline-flex items-center gap-2 border border-[#1d1d1b]/20 px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#1d1d1b]"
                     style={{ fontFamily: "var(--font-heading)" }}
                   >
                     <SlidersHorizontal className="w-4 h-4" /> Filtros
                   </button>
-                  <label className="flex items-center gap-2 text-sm text-neutral-300">
+                  <label className="flex items-center gap-2 text-sm text-[#585755]">
                     <span className="sr-only">Ordenar</span>
                     <select
                       value={orden}
                       onChange={(e) => setOrden(e.target.value as Orden)}
-                      className="bg-metal border border-white/15 text-sm text-white px-3 py-2 focus:outline-none focus:border-[#b7212c]"
+                      className="bg-metal border border-[#1d1d1b]/10 text-sm text-[#1d1d1b] px-3 py-2 focus:outline-none focus:border-[#b7212c]"
                     >
                       <option value="cat">Ordenar por categoría</option>
                       <option value="az">Nombre A–Z</option>
@@ -250,7 +250,7 @@ export default function Tienda() {
               )}
 
               {productos.length > 0 ? (
-                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-px bg-white/10 border border-white/10">
+                <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-px bg-[#1d1d1b]/10 border border-[#1d1d1b]/10">
                   {productos.map((p, i) => (
                     <motion.article
                       key={p.id}
@@ -259,7 +259,7 @@ export default function Tienda() {
                       transition={{ duration: 0.3, delay: Math.min(i, 12) * 0.02, ease: [0.23, 1, 0.32, 1] }}
                       className="group bg-metal flex flex-col hover:bg-metal transition-colors duration-300"
                     >
-                      <div className="aspect-square bg-neutral-100 flex items-center justify-center overflow-hidden">
+                      <div className="aspect-square bg-[#F3F4F6] flex items-center justify-center overflow-hidden">
                         <img
                           src={p.imagen}
                           alt={p.nombre}
@@ -269,15 +269,15 @@ export default function Tienda() {
                       </div>
                       <div className="p-4 lg:p-5 flex-1 flex flex-col">
                         <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="text-[10px] uppercase tracking-widest text-neutral-300">{nombreCategoria(p.categoria)}</span>
+                          <span className="text-[10px] uppercase tracking-widest text-[#585755]">{nombreCategoria(p.categoria)}</span>
                           {p.marca && (
                             <span className="text-[10px] font-bold uppercase tracking-wider bg-[#b7212c] text-white px-2 py-0.5">{p.marca}</span>
                           )}
                         </div>
-                        <h2 className="text-white font-semibold text-[15px] leading-snug mb-2">{p.nombre}</h2>
-                        <p className="text-neutral-300 text-xs leading-relaxed mb-3">{p.descripcion}</p>
-                        <p className="text-[11px] text-neutral-300 border-l-2 border-[#b7212c] pl-2 mb-4 flex-1">
-                          <span className="block text-[10px] uppercase tracking-widest text-neutral-300 mb-0.5">Para</span>
+                        <h2 className="text-[#1d1d1b] font-semibold text-[15px] leading-snug mb-2">{p.nombre}</h2>
+                        <p className="text-[#585755] text-xs leading-relaxed mb-3">{p.descripcion}</p>
+                        <p className="text-[11px] text-[#585755] border-l-2 border-[#b7212c] pl-2 mb-4 flex-1">
+                          <span className="block text-[10px] uppercase tracking-widest text-[#585755] mb-0.5">Para</span>
                           {p.vehiculos}
                         </p>
                         <button
@@ -305,9 +305,9 @@ export default function Tienda() {
                   ))}
                 </div>
               ) : (
-                <div className="border border-dashed border-white/20 bg-metal p-10 text-center">
-                  <h2 className="section-title text-white text-2xl mb-3">No encontramos ese repuesto en la vista previa</h2>
-                  <p className="text-neutral-300 mb-6">Pero seguro lo conseguimos. Escríbenos y un asesor lo busca por ti.</p>
+                <div className="border border-dashed border-[#1d1d1b]/20 bg-metal p-10 text-center">
+                  <h2 className="section-title text-[#1d1d1b] text-2xl mb-3">No encontramos ese repuesto en la vista previa</h2>
+                  <p className="text-[#585755] mb-6">Pero seguro lo conseguimos. Escríbenos y un asesor lo busca por ti.</p>
                   <a
                     href={whatsappLink(`Hola, ¿tienen disponible: ${busqueda.trim()}?`)}
                     target="_blank"
@@ -334,7 +334,7 @@ function Chip({ texto, onQuitar }: { texto: string; onQuitar: () => void }) {
     <button
       type="button"
       onClick={onQuitar}
-      className="inline-flex items-center gap-2 bg-metal border border-white/15 hover:border-[#b7212c] px-3 py-1.5 text-xs text-white"
+      className="inline-flex items-center gap-2 bg-metal border border-[#1d1d1b]/10 hover:border-[#b7212c] px-3 py-1.5 text-xs text-[#1d1d1b]"
     >
       {texto} <X className="w-3 h-3" />
     </button>

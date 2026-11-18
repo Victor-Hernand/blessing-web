@@ -15,11 +15,11 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
       className="text-center px-4 py-8 lg:py-10 relative group"
     >
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-8 h-[2px] bg-[#b7212c]/40 group-hover:w-16 group-hover:bg-[#b7212c] transition-[width,background-color] duration-300" />
-      <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#1d1d1b] mb-2" style={{ fontFamily: "var(--font-heading)" }}>
         {count}
         <span className="text-[#b7212c]">{suffix}</span>
       </div>
-      <div className="text-neutral-300 text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
+      <div className="text-[#585755] text-[11px] sm:text-xs uppercase tracking-[0.2em] font-medium" style={{ fontFamily: "var(--font-heading)" }}>
         {label}
       </div>
     </motion.div>
@@ -28,7 +28,7 @@ function StatItem({ value, suffix, label, index }: { value: number; suffix: stri
 
 export default function StatsBar() {
   return (
-    <section className="relative overflow-hidden bg-metal border-y border-white/10" aria-label="Blessing en cifras">
+    <section className="relative overflow-hidden bg-metal border-y border-[#1d1d1b]/10" aria-label="Blessing en cifras">
       {/* Top red line */}
       <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-[#b7212c] to-transparent" />
 

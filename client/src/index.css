@@ -57,10 +57,10 @@
 
   /* Paleta de la marca, por roles (taste-skill: fondo, superficie, tinta, texto secundario, acento).
      El texto secundario sobre el fondo oscuro pasa 4.5:1; no usar grises intermedios. */
-  --color-bg: #3a3e45;
-  --color-surface: #474c55;
-  --color-ink: #f4f5f7;
-  --color-muted: #a3a3a3;
+  --color-bg: #FFFFFF;
+  --color-surface: #F3F4F6;
+  --color-ink: #1d1d1b;
+  --color-muted: #585755;
   --color-accent: #b7212c;
 
   --font-heading: "Oswald", sans-serif;
@@ -153,7 +153,7 @@
     width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #f5f5f5;
+    background: #FFFFFF;
   }
   ::-webkit-scrollbar-thumb {
     background: #b7212c;
@@ -223,7 +223,7 @@
   }
 
   .text-shimmer {
-    color: #f4f5f7;
+    color: #1d1d1b;
   }
 
   /* Glassmorphism utility */
@@ -305,22 +305,22 @@
     }
   }
 
-  /* Gris metálico: acero cepillado con reflejos diagonales */
+  /* Fondo crema: antes gris metálico (acero cepillado); ahora superficie crema con textura sutil */
   .bg-metal {
-    background-color: #6b727c;
+    background-color: #FFFFFF;
     background-image:
-      linear-gradient(115deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.12) 45%, rgba(255, 255, 255, 0) 60%),
-      linear-gradient(135deg, #7d848e 0%, #6b727c 40%, #8a919b 55%, #626974 80%, #767d87 100%);
+      linear-gradient(115deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 60%),
+      linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 40%, #ECEEF1 55%, #FFFFFF 80%, #F5F6F8 100%);
   }
 
-  /* Fondo de planos/cuadrícula industrial (hero y secciones oscuras) */
+  /* Fondo de planos/cuadrícula industrial en crema */
   .bg-blueprint {
-    background-color: #6b727c;
+    background-color: #FFFFFF;
     background-image:
-      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-      linear-gradient(115deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.12) 45%, rgba(255, 255, 255, 0) 60%),
-      linear-gradient(135deg, #7d848e 0%, #6b727c 40%, #8a919b 55%, #626974 80%, #767d87 100%);
+      linear-gradient(rgba(29, 29, 27, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(29, 29, 27, 0.035) 1px, transparent 1px),
+      linear-gradient(115deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.6) 45%, rgba(255, 255, 255, 0) 60%),
+      linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 40%, #ECEEF1 55%, #FFFFFF 80%, #F5F6F8 100%);
     background-size: 48px 48px, 48px 48px, auto, auto;
   }
 

@@ -19,13 +19,13 @@ export default function CareersSection() {
                 <Briefcase className="w-6 h-6 text-[#b7212c]" />
               </div>
               <div>
-                <span className="block text-xs text-white uppercase tracking-[0.2em] font-medium mb-2" style={{ fontFamily: "var(--font-heading)" }}>
+                <span className="block text-xs text-[#1d1d1b] uppercase tracking-[0.2em] font-medium mb-2" style={{ fontFamily: "var(--font-heading)" }}>
                   Únete al equipo
                 </span>
-                <h2 className="section-title text-white mb-2 text-[30px] lg:text-[34px]">
+                <h2 className="section-title text-[#1d1d1b] mb-2 text-[30px] lg:text-[34px]">
                   ¿Deseas trabajar con nosotros?
                 </h2>
-                <p className="text-white/80 text-sm leading-relaxed max-w-xl">
+                <p className="text-[#1d1d1b]/80 text-sm leading-relaxed max-w-xl">
                   Conoce nuestras vacantes disponibles, aplica en línea y mantente al día con
                   las oportunidades que publicamos en LinkedIn.
                 </p>
@@ -37,7 +37,7 @@ export default function CareersSection() {
                 href={COMPANY.careersUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-white hover:bg-neutral-100 text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm hover:translate-y-[-2px]"
+                className="inline-flex items-center gap-2 bg-white hover:bg-[#F3F4F6] text-[#b7212c] px-6 py-3.5 font-bold uppercase tracking-wider transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] text-sm hover:translate-y-[-2px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <Briefcase className="w-4 h-4" />
@@ -47,7 +47,7 @@ export default function CareersSection() {
                 href={COMPANY.careersLinkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-md border border-[#0077b5] bg-[#0077b5] hover:bg-[#005f91] hover:border-[#005f91] text-white px-5 py-2.5 font-bold uppercase tracking-wider drop-shadow-xl transition-[color,background-color,border-color] duration-300 text-sm"
+                className="group inline-flex items-center gap-2 rounded-md border border-[#0077b5] bg-[#0077b5] hover:bg-[#005f91] hover:border-[#005f91] text-[#1d1d1b] px-5 py-2.5 font-bold uppercase tracking-wider drop-shadow-xl transition-[color,background-color,border-color] duration-300 text-sm"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 <svg

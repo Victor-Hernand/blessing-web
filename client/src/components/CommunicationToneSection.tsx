@@ -23,7 +23,7 @@ export default function CommunicationToneSection() {
           >
             <div className="mb-6">
               <h2
-                className="font-black uppercase leading-[0.92] tracking-[-0.04em] text-white text-[42px]"
+                className="font-black uppercase leading-[0.92] tracking-[-0.04em] text-[#1d1d1b] text-[42px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Tono y Estilo de
@@ -31,28 +31,28 @@ export default function CommunicationToneSection() {
               </h2>
             </div>
 
-            <div className="mb-8 h-px w-full max-w-[580px] bg-neutral-300" />
+            <div className="mb-8 h-px w-full max-w-[580px] bg-[#D9DDE3]" />
 
-            <p className="max-w-[760px] text-base leading-relaxed text-neutral-200 sm:text-lg">
+            <p className="max-w-[760px] text-base leading-relaxed text-[#3a3e45] sm:text-lg">
               El tono de Blessing debe reflejar cercanía, sencillez y credibilidad, proyectando
               siempre energía positiva y confianza.
             </p>
 
             <div className="mt-10 max-w-[720px]">
               <h3
-                className="mb-4 font-black uppercase tracking-[-0.03em] text-white text-[32px]"
+                className="mb-4 font-black uppercase tracking-[-0.03em] text-[#1d1d1b] text-[32px]"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 Tono General
               </h3>
 
-              <p className="mb-6 text-base leading-relaxed text-neutral-200 sm:text-lg">
+              <p className="mb-6 text-base leading-relaxed text-[#3a3e45] sm:text-lg">
                 El tono general es para sentar la base de la personalidad de la marca y crear la
                 conexión emocional con los clientes, generando confianza y credibilidad por medio de
                 una comunicación coherente.
               </p>
 
-              <ol className="space-y-4 text-base leading-relaxed text-white sm:text-lg">
+              <ol className="space-y-4 text-base leading-relaxed text-[#1d1d1b] sm:text-lg">
                 {tonePoints.map((point, index) => (
                   <li key={point} className="flex gap-3">
                     <span className="mt-1 inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#b7212c] text-xs font-bold text-white">
@@ -75,7 +75,7 @@ export default function CommunicationToneSection() {
             <div className="pointer-events-none absolute -right-2 top-2 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-[#b7212c]/90 lg:block" />
             <div className="pointer-events-none absolute -left-2 bottom-6 hidden h-28 w-28 rotate-45 rounded-2xl border-[10px] border-[#b7212c]/90 lg:block" />
 
-            <div className="relative w-full overflow-hidden rounded-[28px] border border-white/10 bg-metal">
+            <div className="relative w-full overflow-hidden rounded-[28px] border border-[#1d1d1b]/10 bg-metal">
               <img
                 src={IMAGES.realTeamStore}
                 alt="Equipo de Auto Repuestos Blessing en el mostrador de la tienda"

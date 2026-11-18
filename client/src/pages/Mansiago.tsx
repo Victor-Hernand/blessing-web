@@ -126,7 +126,7 @@ function MHeader() {
       className={`sticky top-0 z-50 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 ${
         scrolled
           ? "bg-white/95 backdrop-blur-lg shadow-lg shadow-black/30"
-          : "bg-neutral-50"
+          : "bg-[#FFFFFF]"
       }`}
       style={{ fontFamily: "'Montserrat', sans-serif" }}
     >
@@ -192,7 +192,7 @@ function MHeader() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="px-4 py-3 text-gray-300 font-semibold uppercase tracking-wider hover:text-[#e2d337] hover:bg-neutral-50 transition-colors"
+                className="px-4 py-3 text-gray-300 font-semibold uppercase tracking-wider hover:text-[#e2d337] hover:bg-[#FFFFFF] transition-colors"
                 style={{ fontFamily: "'Montserrat', sans-serif" }}
               >
                 {l.label}
@@ -374,7 +374,7 @@ function MProducts() {
             >
               <div className="flex items-start gap-4">
                 <div className={`w-14 h-14 flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
-                  activeProduct === i ? "bg-[#e2d337]" : "bg-neutral-50"
+                  activeProduct === i ? "bg-[#e2d337]" : "bg-[#FFFFFF]"
                 }`}>
                   <DynIcon name={p.icon} size={24} className={`transition-colors ${activeProduct === i ? "text-[#1d1d1b]" : "text-[#e2d337]"}`} />
                 </div>
@@ -441,7 +441,7 @@ function MAbout() {
   const { ref, visible } = useReveal();
 
   return (
-    <section id="m-nosotros" className="bg-neutral-50 py-20 lg:py-28 relative overflow-hidden">
+    <section id="m-nosotros" className="bg-[#FFFFFF] py-20 lg:py-28 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#e2d337] via-[#bc8827] to-transparent" />
       <div className="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#e2d337]/5 blur-3xl" />
@@ -543,7 +543,7 @@ function MCoverage() {
           {MANSIAGO_SELLERS.map((seller, i) => (
             <div
               key={seller.name}
-              className={`relative bg-neutral-50 border border-[#333] p-6 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 cursor-pointer group ${
+              className={`relative bg-[#FFFFFF] border border-[#333] p-6 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 cursor-pointer group ${
                 activeZone === i ? "border-[#e2d337] shadow-lg shadow-[#e2d337]/10" : "hover:border-[#e2d337]/40"
               } ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`}
               style={{ transitionDelay: `${i * 100}ms` }}
@@ -615,7 +615,7 @@ function MBrands() {
   const allBrands = [...MANSIAGO_BRANDS, ...MANSIAGO_BRANDS];
 
   return (
-    <section className="bg-neutral-50 py-16 overflow-hidden border-y border-[#333]">
+    <section className="bg-[#FFFFFF] py-16 overflow-hidden border-y border-[#333]">
       <div ref={ref} className={`transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 ${visible ? "opacity-100" : "opacity-0"}`}>
         <div className="text-center mb-10">
           <h2 className="font-black text-[#1d1d1b] uppercase tracking-tight text-[42px]" style={{ fontFamily: "'Montserrat', sans-serif" }}>
@@ -727,7 +727,7 @@ function MContact() {
               { icon: Clock, label: "Horario", value: MANSIAGO_INFO.schedule },
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-4 group">
-                <div className="w-12 h-12 bg-neutral-50 flex items-center justify-center flex-shrink-0 group-hover:bg-[#e2d337] transition-colors">
+                <div className="w-12 h-12 bg-[#FFFFFF] flex items-center justify-center flex-shrink-0 group-hover:bg-[#e2d337] transition-colors">
                   <item.icon size={20} className="text-[#e2d337] group-hover:text-[#1d1d1b] transition-colors" />
                 </div>
                 <div>
@@ -760,7 +760,7 @@ function MContact() {
                     href={s.href}
                     target="_blank"
                     rel="noopener"
-                    className="w-10 h-10 bg-neutral-50 flex items-center justify-center hover:bg-[#e2d337] transition-colors group"
+                    className="w-10 h-10 bg-[#FFFFFF] flex items-center justify-center hover:bg-[#e2d337] transition-colors group"
                   >
                     <s.icon size={18} className="text-[#e2d337] group-hover:text-[#1d1d1b] transition-colors" />
                   </a>
@@ -771,7 +771,7 @@ function MContact() {
 
           {/* Map */}
           <div className={`transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-400 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"}`}>
-            <div className="w-full aspect-[4/3] bg-neutral-50 overflow-hidden border-4 border-[#1d1d1b]">
+            <div className="w-full aspect-[4/3] bg-[#FFFFFF] overflow-hidden border-4 border-[#1d1d1b]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.123456789!2d-87.2!3d14.08!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTTCsDA0JzQ4LjAiTiA4N8KwMTInMDAuMCJX!5e0!3m2!1ses!2shn!4v1234567890"
                 width="100%"
@@ -929,7 +929,7 @@ function MScrollTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-      className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-neutral-50 border border-[#e2d337]/40 flex items-center justify-center hover:bg-[#e2d337] hover:text-[#1d1d1b] text-[#e2d337] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] shadow-lg"
+      className="fixed bottom-6 left-6 z-50 w-12 h-12 bg-[#FFFFFF] border border-[#e2d337]/40 flex items-center justify-center hover:bg-[#e2d337] hover:text-[#1d1d1b] text-[#e2d337] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] shadow-lg"
     >
       <ArrowUp size={20} />
     </button>

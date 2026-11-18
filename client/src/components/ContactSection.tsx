@@ -21,7 +21,7 @@ export default function ContactSection() {
             <span className="section-label">Comunícate con nosotros</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-white text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Contáctanos <span className="text-gradient-red">Ahora</span>
           </h2>
         </motion.div>
@@ -34,11 +34,11 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="space-y-4"
           >
-            <h3 className="font-bold text-white uppercase tracking-wide mb-6 text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
+            <h3 className="font-bold text-[#1d1d1b] uppercase tracking-wide mb-6 text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
               Información de Contacto
             </h3>
 
-            <a href={`tel:${COMPANY.phone}`} className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
+            <a href={`tel:${COMPANY.phone}`} className="flex items-start gap-4 p-4 bg-[#FFFFFF] border border-neutral-300 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
                 <Phone className="w-4 h-4 text-neutral-900" />
               </div>
@@ -48,7 +48,7 @@ export default function ContactSection() {
               </div>
             </a>
 
-            <a href={`mailto:${COMPANY.email}`} className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
+            <a href={`mailto:${COMPANY.email}`} className="flex items-start gap-4 p-4 bg-[#FFFFFF] border border-neutral-300 hover:border-[#b7212c] hover:shadow-md transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] group">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
                 <Mail className="w-4 h-4 text-neutral-900" />
               </div>
@@ -58,7 +58,7 @@ export default function ContactSection() {
               </div>
             </a>
 
-            <div className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300">
+            <div className="flex items-start gap-4 p-4 bg-[#FFFFFF] border border-neutral-300">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
                 <MapPin className="w-4 h-4 text-neutral-900" />
               </div>
@@ -68,7 +68,7 @@ export default function ContactSection() {
               </div>
             </div>
 
-            <div className="flex items-start gap-4 p-4 bg-[#d9dde3] border border-neutral-300">
+            <div className="flex items-start gap-4 p-4 bg-[#FFFFFF] border border-neutral-300">
               <div className="w-10 h-10 bg-[#b7212c] flex items-center justify-center shrink-0">
                 <Clock className="w-4 h-4 text-neutral-900" />
               </div>
@@ -89,7 +89,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <div className="bg-[#d9dde3] border border-neutral-300 p-6 lg:p-8">
+            <div className="bg-[#FFFFFF] border border-neutral-300 p-6 lg:p-8">
               <div className="flex items-center gap-3 mb-2">
                 <Users className="w-6 h-6 text-[#b7212c]" />
                 <h3 className="font-bold text-neutral-900 uppercase tracking-wide text-[32px]" style={{ fontFamily: "var(--font-heading)" }}>
@@ -107,10 +107,10 @@ export default function ContactSection() {
                     href={`https://wa.me/504${seller.phone.replace(/-/g, "")}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group w-72 shrink-0 flex items-center gap-3 p-3 bg-[#d9dde3] border border-neutral-300 hover:border-green-400 hover:bg-green-950/40 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
+                    className="group w-72 shrink-0 flex items-center gap-3 p-3 bg-[#FFFFFF] border border-neutral-300 hover:border-green-400 hover:bg-green-950/40 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300"
                   >
                     <div className="w-9 h-9 bg-green-500/15 border border-green-900/60 flex items-center justify-center shrink-0 group-hover:bg-green-600 group-hover:border-green-600 transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300">
-                      <MessageCircle className="w-4 h-4 text-green-600 group-hover:text-white transition-colors" />
+                      <MessageCircle className="w-4 h-4 text-green-600 group-hover:text-[#b7212c] transition-colors" />
                     </div>
                     <div className="min-w-0">
                       <div className="text-sm font-semibold text-neutral-900 truncate group-hover:text-green-700 transition-colors">{seller.name}</div>
@@ -133,7 +133,7 @@ export default function ContactSection() {
                 <a href={COMPANY.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ clipPath: "url(#squircleClip)" }} className="w-10 h-10 bg-gradient-to-br from-pink-600 to-purple-800 flex items-center justify-center shadow-lg border border-pink-500/50 text-white transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 hover:shadow-2xl">
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </a>
-                <a href={COMPANY.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" style={{ clipPath: "url(#squircleClip)" }} className="w-10 h-10 bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center shadow-lg border border-gray-600/50 text-white transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 hover:shadow-2xl">
+                <a href={COMPANY.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" style={{ clipPath: "url(#squircleClip)" }} className="w-10 h-10 bg-[#FFFFFF] flex items-center justify-center shadow-lg border border-[#1d1d1b]/20 text-[#1d1d1b] transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 hover:shadow-2xl">
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.030-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
                 </a>
                 <a href={COMPANY.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style={{ clipPath: "url(#squircleClip)" }} className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center shadow-lg border border-green-400/50 text-white transform transition-all duration-300 ease-out hover:scale-110 hover:-translate-y-2 hover:shadow-2xl">

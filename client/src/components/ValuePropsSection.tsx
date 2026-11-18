@@ -21,10 +21,10 @@ export default function ValuePropsSection() {
             <span className="section-label">Por qué elegirnos</span>
             <div className="w-10 h-[2px] bg-[#b7212c]" />
           </div>
-          <h2 className="section-title text-white text-[42px]">
+          <h2 className="section-title text-[#1d1d1b] text-[42px]">
             Nuestra <span className="text-gradient-red">propuesta de valor</span>
           </h2>
-          <p className="text-neutral-200 text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#3a3e45] text-sm lg:text-base mt-4 max-w-2xl mx-auto leading-relaxed">
             Tres pilares que nos diferencian en el mercado hondureño.
           </p>
         </motion.div>
@@ -39,7 +39,7 @@ export default function ValuePropsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1], delay: i * 0.12 }}
-                className="relative bg-[#d9dde3] border border-neutral-300 p-8 group hover:shadow-xl hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
+                className="relative bg-[#FFFFFF] border border-neutral-300 p-8 group hover:shadow-xl hover:border-[#b7212c] transition-[color,background-color,border-color,box-shadow,transform,opacity,width,height] duration-300 hover:-translate-y-1"
               >
                 {/* Barra lateral de acento */}
                 <div className="absolute top-0 left-0 w-1 h-full bg-[#b7212c]" />
